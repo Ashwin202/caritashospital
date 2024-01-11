@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Caritas Support Team  
+                     </h1>
+                <h2 style="color: #c71782; font-weight: 300;">  Compassion in Action</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/support1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4">Compassion in the Community: Caritas<br/> Support at Your Service</h3>           
+            <p> The Caritas Support Team marks a groundbreaking initiative by Caritas Hospital, dedicated to offering compassionate support in various realms that demand a human touch. Comprised of self-motivated employees who voluntarily dedicate their time and effort, this team acts as a force for positive change. </p>        
+            <p>
+                Their mission is to directly engage and inspire individuals to participate in social initiatives and meaningful activities. As dedicated goodwill ambassadors of Caritas Hospital, they actively engage with communities and the public through various social interaction platforms. The Caritas Support Team embodies the spirit of compassion and brings a humanizing touch to our commitment to making a positive impact in the lives of those we serve.</p>
+            </div>
+            <p>&nbsp;</p>
+           
+              
+        </div>
+</section>
+
+<section >
+    <div class="container mt-5">
+          
+            <div class="row justify-content-center bottomlinks" style="width:90%;margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                  <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a></p>
+                        </div>
+                        <div class="ml-4" style="margin-left: 20%;">
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                     <p><a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                          <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a  href="{% url 'blood' %}">Blood Bank</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a style="color:#C71782;" href="{% url 'blood' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                             <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'secondopinion' %}">Second Opinion</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a style="color:#C71782;" href="{% url 'secondopinion' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                               <div>
+                                    <p><a style="color:#C71782 !important;" href="{% url 'support' %}">Caritas Support Team</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a href="{% url 'support' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                           <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'physiotherapy' %}">Physiotherapy</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a href="{% url 'physiotherapy' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a  href="{% url 'homecare' %}">Caritas Home Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a  href="{% url 'homecare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+{% endblock%}

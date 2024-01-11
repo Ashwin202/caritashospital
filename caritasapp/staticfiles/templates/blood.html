@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Blood Bank</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Saving Lives Drop By Drop</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/blood1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>24/7 Lifesaving Support:  Your Beacon of Hope<br>
+                for Transfusion Medicine</h3>
+            <p>&nbsp;</p>
+            <p>The 24/7 highly equipped and modernized blood bank at Caritas Hospital offers the best transfusion medicine services to both inpatients and outpatients who are in urgent need of blood or its components. The Blood Bank has a team of experienced experts and the latest technology. It offers the most efficient services to patients throughout the process, starting from screening donors, collecting blood to separating components and scientifically storing them.</p>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6" >
+                    <ul>
+                    <li class="mb-3">Blood grouping including A1/A2, Bombay group and Du detection</li>
+                    <li class="mb-3">Cross matching - Saline, albumin and Coomb’s method using Gel card system.</li>
+                    <li class="mb-3"> Direct Antiglobulin Test (DAT/DCT)</li>
+                    <li class="mb-3">Indirect Antiglobulin Test (IAT/ICT)</li>
+                    <li class="mb-3">Cold Agglutinin Test and Titer</li>
+                    <li class="mb-3">Blood collection and component preparation using fully automated, closed, sterile extractor system (T-ACE-II)</li>
+                    <li class="mb-3">Packed Red Cells (PRC)</li>
+                    <li class="mb-3"> Fresh Frozen Plasma (FFP)</li>
+                    <li class="mb-3">Platelet Concentrate</li>
+                    <li class="mb-3">Cryoprecipitate</li></ul>                    
+                </div>
+                <div class="col-lg-6" >
+                  <ul>
+                    <li class="mb-3">Single donor platelet by apheresis procedure</li>
+                    <li class="mb-3">Blood preparations are</li>
+                    <li>80 - 95% leuco reduced (WBC removed)</li>
+                    <li>Individually screened for transfusion transmissible infections</li>
+                   <li class="mb-3"> ELISA for HIV 1 & 2, Hepatitis C Virus, Hepatitis B Virus, Syphilis</li>
+                   <li class="mb-3">Malarial parasite Antigen detection kit</li>
+                   <li class="mb-3">Screened for unexpected antibodies using IAT</li>
+                   <li class="mb-3">Adequate and appropriate storage units for blood components</li>
+                   <li class="mb-3">Blood components units are issued on request from other hospitals, as per availability.</li>
+                   </ul>
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+
+<section >
+    <div class="container mt-5">
+          
+            <div class="row  bottomlinks" style="margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                  <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a></p>
+                        </div>
+                        <div>
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                     <p><a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                          <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#C71782 !important;" href="{% url 'blood' %}">Blood Bank</a></p>
+                                </div>
+                                <div>
+                                   <a style="color:#C71782;" href="{% url 'blood' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+              
+              
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a></p>
+                                </div>
+                                <div>
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a  href="{% url 'homecare' %}">Caritas Home Care</a></p>
+                                </div>
+                                <div>
+                                    <a  href="{% url 'homecare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+ 
+
+{% endblock%}

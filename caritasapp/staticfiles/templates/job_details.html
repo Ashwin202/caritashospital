@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<style>
+    label{
+        color:#333333;
+        opacity:70%;
+    }
+</style>
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            
+                <h1 style="font-weight: 600;">{{career.job_title}}</h1>
+                <p>&nbsp;</p>
+                <div class="col-lg-2">
+                <a href="#apply-now"><button type="button" class="enqrybtn" style="margin:0 auto;width:100%;" >Apply Now</button></a>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <p>Department<br/><b>{{career.department}}</b></p>
+            </div>
+            <div class="col-lg-3">
+                <p>Qualification<br/><b>{{career.qualification}}</b></p>
+            </div>
+            <div class="col-lg-3">
+                <p>Experience<br/><b>{{career.experience}}</b></p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <h5>Job Description</h5>
+           <p> {{career.job_discription|safe }}</p>
+        </div>
+        <div class="row">
+            <h5>Key Responsibilities</h5>
+            <p>{{career.key_responsibilities|safe }}</p>
+            </div>
+            <div class="row">
+                <h5>Preferred Skills</h5>
+                <p>{{career.preferred_skills|safe }}</p>
+                <p>&nbsp;</p>
+           <hr style="width: 98%;margin:0 ;border:1px solid #C71782;opacity:100%;">
+        </div>
+    </div>
+   
+</section>
+<section id="apply-now">
+    <div class="container">
+        <div class="row">
+            <h4 style="font-weight:600;">Apply Now, For this <br/> Position</h4>
+            <p>&nbsp;</p>
+        </div>
+        <div class="row justify-content-center" style="width: 70%;">
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+                <form action="{% url 'job_detail' career_id=career.id %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-12 my-2">
+                            <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="First name*" autocomplete="given-name">
+                        </div>
+                        <div class="col-sm-12 my-2">
+                            <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Last name*">
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-6 my-2">
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Email*" autocomplete="given-name">
+                        </div>
+                        <div class="col-sm-6 my-2">
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone*">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-12 my-2">
+                            <label for="job_title">Job Title</label>
+                           <p style="font-weight:600;"> {{career.job_title}}</p>
+
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-12 my-2">
+                            <label for="resume"><img src="{% static 'img/attach-file 1.png' %}"  /><span style="color:#0072BC;font-weight:600;margin-left:10px;">Upload Your Resume</span></label>
+                            <input type="file" name="resume" accept=".pdf, .doc, .docx" required />
+                            <p>&nbsp;</p>
+                            <p>(Only PDF, doc, and docx extensions are supported for resume uploads.)</p>
+
+                           
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-12 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tickbox" name="agree_terms" required>
+                                <label class="form-check-label" for="tickbox">
+                                    By ticking, I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and SMS.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="enqrybtn">Apply Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

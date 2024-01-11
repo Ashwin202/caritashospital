@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Obstetrics, Gynaecology and Fetal Medicine</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Best Gynecology Hospital in Kerala
+                </h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/gynac1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+        </div>
+         </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Empowering Women's Health,<br> Celebrating New Beginnings</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/gynac2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;"> 
+                    The department of Obstetrics and Gynaecology in Caritas Hospital is one of the most advanced facilities of its kind in the region. The department offers a wide range of highly specialized services for comprehensive management of health problems in women of all ages</p>
+                    <p style="font-weight:500;">The exceptional team of doctors comprises experts from sub-specialties including obstetrics, gynecology, infertility management, reproductive medicine, fetal medicine and clinical & interventional imaging. Multidisciplinary in approach, they provide high quality, protocol-based treatment to patients..</p>
+                    <p style="font-weight:500;">The department has an outpatient wing, an inpatient wing, dedicated surgical suites and ICUs, labour suites, a state-of-the-art clinical imaging unit, and a 24 hour unit for handling all emergencies.</p>
+                    <p style="font-weight:500;">The department performs Vaginal Hysterectomy, Non-descend Vaginal Hysterectomy, Vault prolapsed surgery, sacrospinous colpopexy, advanced laparoscopy and hysteroscopy forremoval of uterus, uterine fibroids, endometriosis, endometrial cyst, uterine septum and uterine synechiae.</p>
+            </div>
+        </div>
+  </div>
+</section>
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+           <div class="row  " >
+                <h5 class="mainheading">Obstetrics & Gynaecology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Obstetrics & Gynaecology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+           
+        </div>
+    </div>
+</section>
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+             {% if posts %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            {% if post.department.name == "Obstetrics, Gynaecology and Fetal Medicine" %}
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+              {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

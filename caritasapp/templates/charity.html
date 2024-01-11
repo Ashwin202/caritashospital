@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Caritas Social Responsibility</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Spreading Hope, Changing Lives</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/charity1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4">Why Donate to <br/>Caritas Hospital?</h3>
+           
+            <p>Your generous contribution to Caritas Hospital is more than a gift; it's a catalyst for transforming healthcare for both our patients and society. As a charitable healthcare institution, we deeply appreciate your support, enabling us to deliver top-quality, compassionate care to underserved communities that often lack access to modern healthcare. </p>
+            
+            <h5 class="mt-4">Our Dedication to Safe Care </h5>
+            <p>We stand ready to provide unwavering support. Whether it's everyday healthcare or life-changing medical interventions, you can rely on us to safeguard your well-being and that of your loved ones.</p>
+            <p>Your donation to Caritas Hospital creates a profound impact, fostering a healthier and more equitable future for all.</p>
+            </div>
+            <p>&nbsp;</p>
+          <a href="https://feebook.southindianbank.com/FeeBookUser/userhome" target="_blank">  <button type="button" class="enqrybtn">Donate Now</button></a>
+              
+        </div>
+</section>
+
+
+ 
+
+{% endblock%}

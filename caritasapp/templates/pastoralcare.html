@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Pastoral Care</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Caritas Hospital's Pastoral Care Services</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/pastoral1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Supporting Your Faith, Enhancing Your Healing <br/>with Caritas Hospital Pastoral Care</h3>
+            <p>&nbsp;</p>
+            <p>The pastoral care and medical social work department of Caritas Hospital functions as a part of the leading team of the hospital. It provides spiritual, psychological assistance and emotional support to the patients and to their dear ones if needed, by which it contributes to the holistic health program of the hospital, irrespective of their caste, creed and religion. The team visits the patients, build rapport and provide services offered by department. Certain particular helps such as financial assistance are made available with the help of administrative team.</p>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6" >
+                    <ul>
+                        <li class="mb-3">Sacraments like confession, holy eucharist, anointing of the sick etc.</li>
+                        <li class="mb-3">Counselling for patients, bystanders, and staffs</li>
+                        <li class="mb-3">Prayer services</li>
+                        <li class="mb-3">Regular inpatient visit</li>
+                        <li class="mb-3">Enhance the &lsquo;we feeling&rsquo; among staffs through activities like birthday celebrations and so on<p><br></p>
+                        </li>
+                    </ul>                 
+                </div>
+                <div class="col-lg-6" >
+                  <ul>
+                    
+                        <li class="mb-3">Special counselling for alcoholic patients</li>
+                        <li class="mb-3">Psycho-social and moral support for the service users</li>
+                        <li class="mb-3">Provide training to social work interns.</li>
+                        <li class="mb-3">LIFE- Conducting programs under LIFE.</li>
+                    
+                   </ul>
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+
+<section >
+    <div class="container mt-5">
+          
+            <div class="row bottomlinks" style="margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                  <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a></p>
+                        </div>
+                        <div class="ml-4" style="margin-left: 20%;">
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                     <p><a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                          <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a  href="{% url 'blood' %}">Blood Bank</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a style="color:#C71782;" href="{% url 'blood' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>                            <hr style="width: 98%;margin:0 ;">
+                </div>
+               
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+               
+               
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#C71782 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a  href="{% url 'homecare' %}">Caritas Home Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a  href="{% url 'homecare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+
+
+ 
+
+{% endblock%}

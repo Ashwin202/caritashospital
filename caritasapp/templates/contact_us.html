@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Contact Us </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Your Path to World-Class Healthcare </h2>
+        </div>
+        <div class="row  pt-5" >
+            <div class="col-lg-4 " style="background-color:#FAF9F9;padding:4% 3% 4% 4%;">
+               
+                <p class="mt-5">Ambulance<br/>
+                <a style="color:#0072bc;" href="tel:+919496555200">+91 (0) 9496555200</a></p>
+                <p>Information 24/7<br/>
+                <a style="color:#0072bc;" href="#">+91 (0) 481-2790025 to 29</a></p>
+                <p>Appointment <br/>
+                <a style="color:#0072bc;" href="#">+91 (0) 9496555300,+91 (0) 9496555400</a></p>
+                <p>Cardiology Information<br/>
+               <a style="color:#0072bc;" href="tel:+919496555600"> +91 (0) 9496555600</a></p>
+               <p>ECHS Helpline<br/>
+               <a style="color:#0072bc;" href="tel:+918547090029">+91 (0) 8547090029</a></p>
+                <p>Health Check-up plans <br/>
+                <a style="color:#0072bc;" href="tel:+919496555900">+91 (0) 9496555900</a></p>
+                <p>Insurance Cell<br/>
+                <a style="color:#0072bc;" href="tel:+919446021300">+91 (0) 9446021300</a></p>
+                <p>Stroke Helpline Number <br/>
+                <a style="color:#0072bc;" href="tel:+919496555800"> +91 (0) 9496555800</a></p>
+                
+            </div>
+            <div class="col-lg-7 " style="margin:0 2% 0 4%;">
+                <div class="row">
+                    <div class="col-lg-6">
+                       <p><b> Caritas Hospital</b></p>
+                       <p>Thellakom P.O, Kottayam-686630 <br/>Kerala, India</p>
+                        <p>Phone : <a style="color:#0072bc;" href="#">0481-2790025 to 29 </a><br/>
+                        Email-Id : <a style="color:#0072bc;" href="mailto:mail@caritashospital.org">mail@caritashospital.org</a></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{% static 'img/NABH1.png' %}" class="img-fluid mx-1" alt="NABH1" ><img src="{% static 'img/NABH2.png' %}" class="img-fluid mx-1" alt="NABH2" ><img src="{% static 'img/TUV.png' %}" class="img-fluid" alt="TUV" >
+                        
+                    </div>
+                    </div>
+                    <p>&nbsp;</p>
+                    <h5>General Enquiry</h5>
+                    <p>&nbsp;</p>
+                    <form action=" " method="post" class="custom-form">
+                    {% csrf_token %}
+                    <div class="secondopinion row mb-2">
+       
+                         <div class="col-sm-12 my-2">
+                       
+                            <input type="text" id="first_name" placeholder="First Name" name="first_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+       
+                        <div class="col-sm-12 my-2">
+                            <input type="text" id="last_name" placeholder="Last Name" name="last_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-6 my-2">
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
+                        </div>
+        
+                        <div class="col-sm-6 my-2">
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+                        </div>
+                
+                    </div>
+                    <div class="form-grp row mb-2">
+                         <div class="col-sm-12 my-2">
+                            <textarea id="query" name="query" class="form-control" required placeholder="Message Query" rows="6" cols="40" style="border-bottom:1px solid #000;"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="tickbox" name="tickbox">
+                        <label class="form-check-label" for="categorySales">
+                            By Ticking,I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and sms.
+                        </label>
+                    </div>
+                    <div class="form-grp row mt-4">
+                        <div class="col-sm-12">
+                            <button type="submit" class="enqrybtn">Submit Now </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+        
+        
+       
+    
+</section>
+
+<section>
+    
+    <div class="container">
+        
+        <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.4144083857113!2d76.54630901083584!3d9.645586678992442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07d357e35d61ad%3A0x27680d9b2d78f03!2sCaritas%20Hospital%20-%20Multispeciality%20Hospital%2C%20Kottayam!5e0!3m2!1sen!2sin!4v1698934618083!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

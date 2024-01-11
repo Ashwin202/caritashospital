@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Caritas Heart Institute </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Best Cardiology Hospital In Kerala</h2>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/Heart Institute 859X386.png' %}" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#articles">Articles</a></li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>At Caritas Heart Institute, we're passionate about guiding you toward a lifetime of heart health through expert care and innovation.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/Heart Institute (1).png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="margin-bottom:30px;"> Caritas Heart Institute traces its origin to Caritas Hospital & Institute of Health Sciences, which has been providing exemplary cardiology care for over 37 years. </p>
+                   <p style="margin-bottom:30px;">We specialize in cardiac emergency care and non-invasive cardiac services - especially ECHO cardiography, research, and preventive cardiac education. Eventually, the treatments and technology evolved into highly advanced, targeted, evidence-based cardiology care. This led to the foundation of the Caritas heart institute in 2011 as a one-stop care centre for comprehensive heart care. </p>
+                   <p style="margin-bottom:30px;">Equipped with some of the best facilities and experts in the region, our expertise in interventional cardiology and cardiac surgery has made Caritas Heart Institute the best cardiology hospital in Kerala.</p>
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+        <h3 class="text-center">Treatment and Procedures</h3>
+        <p class="text-center mb-5 mt-3">Caritas heart hospital can be broadly divided into the non-invasive, interventional division of cardiovascular and thoracic Surgery and the heart transplant program. All these cardiovascular units are fully equipped with the best cardiologists to conduct a wide range of cardiothoracic and vascular surgeries under one roof. Our cardiac surgeons have proven expertise in performing complex medical procedures such as heart failure surgery, heart transplantation, coronary artery bypass surgery, heart valve replacement surgery, pediatric cardiac surgeons to treat congenital heart defects in children and others.
+                        </p>
+        <div class="accordion-wrapper">
+           <button class="accordion">Non-invasive Cardiology</button>
+            <div class="panel">
+               <p>The non-invasive cardiology department of Caritas Heart Institute comprises state-of-the-art facilities such as outpatient clinics, ECG, echocardiography, Holter monitors, treadmills and advanced medical equipment including heart rhythm clinic, heart failure clinic, lifestyle clinic, etc.</p>
+                        
+                <p>The ECHO team has crossed the milestone of performing over three lakh cardiac procedures successfully over the years. The team is backed by the most high-end medical equipment that empowers the team to make critical medical decisions right off the bat and provide the highest diagnostic quality treatment.</p>
+            </div>
+            <hr style="width: 100%;margin:0;">
+                    
+            <button class="accordion">Interventional Cardiology</button>
+             <div class="panel">
+               <p>Our hybrid cath lab is the first of its kind in Kerala and among the few extremely advanced cath labs in the entire country. The lab has enabled our cardiac surgeons and paediatric cardiologists to conduct more than 40,000 interventional cardiology procedures including the angioplasty surgery and endovascular treatments. This number includes 25,000 coronary angiograms and 13,000 coronary angioplasty. The department has conducted multiple successful surgeries that include the following:</p>
+                     
+                <ul>
+                    <li style="margin-bottom:15px;">This hybrid cath lab is fitted with advanced Intracoronary Imaging facilities such as Optical Coherence Tomography (OCT) and Intracoronary Ultrasound (IVUS). These abilities, combined with the expertise of our specialists, have catapulted Caritas Heart Institute as the most referred place to perform complex, high-risk interventional procedures (CHIP).</li>
+                    <li style="margin-bottom:15px;">The interventional cardiology department of Caritas Heart Hospital is the first to perform the most complex surgeries within minimum costs in Kerala. Such surgeries include heart valve replacement without open heart surgery such as transcatheter aortic valve implantation (TAVI), transcatheter tricuspid valve implantation (TRIC Valve), and intravascular lithotripsy, among others.</li>
+                    <li style="margin-bottom:15px;">In addition to performing surgeries, we conduct frequent training workshops on complex interventions. Recently, a live broadcast of a surgical procedure completed by our experts was highly appreciated at the 2022 Joint Interventional Conference in Milan, Italy.</li>
+                </ul>
+                       
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">Division of Cardiovascular and Thoracic Surgery (CVTS)</button>
+            <div class="panel">
+                <p>Our CVTS division had set a quality and process benchmark by being the first in Kerala to improvise the process and conduct keyhole heart bypass surgery. To date, this division has an unbroken record of performing over 500 keyhole bypass surgeries and 200 keyhole valve repair/replacement surgeries.</p>
+                <p> We also provide regular academic programs on the keyhole heart surgery procedure that attract multiple academics and cardiac surgeons across the country every year.</p>
+                <p>This division has proved its mettle in providing accurate diagnosis and treatment for a range of cardiac ailments such as coronary artery disease</p>
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">Heart Transplant Program</button>
+            <div class="panel">
+                <p>Medical care pre and post-heart transplant programs are critical to avoid life-long complications. Caritas Heart Institute has the proper infrastructure and human expertise to deliver top-notch medical intervention at every step of the heart transplant process.  </p>
+                     
+            </div>
+            <hr style="width: 100%;margin:0;">   
+        </div>
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+           <div class="row  " >
+                   <h5 class="mainheading" >Cardiology & Interventional Cardiology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Cardiology & Interventional Cardiology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+       
+        
+         <div class="row">
+           
+         <!-- Cardio Thoracic & Vascular  Surgery -->
+                <h5 class="mainheading">Cardio Thoracic & Vascular  Surgery</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Cardio Thoracic & Vascular  Surgery" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+    
+                
+                
+           
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+    </div>
+</section>
+
+
+{% endblock%}

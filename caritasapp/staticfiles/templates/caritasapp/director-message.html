@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Message From The Director</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Wishing Good Health to All</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/director.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;height:480px;">
+                <div class="col-content text-justify py-5">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <h3 class="text-light">Rev. Fr. Dr. Binu Kunnath</h3>
+                    <p class="text-light">Director, Caritas Hospital</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p></p>
+                    <div class="row">
+                        <div class="col-lg-2 text-light" >
+                           <i class="bi bi-linkedin" style="font-size:30px;"></i>
+                        </div>
+                        <div class="col-lg-10 text-light">
+                           <a style="color:#fff;" href="https://www.linkedin.com/in/fr-dr-binu-kunnath-a56605181/" target="_blank"> Connect with<br/> Rev. Fr. Dr. Binu Kunnath on LinkedIn</a>
+                        </div>
+                    </div>
+                
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3>Welcome to Caritas Hospital!</h3>
+            <p>&nbsp;</p>
+           
+                <div class="col-lg-8" >
+                    <p>Caritas Hospital came into being when few visionaries collectively envisioned providing specialized and affordable medical care to people of all walks of life in and around Kottayam. Our vision is to extend hospital ministry with an emphasis on compassionate service. From its humble beginning in 1962, Caritas Hospital has emerged as one of the leading health care providers in Kerala. Over the years, from a 50 bedded hospital, Caritas has grown to a 655 bedded hospital. We expand our facilities from time to time catering to the increasing needs of our patients.</p>
+                    <p> Hospital is committed to delivering the best medical care. The meticulous services of our Medical, Administrative and Support staff ensure world class healthcare. Our highly qualified team of expert doctors spread over 33 departments offer the best care to patients. Modern technology is an integral part of today’s medical care. Caritas Hospital has been pioneers in introducing some of the modern technology to patient care in the central region of Kerala. In Caritas, we have state –of –the-art medical equipment and the most modern technology. Hence, at every stage of patient care, Caritas makes sure that each and every patient receives the optimum care.</p>
+                    <p>Caritas Hospital is enthusiastic about fulfilling the lofty vision of its founding fathers in providing high quality healthcare. The management and the patrons of the hospital played a vital role in maintaining quality care and competence. Their commitment and constant encouragement helped us reach the present stage. We look forward to continuing a better service upholding the values of our Hospital – Love, Kindness and Service. Our mantra, “Kenotic Love Saves Life” equips each Caritasian to share the goal of providing a comprehensive patient care and spread the radiance of Good Health and Happiness.</p>
+                    <p>Wishing good health to all!</p>
+                    <p><b>Rev. Fr. Dr. Binu Kunnath <br/>Director, Caritas Hospital </b></p>
+                </div>
+                <div class="col-lg-4 px-5" style="margin:30px 0;">
+                  <h3 style="color:#c71782;"><span style="font-weight:400;">We look forward to continuing a better service upholding the values of our Hospital </span>– Love, Kindness and Service.</h3>
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+<section >
+    <div class="container ">
+          
+            <div class="row bottomlinks " style="width:90%;margin:0 auto;">
+             <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000;" href="{% url 'director_message' %}">Director's Message</a>
+                        </div>
+                        <div class="col-4 text-end">
+                            <a href="{% url 'director_message' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+
+                   <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000;" href="{% url 'ethics' %}">Ethics Committee</a>
+                        </div>
+                        <div class="col-4 text-end">
+                            <a style="color:#C71782;" href="{% url 'ethics' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%; margin: 0;">
+
+
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                                  <a href="{% url 'governing_body' %}">Governing Body</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                   <a href="{% url 'governing_body' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                                    <a href="{% url 'quality_control' %}">Quality Indicators </a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="{% url 'quality_control' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                                <a style="color:#000;" href="{% url 'milestones' %}">Milestones</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                     <a href="{% url 'milestones' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a href="{% url 'biomedical'%}">Biomedical Waste Management (BMW)</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="{% url 'biomedical'%}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a href="{% url 'achievements' %}">Awards & Achievements</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="{% url 'achievements' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <!--  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="{% url 'faq' %}">FAQ</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a href="{% url 'faq' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+            -->
+           </div>
+        
+        
+    </div>
+</section>
+
+
+ 
+
+{% endblock%}

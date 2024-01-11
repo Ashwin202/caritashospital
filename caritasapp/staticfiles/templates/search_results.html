@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+  <section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Doctors</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Meet Our Expert Medical Team at Caritas Hospital</h2>
+            </div> 
+    </div>
+</section>
+<section>
+<section>
+ <!--Search box-->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <h5 style="font-weight:600;">Find a Doctor/<br/>Search Specialties</h5>
+        </div>
+        <div class="col-md-8">
+           
+               <form id="search-form" class="form-inline" role="form" method="POST" action="{% url 'search_results' %}">
+                    {% csrf_token %}
+                    <div class="input-group rounded-search" style=" border-radius: 25px;box-shadow:0px 0px 4px 0px rgba(0,0,0,0.25); overflow: hidden;">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn search-btn" data-target="#search-form" name="q" style="border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        <input type="text" name="search" class="form-control search-form" placeholder="Search..." style="border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;">
+                    </div>
+                </form>
+
+        </div>
+    </div>
+
+<!--
+ <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search_results' %}">
+        {% csrf_token %}
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+</div>
+<!-- Search results container 
+    <div class="container mt-5">
+        <div id="search-results" class="row "></div>
+    </div>
+    -->
+  </section>  
+
+
+</section>
+<section>
+    <div class="container mt-5">
+        {% if search %}
+            <h5>Searched for {{ search }}</h5>
+            <br/>
+            <div class="row">
+                {% for doctor in doctors %}
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox">
+                   <div class="d-flex align-items-center">
+                        <div class=" col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                            <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                            <h4>{{ doctor.name }}</h4>
+                            <h6>{{ doctor.designation }}</h6>
+                            <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                            <p class="hide_mobile">&nbsp;</p>
+                             {% if doctor.appointment_enabled %}
+                            <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                        {% else %}
+                            <p></p>
+                        {% endif %}
+                        </div>
+                       <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl" ><a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                            <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i></a>
+                        </div>
+                    </div>
+                    <br/>
+                    
+                   
+                </div>
+                {% empty %}
+            <li>No doctors available</li>
+                    
+
+                    {% if forloop.counter|divisibleby:2 and not forloop.last %}
+                        
+                        
+                    {% endif %}
+                {% endfor %}
+            
+        {% else %}
+            <h1>Forgot to search</h1>
+        {% endif %}
+        </div>
+</div>
+    
+</section>
+{% endblock%}

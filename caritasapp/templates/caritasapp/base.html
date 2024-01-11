@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Caritas- Hospital & Institute of Health Science</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+ <link href="{% static 'img/fevicon-new.png' %}" rel="icon">
+  <link href="{% static 'img/fevicon-new.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style3.css' %}" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include FontAwesome CSS for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+ <!-- Include jQuery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <!-- Include Bootstrap JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="{% static 'js/script.js' %}"></script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function() {
+ // Select the mobile menu and toggle button
+const mobileMenu = document.querySelector('.mobile-menu');
+const menuToggle = document.querySelector('.menu-toggle');
+
+// Function to toggle mobile menu visibility
+function toggleMobileMenu() {
+    mobileMenu.classList.toggle('show'); // Add or remove 'show' class to toggle visibility
+}
+
+// Add click event listener to the toggle button
+menuToggle.addEventListener('click', toggleMobileMenu);
+  })
+
+</script>
+  
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" >
+    <div class="container "  style="max-width:100%;">
+        <div class="row">
+            <div class="col-12 px-20 topmenu" >
+                 <a style="color: #000000!important;" href="{% url 'career' %}" target=" ">Careers &nbsp;| </a> 
+                  <a style="color: #c61681!important;" href="tel:9496555200">24x7 Emergency: +91(0) 9496555200</a>
+            </div>
+            </div>
+      
+      <!--<div class="row topmenu">
+        <div class="col-lg-4 px-0" >
+        <a style="color: #000000!important;" href="#">Online Payments &nbsp;| </a> 
+        </div>
+        <div class="col-lg-8 px-0" >
+          <a style="color: #c61681!important;" href="tel:9496555200">24x7 Emergency: +91(0) 9496555200</a>
+        </div>
+        
+      </div>-->
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+   <div class="container d-flex  justify-content-between">
+<div class="logocontainer hide_mobile">
+     <a href="{% url 'index' %}"> <h1 class="logo" style="background-image: url('{% static 'img/caritas-01.svg' %}'); width: 300px; background-repeat: no-repeat;
+    height: 60px;"></h1> </a>
+    </div>
+      <!-- Unn image logo -comment below if you prefer to use a-->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+      
+ <!-- Mobile Menu -->     
+<div class="menu-container hide_desktop" style="  max-height: 100vh;  overflow-y: auto;">
+    <div class="topnav hide_desktop">
+        <a href="{% url 'index' %}">
+            <img src='{% static 'img/caritas-01.svg' %}' style="width:250px;" />
+        </a>
+        <div id="myLinks">
+            <ul style="list-style:none;">
+                <li class="dropmenu">
+                <a href="#" class="submenu-toggle" onclick="toggleSubmenu('departmentSubmenu')">Departments <i class="bi bi-chevron-down ms-2"></i></a>
+                <div class="submenu-content" id="departmentSubmenu">
+                    <div class="submenu">
+                        <a href="#" class="submenu-toggle" onclick="toggleSubmenu('coexSubmenu')" style="color:#333333!important;">Centres of Excellence <i class="bi bi-chevron-down ms-2"></i></a>
+                        <div class="submenu-content" id="coexSubmenu">
+                        <a href="{% url 'caritas_cancer_institute' %}">Caritas Cancer Institute<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_heart_institute' %}">Caritas Heart Institute<i class="bi bi-chevron-right ms-2"></i></a>
+                         <a href="{% url 'caritas_neuro' %}">Caritas Neuro Sciences<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'criticalcare' %}">Critical Care Medicine <i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'dermatology' %}">Dermatology & Cosmetology<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'emergency_medicine' %}">Emergency Medicine & Trauma Care<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_gastro' %}">Gastro Sciences<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_generalmedicine' %}">General Medicine<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'generalsurgery' %}">General, Minimal Access & Bariatric Surgery (General Surgery)<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_nephrology' %}">Nephrology & Renal<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'gynaecology' %}">Obstetrics, Gynaecology & Fetal Medicine<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_orthopaedics' %}">Orthopaedics, Joint Replacement & Arthroscopy<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_paediatrics' %}">Paediatrics & Paediatrics Surgery<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'physicalmedicine' %}">Physical Medicine & Rehabilitation<i class="bi bi-chevron-right ms-2"></i></a>
+                       <a href="{% url 'caritas_rheumatology' %}">Rheumatology<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'caritas_urology' %}">Urology<i class="bi bi-chevron-right ms-2"></i></a>
+                        
+                            </div>
+                        </div>
+                        <div class="submenu">
+                        <a href="#" class="submenu-toggle" onclick="toggleSubmenu('specialitySubmenu')" style="color:#333333 !important;">Specialities <i class="bi bi-chevron-down ms-2"></i></a>
+                        <div class="submenu-content" id="specialitySubmenu">
+                                 <a href="{% url 'anaesthesiology' %}"> Anaesthesiology<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'community_medicine' %}"> Community Medicine<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'dental' %}">Dental, Oral &amp; Maxillo Facial Surgery<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'caritas_ENT' %}">Department of ENT &amp; Audiology<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'endocrinology' %}">Endocrinology<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'interventional' %}"> Interventional Radiology, Radio Diagnosis and Imaging<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'neonatology' %}">Neonatology</a>
+                                 <a href="{% url 'ophthalmology' %}">Opthalmology<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'pathology' %}">Pathology, Microbiology &amp; Laboratory Medicine<i class="bi bi-chevron-right ms-1"></i></a>
+                                 <a href="{% url 'plastic_microvascular' %}">Plastic and Micro Vascular Surgery</a>
+                                 <a href="{% url 'psychiatry' %}">Psychiatry, Counseling and Psychotherapy Services<i class="bi bi-chevron-right ms-2"></i></a>
+                                 <a href="{% url 'pulmonology' %}">Pulmonology &amp; Interventional Pulmonology<i class="bi bi-chevron-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </li>
+                <li><a href="{% url 'doctors' %}">Doctors</a></li>
+                <li class="dropdown">
+                     <div class="dropdown-submenu" id="ourhospitalsDropdown">
+                            <a href="#" class="submenu" onclick="toggleSubmenu('ourhospitalsSubmenu')">Our Hospitals<i class="bi bi-chevron-down ms-2"></i></a>
+                            <div class="submenu-content" id="ourhospitalsSubmenu">
+                                <a href="{% url 'family' %}" class="menuheading " >Caritas Family Hospital</a>
+                                 <a href="{% url 'caritaskkm' %}" class="menuheading " >Caritas KMM Hospital</a>
+                                 <a href="{% url 'caritashdp' %}" class="menuheading " >Caritas HDP Hospital</a>
+                                 
+                                 
+                            </div>
+                        </div>
+                        </li>
+                 <li><a  href="{% url 'international_patients' %}">International Patients</a>
+            
+              </li>
+             <li class="dropmenu">
+            <div class="dropdown-submenu" id="academicresearchDropdown">
+                <a href="#" class="submenu" onclick="toggleSubmenu('academicresearchSubmenu')" >Academics & Research<i class="bi bi-chevron-down ms-2"></i></a>
+                <div class="submenu-content" id="academicresearchSubmenu">
+                    <a href="#" class="submenu" onclick="toggleSubmenu('academicsSubmenu')" style="color:#333333!important;">Academics <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="academicsSubmenu">
+                        <a class="menuheading" href="/dnb/">Caritas DNB Programme</a>
+                        <a class="menuheading" href="/college-of-pharmacy">Caritas College of Pharmacy</a>
+                        <a class="menuheading" href="/college-of-nursing/">Caritas College of Nursing</a>
+                        <a class="menuheading" href="/caritas-allied-health-science/">Caritas Allied Health Science</a>
+                    </div>
+                    <a href="#" class="submenu" onclick="toggleSubmenu('researchSubmenu')" style="color:#333333!important;">Research <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="researchSubmenu">
+                       <a class="menuheading" href="/research-development/">Research &amp; Development Cell</a>
+                    </div>
+                     <a href="#" class="submenu" onclick="toggleSubmenu('resourceSubmenu')" style="color:#333333!important;">Resources <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="resourceSubmenu">
+                        <a href="{% url 'articles' %}">Articles to Read<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'news_events' %}">News & Events<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'testimonials' %}">Patient Testimonials<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'gallery' %}">Gallery<i class="bi bi-chevron-right ms-2"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </li>
+           <li class="dropmenu">
+            <div class="dropdown-submenu" id="aboutDropdown">
+                <a href="#" class="submenu" onclick="toggleSubmenu('aboutSubmenu')" >About<i class="bi bi-chevron-down ms-2"></i></a>
+                <div class="submenu-content" id="aboutSubmenu">
+                    <a href="#" class="submenu" onclick="toggleSubmenu('aboutusSubmenu')" style="color:#333333!important;">About Us <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="aboutusSubmenu">
+                         <a href="{% url 'about_caritas' %}">About Caritas <i class="bi bi-chevron-right ms-2"></i></a>
+                         <a href="{% url 'director_message' %}">Directors Message<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'governing_body' %}">Governing Body<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'milestones' %}">Milestones<i class="bi bi-chevron-right ms-2"></i></a>
+                       <a href="{% url 'achievements' %}">Awards & Achievements<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'career' %}">Careers at Caritas<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'charity' %}">Caritas Social Responsibility<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'ethics' %}">Ethics Committee<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'quality_control' %}">Quality Indicators<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'biomedical'%}">Biomedical Waste Management<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'directions' %}">Directions to Reach<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'visitors_guide' %}">Visitors Guide<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'contact_us' %}">Contact Us<i class="bi bi-chevron-right ms-2"></i></a>
+                    </div>
+                    
+                     <a href="#" class="submenu" onclick="toggleSubmenu('resourcesSubmenu')" style="color:#333333!important;">Resources <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="resourcesSubmenu">
+                        <a href="{% url 'articles' %}">Articles to Read<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'news_events' %}">News & Events<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'testimonials' %}">Patient Testimonials<i class="bi bi-chevron-right ms-2"></i></a>
+                        <a href="{% url 'gallery' %}">Gallery<i class="bi bi-chevron-right ms-2"></i></a>
+                        
+                    </div>
+                    <a href="#" class="submenu" onclick="toggleSubmenu('serviceSubmenu')" style="color:#333333!important;">Services <i class="bi bi-chevron-down ms-2"></i></a>
+                    <div class="submenu-content" id="serviceSubmenu">
+                       <a href="{% url 'radiology' %}"> Radiology & Laboratory <i class="bi bi-chevron-right ms-2"></i></a>
+                       <a href="{% url 'blood' %}" >Blood Bank<i class="bi bi-chevron-down ms-2"></i></a>
+                       <a href="{% url 'clinical' %}" >Clinical Nutrition<i class="bi bi-chevron-down ms-2"></i></a>
+                       <a href="{% url 'organ' %}">Organ Transplant Programme<i class="bi bi-chevron-down ms-2"></i></a>
+                       <a href="{% url 'insurance' %}" >Insurance Partners<i class="bi bi-chevron-down ms-2"></i></a>
+                      <a href="{% url 'mortuary_services' %}" >Caritas Mortuary Services<i class="bi bi-chevron-down ms-2"></i></a>
+                      <a href="{% url 'pastoralcare' %}" >Pastoral Care<i class="bi bi-chevron-down ms-2"></i></a>
+                      <a href="{% url 'homecare' %}">Caritas Home Care<i class="bi bi-chevron-down ms-2"></i></a>
+                      <a href="/health-checkup-packages">Health Checkup Packages<i class="bi bi-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li> 
+        <div class="action_button mt-3">
+                <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">    <button type="button" id="openFormButton" class="enqrybtn">Appointments</button></a>
+            
+        </div>
+        </li>
+
+                
+            </ul>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+       
+    </div>
+</div>
+
+
+
+
+        <!-- Desktop Menu -->
+        <div class="main">
+          <nav id="cbp-hrmenu" class="cbp-hrmenu" role="navigation" aria-label="Main Nvigtaion">
+            <ul role="menubar" aria-hidden="false">
+              <li class="dropmenu">
+                <a role="menuitem" href="#" aria-haspopup="true" tabindex="0">Departments<i class="bi bi-chevron-down ms-2"></i></a>
+                <div class="cbp-hrsub">
+                  <div class="cbp-hrsub-inner">
+                    <div class="col-lg-2 border-end px-4" style="width:28%;">
+                      <div class="column-content">
+                          <img src="{% static 'img/doctornurses.png' %}" alt="doctor and nurses"  />
+                          <h4>Our Speciality </h4>
+                          <p style="font-size:14px;text-align:justify;font-weight:500;">We are home to 43 broad specialities with the best-in-the country healthcare professionals whose motto is to treat a patient's ailment and help them to get back to their daily life in the best and fastest possible way</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-2" style="width:19%;">
+                    
+                    <div class="column-content">
+                        <h6 class="mb-2">Centres of Excellence</h6>
+                        
+                        <ul class="drp" style="list-style:none;">
+                        <li><a href="{% url 'caritas_cancer_institute' %}">Caritas Cancer Institute <i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'caritas_heart_institute' %}">Caritas Heart Institute<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'caritas_neuro' %}">Caritas Neuro Sciences<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'criticalcare' %}">Critical Care Medicine <i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'dermatology' %}">Dermatology & Cosmetology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'emergency_medicine' %}">Emergency Medicine & Trauma Care<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'caritas_gastro' %}">Gastro Sciences<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'caritas_generalmedicine' %}">General Medicine<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'generalsurgery' %}">General, Minimal Access & Bariatric Surgery (General Surgery)<i class="bi bi-chevron-right ms-2"></i></a></li>
+                       
+                      
+                        
+                         
+                         
+                          
+                           
+                      </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-2 border-end" style="width:21%;">
+                  <div class="column-content">
+                     <ul>
+                      <li class="mb-4"></li>
+                       <li><a href="{% url 'caritas_nephrology' %}">Nephrology & Renal<i class="bi bi-chevron-right ms-2"></i></a></li>
+                       <li><a href="{% url 'gynaecology' %}">Obstetrics, Gynaecology & Fetal Medicine<i class="bi bi-chevron-right ms-2"></i></a></li>
+                     <li><a href="{% url 'caritas_orthopaedics' %}">Orthopaedics, Joint Replacement & Arthroscopy<i class="bi bi-chevron-right ms-2"></i></a></li>
+                     <li><a href="{% url 'caritas_paediatrics' %}">Paediatrics & Paediatrics Surgery<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'physicalmedicine' %}">Physical Medicine & Rehabilitation<i class="bi bi-chevron-right ms-2"></i></a></li>
+                       <li><a href="{% url 'caritas_rheumatology' %}">Rheumatology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'caritas_urology' %}">Urology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        
+                        
+                     </ul>
+                  </div>
+              </div>
+              <div class="col-lg-2" style="width:16%;">
+                
+               
+                  <div class="column-content">
+                    <h6 class="mb-2">Specialities</h6>
+                    <ul style="list-style:none;">
+                      <li><a href="{% url 'anaesthesiology' %}"> Anaesthesiology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'community_medicine' %}"> Community Medicine<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'dental' %}">Dental, Oral &amp; Maxillo Facial Surgery<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'caritas_ENT' %}">Department of ENT &amp; Audiology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'endocrinology' %}">Endocrinology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'interventional' %}"> Interventional Radiology, Radio Diagnosis and Imaging<i class="bi bi-chevron-right ms-2"></i></a></li>
+                     
+                      
+                      
+                     </ul>
+                  </div>
+              </div>
+              <div class="col-lg-2" style="width:15%;">
+                <div class="column-content">
+                
+                  <ul class="drp" style="list-style:none;">
+                    <li class="mb-4"></li>
+                    <li><a href="{% url 'neonatology' %}">Neonatology</a></li>
+                    <li><a href="{% url 'ophthalmology' %}">Opthalmology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                    <li><a href="{% url 'pathology' %}">Pathology, Microbiology &amp; Laboratory Medicine<i class="bi bi-chevron-right ms-1"></i></a></li>
+                    <li><a href="{% url 'plastic_microvascular' %}">Plastic and Micro Vascular Surgery</a></li>
+                    <li><a href="{% url 'psychiatry' %}">Psychiatry, Counseling and Psychotherapy Services<i class="bi bi-chevron-right ms-2"></i></a></li>
+                    
+                    <li><a href="{% url 'pulmonology' %}">Pulmonology &amp; Interventional Pulmonology<i class="bi bi-chevron-right ms-2"></i></a></li>
+                    
+                    
+                   </ul>
+                </div>
+              </div>
+                  </div><!-- /cbp-hrsub-inner -->
+                </div><!-- /cbp-hrsub -->
+              </li>
+              <li>
+                <a role="menuitem" href="{% url 'doctors' %}" >Doctors</a>
+                
+              </li>
+              <li class="dropmenu">
+                <a role="menuitem" href="#" aria-haspopup="true" tabindex="0">Our Hospitals<i class="bi bi-chevron-down ms-2"></i></a>
+                
+                  <div class="cbp-hrsub">
+                  <div class="cbp-hrsub-inner">
+                    <div class="col-lg-4 border-end px-4" style="width:30%;">
+                      <div class="column-content">
+                          <img src="{% static 'img/ourhospital1.png' %}" alt="doctor and nurses"   />
+                          <h5 class="my-4">Compassionate Care, Medical Excellence. </h5>
+                          <p style="font-size:14px !important;padding:0 22px 0 0;line-height:1.2;" > Explore our network of exceptional healthcare institutions committed to providing compassionate and comprehensive medical services. Each hospital shares our dedication to patient well-being, cutting-edge treatments, and a patient-centric approach.</p>
+                          <p></p>
+                      </div>
+                  </div>
+                  <div class="col-lg-3" style="width:21%;" >
+                    
+                  <div class="column-content px-4">
+                          <img src="{% static 'img/family hospital (1) 1.png' %}" alt="family_hospital"   />
+                          <p></p>
+                          <p><a href="{% url 'family' %}" class="menuheading " >Caritas Family Hospital</a></p>
+                          <p style="font-size:13px !important;line-height:1.4;" >Karipal Building, Vadavathoor<br/> P.OKalathipady, Kottayam, <br/>Kerala - 686018 </p>
+                          <p>0481 2570100</p>
+                          <p><a href="{% url 'family' %}" class="menuheading " >Know more</a></p>
+                      </div>
+                </div>
+                <div class="col-lg-3 " style="width:20%;" >
+                        <div class="column-content ">
+                          <img src="{% static 'img/kmm hospital 1.png' %}" alt="kmm_hospital"   />
+                          <p></p>
+                          <p><a href="{% url 'caritaskkm' %}" class="menuheading " >Caritas KMM Hospital</a></p>
+                          <p style="font-size:13px !important;line-height:1.4;" >Thiruvathukkal Rd,<br/> Puthenangady Kottayam,<br/> Kerala - 686001 </p>
+                          <p>0481 2580047</p>
+                          <p><a href="{% url 'caritaskkm' %}" class="menuheading " >Know more</a></p>
+                      </div>
+              </div>
+              <div class="col-lg-2" >
+                <div class="column-content ">
+                   <img src="{% static 'img/hdp hospital 1.png' %}" alt="hdphospital"   />
+                          <p></p>
+                    <p><a href="{% url 'caritashdp' %}" class="menuheading " >Caritas HDP Hospital</a></p>
+                    <p style="font-size:13px !important;line-height:1.4;" > Kaipuzha,<br/> Kottayam, <br/>Kerala - 686602 </p>
+                    <p>0481 2711418</p>
+                    <p><a href="{% url 'caritashdp' %}" class="menuheading " >Know more</a></p>
+                </div>
+              </div>
+             
+                  </div><!-- /cbp-hrsub-inner -->
+                </div><!-- /cbp-hrsub -->
+                
+              </li>
+              
+      
+              
+              <li >
+                <a role="menuitem" href="{% url 'international_patients' %}" >International Patients</a>
+            
+              </li>
+                <li class="dropmenu">
+                <a role="menuitem" href="#" aria-haspopup="true" tabindex="0">Academics & Research<i class="bi bi-chevron-down ms-2"></i></a>
+                
+                  <div class="cbp-hrsub">
+                  <div class="cbp-hrsub-inner">
+                    <div class="col-lg-4 border-end px-4" style="width:30%;">
+                      <div class="column-content">
+                          <img src="{% static 'img/hand.png' %}" alt="doctor and nurses"   />
+                          <h5 class="my-4">Advancing Knowledge, Transforming Healthcare </h5>
+                          <p style="font-size:14px !important;padding:0 22px 0 0;line-height:1.2;">Explore our pioneering endeavours in academics and research at Caritas, where innovation meets education to shape the future of healthcare. Uncover breakthroughs, scholarly excellence, and the driving force behind our commitment to advancing medical knowledge for the benefit of all.</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-5 border-end" >
+                    
+                    <div class="column-content px-5">
+                        <h6 class="mb-4">Academics</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <img src="{% static 'img/pharmacy 1.png' %}" alt="doctor and nurses"   />
+                            <p class="my-3"><a class="menuheading my-3" href="{% url 'dnb' %}">Caritas DNB Programme</a></p>
+                            </div>
+                            <div class="col-lg-6">
+                            <img src="{% static 'img/pharmacy 2.png' %}" alt="doctor and nurses"   />
+                            <p class="my-3"><a class="menuheading my-3" href="{%  url 'pharmacy' %}">Caritas College of Pharmacy</a></p>
+                            </div>
+                            </div>
+                            <div class="row mt-4">
+                            <div class="col-lg-6">
+                            <img src="{% static 'img/nursing 1 (1).png' %}" alt="doctor and nurses"   />
+                            <p class="my-3"><a class="menuheading my-3" href="{% url 'caritasnursing' %}">Caritas College of Nursing</a></p>
+                            </div>
+                            <div class="col-lg-6">
+                            <img src="{% static 'img/paramedical 1 (1).png' %}" alt="doctor and nurses"   />
+                            <p class="my-3"><a class="menuheading my-3" href="{% url 'paramedical' %}">Caritas Allied Health Science</a></p>
+                            </div>
+
+                        </div>
+                       
+
+                    </div>
+                </div>
+             
+              <div class="col-lg-3" >
+           
+                  <div class="column-content px-4">
+                    <h6 class="mb-4">Research</h6>
+                    <img src="{% static 'img/nursing 2.png' %}" alt="doctor and nurses"  />
+                    <p class="my-3"><a class="menuheading my-3" href="{% url 'research_development' %}">Research & Development Cell</a></p>
+                   
+                    <h6 class="mt-3">Resources</h6>
+                    <ul style="list-style:none;">
+                      <li><a href="{% url 'articles' %}"> Articles to Read<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'news_events' %}">News & Events<i class="bi bi-chevron-right ms-2"></i></a></li>
+                     
+                      <li><a href="{% url 'testimonials' %}">Patient Testimonials<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'gallery' %}">Gallery<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      
+                     </ul>
+                  </div>
+              </div>
+             
+                  </div><!-- /cbp-hrsub-inner -->
+                </div><!-- /cbp-hrsub -->
+                
+              </li>
+              
+              <li class="dropmenu" aria-haspopup="true">
+                <a role="menuitem" href="{% url 'about_caritas' %}" aria-haspopup="true" tabindex="0">About<i class="bi bi-chevron-down ms-2"></i></a>
+                <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div class="col-lg-3 border-end px-4" style="width:30%;" >
+                      <div class="column-content">
+                          <img src="{% static 'img/stethoscope.png' %}" alt="doctor and nurses"   />
+                          <h5 class="my-4">Committed to Your Wellbeing </h5>
+                          <p style="font-size:14px !important;padding:0 22px 0 0;line-height:1.2;">Caritas Hospital operates on the foundation of two basics ideals, which are charity and pursuit of excellence. We consider the wellbeing of the patient as our primary responsibility and strive to providen the best treatment within the shortest possible time at the minimum cost.</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-2">
+                    
+                    <div class="column-content px-4">
+                        <h6 class="mb-2">About us</h6>
+                        
+                        <ul class="drp" style="list-style:none;">
+                        <li><a href="{% url 'about_caritas' %}">About Caritas <i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'director_message' %}">Directors Message<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'governing_body' %}">Governing Body<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'milestones' %}">Milestones<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'achievements' %}">Awards & Achievements<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'career' %}">Careers at Caritas<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'charity' %}">Caritas Social Responsibility<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'ethics' %}">Ethics Committee<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'quality_control' %}">Quality Indicators<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 border-end" >
+                  <div class="column-content px-4">
+                     <ul>
+                        <li class="mb-4"></li>
+                        <li><a href="{% url 'biomedical'%}">Biomedical Waste Management<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'directions' %}">Directions to Reach<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'visitors_guide' %}">Visitors Guide<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'contact_us' %}">Contact Us<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        
+                       <!-- <li><a href="{% url 'faq' %}">FAQ<i class="bi bi-chevron-right ms-2"></i></a></li> -->
+                        
+                     </ul>
+                     
+                    <h6 class="mb-2 mt-2">Resources</h6>
+                    <ul style="list-style:none;">
+                      <li><a href="{% url 'articles' %}"> Articles to Read<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'news_events' %}">News & Events<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'testimonials' %}">Patient Testimonials<i class="bi bi-chevron-right ms-2"></i></a></li>
+                        <li><a href="{% url 'gallery' %}">Gallery<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      
+                     </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3" >
+                
+               
+                  <div class="column-content px-4">
+                      
+                     <h6 class="mb-2">Services</h6>
+                     <ul style="list-style:none;">
+                      <li><a href="{% url 'radiology' %}"> Radiology & Laboratory <i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'blood' %}">Blood Bank<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'clinical'%}">Clinical Nutrition<i class="bi bi-chevron-right ms-2"></i></a></li>
+                    <!--  <li><a href="{% url 'physiotherapy' %}">Physiotherapy<i class="bi bi-chevron-right ms-2"></i></a></li> -->
+                      <li><a href="{% url 'organ' %}">Organ Transplant Programme<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      
+                      <li><a href="{% url 'insurance' %}">Insurance Partners<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'mortuary_services' %}">Caritas Mortuary Services<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'pastoralcare' %}"> Pastoral Care<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'homecare' %}">Caritas Home Care<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      <li><a href="{% url 'health_package' %}">Health Checkup Packages<i class="bi bi-chevron-right ms-2"></i></a></li>
+                      
+                      
+                     </ul>
+                   
+                    
+                  </div>
+              </div>
+             
+                  </div><!-- /cbp-hrsub-inner -->
+                </div><!-- /cbp-hrsub -->
+              </li>
+              <li>   <!-- Action Button -->
+                <div class="action_button">
+                <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">    <button type="button" id="openFormButton">Appointments</button></a>
+            
+                </div>
+              </li>
+            </ul>
+             
+          </nav>
+        </div>
+     </div>
+  
+      <!-- .navbar -->
+    
+   
+
+  
+</header><!-- End Header -->
+
+
+            {% block content%}
+            <h1>Hello World</h1>
+            {% endblock%}
+
+
+
+       <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <!--Facilities-->
+<section>
+  <div class="container px-5 py-5"  style="background-color:#F4F6F6;border-radius:25px;">
+    <div class="row justify-content-center ">
+      <div class="col-lg-2">
+       <p>Ambulance</p>
+       <p><a href="tel:+919496555200">+91 (0) 9496555200</a></p>
+       
+      </div>
+       <div class="col-lg-4">
+       <p>Appointment</p>
+       <p><a href="tel:+919496555300">+91 (0) 9496555300</a>, <a href="tel:+919496555400">+91 (0) 9496555400</a></p>
+      
+       </div>
+       <div class="col-lg-3">
+       <p>Information 24/7</p>
+       <p><a href="tel:0481-2790025">+91 (0) 481-2790025 to 29</a></p>
+       </div>
+       
+       <div class="col-lg-3">
+        
+        <p>Health Check-up plans</p>
+        <p><a href="tel:+919496555900">+91 (0) 9496555900</a></p>
+       </div>
+      
+      </div>
+    </div>
+  
+</section>
+
+<!--End of Facilities-->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h6 style="margin-bottom:30px;">Centres of Excellence</h6>
+            <hr style="width:85%;margin:20px 0px;">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_cancer_institute' %}" style="display: block; margin-bottom: 15px;">Caritas Cancer Institute</a></li>
+                <li><a href="{% url 'caritas_heart_institute' %}" style="display: block; margin-bottom: 15px;">Caritas Heart Institute</a></li>
+                <li><a href="{% url 'caritas_neuro' %}" style="display: block; margin-bottom: 15px;">Caritas Neuro Sciences</a></li>
+                <li><a href="{% url 'criticalcare' %}" style="display: block; margin-bottom: 15px;">Critical Care Medicine</a></li>
+                <li><a href="{% url 'dermatology' %}" style="display: block; margin-bottom: 15px;">Dermatology & Cosmetology</a></li>
+                <li><a href="{% url 'emergency_medicine' %}" style="display: block; margin-bottom: 15px;">Emergency Medicine & Trauma Care</a></li>
+                <li><a href="{% url 'caritas_gastro' %}" style="display: block; margin-bottom: 15px;">Gastro Sciences</a> </li>
+                <li><a href="{% url 'caritas_generalmedicine' %}" style="display: block; margin-bottom: 15px;">General Medicine</a></li>
+                <li><a href="{% url 'generalsurgery' %}" style="display: block; margin-bottom: 15px;">General, Minimal Access and Bariatric Surgery (General Surgery)</a></li>
+                
+                
+                
+                
+                </ul>
+              </div>
+              <div class="col-lg-6">
+               <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_nephrology' %}" style="display: block; margin-bottom: 15px;">Nephrology & Renal Transplant</a></li>  
+                <li><a href="{% url 'gynaecology' %}" style="display: block; margin-bottom: 15px;">Obstetrics, Gynaecology and Fetal Medicine</a></li>
+                <li><a href="{% url 'caritas_orthopaedics' %}" style="display: block; margin-bottom: 15px;">Orthopaedics, Joint Replacement and Arthroscopy</a></li>
+                <li><a href="{% url 'caritas_paediatrics' %}" style="display: block; margin-bottom: 15px;">Paediatrics & Paediatrics Surgery</a></li>
+                <li><a href="{% url 'physicalmedicine' %}" style="display: block; margin-bottom: 15px;">Physical Medicine and Rehabilitation</a></li>
+                <li><a href="{% url 'caritas_rheumatology' %}" style="display: block; margin-bottom: 15px;">Rheumatology</a></li>
+                <li><a href="{% url 'caritas_urology' %}" style="display: block; margin-bottom: 15px;">Urology</a></li>
+   
+               </ul>
+                
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-lg-6">
+            <h6 style="margin-bottom:30px;">Specialities</h6>
+            <hr style="width:85%;margin:20px 0px;">
+            <div class="row">
+              <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   <li><a href="{% url 'anaesthesiology' %}" style="display: block; margin-bottom: 15px;">Anaesthesiology</a></li>
+                   <li><a href="{% url 'community_medicine' %}" style="display: block; margin-bottom: 15px;"> Community Medicine</a></li>
+                   <li><a href="{% url 'dental' %}" style="display: block; margin-bottom: 15px;">Dental, Oral & Maxillo Facial Surgery</a></li>
+               
+                   <li><a href="{% url 'caritas_ENT' %}" style="display: block; margin-bottom: 15px;">Department of ENT & Audiology</a></li>
+                   <li><a href="{% url 'endocrinology' %}" style="display: block; margin-bottom: 15px;">Endocrinology</a></li>
+                   <li><a href="{% url 'interventional' %}" style="display: block; margin-bottom: 15px;"> Interventional Radiology, Radio Diagnosis and Imaging</a></li>
+                   
+                   <li><a href="{% url 'neonatology' %}" style="display: block; margin-bottom: 15px;">Neonatology</a></li>
+                   
+                  </ul>
+                </div>
+               <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   
+                   <li><a href="{% url 'ophthalmology' %}" style="display: block; margin-bottom: 15px;">Ophthalmology</a></li>
+                   <li><a href="{% url 'pathology' %}" style="display: block; margin-bottom: 15px;">Pathology, Microbiology & Laboratory Medicine</a></li>
+                   <li><a href="{% url 'plastic_microvascular' %}" style="display: block; margin-bottom: 15px;">Plastic and Micro Vascular Surgery</a></li>
+                   <li><a href="{% url 'psychiatry' %}" style="display: block; margin-bottom: 15px;">Psychiatry, Counseling and Psychotherapy Services</a></li>
+                   <li><a href="{% url 'pulmonology' %}" style="display: block; margin-bottom: 15px;">Pulmonology & Interventional Pulmonology</a></li>
+                   
+                   
+                  </ul>
+                </div>
+            </div>
+           
+          </div>
+          </div>      
+        </div>
+      </div>
+    
+    <!--footer widgets-->
+
+
+<section id="cntct" class="footer-second py-5" >
+    <div class="container" style="max-width:96%;">
+      <div class="row justify-content-center">
+        <div class="col-lg-2">
+          <h6 style="margin-bottom:30px;">Contact</h6>
+          <p><strong>Address</strong></p>
+          <p><a href="#">Caritas Hospital, Thellakom (po),Kottayam-686630</a></p>
+          <p><strong>Contact Number</strong><p>
+          <p><a href="">0481-2790025 to 29</a></p>
+          <p><strong>Email-Id</strong></p>
+          <p><a href="mail@caritashospital.org">mail@caritashospital.org</a></p>
+          <p><strong>Feedback</strong></p>
+          <p><a href="mailto:patientfeedback@caritashospital.org">patientfeedback@caritashospital.org</a></p>
+
+          <div class="action_button my-4">
+           <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank"> <button type="button" id="openFormButton">Appointments</button></a>
+       
+           </div>
+        </div>
+        <div class="col-lg-2" >
+          <h6 style="margin-bottom:30px;">About</h6>
+          <ul style="list-style:none; padding-left: 0;">
+            <li><a href="{% url 'about_caritas' %}" style="display: block; margin-bottom: 15px;">About Caritas</a></li>
+            <li><a href="{% url 'director_message' %}" style="display: block; margin-bottom: 15px;">Director's Message</a></li>
+            <li><a href="{% url 'governing_body' %}" style="display: block; margin-bottom: 15px;">Governing Body</a></li>
+            <li><a href="{% url 'milestones' %}" style="display: block; margin-bottom: 15px;">Milestones</a></li>
+            <li><a href="{% url 'achievements' %}" style="display: block; margin-bottom: 15px;">Awards & Achievements</a></li>
+            <li><a href="{% url 'career' %}" style="display: block; margin-bottom: 15px;">Careers at Caritas</a></li>
+            <li><a href="{% url 'contact_us' %}" style="display: block; margin-bottom: 15px;">Contact Us</a></li>
+            <li><a href="{% url 'charity' %}" style="display: block; margin-bottom: 15px;">Caritas Social Responsibility</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6 style="margin-bottom:30px;">Education</h6>
+          <ul style="list-style:none; padding-left: 0;">
+            <li><a href="{% url 'dnb' %}" style="display: block; margin-bottom: 15px;">Caritas DNB Programme </a></li>
+            <li><a href="{% url 'caritasnursing' %}" style="display: block; margin-bottom: 15px;">Caritas College of Nursing</a></li>
+            <li><a href="{% url 'pharmacy'%}" style="display: block; margin-bottom: 15px;">Caritas Collge of Pharmacy</a></li>
+            <li><a href="{% url 'paramedical' %}" style="display: block; margin-bottom: 15px;">Caritas Allied Health Science</a></li>
+          </ul>
+
+          <h6 style="margin-bottom:20px;  margin-top: 20px;">Our Hospitals</h6>
+                     <ul  style="list-style:none; padding-left: 0;">
+                         <li><a href="{% url 'family' %}"  style="display: block; margin-bottom: 15px;">Caritas Family Hospital</li>
+                         <li  style="display: block; margin-bottom: 15px;"><a href="{% url 'caritashdp' %}">Caritas HDP Hospital</a></li>
+                         <li  style="display: block; margin-bottom: 15px;"><a href="{% url 'caritaskkm' %}">Caritas KMM Hospital</a></li>
+                     </ul>
+
+
+        </div>
+        <div class="col-lg-2" >
+          <h6 style="margin-bottom:30px;">Services</h6>
+          <ul style="list-style:none; padding-left: 0;">
+           
+            
+                        <li><a href="{% url 'blood' %}" style="display: block; margin-bottom: 15px;">Blood Bank</a></li>
+                        <li><a href="{% url 'clinical' %}" style="display: block; margin-bottom: 15px;">Clinical Nutrition</a></li>
+                        <!--<li><a href="{% url 'physiotherapy' %}" style="display: block; margin-bottom: 15px;">Physiotherapy</a></li> -->
+                        <li><a href="{% url 'organ' %}" style="display: block; margin-bottom: 15px;">Organ Transplant Programme</a></li>
+                        <li><a href="{% url 'insurance' %}" style="display: block; margin-bottom: 15px;">Insurance Partners</a></li>
+                       <!-- <li><a href="{% url 'secondopinion' %}" style="display: block; margin-bottom: 15px;">Second Opinion</a></li> -->
+                       
+                        
+                        <li><a href="{% url 'mortuary_services' %}" style="display: block; margin-bottom: 15px;">Caritas Mortuary Services</a></li>
+                        <li><a href="{% url 'pastoralcare' %}" style="display: block; margin-bottom: 15px;">Pastoral Care</a></li>
+                        <li><a href="{% url 'homecare' %}" style="display: block; margin-bottom: 15px;">Caritas Home Care</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6 style="margin-bottom:30px;">Useful Links</h6>
+          <ul style="list-style:none; padding-left: 0;">
+            <li><a href="{% url 'doctors' %}" style="display: block; margin-bottom: 15px;">Find a Doctor</a></li>
+            <li><a href="{% url 'international_patients' %}" style="display: block; margin-bottom: 15px;">International Patients</a></li>
+            <li><a href="https://feebook.southindianbank.com/FeeBookUser/userhome" target="_blank" style="display: block; margin-bottom: 15px;">Online Payments</a></li>
+            <li><a href="{% url 'ethics' %}" style="display: block; margin-bottom: 15px;">Ethics Committee</a></li>
+              <li><a href="{% url 'biomedical'%}" style="display: block; margin-bottom: 15px;">Biomedical Waste Management(BMW)</a></li>
+            <li><a href="{% url 'quality_control' %}" style="display: block; margin-bottom: 15px;">Quality Indicator</a></li>
+          </ul>
+           <h6 style="margin-bottom:30px;">Resources</h6>
+          <ul style="list-style:none; padding-left: 0;">
+            <li><a href="{% url 'articles' %}" style="display: block; margin-bottom: 15px;">Articles to Read </a></li>
+            <li><a href="{% url 'news_events' %}" style="display: block; margin-bottom: 15px;">News & Events</a></li>
+            
+            <li><a href="{% url 'testimonials' %}" style="display: block; margin-bottom: 15px;">Patient Testimonials</a></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+    </div>
+  </section>
+<!--End of footer widgets-->
+    <div class="container">
+          <div class="row">
+      <div class="col-lg-6 social">
+
+      <a target="_blank" href="https://www.facebook.com/CaritasHospitalThellakom/"><img src="{%static 'img/fb.png' %}"></a> <a target="_blank" href="https://www.linkedin.com/company/caritashospital/"><img src="{%static 'img/linkedin.png' %}"></a> <a target="_blank" href="https://www.instagram.com/caritashospital"><img src="{%static 'img/instagram.png' %}"></a><a target="_blank" href="https://www.youtube.com/channel/UCKZOzDHqQNwu6ZIreumi9bQ"><img src="{% static 'img/youtube.png' %}"></a>
+      </div>
+      <div class="col-lg-6 credits">
+       
+        <a style="color:#000 !important;" href="{% url 'privacy' %}">Privacy Policy</a>  &nbsp;&nbsp;|&nbsp;&nbsp; <a style="color:#000 !important;" href="{% url 'terms_conditions' %}">Terms & Conditions</a> &nbsp;&nbsp;|&nbsp;&nbsp;All Rights Reserved   &copy; 2023.Caritas Hospital
+      </div>
+       </div>
+    </div>
+    
+    
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/+914812790025?text=Hello%20there!" target="_blank">
+            
+            <img src="{% static 'img/whatsapp-icon.png' %}" alt="WhatsApp" width="60" height="60">
+        </a>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <script src="{% static 'path/to/purecounter.min.js' %}"></script> 
+  <script>
+    var pureCounter = new PureCounter();
+    document.addEventListener("DOMContentLoaded", function () {
+      const counters = document.querySelectorAll(".purecounter");
+      counters.forEach(counter => {
+        let endValue = parseInt(counter.getAttribute("data-purecounter-end"));
+        let plusSymbol = counter.nextElementSibling;
+        if (isNaN(endValue)) {
+          plusSymbol.style.display = "none";
+        } else {
+          const options = {
+            duration: parseInt(counter.getAttribute("data-purecounter-duration")),
+          };
+          const pureCounter = new PureCounter(counter, endValue, options);
+          pureCounter.start();
+        }
+      });
+    });
+  </script>
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+<script>
+  $(document).ready(function() {
+    var b = $("#cbp-hrmenu > ul > li.dropmenu"),
+      g = b.children("a"),
+      c = $("body"),
+      d = -1;
+
+    function f() {
+      g.on("click", a);
+      b.on("click", function(h) {
+        h.stopPropagation();
+      });
+    }
+
+    function a(j) {
+      if (d !== -1) {
+        b.eq(d).removeClass("cbp-hropen");
+      }
+
+      var i = $(j.currentTarget).parent("li"),
+        h = i.index();
+
+      if (d === h) {
+        i.removeClass("cbp-hropen");
+        accessible(i);
+        d = -1;
+      } else {
+        b.eq(d).removeClass("cbp-hropen");
+        i.addClass("cbp-hropen");
+
+        d = h;
+        c.off("click").on("click", e);
+        accessible(i, d);
+      }
+
+      return false;
+    }
+
+    function accessible(i, d) {
+      $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+          b.eq(d).removeClass("cbp-hropen");
+
+          var accessibleFeedback = document.createElement('div');
+          accessibleFeedback.setAttribute('aria-live', 'assertive');
+          accessibleFeedback.setAttribute('role', 'alert');
+          accessibleFeedback.setAttribute('tabindex', '0');
+          accessibleFeedback.className = ('accessibleFeedback');
+          accessibleFeedback.innerHTML = 'Menu Closed';
+          $(i).append(accessibleFeedback);
+          accessibleFeedback.focus();
+          setTimeout(function() {
+            $('.accessibleFeedback').each(function() {
+              $(this).remove();
+            });
+          }, 500);
+        }
+
+        if (e.keyCode == 13) {
+          var accessibleFeedback = document.createElement('div');
+          accessibleFeedback.setAttribute('aria-live', 'assertive');
+          accessibleFeedback.setAttribute('role', 'alert');
+          accessibleFeedback.setAttribute('tabindex', '0');
+          accessibleFeedback.className = ('accessibleFeedback');
+          accessibleFeedback.innerHTML = 'Menu Open';
+          $('li.cbp-hropen > div').prepend(accessibleFeedback);
+          accessibleFeedback.focus();
+          setTimeout(function() {
+            $('li.cbp-hropen .accessibleFeedback').each(function() {
+              $(this).remove();
+            });
+          }, 500);
+        }
+      });
+    }
+
+    function e(h) {
+      b.eq(d).removeClass("cbp-hropen");
+      d = -1;
+    }
+
+    $('.dropmenu > a').on('click', function(event) {
+      event.preventDefault();
+      var $parent = $(this).parent('.dropmenu');
+      $('.dropmenu').not($parent).removeClass('cbp-hropen');
+      $parent.toggleClass('cbp-hropen');
+    });
+
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.cbp-hrmenu').length) {
+        $('.dropmenu').removeClass('cbp-hropen');
+      }
+    });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode === 27) {
+        $('.dropmenu').removeClass('cbp-hropen');
+      }
+    });
+
+    g.on("click", a);
+    b.on("click", function(h) {
+      h.stopPropagation();
+    });
+  });
+</script>
+
+
+
+  
+<!--Accordion script-->
+<!-- Accordion script -->
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
+<!-- End Accordion script -->
+
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+    var videoPlayer = document.getElementById('videoPlayer');
+
+    var videoLinks = document.querySelectorAll('.video-link');
+    videoLinks.forEach(function(videoLink) {
+      videoLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        var videoUrl = videoLink.getAttribute('data-video-url');
+        videoPlayer.src = videoUrl;
+        videoModal.show();
+      });
+    });
+  });
+</script>
+
+<script>
+    $(function () {
+        $("#search-input").autocomplete({
+            source: "{% url 'autocomplete' %}",
+            minLength: 2, // Minimum characters before triggering autocomplete
+        });
+    });
+</script>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<!--Mobile menu -->
+
+<script>
+function toggleDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.classList.toggle("show");
+}
+
+function toggleSubmenu(submenuId) {
+    var submenu = document.getElementById(submenuId);
+    submenu.classList.toggle("show-submenu");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+</script>
+
+</body>
+
+</html>

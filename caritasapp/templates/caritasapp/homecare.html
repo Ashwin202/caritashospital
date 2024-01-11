@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Caritas Home Care </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Your Health, Your Home, Our Care</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/home_care.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                 {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#HomeCareServices">Home Care Services</a><li>
+                <li><a href="#HomeCarePackages">Home Care Packages</a><li>
+                <li><a href="#Benefits">Benefits</a><li>
+                <li><a href="#Contact">Contact</a><li>
+            </ul>
+</div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Home Care at Its Best: Caritas Home Care Offers<br/> Convenience and Quality</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/homecare2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p>Welcome to Caritas Home Care, your partner in delivering quality healthcare services to your doorstep. We understand the importance of accessible and compassionate care, which is why we offer a range of services designed to cater to your specific healthcare needs. Whether you require regular doctor consultations, nursing care, laboratory services, physiotherapy, or ambulance support, Caritas Home Care is here to provide you with the support you need. </p>
+                   <p>At Caritas Home Care, our mission is to ensure your well-being and comfort. We understand that each individual's healthcare needs are unique, and our dedicated team of professionals is here to provide personalized care that meets your specific requirements. With our meticulously crafted packages, you can choose the one that best aligns with your health goals and lifestyle. We take pride in bringing quality healthcare directly to your home, ensuring you can lead a healthy and fulfilling life without the need to travel or visit a hospital. Your health is our priority, and we look forward to serving you with compassion, dedication, and expertise.</p>
+                  
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#FAF9F9;max-width:100%;"><span id="HomeCareServices"></span>
+    <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <h3 class="text-center mb-5">Exceptional Home Care Services<br/> at Your Doorstep</h3>
+                </div>
+                <div class="row justify-content-center" > 
+                <div class="col-lg-2 mx-3">
+                     <img src="{% static 'img/doctor_consultation.png' %}" alt=""  />
+                     <div class="col-content">
+                         <h6 class="my-3">Doctor Consultation</h6>
+                         <p style="font-size:14px !important;">Our team of experienced doctors is just a call away. Get professional medical advice and consultations without leaving your home.</p>
+                     </div>
+                    
+               </div>
+               <div class="col-lg-2 mx-3">
+                     <img src="{% static 'img/nursing_care.png' %}" alt="" />
+                     <div class="col-content">
+                         <h6 class="my-3">Nursing care</h6>
+                         <p style="font-size:14px !important;">Receive dedicated nursing care for your specific medical needs, ensuring you or your loved ones have the best care possible.</p>
+                     </div>
+                    
+               </div>
+               <div class="col-lg-2 mx-3">
+                     <img src="{% static 'img/laboratory_service.png' %}" alt="" />
+                     <div class="col-content">
+                         <h6 class="my-3">Laboratory Services</h6>
+                         <p style="font-size:14px !important;">Access essential diagnostic tests from the comfort of your home, ensuring timely health check-ups</p>
+                     </div>
+                    
+               </div>
+              
+               <div class="col-lg-2 mx-3">
+                     <img src="{% static 'img/ambulance_service.png' %}" alt=""  />
+                     <div class="col-content">
+                         <h6 class="my-3">Ambulance Service</h6>
+                         <p style="font-size:14px !important;">In case of emergencies, our ambulance service is available to transport you safely to a medical facility.</p>
+                     </div>
+                    
+               </div>
+                 
+            </div>
+
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="HomeCarePackages"></span>
+    <div class="container mt-5">
+        
+            <div class="row">
+                <h3 class="text-center" >A Healthier You Starts Today.<br/> Discover Our Health Checkup Packages</h3>
+                <p>&nbsp;</p>
+                <div class="col-lg-3">
+                    <h6>Basic Package</h6>
+                    <h6 style="color: #c71782;">4,500/Year</h6>
+                </div>
+                <div class="col-lg-9">
+                    <ul>
+                        <li>Doctor & Nurse Visit every 3 months</li>
+                        <li>BP, SPO2, Blood Sugar Test every 3 months</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border:1px solid #C71782;opacity:100%;">
+             <div class="row">
+                <div class="col-lg-3">
+                    <h6>Basic Investigation Package</h6>
+                    <h6 style="color: #c71782;">7,500/Year</h6>
+                </div>
+                <div class="col-lg-9">
+                    <ul>
+                        <li>Doctor & Nurse Visit every 3 months</li>
+                        <li>BP, SPO2, Blood Sugar Test every 3 months</li>
+                        <li>RBS, RFT, HbA1c, Electrolyte, Urine Routine investigations every 3 months</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border:1px solid #C71782;opacity:100%;">
+             <div class="row">
+                <div class="col-lg-3">
+                    <h6>Executive Package</h6>
+                    <h6 style="color: #c71782;">9,750/Year</h6>
+                </div>
+                <div class="col-lg-9">
+                    <ul>
+                        <li>Doctor & Nurse Visit every 3 months</li>
+                        <li>BP, SPO2, Blood Sugar Test every 3 months</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border:1px solid #C71782;opacity:100%;">
+             <div class="row">
+                <div class="col-lg-3">
+                    <h6>Executive Investigation Package</h6>
+                    <h6 style="color: #c71782;">12,500/Year</h6>
+                </div>
+                <div class="col-lg-9">
+                    <ul>
+                        <li>Doctor & Nurse Visit every 3 months</li>
+                        <li>BP, SPO2, Blood Sugar Test every 3 months</li>
+                    </ul>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <p><span style="color: #c71782;">Note:</span> Please note that our home care services are available to residents within a 30-kilometer radius of Caritas Hospital.</p>
+    </div>
+</section>
+
+
+<section id="deptsections" style="background-color:#FAF9F9;"><span id="Benefits"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <h3>Where Care Meets Convenience.<br/> Explore the Benefits of Home Care</h3>
+              <p>&nbsp;</p>
+            <div class="col-lg-7">
+              
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6>Convenience</h6> 
+                        <p>Receive medical care and services without the need for travel, saving you time and effort.</p>
+                        <h6>Personalized Care</h6>
+                        <p>Tailored healthcare services to meet your specific medical requirements, ensuring comprehensive care.</p>
+                        <h6>Regular Check-ups </h6>
+                        <p>Stay updated on your health with scheduled doctor visits and diagnostic tests.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6>Professional Assistance </h6> 
+                        <p>Access experienced doctors, nurses, and specialists who prioritise your well-being.</p>
+                        <h6>Affordability</h6>
+                        <p>Cost-effective packages for all your healthcare needs, ensuring quality care without financial strain.</p>
+                        <h6>Emergency Support</h6>
+                        <p>Quick access to ambulance services in case of emergencies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="{% static 'img/homecare3.png' %}" alt=""  />
+            </div>
+           
+        </div>
+            
+    </div>
+</section>
+<section id="deptsections" class="py-5" ><span id="Contact"></span>
+    <div class="container mt-5">
+        <div class="row">
+            
+            <div class="col-lg-6 ">
+                <h3>Reach Out for <br/>Caritas Home Care Services</h3>
+                <p><span style="color: #c71782;">Note:</span> Please note that our home care services are available to residents within a 30-kilometer radius of Caritas Hospital.</p>
+                <p>&nbsp;</p>
+                 <form action=" " method="post" class="custom-form">
+                    {% csrf_token %}
+                    <div class="secondopinion row my-3">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="text" id="first_name" placeholder="First Name" name="first_name" maxlength="30" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" class="form-control" required>
+                            <span class="required-symbol">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row my-3">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="text" id="last_name" placeholder="Last Name" name="last_name" maxlength="30" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" class="form-control" required>
+                            <span class="required-symbol">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row my-3">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
+                            <span class="required-symbol">*</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row my-3">
+        
+                        <div class="col-sm-6 my-2">
+                            <div class="input-with-symbol">
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="" disabled selected>Select Country</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.alpha_2 }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <span class="required-symbol">*</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 my-2">
+                            <div class="input-with-symbol">
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+                           <span class="required-symbol">*</span>
+                        </div>
+                        </div>
+                
+                    </div>
+                     <div class="secondopinion row my-3">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                           <select id="package" name="package" class="form-control" required>
+                                <option value="" disabled selected>Select Home Care Packages</option>
+                                 <option value="EHC">Executive Health Check-Up</option>
+                                 <option value="DHC">Diabetic Health Check-Up</option>
+                                 <option value="WWHC">Well Women Health Check-Up</option>
+                                 <option value="PHC">Paediatric Health Check-Up</option>
+                                 <option value="WBHC">Whole Body Health Check-Up</option>
+                                 <option value="SCHC">Senior Citizen Health Check-Up</option>
+                                 <option value="CHC">Cardiac Health Check-Up</option>
+                            </select>
+                            <span class="required-symbol">*</span>
+                        </div>
+                        </div>
+                    </div>
+                     <div class="row my-3">
+                        <div class="col-sm-12 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tickbox" name="agree_terms" required>
+                                <label class="form-check-label" for="tickbox">
+                                    By ticking, I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and SMS.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-grp row mt-4">
+                        <div class="col-sm-12">
+                            <button type="submit" class="enqrybtn">Submit Now </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 " style="background-color:#FAF9F9;padding:70px;">
+                <h5 class="mb-3" >Other Ways to Avail Caritas Home Care Service</h5>
+                <p>In addition to our online form, Caritas Hospital offers you multiple convenient methods to book our home care services .</p>
+                <p><b>Talk to Us:</b></p>
+                <h6><a style="color:#0072BC !important;" href="tel:04816811110">0481 6811110</a></h6> 
+                <p>Simply give us a call, and our dedicated team will assist you.</p>
+                
+                <p><b>WhatsApp:</b></p> 
+                <h6><a aria-label="Chat on WhatsApp" href="https://wa.me/+919188527154" target="_blank"><img src="{% static 'img/whatsapp 1.png' %}" alt=""  /> <span style="color:#0072BC !important;font-weight:600;">+919188527154</span></a></h6>
+                <p>Use WhatsApp to initiate your enquiry. Our team will guide you through the rest of the process.</p>
+                
+            </div>
+             
+        </div>
+    </div>
+    <p>&nbsp;</p>
+</section>
+
+
+
+
+
+{% endblock%}

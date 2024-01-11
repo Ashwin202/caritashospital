@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Emergency Medicine & Trauma Care</h1>
+            <h2 style="color: #c71782; font-weight: 300;">Ambulance Service in Kerala </h2>
+            </div>
+            <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/emergency1.png' %}" class="img-fluid" />
+            </div>
+             <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                  <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                        {% include 'caritasapp/enquiry_form_template.html' %}
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Your Safety Net in the Storm:<br/> Expert Care in Critical Moments</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/emergency2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p >The Emergency Care unit of Caritas Hospital offers comprehensive care for all medical emergencies, 24/7. The Unit has a dedicated team of Emergency physicians and expert doctors from all major specialties. </p>
+                   <p>They are always ready to provide fast-track medical, interventional or surgical treatment to patients. The Emergency physicians are highly specialized and experienced in providing treatment for injuries or illnesses that demand immediate treatment.</p>
+                   <p> With the support of state-of-the-art technology, they ensure immediate and effective medical care in the most efficient manner.</p>
+                 
+        </div>
+  </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+        <h3 class="text-center">Treatment and Procedures</h3>
+        <p class="text-center mb-5 mt-3">Caritas heart hospital can be broadly divided into the non-invasive, interventional division of cardiovascular and thoracic Surgery and the heart transplant program. All these cardiovascular units are fully equipped with the best cardiologists to conduct a wide range of cardiothoracic and vascular surgeries under one roof. Our cardiac surgeons have proven expertise in performing complex medical procedures such as heart failure surgery, heart transplantation, coronary artery bypass surgery, heart valve replacement surgery, pediatric cardiac surgeons to treat congenital heart defects in children and others.
+                        </p>
+        <div class="accordion-wrapper">
+           <button class="accordion">24/7 Emergency Services</button>
+            <div class="panel">
+             <ul>
+                <li>24/7 Emergency care - medical / surgical/ interventional</li>
+                <li>Emergency Physicians trained and highly specialized in management of emergencies</li>
+                <li>Adult ER</li>
+                <li>Pediatric ER</li>
+                <li>Dedicated trauma / accident care unit</li>
+                <li>Poly-trauma care</li>
+                <li>Hyper acute stroke clinic</li>
+                <li>Rapid access chest pain clinic</li>
+                <li>Dedicated radiology suite for fast-tracking diagnosis&nbsp;</li>
+                <li>Emergency ICU care&nbsp;</li>
+                <li>Infectious diseases screening area&nbsp;</li>
+                <li>Decontamination room&nbsp;</li>
+                <li>ICU ambulances services&nbsp;</li>
+                <li>Other integrated emergency services</li>
+            </ul>
+            </div>
+            <hr style="width: 100%;margin:0;">
+                    
+            <button class="accordion">Rapid Access Chest Pain Clinic</button>
+             <div class="panel">
+               <p>The Emergency Care unit of Caritas Hospital provides 24/7 care for all cardiac emergencies. This includes medical, surgical and interventional care for both adult and child patients.
+               </p>
+                       
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">24/7 Trauma Care Unit</button>
+            <div class="panel">
+                <p>Caritas Emergency Care offers 24/7 trauma care services for the management of trauma / accidents / serious injuries, including poly-trauma (injury to multiple parts or organs of the body).</p>
+               
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">24/7 Paediatric Emergency Care</button>
+            <div class="panel">
+                <p>Caritas Hospital has one of the most advanced facilities for the management of paediatric emergencies. The team of Paediatric Intensive Care experts in Caritas Hospital is internationally trained in paediatric and neonatal retrieval and transport, including aero medical transfer.</p>
+                     
+            </div>
+            <hr style="width: 100%;margin:0;">   
+            <button class="accordion">Intensive Care Units</button>
+            <div class="panel">
+                <p>Intensive Care Units (ICU) at Caritas Hospital provide efficient, dedicated and high quality care to critically ill patients through a collaborative multi-disciplinary approach. Equipped with a state-of-the-art clinical support system, Caritas ICUs are manned by trained doctors, intensivists and ancillary staff. They can handle patients with serious medical complications such as complex comorbid conditions ranging from sepsis to pneumonia, Acute Respiratory Distress Syndrome (ARDS) and multi-organ failure. The ICUs also have a full-fledged medical team for infection control to ensure protection of patients from infections, especially in the context of antibiotic-resistant ‘superbugs’ spreading fast.</p>
+                <p>Caritas Hospital also has specialized ICUs including Cardiology ICUs, Cardiovascular Thoracic ICUs, Surgical ICUs, Medical ICUs, Neuro ICUs, Transplant ICUs, Paediatric ICUs, Neonatal ICUs Emergency ICUs, all of which are operational 24/7.</p>
+                     
+            </div>
+            <hr style="width: 100%;margin:0;">   
+        </div>
+        
+    </div>
+</section>
+
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row  " >
+                  
+                <h5 class="mainheading">Emergency Medicine & Trauma Care</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Emergency Medicine & Trauma Care" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="deptsections">
+    <span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+            
+
+            {% if posts_exist %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+            <p class="mb-4 text-center">Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+                {% for post in posts %}
+                    {% if post.department.name == "Emergency Medicine & Trauma Care" %}
+                        <div class="col-lg-12">
+                            <div class="post">
+                                <div class="row align-items-center mx-4">
+                                    <div class="col-lg-11">
+                                        <h6>{{ post.title }}</h6>
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <a href="{% url 'detail' post.slug %}">
+                                            <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr style="width: 95%; margin: 30px auto;">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <p><a class="mx-4 mt-5" href="{url 'article'}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+            {% else %}
+                <p></p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

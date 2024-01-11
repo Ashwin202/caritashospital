@@ -1,0 +1,632 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-10">
+                <h1 style="font-weight: 600;">International Patients </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Compassionate Care Knows No Borders</h2>
+            </div>
+            <div class="col-lg-2 ">
+                <a class="mainheading" href="{% url 'international_patients' %}">English </a> | <a href="{% url 'international_patients_arabic' %} " style="color:#000;">عربي</a>
+            </div>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/patient-measuring-blood-pressure.png' %}" class="img-fluid" alt="patient-measuring-blood-pressure" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+              {% include 'caritasapp/enquiry_form_template.html' %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#Services">Services</a><li>
+                <li><a href="#PlanYourVisit">Plan Your Visit</a><li>
+                <li><a href="#Departments">Departments</a></li>
+                <li><a href="#WhyCaritas">Why Caritas?</a><li>
+                <li><a href="#AboutCaritas">About Caritas</a><li>
+                <li><a href="#AboutKottayam">About Kottayam</a><li>
+                   
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Welcome to Caritas Hospital,<br/> Your Global Healthcare Destination</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/international2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;"> At Caritas Hospital, we are dedicated to providing world-class healthcare services to patients from around the globe. Our commitment to excellence, compassion, and cutting-edge medical technology has made us a trusted choice for international patients seeking quality healthcare.</p>
+                   <p>Whether you are seeking specialized medical care, a comprehensive health checkup, or a second opinion, Caritas Hospital is your healthcare destination of choice. We are committed to providing the highest standard of medical care, ensuring your health and well-being are our top priorities. </p>
+                   <p>At Caritas Hospital, we don't just provide medical treatment; we offer a commitment to your health, happiness, and peace of mind. We look forward to serving you and providing you with the world-class care you deserve.</p>
+                   <a href="#makeanenquiry"><button type="button" class="enqrybtn">Make An Enquiry</button></a>
+                   
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="Services"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6" >
+               <h3>Services for <br/>International Patients</h3> 
+               <p>Caritas Hospital offers a wide range of healthcare services designed to meet the diverse needs of our international patients.With a focus on compassion and excellence, we prioritize your well-being, ensuring you receive world-class care tailored to your unique requirements. We're here to be your trusted healthcare partner.</p>
+                <a href="#makeanenquiry"><button type="button" class="enqrybtn">Make An Enquiry</button></a>
+               <p>&nbsp;</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Availability of Ayurveda rejuvenation treatment upon patient's request.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Dedicated staff for patient care.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Tour packages tailored to the patient's preferences.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Visa extension support in case of a longer stay.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Assistance with insurance matters. </p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Discharge process and easy payment options.</p>
+            </div>  
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <h4 style="font-weight:600;">Comprehensive Healthcare Services</h4>
+                <p>Caritas Hospital is committed to providing a comprehensive suite of healthcare services to meet your needs.</p>
+                <p></p>
+                <p class="mt-5 textxolor_pink"><i class="bi bi-chevron-right ms-2"></i>&nbsp;Emergency Service <i class="bi bi-chevron-right ms-2"></i>&nbsp;Outpatient Services<i class="bi bi-chevron-right ms-2"></i>&nbsp;Inpatient Services</p>
+                <p class="mt-4 textxolor_pink"><i class="bi bi-chevron-right ms-2"></i>&nbsp;Homecare Services<i class="bi bi-chevron-right ms-2"></i>&nbsp;Healthcare Packages</p>
+                <p>&nbsp;</p>
+                <p ><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Post-discharge medicine and care support.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Transportation back to the airport.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Assistance with flight and cab booking. </p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Online second opinion services available from your home country.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>Medical knowledge support via the provided IPR number.</p>
+            </div> 
+        </div> 
+    
+      
+    </div>
+</section>
+
+<section id="deptsections"><span id="PlanYourVisit"></span>
+    <div class="container mt-5">
+        <h3 class="mb-4">Plan Your Visit: Streamlined Care for<br/> International Patients</h3>
+            <p>Caritas Hospital follows a well-structured process for international patients. From initial inquiries and treatment estimations to arrival, accommodation, and additional services, we ensure a seamless and comfortable healthcare journey, allowing you to focus on your health and well-being.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row  " >
+            <div class="col-lg-6 px-3 " >
+                <img src="{% static 'img/young-male-psysician-with-patient-measuring-blood-pressure 14.png' %}" style="width:100% !important;"  />
+                <div class="col-content px-4 plan" style="background-color:#FAF9F9;">
+                <h5 class="pt-4 ">Patient Inquiry and Initial Contact</h5>
+                <ul class="custom-list">
+                <li class="mx-2">Receiving patient query (medical and diagnostics reports) via WhatsApp:<a style="color:#0072bc;" href="tel:+918714673343"> +91-8714673343</a> </li>
+                <li class="mx-2">Treatment estimation form will be shared within 24 hours, including treatment requirements, modality, estimated stay days, and approximate costing. </li>
+                <li class="mx-2">Supporting letters and documents required for a medical visa will be provided.</li>
+                </ul>
+                <p>&nbsp;</p>
+                </div>
+            </div>
+            <div class="col-lg-6 px-3 " >
+                <img src="{% static 'img/young-male-psysician-with-patient-measuring-blood-pressure 15.png' %}" style="width:100% !important;" />
+                <div class="col-content px-4 plan" style="background-color:#FAF9F9;">
+                <h5 class="pt-4 ">Arrival and Stay</h5>
+                <ul class="custom-list">
+                    <li class="mx-2">Travel arrangements to pick up the patient and bystanders from the airport.</li>
+                    <li class="mx-2">Arrangement of hospital stay for the patient and bystanders, as well as hotel stays for families.</li>
+                    <li class="mx-2">Treatment is conducted with the utmost care, and green channel facilities are provided for a smooth process.</li>
+                </ul>
+                <p>&nbsp;</p>
+                </div>
+            </div>
+            
+           
+                
+           </div>
+        
+        
+    </div>
+</section>
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 1.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">State-of-the-art Infrastructure</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 2.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">Pick and Drop</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 3.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">Tie-up With All Major Health Insurance Providers</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 4.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">Helipad</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 5.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">Translator</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 6.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">Reach by Air</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 7.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">Lush Green Ambience</p>
+            </div>
+             
+        </div>
+        <p>&nbsp;</p>
+        <div>
+            <a href="#makeanenquiry">  <button type="button" class="enqrybtn">Make An Enquiry</button></a>
+        </div>
+    </div>
+</section>
+<section class="mb-5" style="background-image: url('{% static 'img/houseboat.png' %}');background-size:cover;height:630px;">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-7">
+                <p>&nbsp;</p>
+                <h2 class="text-light">Travel from Many Places to<br/> One Place That Heals.</h2>
+                
+                <p class="text-light mt-4">When you opt for a treatment at Caritas Hospital & Institute of Health Sciences, you can experience a world-class treatment, an environment conducive to healing, a comfortable stay and easy access to the pristine landscape of Kottayam</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section id="deptsections"><span id="Departments"></span>
+    <div class="container">
+        <div class="row">
+            <h3>Our Departments</h3>
+            <p>Caritas Hospital takes pride in its array of specialized departments, each dedicated to delivering exceptional care in their respective fields. Our Centers of Excellence and Specialties cover a wide range of medical disciplines, ensuring that our international patients have access to the most advanced and comprehensive healthcare services.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="row justify-content-center" id="intdept">
+          <div class="col-lg-6">
+            <h6 style="margin-bottom:30px;">Center Of Excellence</h6>
+            <hr style="width:85%;margin:20px 0px;">
+           <div class="row">
+              <div class="col-lg-6">
+                <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_cancer_institute' %}" style="display: block; margin-bottom: 15px;">Caritas Cancer Institute</a></li>
+                <li><a href="{% url 'caritas_heart_institute' %}" style="display: block; margin-bottom: 15px;">Caritas Heart Institute</a></li>
+                <li><a href="{% url 'caritas_neuro' %}" style="display: block; margin-bottom: 15px;">Caritas Neuro Sciences</a></li>
+                <li><a href="{% url 'criticalcare' %}" style="display: block; margin-bottom: 15px;">Critical Care Medicine</a></li>
+                <li><a href="{% url 'dermatology' %}" style="display: block; margin-bottom: 15px;">Dermatology & Cosmetology</a></li>
+                <li><a href="{% url 'emergency_medicine' %}" style="display: block; margin-bottom: 15px;">Emergency Medicine & Trauma Care</a></li>
+                <li><a href="{% url 'caritas_gastro' %}" style="display: block; margin-bottom: 15px;">Gastro Sciences</a> </li>
+                <li><a href="{% url 'caritas_generalmedicine' %}" style="display: block; margin-bottom: 15px;">General Medicine</a></li>
+                <li><a href="{% url 'generalsurgery' %}" style="display: block; margin-bottom: 15px;">General, Minimal Access and Bariatric Surgery (General Surgery)</a></li>
+                
+                
+                
+                
+                </ul>
+              </div>
+              <div class="col-lg-6">
+               <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_nephrology' %}" style="display: block; margin-bottom: 15px;">Nephrology & Renal Transplant</a></li>  
+                <li><a href="{% url 'gynaecology' %}" style="display: block; margin-bottom: 15px;">Obstetrics, Gynaecology and Fetal Medicine</a></li>
+                <li><a href="{% url 'caritas_orthopaedics' %}" style="display: block; margin-bottom: 15px;">Orthopaedics, Joint Replacement and Arthroscopy</a></li>
+                <li><a href="{% url 'caritas_paediatrics' %}" style="display: block; margin-bottom: 15px;">Paediatrics & Paediatrics Surgery</a></li>
+                <li><a href="{% url 'physicalmedicine' %}" style="display: block; margin-bottom: 15px;">Physical Medicine and Rehabilitation</a></li>
+                <li><a href="{% url 'caritas_rheumatology' %}" style="display: block; margin-bottom: 15px;">Rheumatology</a></li>
+                <li><a href="{% url 'caritas_urology' %}" style="display: block; margin-bottom: 15px;">Urology</a></li>
+   
+               </ul>
+                
+              </div>
+            </div>
+           
+      
+           
+          </div>
+
+          <div class="col-lg-6 textcolor_black">
+            <h6 style="margin-bottom:30px;">Specialities</h6>
+            <hr style="width:85%;margin:20px 0px;">
+            <div class="row">
+              <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   <li><a href="{% url 'anaesthesiology' %}" style="display: block; margin-bottom: 15px;">Anaesthesiology</a></li>
+                   <li><a href="{% url 'community_medicine' %}" style="display: block; margin-bottom: 15px;"> Community Medicine</a></li>
+                   <li><a href="{% url 'dental' %}" style="display: block; margin-bottom: 15px;">Dental, Oral & Maxillo Facial Surgery</a></li>
+               
+                   <li><a href="{% url 'caritas_ENT' %}" style="display: block; margin-bottom: 15px;">Department of ENT & Audiology</a></li>
+                   <li><a href="{% url 'endocrinology' %}" style="display: block; margin-bottom: 15px;">Endocrinology</a></li>
+                   <li><a href="{% url 'interventional' %}" style="display: block; margin-bottom: 15px;"> Interventional Radiology, Radio Diagnosis and Imaging</a></li>
+                   <li><a href="{% url 'neonatology' %}" style="display: block; margin-bottom: 15px;">Neonatology</a></li>
+                   
+                   
+                  </ul>
+                </div>
+               <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   
+                   <li><a href="{% url 'ophthalmology' %}" style="display: block; margin-bottom: 15px;">Ophthalmology</a></li>
+                   <li><a href="{% url 'pathology' %}" style="display: block; margin-bottom: 15px;">Pathology, Microbiology & Laboratory Medicine</a></li>
+                   <li><a href="{% url 'plastic_microvascular' %}" style="display: block; margin-bottom: 15px;">Plastic and Micro Vascular Surgery</a></li>
+                   <li><a href="{% url 'psychiatry' %}" style="display: block; margin-bottom: 15px;">Psychiatry, Counseling and Psychotherapy Services</a></li>
+                   <li><a href="{% url 'pulmonology' %}" style="display: block; margin-bottom: 15px;">Pulmonology & Interventional Pulmonology</a></li>
+                   
+                   
+                  </ul>
+                </div>
+            </div>
+           
+          </div>
+          </div>      
+        </div>
+</section>
+
+
+
+<!-- Voice of Patients -->
+<section id="deptsections" style="background-color:#F4F6F6;"><span id="WhyCaritas"></span>
+  <div class="container mt-5">
+    <div class="row justify-content-center text-center">
+      <h3>Voices of Our Patients</h3>
+      <p>Discover the stories and experiences of international patients who have<br/> entrusted Caritas Hospital with their healthcare journey.</p>
+      </div>
+     <div class="row justify-content-center">
+            {% for testimonial in testimonials|slice:":3" %}
+                <div class="col-lg-4 my-3">
+                    
+                    <!-- Video iframe directly embedded -->
+                  
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="380" height="250" class="videobox embed-responsive-item" src="https://www.youtube.com/embed/{{testimonial.youtube_id }}" allowfullscreen></iframe>
+                    </div>
+                    <h5 class="mb-3">{{ testimonial.title }}</h5>
+                    
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <p>&nbsp;</p>
+            <p style="text-align:center;"><a href="#makeanenquiry">  <button type="button" class="enqrybtn">Make An Enquiry</button></a></p>
+        </div>
+  </div>
+</section>
+
+<section>
+    <div class="container mt-5">
+        <h3>Why Choose Caritas Hospital Kottayam</h3>
+        <p>When you choose Caritas Kottayam, you are choosing a healthcare partner dedicated to your well-being, happiness, and peace of mind. Explore the reasons why patients from around the world make Caritas Kottayam their preferred destination for healthcare.</p>
+        <div class="row mt-5">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">Accreditations</h6>
+            </div>
+            <div class="col-lg-4">
+                <p>National Accreditations:</p>
+                <ul>
+                    <li>NABH since 2015 (twice re-accredited)</li>
+                    <li>NABH for nursing excellence (since 2019)</li>
+                    <li>NABH for ethics committee (since 2020) NABL for molecular diagnostics (since 2021)</li>
+                </ul>  
+                
+                        <img src="{% static 'img/NABH1.png' %}" class="img-fluid mx-2" alt="NABH1" style="width:50px;height:50px;"><img src="{% static 'img/NABH2.png' %}" class="img-fluid mx-2" alt="NABH2" style="width:50px;height:50px;"><img src="{% static 'img/NABL_Official_LOGO_Registered 1.png' %}" class="img-fluid mx-2" alt="TUV" style="width:36px;height:50px;">
+                        
+                    
+            </div>
+            <div class="col-lg-3">
+               <p>Government Recognitions:</p> 
+               <ul>
+                   <li>Eat right campus – Govt of India (since 2022)</li>
+                   <li>Mother & Baby friendly hospital initiative – Govt of Kerala (since 2022)</li>
+               </ul>
+                <img src="{% static 'img/eatright.png' %}" class="img-fluid mx-2" alt="eat right" style="width:120px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/mom-child.png' %}" class="img-fluid mx-2" alt="mom-child" style="width:50px;height:50px;">
+            </div>
+            <div class="col-lg-3">
+                <p>Other Certifications: </p>
+                <ul>
+                   <li>EpiHC certified in 2023</li>
+                   <li>Center of Quality Promotion 2023 </li>
+                   <li>Great place to work 2023</li>
+                </ul>
+                <img src="{% static 'img/epihc.png' %}" class="img-fluid mx-2" alt="NABH1" style="width:90px;"><img src="{% static 'img/CAHD.png' %}" class="img-fluid mx-2" alt="CAHD" style="width:60px;"><img src="{% static 'img/greatplacetowork.png' %}" class="img-fluid mx-2" alt="TUV" style="width:80px;">
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">Capacity & Services</h6>
+            </div>
+            <div class="col-lg-10">
+               <p>Capacity to cater more than 55,000 Inpatients & 600,000</p> 
+               <p>Outpatients per year Quaternary care serving central Kerala</p>
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">Highlights</h6>
+            </div>
+            <div class="col-lg-4">
+                <ul>
+                    <li>All major accreditations</li>
+                    <li>Air ambulance availability</li>
+                    <li> Kerala’s first digital PET CT</li>
+                    <li>Only center in Kerala for Laser Angioplasty</li>
+                </ul>
+               
+            </div>
+            <div class="col-lg-4">
+               <ul>
+                   <li>Kerala’s first AI-powered 384-slice CT Scan</li>
+                   <li>Linear Accelerator</li>
+                   <li>Neuro microscope with navigation</li>
+               </ul> 
+              
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">Cutting-Edge Services</h6>
+            </div>
+            <div class="col-lg-4">
+                <ul>
+                    <li>“I am a Caritasian” Robot </li>
+                    <li>Dedicated WhatsApp services</li>
+                    <li>Contactless patient registration & appointment kiosks</li>
+                </ul>
+               
+            </div>
+            <div class="col-lg-4">
+               <ul>
+                   <li>Scalp cooling machine  </li>
+                   <li>Online appointment system with payment gateway integration</li>
+                   <li>SMS alert integration</li>
+               </ul> 
+              
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">Medical Service</h6>
+            </div>
+            <div class="col-lg-10">
+               <p>Quality services with more than 200 dedicated doctors</p> 
+               
+            </div>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+            <a href="#makeanenquiry"> <button type="button" class="enqrybtn">Make An Enquiry</button></a>
+        </div>
+    </div>
+</section>
+<section id="deptsections" style="background-color:#FAF9F9;"><span id="AboutCaritas"></span> 
+    <div class="container mt-5">
+        <div class="row">
+            <p>&nbsp;</p>
+            <div class="col-lg-3">
+                <img src="{% static 'img/carith 1 (3).png' %}" class="img-fluid" alt="caritas hospital" >
+                
+            </div>
+            <div class="col-lg-8 mx-4">
+                <h3>About Caritas Hospital Kottayam</h3>
+                <p>Caritas Hospital, run by the Catholic diocese of Kottayam, operates under a registered charitable trust with the registration number 510/IV/95. Caritas Hospital, Kottayam, the towering lighthouse of good health and healing in Central Kerala. As modern medical science has turned the dread associated with illnesses a thing of past, Caritas stays committed to leading undreds of our patients to the light of good health and happiness. ‘Kenotic love saves life’ is our motto and we are guided by the spirit of Lord Jesus Christ, who wanted every human being to enjoy the fullness of joy and abundance of life.</p>
+                <p>The erstwhile Bishop of Kottayam laid the foundation of the Caritas Hospital & Institute of Health Sciences in 1962. The motive behind establishing this healthcare institution was to serve the local community by providing high-quality but affordable medical treatment for maternity needs and snakebites. Our mission was to provide affordable healthcare services to people across Central Kerala. The zeal to take this mission forward saw our 50-bed hospital branch itself into a multispecialty hospital with 600+ beds and 134 ICU beds.</p>
+                <p><a style="color:#0072BC;" href="/about-caritas">Read More <i class="bi bi-chevron-right"></i></a></p>
+            </div>
+        </div>
+  <div><p>&nbsp;</p></div>
+        <div class="row">
+            <div class="col-lg-5">
+                <h1 style="color: #C71782;font-weight:900;">Navigate Through the Numbers.</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">655 <span style="font-weight:400;"> Beds</span> </h3> 
+                    </div>
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">134<span style="font-weight:400;"> ICUs</span> </h3> 
+                    </div>
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">12 <span style="font-weight:400;"> OTs</span> </h3> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
+                    <span class="plus">+</span>
+                  </h3>
+                  <p>Glorious<br/> Years</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                   <span> 24 x 7 </span>
+                  </h3>
+                  <p>Expert<br/> Care</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="16" data-purecounter-duration="1" class="purecounter"></span>
+                   
+                  </h3>
+                  <p>Centres of <br/>Excellence</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="43" data-purecounter-duration="1" class="purecounter"></span>
+                  </h3>
+                  <p>Major <br/>Departments</p>
+                </div>
+            </div>
+            </div>
+                   <div class="row">
+                <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+                  </h3>
+                  <p>Allied Medical & Support Services</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+                    <span class="plus">+</span>
+                  </h3>
+                  <p>Expert Doctors</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="3000" data-purecounter-duration="1" class="purecounter"></span>
+                    <span class="plus">+</span>
+                  </h3>
+                  <p>Dedicated Staff</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h3>
+                    <span data-purecounter-end="700000" data-purecounter-duration="1" class="purecounter"></span>
+                  </h3>
+                  <p>Patient Footfall/Year</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections" ><span id="AboutKottayam"></span> 
+<div class="container mt-5">
+    <div class="row">
+        <h3>About Kottayam</h3>
+        <p></p>
+        <div class="col-lg-6 ">
+            
+            <p>Kottayam is located 155 km north of Trivandrum and 85 km south of Kochi airports. Kotayam is unexplored for MVT and a pass by location for MVT. The challenge is to hold the potential patients who are passers through or visit nearby Kumarakom and alleppy who are post medical tourist. Tie up with resorts and promoting Ayurveda would be the ideal solution. Kottayam is a city in the Indian state of Kerala. It is located in central Kerala and is also the administrative capital of Kottayam district. Bordered by the lofty and mighty Western Ghats on the east and the Vembanad Lake and paddy fields of Kuttanad on the west, Kottayam is a land of unique characteristics. Panoramic backwater stretches, lush paddy fields, highlands, hills and hillocks, extensive rubber plantations, places associated with many legends and a totally literate people have given Kottayam District the enviable title: The land of letters, legends, latex and lakes.</p>
+            <p>The city is an important trading center of spices and commercial crops, especially rubber. Most of India’s natural rubber originates from the acres of well-kept plantations of Kottayam, also home to the Rubber Board. Kottayam is also called as “Akshara Nagari” which means the “city of letters” considering its contribution to print media and literature.Kottayam Town is the first town in India to have achieved 100% literacy (a remarkable feat achieved as early as in 1989). English education in South India did actually start at the Old Seminary here at Kottayam in 1813. The first printing press in Kerala was established (CMS Press) here in 1821 by Rev.Benjamin Baily. The first college in the State (CMS College) was also started here at Kottayam in 1840. Maiden printed Malayalam-English and English-Malayalam Dictionaries were published from Kottayam in 1846 and 1847 respectively. The first and only Cooperative Society of writers, authors and publishers (SPCS), for publishing books and periodicals was set up here in 1945.</p>
+        </div>
+        <div class="col-lg-6">
+            <p>Kottayam is the hometown of a vast number of books and periodicals and is the center of publishing business in the State. Kottayam is the first town in India selected by the Ministry of Environment and Forests, Government of India to be transformed as an Eco City. Sri K R Narayanan, the former President of India hails from Kottayam District. Kottayam is the ideal take off point for visits to Peermade, Munnar, Thekkady, Ernakulam and the temple city, Madurai. It is also a gateway to the pilgrim centers of Sabarimala, Mannanam, Vaikom, Ettumanoor, Bharananganam, Erumeli etc.</p>
+            <p>The top sightseeing places in Kottayam are:</p>
+            <ol>
+                <li style="margin-top:0px !important;" >Kottathavalam</li>
+                <li style="margin-top:0px !important;">Nadukani</li>
+                <li style="margin-top:0px !important;">Spiritual Places</li>
+                <li style="margin-top:0px !important;">Kumarakom Bird Sanctuary</li>
+                <li style="margin-top:0px !important;">Island of Pathiramanal</li>
+                <li style="margin-top:0px !important;">Illikkal Kallu.</li>
+                <li style="margin-top:0px !important;">Marmala Waterfalls</li>
+                <li style="margin-top:0px !important;">Boat Races and Many more</li>
+            </ol>       
+           <p>All these factors, aside from it being strikingly beautiful, make it as one of the must visit destinations in Kerala. Though a handful, the tourist places in Kottayam guarantee a peaceful retreat.</p> 
+        </div>
+    </div>
+    <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+</div>
+</section>
+<section  id="deptsections">
+    <span id="makeanenquiry"></span>
+    <div class="container">
+        <div class="row" id="makeenqry">
+            <h3 class="mb-4">Make An Enquiry</h3>
+            <div class="col-lg-6">
+                
+                <p>At Caritas Hospital, we are dedicated to providing prompt and personalized assistance to our international patients. Our team is readily available to address your inquiries, provide information, and guide you through your healthcare journey.</p>
+                <p>For any questions or assistance, please feel free to contact us through the following channels:</p> 
+                <p><b>Phone:</b></p> 
+                <p>International Patient Relations: <a href="tel:+ 9187146 73343">+ 91 87146 73343</a></p>
+                <p>Hospital Reception:<a href="#">  +91 (0) 481-2790025 to 29</a></p>
+                <p><b>Email:</b></p> 
+                <p>International Patient Inquiries: <a href="mailto:mail@caritashospital.org ">mail@caritashospital.org </a></p> 
+                
+                <p><a href="/directions">View Directions to Reach <i class="bi bi-chevron-right"></i></a></p>
+            </div>
+            <div class="col-lg-5 mx-3">
+                <p>Please fill up this form and submit it. Our International Patient Desk executives will contact you shortly</p>
+                
+                 <form action="/enquire_form/" method="post" class="custom-form internationalform">
+                    {% csrf_token %}
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="text" id="first_name" placeholder="First Name" name="first_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="text" id="last_name" placeholder="Last Name" name="last_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" class="form-control" required>
+                        </div>
+                    </div>
+                     <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="" disabled selected>Select Country</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.alpha_2 }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <div class="col-sm-12 action_button">
+                            <button type="submit" class="internationalformbtn">Enquire Now ></button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock%}

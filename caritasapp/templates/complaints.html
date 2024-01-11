@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+                <h1 style="font-weight: 600;">Internal Complaints Commitee  </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Ensuring Safety and Dignity</h2>    
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/complaints.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4">Guardians of Workplace Respect: The <br/>Internal Complaints Committee</h3>           
+            <p>In accordance with the provisions outlined in the Sexual Harassment of Women at Workplace (Prevention, Prohibition & Redressal) Act, our institution maintains a dedicated Internal Complaints Committee. These dedicated individuals play a crucial role in ensuring a safe and respectful environment within our institution. They are committed to addressing and resolving any concerns related to workplace harassment, thus upholding the principles of equality and dignity for all.</p>
+
+          <p>  Rev. Fr. Mathew Chazhisseril (Contact: 9446012600)</p>
+            
+           <p> Ms. Annamma C T (Contact: 9497713582)</p>         
+           <p> Ms. Shiji Jose (Contact: 9497713537)</p>          
+          <p>  Dr. Sunu John</p>            
+          <p>  Adv. Jessymol Joseph</p>         
+          <p>  Ms. Jetty Biju </p>
+          <p>  Mr. Cirsoh Joseph</p>
+            </div>
+            <p>&nbsp;</p>
+           
+              
+        </div>
+</section>
+
+
+ 
+
+{% endblock%}

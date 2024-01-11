@@ -1,0 +1,691 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-10">
+                <h1 style="font-weight: 600;">المرضى الدوليون </h1>
+                <h2 style="color: #c71782; font-weight: 300;">الرعاية الرحيمة لا تعرف حدودًا</h2>
+            </div>
+            <div class="col-lg-2 ">
+                <a style="color:#000;"  href="{% url 'international_patients' %}">English </a> | <a href="{% url 'international_patients_arabic' %} " class="mainheading">عربي</a>
+            </div>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/patient-measuring-blood-pressure.png' %}" class="img-fluid" alt="patient-measuring-blood-pressure" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">هل لديك أية أسئلة؟ نحن هنا لمساعدتك</h4>
+                    <p class="text-light">لا تتردد في التواصل معنا، ولنبدأ رحلتنا معًا نحو 
+</p>
+
+              {% include 'caritasapp/enquiry_form_template.html' %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">نظرة عامة</a></li>
+                <li><a href="#Services">الخدمات</a><li>
+                <li><a href="#PlanYourVisit">خطّط لزيارتك</a><li>
+                <li><a href="#Departments">الأقسام</a></li>
+                <li><a href="#WhyCaritas">لماذا كاريتاس؟</a><li>
+                <li><a href="#AboutCaritas">عن كاريتاس</a><li>
+                <li><a href="#AboutKottayam">حول كوتايام</a><li>
+                   
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>مرحبًا بك في مستشفى كاريتاس، <br/>
+وجهتك العالمية للرعاية الصحية</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/international2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;"> نحن ملتزمون في مستشفى كاريتاس، بتقديم خدمات رعاية صحية عالمية المستوى للمرضى من جميع أنحاء العالم. نحن ملتزمون بالتميز، وبتقديم الرعاية الطبية الرحيمة، المدعومة بتكنولوجيا الرعاية الطبية المتقدمة وهو ما جعلنا خيارًا موثوقًا للمرضى الدوليين الذين يبحثون عن رعاية صحية عالية الجودة.</p>
+                   <p>سواء كنت تبحث عن رعاية طبية متخصصة، أو فحص طبي شامل، أو تحتاج إلى مشورة طبية للحصول على رأي طبي ثانٍ، فإن مستشفى كاريتاس هي وجهتك الطبية المفضلة. نحن ملتزمون بتوفير أعلى مستوى من الرعاية الطبية، بل حريصون على أن تكون صحتك وراحتك أولويتنا الأولى. </p>
+                   <p>نحن في مستشفى كاريتاس، لا نقدم مجرد علاج طبي، بل نقدم التزامًا بالحفاظ على صحتك، وسعادتك، وراحتك النفسية. نتطلع إلى خدمتك وتقديم الرعاية عالية المستوى التي تستحقها.</p>
+                   <a href="#makeanenquiry"><button type="button" class="enqrybtn">استفسر الآن</button></a>
+                   
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="Services"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6" >
+               <h3>خدمات للمرضى الدوليين</h3> 
+               <p>يقدم مستشفى كاريتاس مجموعة واسعة من خدمات الرعاية الصحية التي تلبي احتياجات مرضانا الدوليين المتنوعة. كما نولي اهتمامًا كبيرًا بتقديم الرعاية الرحيمة والتميز، نعطي أولوية لرفاهيتك، ونضمن أنك ستحصل على رعاية عالمية المستوى تلبي متطلباتك الفريدة. نحن متواجدون هنا لنكون شريكك الموثوق في الرعاية الصحية.</p>
+                <a href="#makeanenquiry"><button type="button" class="enqrybtn">استفسر الآن</button></a>
+               <p>&nbsp;</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>توفر علاج الأيورفيدا لتجديد الحيوية حسب طلب المريض.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>فريق مكرس لرعاية المرضى.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>حزم سياحية مصممة وفقًا لتفضيلات المريض.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>توفر دعمًا لتمديد التأشيرة في حالة الإقامة الطويلة.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>مساعدة في مسائل التأمين.</p>
+                   <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>عملية التخريح من المستشفى وخيارات الدفع السهلة.</p>
+            </div>  
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <h4 style="font-weight:600;">خدمات شاملة للرعاية الصحية</h4>
+                <p>يتعهد مستشفى كاريتاس بتقديم مجموعة شاملة من خدمات الرعاية الصحية لتلبية احتياجاتك.</p>
+                <p></p>
+                <p class="mt-5 textxolor_pink"><i class="bi bi-chevron-right ms-2"></i>&nbsp;خدمة الطوارئ<i class="bi bi-chevron-right ms-2"></i>&nbsp;خدمة الالعيادات الخارجية<i class="bi bi-chevron-right ms-2"></i>&nbsp;خدمات العيادات الداخلية</p>
+                <p class="mt-4 textxolor_pink"><i class="bi bi-chevron-right ms-2"></i>&nbsp;خدمات الرعاية المنزلية <i class="bi bi-chevron-right ms-2"></i>&nbsp;حزم الرعاية الصحية</p>
+                <p>&nbsp;</p>
+                <p ><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>توفر دعمًا لتأمين الأدوية والرعاية بعد التخريج من المستشفى.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>تأمين وسيلة نقل للعودة إلى المطار.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>مساعدة في حجز الرحلات الجوية وتأمين سيارات الأجرة.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>توفر خدمات الرأي الطبي الثاني عبر الإنترنت من بلدك الأصلي.</p>
+                <p><i class="fa-solid fa-chevron-right" style="color: #000000;font-size:12px;margin-right:25px;"></i>توفر دعم المعرفة الطبية عبر مراسلة صاحب رقم الملكية الفكرية المقدم.</p>
+            </div> 
+        </div> 
+    
+      
+    </div>
+</section>
+
+<section id="deptsections"><span id="PlanYourVisit"></span>
+    <div class="container mt-5">
+        <h3 class="mb-4">خطّط لزيارتك: رعاية ميسّرة للمرضى الدوليين</h3>
+            <p>
+
+يعتمد مستشفى كاريتاس عملية منظمة جيدًا لعلاج لمرضى الدوليين. بدءًا من توفير الاستفسارات الأولية، وتقديرات العلاج، إلى الخدمات عند الوصول، وتأمين الإقامة وغيرها من الخدمات،نضمن حصولك على رحلة طبية، سلسة، ومريحة، مما يمنحك الفرصة للتركيز على تحسين صحتك ورفاهيتك.
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row  " >
+            <div class="col-lg-6 px-3 " >
+                <img src="{% static 'img/young-male-psysician-with-patient-measuring-blood-pressure 14.png' %}" style="width:100% !important;"  />
+                <div class="col-content px-4 plan" style="background-color:#FAF9F9;">
+                <h5 class="pt-4 ">استفسار المرضى والاتصال الأولي</h5>
+                <ul class="custom-list">
+                <li class="mx-2">استقبال استفسار المرضى (التقارير الطبية والتشخيصية) عبر تطبيق واتساب: +91-8714673343 </li>
+                <li class="mx-2">سيتم مشاركة نموذج تقدير العلاج في غضون 24 ساعة، بما في ذلك متطلبات العلاج، وطربقة العلاج، وعدد أيام الإقامة المقدرة، والتكلفة التقريبية. </li>
+                <li class="mx-2">سيتم توفير الرسائل والوثائق الداعمة المطلوبة للحصول على تأشيرة طبية.</li>
+                </ul>
+                <p>&nbsp;</p>
+                </div>
+            </div>
+            <div class="col-lg-6 px-3 " >
+                <img src="{% static 'img/young-male-psysician-with-patient-measuring-blood-pressure 15.png' %}" style="width:100% !important;" />
+                <div class="col-content px-4 plan" style="background-color:#FAF9F9;">
+                <h5 class="pt-4 ">الوصول والإقامة</h5>
+                <ul class="custom-list">
+                    <li class="mx-2">ترتيبات السفر لاستلام المريض والمرافقين من المطار.</li>
+                    <li class="mx-2">ترتيب إقامة المريض والمرافقين في المستشفى، بالإضافة إلى ترتيب إقامة العائلات في الفنادق.</li>
+                    <li class="mx-2">يتم إجراء العلاج بأقصى درجات العناية، وتتم توفير مرافق الممرات الخضراء لتسهيل عملية العلاج.</li>
+                </ul>
+                <p>&nbsp;</p>
+                </div>
+            </div>
+            
+           
+                
+           </div>
+        
+        
+    </div>
+</section>
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 1.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">بنية تحتية متطورة</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 2.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">التوصيل من وإلى المطار</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 3.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin-top:15px;">تعاقد مع جميع مزودي التأمين الصحي الرئيسيين</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 4.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">مهبط للطائرات المروحية</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 5.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">مترجم</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 6.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">الوصول عن طريق الجو</p>
+            </div>
+             <div class="col-lg-3">
+                 <img src="{% static 'img/DSC01597 7.png' %}" style="width:100% !important;"  alt="international" />
+                 <p style="font-size:18px !important;margin:15px 0px;">بيئة خضراء جميلة</p>
+            </div>
+             
+        </div>
+        <p>&nbsp;</p>
+        <div>
+            <a href="#makeanenquiry">  <button type="button" class="enqrybtn">استقسر الآن</button></a>
+        </div>
+    </div>
+</section>
+<section class="mb-5" style="background-image: url('{% static 'img/houseboat.png' %}');background-size:cover;height:630px;">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-7">
+                <p>&nbsp;</p>
+                <h2 class="text-light">السفر من أماكن متعددة إلى مكان واحد طلبًا للشفاء.</h2>
+                
+                <p class="text-light mt-4">عندما تختار العلاج في مستشفى كاريتاس ومعهد علوم الصحة، بإمكانك أن تختبر علاجًا بمستوى عالمي، وبيئة تساعد على الشفاء، وإقامة مريحة قريبة من المناظر الطبيعية الجميلة في كوتايام.</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section id="deptsections"><span id="Departments"></span>
+    <div class="container">
+        <div class="row">
+            <h3>أقسامنا</h3>
+            <p>يفخر مستشفى كاريتاس بمجموعة من الأقسام المتخصصة، حيث يعمل كل قسم على تقديم رعاية استثنائية في مجاله الخاص. تغطي مراكز التميز والالتخصصات الطبية، مما يضمن وصول مرضانا الدوليين إلى أحدث وأشمل خدمات الرعاية الصحية.تخصصات الخاصة بنا ومجموعة واسعة من </p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h6 style="margin-bottom:30px;">مركز التميز</h6>
+            <hr style="width:85%;margin:20px 0px;">
+            <div class="row">
+              <div class="col-lg-6 textcolor_black">
+                <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_cancer_institute' %}" style="display: block; margin-bottom: 15px;">	معهد كاريتاس لعلاج السرطان </a></li>
+                <li><a href="{% url 'caritas_heart_institute' %}" style="display: block; margin-bottom: 15px;">	معهد كاريتاس لأمراض القلب </a></li>
+                <li><a href="{% url 'caritas_neuro' %}" style="display: block; margin-bottom: 15px;">	معهد كاريتاس لعلوم الأعصاب </a></li>
+                <li><a href="{% url 'caritas_gastro' %}" style="display: block; margin-bottom: 15px;">	علوم الجهاز الهضمي</a> </li>
+                <li><a href="{% url 'caritas_orthopaedics' %}" style="display: block; margin-bottom: 15px;">	جراحة العظام واستبدال المفاصل والمنظار</a></li>
+                <li><a href="{% url 'caritas_nephrology' %}" style="display: block; margin-bottom: 15px;">	أمراض الكلى وزراعة الكلى</a></li>
+                <li><a href="{% url 'caritas_paediatrics' %}" style="display: block; margin-bottom: 15px;">	طب الأطفال وجراحة الأطفال</a></li>
+                <li><a href="{% url 'caritas_generalmedicine' %}" style="display: block; margin-bottom: 15px;">	الطب العام</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 textcolor_black">
+               <ul style="list-style:none;padding-left:0px;">
+                <li><a href="{% url 'caritas_urology' %}" style="display: block; margin-bottom: 15px;">	طب المسالك البولية</a></li>
+                <li><a href="{% url 'caritas_rheumatology' %}" style="display: block; margin-bottom: 15px;">	أمراض الروماتيزم</a></li>
+                <li><a href="{% url 'gynaecology' %}" style="display: block; margin-bottom: 15px;">	طب النساء، والتوليد، وطب الجنين </a></li>
+              
+                <li><a href="{% url 'physicalmedicine' %}" style="display: block; margin-bottom: 15px;">	الطب الطبيعي وإعادة التأهيل</a></li>
+                <li><a href="{% url 'criticalcare' %}" style="display: block; margin-bottom: 15px;">	طب العناية المركزة</a></li>
+                <li><a href="{% url 'generalsurgery' %}" style="display: block; margin-bottom: 15px;">	جراحة عامة، وجراحة جراحة طفيفة التوغل، وجراحة السمنة (جراحة عامة)</a></li>
+                <li><a href="{% url 'dermatology' %}" style="display: block; margin-bottom: 15px;">	الأمراض الجلدية والتجميل</a></li>
+                <li><a href="{% url 'emergency_medicine' %}" style="display: block; margin-bottom: 15px;">	طب الطوارئ ورعاية الصدمات</a></li>
+               </ul>
+                
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-lg-6 textcolor_black">
+            <h6 style="margin-bottom:30px;">التخصصات</h6>
+            <hr style="width:85%;margin:20px 0px;">
+            <div class="row">
+              <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   <li><a href="{% url 'anaesthesiology' %}" style="display: block; margin-bottom: 15px;">	التخدير</a></li>
+                   <li><a href="{% url 'dental' %}" style="display: block; margin-bottom: 15px;">	طب الأسنان وجراحة الفم والوجه والفكين</a></li>
+                   <li><a href="{% url 'caritas_ENT' %}" style="display: block; margin-bottom: 15px;">	قسم الأنف والأذن والحنجرة والسمع</a></li>
+                   <li><a href="{% url 'endocrinology' %}" style="display: block; margin-bottom: 15px;">	أمراض الغدد الصماء</a></li>
+                   <li><a href="{% url 'neonatology' %}" style="display: block; margin-bottom: 15px;">	طب الأطفال الحديث</a></li>
+                   <li><a href="{% url 'ophthalmology' %}" style="display: block; margin-bottom: 15px;">	طب العيون</a></li>
+                   <li><a href="{% url 'pathology' %}" style="display: block; margin-bottom: 15px;">	علم الأمراض والأحياء المجهرية وطب المختبر</a></li>
+                  </ul>
+                </div>
+               <div class="col-lg-6">
+                  <ul style="list-style:none;padding-left:0px;">
+                   
+                   <li><a href="{% url 'psychiatry' %}" style="display: block; margin-bottom: 15px;">	الطب النفسي، والاستشارات النفسية، والعلاج النفسي</a></li>
+                   <li><a href="{% url 'plastic_microvascular' %}" style="display: block; margin-bottom: 15px;">	الجراحة التجميلية والجراحة المجهرية الوعائية</a></li>
+                   <li><a href="{% url 'pulmonology' %}" style="display: block; margin-bottom: 15px;">	أمراض الرئة وطب الرئة التداخلي</a></li>
+                   <li><a href="{% url 'radiology' %}" style="display: block; margin-bottom: 15px;">	التصوير الشعاعي التداخلي، والتشخيص الشعاعي، والتصوير</a></li>
+                   <li><a href="{% url 'community_medicine' %}" style="display: block; margin-bottom: 15px;">	طب المجتمع</a></li>
+                  </ul>
+                </div>
+            </div>
+           
+          </div>
+          </div>      
+        </div>
+</section>
+
+
+
+<!-- Voice of Patients -->
+<section id="deptsections" style="background-color:#F4F6F6;"><span id="WhyCaritas"></span>
+  <div class="container mt-5">
+    <div class="row justify-content-center text-center">
+      <h3>تعليقات مرضانا</h3>
+      <p>عرّف على قصص وتجارب المرضى الدوليين الذين وثقوا بمستشفى كاريتاس وبرعايتهم أثناء رحلتهم الطبية.</p>
+      </div>
+      <div class="row justify-content-center">
+            {% for testimonial in testimonials|slice:":3" %}
+                <div class="col-lg-4 my-3">
+                    
+                    <!-- Video iframe directly embedded -->
+                  
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="380" height="250" class="videobox embed-responsive-item" src="https://www.youtube.com/embed/{{testimonial.youtube_id }}" allowfullscreen></iframe>
+                    </div>
+                    <h5 class="mb-3">{{ testimonial.title }}</h5>
+                    
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <p>&nbsp;</p>
+            <p style="text-align:center;"><a href="#makeanenquiry">  <button type="button" class="enqrybtn">استقسر الآن</button></a></p>
+        </div>
+  </div>
+</section>
+
+<section>
+    <div class="container mt-5">
+        <h3>ما الذي يدفعك لاختيار مستشفى كاريتاس في كوتايام؟</h3>
+        <p>عندما تختار مستشفى كاريتاس في كوتايام، فإنك تختار شريكًا في الرعاية الصحية كرّس نفسه لتوفير رفاهيتك، وسعادتك، وراحة بالك. تعرّف على الأسباب يختارون مستشفى كاريتاس في كوتايام كوجهة مفضلة للرعاية الصحية.التي تجعل المرضى من جميع أنحاء العالم </p>
+        <div class="row mt-5">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">الاعتمادات</h6>
+            </div>
+            <div class="col-lg-4">
+                <p>عتمادات الوطنية:</p>
+                <ul>
+                    <li>	اعتماد المجلس الوطني لاعتماد المستشفيات ومقدمي الخدمات الصحية (NABH) منذ عام 2015 (تم إعادة الاعتماد مرتين)</li>
+                    <li>	اعتماد المجلس الوطني لاعتماد المستشفيات ومقدمي الخدمات الصحية للتميز التمريضي (NABH) (منذ عام 2019</li>
+                    <li>	اعتماد المجلس الوطني لاعتماد المستشفيات ومقدمي الخدمات الصحية للجنة الأخلاقيات (NABH) (منذ عام 2020)
+	اعتماد NABL للتشخيص الجزيئي (منذ عام 2021)
+</li>
+                </ul>  
+                
+                        <img src="{% static 'img/NABH1.png' %}" class="img-fluid mx-2" alt="NABH1" style="width:50px;height:50px;"><img src="{% static 'img/NABH2.png' %}" class="img-fluid mx-2" alt="NABH2" style="width:50px;height:50px;"><img src="{% static 'img/NABL_Official_LOGO_Registered 1.png' %}" class="img-fluid mx-2" alt="TUV" style="width:36px;height:50px;">
+                        
+                    
+            </div>
+            <div class="col-lg-3">
+               <p>التسجيلات الحكومية:</p> 
+               <ul>
+                   <li>	برنامج "حرم جامعي صحي التغذية" - حكومة الهند (منذ عام 2022)</li>
+                   <li>	مبادرة مستشفى صديق للأم والطفل - حكومة كيرالا (منذ عام 2022)</li>
+               </ul>
+                <img src="{% static 'img/eatright.png' %}" class="img-fluid mx-2" alt="eat right" style="width:120px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/mom-child.png' %}" class="img-fluid mx-2" alt="mom-child" style="width:50px;height:50px;">
+            </div>
+            <div class="col-lg-3">
+                <p>شهادات أخرى: </p>
+                <ul>
+                   <li>	حاصل على شهادة EpiHCللوبائيات والرعاية الصحية في عام 2023</li>
+                   <li>	مركز تعزيز الجودة في عام 2023 </li>
+                   <li>	مكان رائع للعمل في عام 2023</li>
+                </ul>
+                <img src="{% static 'img/epihc.png' %}" class="img-fluid mx-2" alt="NABH1" style="width:90px;"><img src="{% static 'img/CAHD.png' %}" class="img-fluid mx-2" alt="CAHD" style="width:60px;"><img src="{% static 'img/greatplacetowork.png' %}" class="img-fluid mx-2" alt="TUV" style="width:80px;">
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">الاستطاعة والخدمات</h6>
+            </div>
+            <div class="col-lg-10">
+               <p>القدرة على خدمة أكثر من 55,000 مريض داخلي و 600,000 مريض خارجي سنويًا في الرعاية الفائقة التي تخدم وسط كيرالا.</p>
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">الاستطاعة والخدمات</h6>
+            </div>
+            <div class="col-lg-4">
+                <ul>
+                    <li>	توفر جميع الاعتمادات الرئيسية</li>
+                    <li>	توفر طائرة إسعاف جوية</li>
+                    <li> 	أول جهاز رقمي للتصوير المقطعي بالإصدار البوزيتروني (PET CT) في ولاية كيرالا</li>
+                    <li>	المركز الوحيد في ولاية كيرالا لقسطرة الأوعية الدموية بالليزر </li>
+                </ul>
+               
+            </div>
+            <div class="col-lg-4">
+               <ul>
+                   <li>أول جهاز تصوير مقطعي محوسب (CT Scan) بقدرة 384 شريحة مدعوم بالذكاء الاصطناعي في ولاية كيرالا</li>
+                   <li>	مسرع خطي</li>
+                   <li>مجهر عصبي مع نظام الملاحة</li>
+               </ul> 
+              
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">الخدمات المتقدمة</h6>
+            </div>
+            <div class="col-lg-4">
+                <ul>
+                    <li>	روبوت "أنا كاريتاسيان". </li>
+                    <li>	خدمات واتساب مخصصة.</li>
+                    <li>	أجهزة كيوسك لتسجيل المرضى ومحطات تحديد المواعيد بدون تلامس.</li>
+                </ul>
+               
+            </div>
+            <div class="col-lg-4">
+               <ul>
+                   <li>	جهاز تبريد فروة الرأس </li>
+                   <li>	نظام مواعيد عبر الإنترنت مع تكامل بوابة الدفع.</li>
+                   <li>	دمج إرسال التنبيهات عبر الرسائل القصيرة</li>
+               </ul> 
+              
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+        <div class="row">
+            <div class="col-lg-2">
+                <h6 style="color:#C71782;">الخدمات الطبية</h6>
+            </div>
+            <div class="col-lg-10">
+               <p>خدمات ذات جودة عالية يقدمها أكثر من 200 طبيب متفانٍ.</p> 
+               
+            </div>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+            <a href="#makeanenquiry"> <button type="button" class="enqrybtn">استفسر الآن</button></a>
+        </div>
+    </div>
+</section>
+<section id="deptsections" style="background-color:#FAF9F9;"><span id="AboutCaritas"></span> 
+    <div class="container mt-5">
+        <div class="row">
+            <p>&nbsp;</p>
+            <div class="col-lg-3">
+                <img src="{% static 'img/carith 1 (3).png' %}" class="img-fluid" alt="caritas hospital" >
+                
+            </div>
+            <div class="col-lg-8 mx-4">
+                <h3>نبذة عن مستشفى كاريتاس في كوتايام</h3>
+                <p>تدير مستشفى كاريتاس، الأبرشية الكاثوليكية في كوتايام، تحت أمانة جمعية ثقة الخيرية المسجلة برقم التسجيل  510/IV/95. مستشفى كاريتاس في كوتايام، هو المنارة العالية للصحة والاستشفاء في وسط كيرالا. والآن بعد أن ساهمت العلوم الطبية الحديثة بتحويل الرعب من الأمراض إلى شيء من الماضي، تعهدت مستشفى كاريتاس بقيادة المئات من مرضانا نحو نور الصحة والسعادة. "الحب غير المشروط ينقذ الحياة" هو شعارنا، تُلهمنا روح السيد المسيح، الذي أراد أن يتمتع كل إنسان بالسعادة الغامرة ووفرة الحياة.</p>
+                <p>وضع الأسقف السابق لكوتايام أسس مستشفى كاريتاس ومعهد علوم الصحة في عام 1962. كان الدافع وراء تأسيس هذه المؤسسة الصحية هو خدمة المجتمع المحلي من خلال توفير رعاية طبية عالية الجودة بأسعار معقولة للاحتياجات الصحية المتعلقة بالأمومة ولعلاج لدغات الثعابين. كانت مهمتنا توفير خدمات رعاية صحية بأسعار معقولة للناس في وسط كيرالا. وبفضل الحماس لتحقيق هذه المهمة، تطور مستشفانا ذو الـ 50 سريرًا إلى مستشفى متخصص متعدد التخصصات بأكثر من 600 سرير و134 سرير للعناية المركزة.
+
+</p>
+                <p><a style="color:#0072BC;" href="/about-caritas">تعرف على المزيد <i class="bi bi-chevron-right"></i></a></p>
+            </div>
+        </div>
+  <div><p>&nbsp;</p></div>
+        <div class="row">
+            <div class="col-lg-5">
+                <h1 style="color: #C71782;font-weight:900;">تصفح الأرقام.</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">655 <span style="font-weight:400;"> سرير</span> </h3> 
+                    </div>
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">134<span style="font-weight:400;"> وحدة العناية المركزة</span> </h3> 
+                    </div>
+                    <div class="col-lg-4">
+                       <h3 style="color:#C71782;">12 <span style="font-weight:400;"> غرفة العمليات</span> </h3> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                      أكثر من 60
+سنة مجيدة
+
+
+                  </h4>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                   خلال أيام الأسبوع على مدار الساعة
+                  </h4>
+  
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                   16 مراكز للتميز
+                  </h4>
+                 
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                   43 قسمًا رئيسيًا
+                  </h4>
+                </div>
+            </div>
+            </div>
+                   <div class="row">
+                <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                    30
+الخدمات الطبية والدعم المساند
+
+                  </h4>
+                 
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                   أكثر من 200 طبيب متخصص
+                  </h4>
+                  <p></p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                   أكثر من 3000 موظف مخصص
+                  </h4>
+                  
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="count-box">
+                  <h4>
+                    أكثر من 200 طبيب متخصص
+                  </h4>
+               
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections" ><span id="AboutKottayam"></span> 
+<div class="container mt-5">
+    <div class="row">
+        <h3>نبذة عن كوتايام</h3>
+        <p></p>
+        <div class="col-lg-6 ">
+            
+            <p>نبذة عن كوتايام
+
+
+
+
+
+تقع كوتايام على بُعد 155 كيلومترًا شمال مطار تريفاندروم و85 كيلومترًا جنوب مطار كوتشي. كوتايام لم تستكشف بشكل كامل للسياحة الطبية وتعتبر مكانًا عابرًا للسياحة الطبية. يكمن التحدي في جذب المرضى المحتملين الذين يمرون عبر المدينة أو يزورون كوماراكوم وآليبي القريبتين واللتين يُعتبران وجهة للسياح الطبيين.
+
+
+
+
+التعاون مع المنتجعات وتطوير علاج الأيورفيدا سيكون الحل المثالي لجذب هؤلاء السياح الطبيين. كوتايام هي مدينة في ولاية كيرالا الهندية، وتقع في وسط كيرالا وهي أيضًا العاصمة الإدارية لمقاطعة كوتايام.
+
+
+
+
+تحدها التلال والجبال الغربية العالية والضخمة من الجهة الشرقية، وبحيرة فيمباناد وأراضي الأرز في كوتاناد من الجهة الغربية، كوتايام أرض ذات خصائص فريدة. امتدادات المياه الخلفية البانورامية، وحقول الأرز الخضراء، والهضاب، والتلال الكبيرة، والتلال الصغيرة، والمزارع الواسعة للمطاط، والأماكن المرتبطة بالعديد من الأساطير والتي يعيش فيها شعب ناعلم بالكامل أعطى مقاطعة كوتايام لقبها الذي تحسد عليه: أرض الأحرف، والأساطير، والمطاط، والبحيرات.
+
+تعتبر المدينة مركزًا تجاريًا مهمًا للتوابل، والمحاصيل التجارية، وخاصة المطاط. بُستخرج معظم المطاط الطبيعي في الهند من الأراضي الواسعة لمزارع كوتايام والتي يتم العناية بها جيدًا، وهي أيضًا موطن للمجلس الهندي للمطاط. يُطلق على كوتايام أيضًا لقب "أكشارا ناغاري" والذي يعني "مدينة الحروف" نظرًا لمساهمتها في وسائل الإعلام المطبوعة والأدب. تعتبر بلدة كوتايام أول بلدة في الهند تحقق معدل محو أمية بلغ 100٪ (إنجاز ملحوظ تم تحقيقه في وقت مبكر جدًا في عام 1989). بدأ التعليم باللغة الإنجليزية في جنوب الهند في الدير القديم هنا في كوتايام في عام 1813. تأسست أول مطبعة في كيرالا (مطبعة سي إم إس) هنا في كوتايام عام 1821 على يد القس بنيامين بايلي. كما تم إنشاء أول كلية في الولاية (كلية سي إم إس) هنا في كوتايام عام 1840.. تم نشر أول قواميس مطبوعة بين المالايالامية والإنجليزية والإنجليزية والمالايالامية من كوتايام في عامي 1846 و1847 على التوالي. تأسست أول جمعية تعاونية للكتاب والمؤلفين والناشرين (SPCS) لنشر الكتب والإصدارات الدورية هنا في عام 1945 وهي الجمعية الوحيدة حتى الآن.
+
+</p>
+            <p>تعتبر المدينة مركزًا تجاريًا مهمًا للتوابل، والمحاصيل التجارية، وخاصة المطاط. بُستخرج معظم المطاط الطبيعي في الهند من الأراضي الواسعة لمزارع كوتايام والتي يتم العناية بها جيدًا، وهي أيضًا موطن للمجلس الهندي للمطاط. يُطلق على كوتايام أيضًا لقب "أكشارا ناغاري" والذي يعني "مدينة الحروف" نظرًا لمساهمتها في وسائل الإعلام المطبوعة والأدب. تعتبر بلدة كوتايام أول بلدة في الهند تحقق معدل محو أمية بلغ 100٪ (إنجاز ملحوظ تم تحقيقه في وقت مبكر جدًا في عام 1989). بدأ التعليم باللغة الإنجليزية في جنوب الهند في الدير القديم هنا في كوتايام في عام 1813. تأسست أول مطبعة في كيرالا (مطبعة سي إم إس) هنا في كوتايام عام 1821 على يد القس بنيامين بايلي. كما تم إنشاء أول كلية في الولاية (كلية سي إم إس) هنا في كوتايام عام 1840.. تم نشر أول قواميس مطبوعة بين المالايالامية والإنجليزية والإنجليزية والمالايالامية من كوتايام في عامي 1846 و1847 على التوالي. تأسست أول جمعية تعاونية للكتاب والمؤلفين والناشرين (SPCS) لنشر الكتب والإصدارات الدورية هنا في عام 1945 وهي الجمعية الوحيدة حتى الآن.</p>
+        </div>
+        <div class="col-lg-6">
+            <p>كوتايام هي مسقط رأس عدد كبير جدًا من الكتب والإصدارات الدورية، وهي مركز لنشاط النشر في الولاية. وقد تم اختيار كوتايام كأول بلدة في الهند من قبل وزارة البيئة والغابات في حكومة الهند لتحويلها إلى مدينة بيئية. ينحدر الرئيس السابق للهند، سري كيه آر نارايانان، من مقاطعة كوتايام. كوتايام هي نقطة الانطلاق المثالية لزيارة بيرماد، مونار، ذيكادي، إرناكولام ومدينة المعابد، ومادوراي. كما أنها بوابة لمراكز الحج في ساباريمالا، مانانام، فايكوم، إتومانور، بهارانانجانام، إروميلي، وغيرها.</p>
+            <p>أهم أماكن الجذب السياحي في كوتايام هي:</p>
+            <ol>
+                <li style="margin-top:0px !important;" > كوتاثافالام</li>
+                <li style="margin-top:0px !important;">نادوكاني</li>
+                <li style="margin-top:0px !important;">المواقع الروحية</li>
+                <li style="margin-top:0px !important;">محمية طيور كوماراكوم</li>
+                <li style="margin-top:0px !important;">جزيرة باثيرامانال</li>
+                <li style="margin-top:0px !important;">إيليكال كالو.</li>
+                <li style="margin-top:0px !important;">شلالات مارمالا</li>
+                <li style="margin-top:0px !important;">سباقات القوارب وغيرها الكثير</li>
+            </ol>       
+           <p>كل هذه العوامل، بالإضافة إلى جمالها المدهش، تجعلها واحدة من الوجهات التي يجب زيارتها في كيرالا. على الرغم من قلة عددها، فإن أماكن الجذب السياحي في كوتايام تضم مناطق هادئة تضمن الاسترخاء والهدوء.</p> 
+        </div>
+    </div>
+    <hr style="border:1px solid #C71782;opacity:100%;margin:40px 0">
+</div>
+</section>
+<section  id="deptsections">
+    <span id="makeanenquiry"></span>
+    <div class="container">
+        <div class="row">
+            <h3 class="mb-4">استفسر الآن</h3>
+            <div class="col-lg-6">
+                
+                <p>نحن ملتزمون في مستشفى كاريتاس، بتقديم المساعدة الفورية والشخصية لمرضانا الدوليين. فريقنا متاح في أي وقت للإجابة على استفساراتكم، تقديم المعلومات، وإرشادكم خلال رحلتكم الصحية.</p>
+                <p>في حال وجود أية أسئلة أو طلبٍ للمساعدة، يرجى التواصل معنا عبر القنوات التالية:</p> 
+                <p><b>الهاتف:</b></p> 
+                <p>علاقات المرضى الدوليين: <a href="tel:+ 9187146 73343">+ 91 87146 73343</a></p>
+                <p>الاستقبال في المستشفى:<a href="#"> +91 (0) 481-2790025 إلى 29</a></p>
+                <p><b>البريد الإلكتروني:</b></p> 
+                <p>استفسارات المرضى الدوليين: <a href="mailto:mail@caritashospital.org ">mail@caritashospital.org </a></p> 
+               
+                <p><a href="/directions">عرض الاتجاهات للوصول  <i class="bi bi-chevron-right"></i></a></p>
+            </div>
+            <div class="col-lg-5 mx-3">
+                <p>يرجى ملء هذا النموذج وإرساله. سيتصل بكم مسؤولو مكتب المرضى الدوليين لدينا قريبًا.</p>
+                
+                 <form action="/enquire_form/" method="post" class="custom-form internationalform">
+                    {% csrf_token %}
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="text" id="first_name" placeholder="الاسم الأول:" name="first_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="text" id="last_name" placeholder="اللقب:" name="last_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="البريد الإلكتروني:" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <input type="tel" id="phone_number" name="phone_number" placeholder="رقم الهاتف:" class="form-control" required>
+                        </div>
+                    </div>
+                     <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="" disabled selected>اختر البلد:</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.alpha_2 }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <div class="col-sm-12 action_button">
+                            <button type="submit" class="internationalformbtn">استفسر الآن   ></button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('enquireForm').addEventListener('submit', function(event) {
+    const phoneNumberInput = document.getElementById('phone_number');
+    const phoneNumber = phoneNumberInput.value;
+
+    // Define a regular expression to match 10 to 14 digits
+    const phoneNumberPattern = /^\d{10,14}$/;
+
+    if (!phoneNumberPattern.test(phoneNumber)) {
+        // Show error message
+        const errorMessage = document.querySelector('#phone_number + .error-msg');
+        errorMessage.style.display = 'block';
+
+        // Prevent form submission
+        event.preventDefault();
+    }
+});
+
+</script>
+<script>
+  document.getElementById('enquireForm').addEventListener('submit', function(event) {
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        if (!email.includes('.')) {
+            const incompleteMsg = document.querySelector('#email + .incomplete-msg');
+            incompleteMsg.style.display = 'block';
+            incompleteMsg.textContent = 'Please enter a complete email address.';
+        } else {
+            const errorMsg = document.querySelector('#email + .error-msg');
+            errorMsg.style.display = 'block';
+            errorMsg.textContent = 'Please enter a valid email address.';
+        }
+
+        event.preventDefault();
+    }
+});
+
+
+</script>
+
+{% endblock%}

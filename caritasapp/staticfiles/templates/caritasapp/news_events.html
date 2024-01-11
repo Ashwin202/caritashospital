@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">News & Events </h1>
+                
+             <p>&nbsp;</p>   
+        </div>
+         <div class="row">
+            {% for post in posts %}
+                {% if post.category.title == "News & Events" %}  <!-- Filter posts by category title -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="post">
+                            
+                               
+                                    <a href="{% url 'detail' post.slug %}" style="color:#000;">
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-2">
+                                    
+                                    <h6>{{ post.title }}</h6>
+                                    </a>
+                                   
+                                    <p style="color:rgba(0, 0, 0, 0.5);">{{ post.created|date:"F Y" }}</p> 
+                                
+                            
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+     </div>   
+</section>
+
+
+
+{% endblock%}

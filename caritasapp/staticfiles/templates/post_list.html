@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %} 
+
+{% block content %}
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-md-6">
+                        <div class="post">
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.body|truncatechars:150 }}</p>
+                            <a href="{% url 'post_detail' post.slug %}">Read more</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Other tab panes go here -->
+    </div>
+{% endblock %}

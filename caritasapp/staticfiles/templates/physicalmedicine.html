@@ -1,0 +1,603 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Physical Medicine and Rehabilitation</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Physical Medicine Hospital in Kerala</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/pysical1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                  {% include 'caritasapp/enquiry_form_template.html' %}
+                  
+                </div>
+            </div>
+        </div> 
+        
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+</div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Where Healing and Innovation Unite in <br>
+                Orthopaedic Excellence.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+             <img src="{% static 'img/physical2.png' %}" style="width:96%;" />
+              
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;">The Physical Medicine and Rehabilitation Department at Caritas offers a wide range of services to enhance and restore functional ability and quality of life in people with physical impairments/ disabilities of brain, spinal cord, nerves, bones, joints, ligaments, muscles, and tendons. </p>
+                   <p style="font-weight:500;">The expert PMR team led by physiatrists provides high quality, evidence-based care including physiotherapy and rehabilitative services with a multidisciplinary approach to patients of all ages.</p>
+                   <p style="font-weight:500;"> 
+                    The patient’s family is made an integral part of the treatment process to ensure the best possible outcome<p>       
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Treatment and Procedures</h3>
+                </div>
+                <div class="row justify-content-center" style="width:60%;margin:40px auto 5px auto;"> 
+                <div class="col-lg-5">
+               <ul>
+                    <li>
+                        <p>Hydrotherapy Unit</p>                       
+                    </li>
+                    <li>
+                        <p> EMG Bio-feedback</p>
+                    </li>
+                    <li>
+                        <p>Virtual rehab</p>
+                    </li>
+                    <li>
+                        <p> Neurodevelopmental therapy</p>
+                    </li>
+                    <li>
+                        <p>Visual Stimulation</p>
+                    </li>
+                </ul>
+                </div>
+                 <div class="col-lg-5">
+                     <ul>
+                        <li>
+                            <p>Electrotherapy</p>
+                        </li>
+                      <li>
+                          <p> Exercise therapy</p>
+                    </li>
+                        <li>
+                            <p>Occupational therapy</p>
+                        </li>
+                        <li>
+                            <p>ADL training, Speech and Swallow Therapy</p>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+           <div class="row  " >
+                      <h5 class="mainheading">Physical Medicine & Rehabilitation</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Physical Medicine & Rehabilitation" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+           
+        </div>
+    </div>
+</section>
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in cancer_posts %}  <!-- Updated variable name -->
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="#" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+    </div>
+</section>
+
+<!--Tab-->
+<!--
+<section id="insight_tab" >
+    <div class="container mt-5 px-0 " style="max-width:100%;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:0 7%;">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab"
+                    aria-controls="tab1" aria-selected="true">Overview</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-3 col-sm-4" role="presentation" >
+                <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
+                    aria-controls="tab2" aria-selected="false">Treatments and Procedures</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-3 col-sm-4" role="presentation" >
+                <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab"
+                    aria-controls="tab3" aria-selected="false">Doctors</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-3 col-sm-4" role="presentation" >
+                <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab"
+                    aria-controls="tab4" aria-selected="false">Upcoming Projects</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-3 col-sm-4" role="presentation" >
+                <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tab5" role="tab"
+                    aria-controls="tab5" aria-selected="false">Articles</a>
+            </li>
+        </ul>
+        <div class="tab-content mt-2" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+               <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="{% static 'img/caritas_cancer_2.png' %}" style="width:96%;" />
+                    </div>
+                    <div class="col-lg-7 pt-4 mt-1">
+                       <p style="font-weight:500;margin-bottom:30px;"> Quality medical care was a distant dream for communities across central Kerala, let alone a specialized centre to deal with morbid ailments like cancer. Government hospitals' limited medical oncology treatments were no match for the growing cancer treatment needs. People had to wait for a long duration to receive proper treatment. Such dire conditions prompted the then Metropolitan Mar Kuriakose Kunnasserry, Archeparchy of Kottayam Diocese, to establish a full-fledged cancer hospital in Kerala.</p>
+                       <p style="font-weight:500;">The cancer centre was built within the Caritas Hospital Campus. It initially started functioning as a surgical oncology department in January 2000. Under Metropolitan Mar Kuriakose Kunnasserry, the then Director Rev. Fr. Simon Pazhukayil and Rev. Fr. Jacob Kollaparampil, the cancer centre was redesigned and relaunched as Caritas Cancer Institute on 24th February 2003.</p>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+        
+                <div class="container mt-5 py-5 px-0 " style="background-color:#F4F6F6;max-width:100%;">
+                    <div class="row justify-content-center" style="margin:0 auto;width:60%;">
+                    <h3 class="text-center">Treatment and Procedures</h3>
+                    <p class="text-center mb-5 mt-3">Caritas Cancer Institute provides comprehensive oncology services, including diagnosis, treatment and follow-up care for all types of cancers and supportive care such as patient education and support for people diagnosed with life-threatening illnesses. The scope of treatments and procedures can be broadly divided into:</p>
+                    <button class="accordion">Medical Oncology</button>
+                    <div class="panel">
+                       <p> It is one of the oldest departments of this cancer hospital in Kerala. The medical oncology department comprises a team of highly specialized doctors, nurses and support staff who provide targeted and evidence-based diagnosis and treatment regimens to treat adult and pediatric malignancies.</p>
+
+                     <h6><b>Facilities and Services</b></h6>
+                        <p>The facilities and services provided at the medical oncology department include -</p>
+                       <ul> 
+                       <li>Day Care Chemotherapy</li>
+                       <li>Diagnosis/Screening of Cancer</li>
+                       <li>Counselling including emotional support</li>
+                       <li>Stem Cell Transplantation</li>
+                       <li>End-of-Life </li>
+                       <li>Autologous Peripheral Blood Stem Cell Transplantation</li>
+                       </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    
+                    <button class="accordion">Radiation Oncology</button>
+                    <div class="panel">
+                      <p>The radiation oncology department is tasked to dispense radiation practices that are strictly compliant with AERB (Atomic Energy Regulatory Board) guidelines. The department houses experienced and certified Radiation oncologists, physicists including radiation safety officer, nurses, radiation therapists and nutritionists.</p>
+                      <h6><b>Facilities and Services</b></h6>
+                        <p>Here’s a look at the facilities and services provided at the radiation oncology department:</p>
+                       <b>Teletherapy </b>
+                       <ul>
+                        <li>2D Conventional</li>
+                        <li>3D Conformal</li|>
+                        <li>Static and Dynamic IMRT</li>
+                        <li> RapidArc</li>
+                        </ul>
+                        <b>Brachytherapy</b>
+                        <ul>
+                        <li>Interstitial</li>
+                        <li> Intracavitary</li>
+                        <li>Intraluminal</li>
+                        <li>Mould</li>
+                        </ul>
+                        <b>Concurrent Chemotherapy</b>
+                        <br/>
+                        <br/>
+                       
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Surgical Oncology</button>
+                    <div class="panel">
+                      <p>This was the first specialized cancer department launched in the Caritas Hospital 22 years ago. The surgical oncology team has successfully conducted over 16,000 minor and major surgeries to date.</p>
+
+                     <h6><b>Facilities and Services</b></h6>
+                        <p>Here’s looking at the facilities and services provided at the surgical oncology department:</p>
+                       <ul> 
+                            <li>Dedicated operation theatres</li>
+                            <li>Postoperative care ICUs, wards, and rooms</li>
+                            <li>Diagnosis and staging workup</li>
+                            <li>Surgical management for the following cancer types:
+                                <ul>
+                                <li>Head and neck cancer</li>
+                                <li>Breast cancer</li>
+                                <li>Gastrointestinal cancer</li>
+                                <li>Hepatobiliary cancer</li>
+                                <li>Genitourinary cancer</li>
+                                <li>Gynaecological cancer</li>
+                                <li>Lung, oesophageal and mediastinal cancer</li>
+                                <li>Musculoskeletal cancer</li>
+                                </ul>
+                            </li>
+                       </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Nuclear Medicine</button>
+                    <div class="panel">
+                      <p>World-class infrastructure characterise the nuclear medicine department, including a unique molecular imaging facility, PET-CT and gamma camera imaging, and a team of highly-experienced specialists. This department is known to provide personalised medical care by precisely understanding the molecular processes at the cellular level. It improves the diagnosis and treatment outcomes significantly. The department is among very few across Kerala to provide radionuclide therapy.
+                      </p>
+                      <h6><b>Facilities and Services</b></h6>
+                        <p>Enlisting below are the facilities and services provided at the nuclear medicine department:</p>
+                       <ul> 
+                        <li>Brain Scan Including Cerebral</li>
+                        <li>Perfusion Study</li>
+                        <li>Thyroid Gland Scintigraphy and</li>
+                        <li>Thyroid Uptake Study</li>
+                        <li>Renogram Studies Using Diuretic and ACE</li>
+                        <li>Inhibitor Interventions</li>
+                        <li>Parathyroid Gland Scintigraphy</li>
+                        <li>Salivary Gland Scintigraphy</li>
+                        <li>Myocardial Perfusion Scintigraphy</li>
+                        <li>Cardiac Amyloidosis Imaging</li>
+                        <li>MUGA Scan</li>
+                        <li>Lung Ventilation - Perfusion Study</li>
+                        <li>Gastric Emptying Study</li>
+                        <li>Gastrointestinal Bleed Study</li>
+                        <li>Liver Scan</li>
+                        <li>Hepatobiliary Scintigraphy</li>
+                        <li>GFR Evaluation</li>
+                        <li>Renal Scans</li>
+                        <li>Bone Scan</li>
+                        <li>Lymphoscintigraphy</li>
+                        <li>MIBG Scans for Neuroendocrine Tumors</li>
+                        <li>Whole-body FDG PET-CT Scan for Oncology Patients</li>
+                        <li>Radioactive Iodine Therapy to Treat Hyperthyroidism and Thyroid Cancer</li>
+                        <li>Whole-body Ga DOTA PET-CT Scan for Neuroendocrine Tumor Imaging</li>
+                        <li>Lu PRRT for Neuroendocrine Tumors 131I Lipiodol Therapy for Liver Cancer</li>
+                        <li>Myocardial FDG PET Scan for Viability Assessment in Patients with Cardiac Disorders</li>
+                        <li>Lu PSMA Therapy for Metastatic Prostate Cancer</li>
+                        <li>Radioactive Therapy Using 32P, 89Sr, 153Sm to Treat Bone Pains from Tumor Metastasis to the Bone</li>
+                        <li>MIBG for Adrenal Gland Tumors in Adults & Adrenal Gland/Nerve Tissue Tumors in Children</li>
+                       </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Psycho-oncology</button>
+                    <div class="panel">
+                      <p>The department comprises psycho-oncologists, psychiatrists and counsellors who provide the right kind of emotional support to both adults and children diagnosed with cancer. It helps the patient and their family cope with the emotional turmoil while fighting this disease. The experts ensure the utmost patient privacy during counselling.</p>
+                      <h6><b>Facilities and Services</b></h6>
+                      <p>Here’s the list of the facilities and services provided at the psycho-oncology department:</p>
+                            <ul> 
+                                <li>Family Counselling</li>
+                                <li>Couple Therapy</li>
+                                <li>Individual Counselling and Therapy</li>
+                                <li>Diagnosis and bereavement</li>
+                                <li>(Bereavement Counselling)</li>
+                                <li>Pre and Post Treatment</li>
+                                <li>Follow-up/Support</li>
+                            </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Pain and Palliative Care</button>
+                    <div class="panel">
+                      <p>This department started functioning in 2004, catering to patients who could no longer respond to curative treatments. The services helped patients to manage their cancer-related pains and help in symptom management, thereby leading a comfortable life. The department also catered to patients suffering from incurable diseases like chronic rheumatoid arthritis, COPD, Stroke, Paraplegia, Spine Injury, Old Age, etc.</p>
+                      <h6><b>Facilities and Services</b></h6>
+                      <p>Here’s the list of the facilities and services provided at the psycho-oncology department:</p>
+                            <ul> 
+                                <li>Inpatient Care (Symptomatic Care and Terminal Care for Cancer Patients)</li>
+                                <li>Palliative Home Care (Free Services Supported by the Community)</li>
+                                <li>Community-based programs on Cancer Awareness and Palliative Care</li>
+                                <li>Financial Assistance to the Deserving Poor Patients</li>
+                                <li>Provides Free Hospital Equipment such as Air Bed, Wheel Chair, etc. for the Needy</li>
+                                <li>Outpatient Care</li>
+                                <li>Pain Management</li>
+                                <li>Integrative Oncology Care</li>
+                            </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Community Oncology</button>
+                    <div class="panel">
+                      <p>The community oncology department aims to propagate awareness about types of cancers that can be cured if detected at early stages. The department team conducts mass education and cancer detection camps and distributes patient education and support to spread this awareness. Such awareness facilitates early and appropriate cancer screening and prevention.</p>
+                      <h6><b>Facilities and Services</b></h6>
+                      <p>Here’s looking at the facilities and services provided at the community oncology department:</p>
+                            <ul> 
+                                <li>Cancer Registry</li>
+                                <li>Cancer Awareness</li>
+                                <li>Cancer Prevention</li>
+                                <li>Early Cancer Detection</li>
+                                <li>Cancer Screening</li>
+                                <li>Tobacco Control</li>
+                            </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                </div>
+                </div>
+            
+            </div >        
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                <div class="container mt-5">
+                    <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+                        <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <div class="row justify-content-center " >
+                        -->
+                        
+                            <!-- Doctor 1 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4  ">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/Prof.Dr1.png' %}" alt="Doctor 1" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Prof. Dr. Jose Tom</h4>
+                                        <h6>Senior Consultant Radiation Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                        -->
+                    
+                            <!-- Doctor 2 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRJOHNY.png' %}" alt="Doctor 2" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Johny K. Joseph</h4>
+                                        <h6>Consultant Radiation Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                        -->
+                            <!-- Doctor 3 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRUNNI.png' %}" alt="Doctor 3" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Unni S. Pillai</h4>
+                                        <h6>Consultant Medical Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 20%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                    -->
+                            <!-- Doctor 4 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRJENNY.png' %}" alt="Doctor 4" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Jenny Joseph </h4>
+                                        <h6>Consultant Radiation Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                        -->
+                            <!-- Doctor 5 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRBOBEN.png' %}" alt="Doctor 5" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Boben Thomas</h4>
+                                        <h6> Consultant Medical Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 20%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                    -->
+                            <!-- Doctor 6 -->
+                            <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRJUDITH.png' %}" alt="Doctor 6" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Judith Aaron </h4>
+                                        <h6> Consultant Radiation Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                            -->
+                            <!-- Doctor 7 -->
+                           <!--
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRJOJO.png' %}" alt="Doctor 6" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Jojo V. Joseph</h4>
+                                        <h6>Senior Consultant Surgical Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                        -->
+                            <!-- Doctor 8 -->
+                          
+                          <!--  <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-5">
+                                        <img src="{% static 'img/DRMANU.png' %}" alt="Doctor 6" class="img-fluid" />
+                                    </div>
+                                    <div class="mx-4 mt-2">
+                                        <h4>Dr. Manu John</h4>
+                                        <h6>Consultant Palliative Oncologist</h6>
+                                        <p>&nbsp;</p>
+                                        <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                    </div>
+                                    <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                                        <i class='bi bi-arrow-right-circle'></i>
+                                    </div>
+                                </div>
+                                <br/>
+                                <hr style="width: 98%;margin:0 ;">
+                            </div>
+                    
+                            <!-- Doctor 2 -->
+                            <!-- ... Repeat the structure for other doctors ... -->
+                    <!--   </div>
+                    
+                    
+                </div>
+            </div>
+        -->
+            <!--
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab"  style="background-color:#F4F6F6;max-width:100%;">
+                <div class="container mt-5 py-5 px-0 ">
+                    <div class="row justify-content-center" >
+                        <h3>Upcoming Projects</h3>
+                        <p>&nbsp;</p>
+                        {% for post in posts %}
+                        {% if post.category.title == "Upcoming Projects" %}  
+                        <div class="col-lg-4 mb-4 px-4">
+                            <div class="post">
+                                
+                                <img class="card-img-top mb-4" src="{{ post.image.url }}" alt="Card image cap">
+                                <h5 class="mb-4">{{ post.title }}</h5>
+                                <p>{{ post.body|truncatewords:500 }}</p>  <!-- Display excerpt, truncate to 20 words -->
+                               <!-- <a href="{% url 'detail' post.slug %}" class="btn btn-primary">Read More</a>-->
+                     <!--   </div>
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                Content for Tab 5
+            </div>
+        </div>
+    </div>
+    </section>
+-->
+    <!--end tab-->
+
+
+
+
+{% endblock%}

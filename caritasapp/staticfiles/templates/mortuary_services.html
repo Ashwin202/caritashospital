@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Caritas Mortuary Services </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Compassion in Every Farewell</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/mortuary.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h3 class="mb-4">Saying Goodbye with Grace and<br/> Understanding</h3>
+       <p>In times of grief and loss, our mortuary service stands as a beacon of comfort and respect, understanding the diverse cultural and religious aspects that shape the way we say goodbye to our departed loved ones. At Caritas Hospital, our dedicated mortuary service team ensures that every individual is treated with the utmost care and dignity.</p> 
+       <p>Contact: <a style="color: #0072bc;" href="#">0481 27900 25-29</a> or <a style="color: #0072bc;" href="tel:8547190028">8547190028 (Mobile)</a> </p>
+    </div>
+</section>
+
+
+{% endblock%}

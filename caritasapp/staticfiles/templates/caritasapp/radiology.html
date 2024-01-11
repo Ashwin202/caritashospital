@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Radiology & Laboratory</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Diagnostic Care Hospital In Kerala</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/radiology1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                      {% include 'caritasapp/enquiry_form_template.html' %}
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Empowering Health Journeys with <br/>Advanced Radiology & Laboratory Services</h3>
+            <p>&nbsp;</p>
+            <p>At Caritas Hospital, our Radiology & Laboratory services stand as the cornerstone of our commitment to delivering timely, cost-effective, and top-quality diagnostic care. We prioritize the well-being of our patients by providing a safe and secure environment for all diagnostic procedures. Our state-of-the-art Radiology & Laboratory facilities, combined with the expertise of our staff, work in harmony to ensure accurate diagnoses and efficient treatment planning, all while keeping patient safety and comfort at the forefront of our healthcare mission. At Caritas, we take pride in setting the standard for excellence in diagnostic healthcare.</p>
+            </div>
+            <div class="row mt-4" style="width:90%;">
+                <div class="col-lg-3" >
+                    <ul>
+                    <li class="mb-3">24/7 Laboratory Services  </li>
+                    <li class="mb-3">Radiology and Imaging </li>
+                    <li class="mb-3"> Interventional Radiology</li>
+                    <li class="mb-3"> 24/7 MRI Scan(IAT/ICT)</li>
+                    <li class="mb-3">24/7 CT Scan</li>
+                    </ul>                    
+                </div>
+                <div class="col-lg-3" >
+                  <ul>
+                    <li class="mb-3">Ultrasound Scan</li>
+                    <li class="mb-3">24/7 X-Ray Services</li>
+                    <li class="mb-3">Nuclear Medicine and PET-CT</li>
+                    <li class="mb-3">Mammography</li>
+                   <li class="mb-3">Angiogram</li>
+           
+                   </ul>
+                </div>
+                 <div class="col-lg-3" >
+                  <ul>
+                    <li class="mb-3">2D Echo   </li>
+                    <li class="mb-3">EEG/EMG</li>
+                    <li class="mb-3">Sleep Lab</li>
+                    <li class="mb-3">Holter Monitoring</li>
+                   <li class="mb-3"> Treadmill Test</li>
+                   </ul>
+                </div>
+                 <div class="col-lg-3" >
+                  <ul>
+                    <li class="mb-3">Endoscopy </li>
+                    <li class="mb-3">Spirometry</li>
+                   
+                     
+                   </ul>
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+
+<section >
+    <div class="container ">
+          
+            <div class="row bottomlinks" style="margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#C71782 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a>
+                        </div>
+                       <div class="col-4 text-end">
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a>
+                                </div>
+                              <div class="col-4 text-end">
+                                    <a style="color:#C71782;" href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000 !important;" href="{% url 'blood' %}">Blood Bank</a>
+                                </div>
+                              <div class="col-4 text-end">
+                                    <a href="{% url 'blood' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+               
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                             <a style="color:#000 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a>
+                                </div>
+                               <div class="col-4 text-end">
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  
+               
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a>
+                                </div>
+                           <div class="col-4 text-end">
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 ">
+                    <div class="row">
+                        <div class="col-8" style="margin:auto 0px;">
+                            <a style="color:#000 !important;" href="{% url 'homecare' %}">Caritas Home Care</a>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a style="color:#000 !important;" href="{% url 'homecare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+ 
+
+{% endblock%}

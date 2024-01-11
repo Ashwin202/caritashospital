@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Careers  </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Join Our Team, Transform Lives</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/career.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-5">
+            <h3 class="mb-4">Where Quality Healthcare Meets Professional Excellence</h3>
+            <p>&nbsp;</p>
+           <a href="{% url 'open_positions' %}"><button type="button" class="enqrybtn">View Open Positions</button></a>
+           </div>
+           <div class="col-lg-7 px-3">
+            <p>At Caritas Hospital, we believe in the power of people to make a positive impact on healthcare. We invite you to embark on a journey of professional growth, personal fulfillment, and compassionate care.</p>
+            <p>Join our dynamic team and be a part of an organization dedicated to delivering high-quality healthcare services while upholding the values of empathy, excellence, and innovation. Whether you are an experienced healthcare professional or a fresh graduate looking to make a difference, Caritas offers a range of career opportunities in various departments.</p>
+            <p>Discover a supportive and inclusive work environment where you can learn, grow, and contribute to the well-being of our community. Your journey to a rewarding and meaningful career starts here at Caritas Hospital. Explore our current job openings, and together, let's create a healthier and happier tomorrow.</p>
+            
+            
+            </div>
+        </div>
+            
+              
+        </div>
+</section>
+<section>
+    <div class="row">
+        <div class="col-lg-2">
+            <img src="{% static 'img/career1.png' %}" class="img-fluid" alt="Career1" />
+        </div>
+        <div class="col-lg-2">
+            <img src="{% static 'img/career2.png' %}" class="img-fluid" alt="Career2" />
+        </div>
+        <div class="col-lg-2">
+            <img src="{% static 'img/career3.png' %}" class="img-fluid" alt="Career3" />
+        </div>
+        <div class="col-lg-2">
+            <img src="{% static 'img/career4.png' %}" class="img-fluid" alt="Career4" />
+        </div>
+        <div class="col-lg-2">
+            <img src="{% static 'img/career5.png' %}" class="img-fluid" alt="Career5" />
+        </div>
+        <div class="col-lg-2">
+            <img src="{% static 'img/career6.png' %}" class="img-fluid" alt="Career6" />
+        </div>
+        
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h3 class="mt-4">Life at Caritas: Where Each Day<br/> Redefines Your Journey</h3>
+        <p>At Caritas Hospital, we recognize the importance of taking care of our greatest asset—our dedicated staff. Our staff welfare programs are designed to enhance the well-being and comfort of our employees while also boosting their overall job satisfaction and performance. Some of the key elements of our staff welfare initiatives include:</p>
+        <div class="row mt-5">
+            <div class="col-lg-5">
+                <img src="{% static 'img/career7.png' %}" class="img-fluid" alt="Career7" />
+            </div>
+            <div class="col-lg-7">
+                <p><b>Annual Employee Health Check-Up</b></p>
+               <p>We ensure that our staff has access to regular health check-ups to promote well-being.</p>
+               <hr class="my-4" style="border:1px solid #C71782;opacity:100%;">
+               <p><b>Staff Health Insurance </b></p>
+               <p>We provide comprehensive health insurance coverage to safeguard the health of our employees.</p>
+               <hr class="my-4" style="border:1px solid #C71782;opacity:100%;">
+               <p><b>Employee Provident Fund (EPF) Scheme </b></p>
+               <p>We offer a robust EPF scheme to support the financial security of our staff.</p>
+               <hr class="my-4" style="border:1px solid #C71782;opacity:100%;">
+               <p><b>Employee State Insurance (ESI) Scheme</b></p> 
+               <p>Our employees benefit from the ESI scheme, ensuring financial protection during unforeseen situations.</p>
+               <hr class="my-4" style="border:1px solid #C71782;opacity:100%;">
+               <p><b>Discounts and Provisions on Food</b></p>
+               <p>We offer discounts and provisions on food, promoting a healthy and cost-effective dining experience.</p>
+               <p>&nbsp;</p>
+               <a href="{% url 'open_positions' %}"><button type="button" class="enqrybtn">View Open Positions</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container" style="background-color:#FAF9F9;display:none;">
+        <div class="row justify-content-center text-center py-5" style="width:50%;margin:0 auto;">
+            <h3>Quick Application</h3>
+        <p>Are you employed in the field of nursing or a medical-technical or medical-therapeutic profession? You can now submit a spontaneous application with just a few clicks!</p>
+        <p></p>
+        <button type="button" class="enqrybtn" style="margin:0 auto;width:30%;" >Upload Resume</button>
+         </div>
+        
+       
+    </div>
+</section>
+
+{% endblock%}

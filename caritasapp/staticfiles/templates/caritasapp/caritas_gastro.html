@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Gastro Sciences</h1>
+            <h2 style="color: #c71782; font-weight: 300;"> Best Gastroenterology Hospital in Kerala </h2>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/Gastro Sciences 859X386.png' %}" class="img-fluid" alt="gastro-1" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content px-4 text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                   {% include 'caritasapp/enquiry_form_template.html' %}
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+          </div>
+    </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Guiding Your Digestive Wellness Journey with<br/> Precision and Compassion.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/Gastro Sciences (1).png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 " style="margin:auto 0;">
+                   <p> The Gastroenterology Department at Caritas Hospital offers a comprehensive range of services and advanced facilities to address various gastrointestinal conditions.</p>
+                   <p>Our modern endoscopic theatre is equipped with state-of-the-art technologies, including endoscopy, colonoscopy, enteroscopy, and ERCP, allowing us to perform therapeutic endoscopic procedures such as EVL, polypectomy, APC, PEG/RIG-feeding, and submucosal resection. </p>
+                   <p> Our outpatient facilities include a general OPD as well as specialized liver and pancreatic clinics, providing patients with dedicated care and expertise.
+                    </p>
+                   
+        </div>
+      <p>&nbsp;</p>
+        <h5>Surgical Gastroenterology & Liver Transplant </h5>
+        <p>Caritas Hospital is proud to house the only liver transplantation center in Central Travancore. Our Surgical Gastroenterology & Liver Transplant Department boasts a highly skilled team of professionals, including Hepato-pancreato-biliary & liver-organ transplant surgeons, hepatologists, pancreato-biliary endoscopy experts, Hepato-biliary radiologists/interventional radiologists, and liver transplant anesthesiologists.</p>
+        <p>We specialize in the latest diagnostic and surgical treatments for luminal gastroenterology, hepato-pancreato-biliary diseases, and esophageal dysfunctions. Our department is well-equipped with advanced facilities in GI Pathology and GI Oncology, ensuring that our patients receive the highest standard of care and comprehensive solutions for their gastrointestinal health needs.</p>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Treatment and Procedures</h3>
+                    <p class="text-center mb-5 mt-3">We are dedicated to delivering the highest standards of care and employing advanced techniques to ensure the well-being of our patients. At Caritas Hospital, you can benefit from a wide range of Therapeutic Upper Gastrointestinal and Diagnostic Radiology Procedures.</p>
+
+
+                </div>
+                <div class="row justify-content-center" style="width:90%;margin:0 auto;"> 
+                <div class="col-lg-6">
+                <ul>
+                    <li>FNAC, Liver biopsy</li>
+                    <li>Biliary obstruction &ndash; Percutaneous Transhepatic Biliary Drainage (PTBD)</li>
+                    <li>Bile duct strictures &ndash; Stenting</li>
+                    <li>Bile duct cancer &ndash; Metallic stent placement</li>
+                    <li>Chronic pancreatitis &ndash; Pancreatic stenting</li>
+                    <li>Pancreas Divisum &ndash; Minor pappilla stenting</li>
+                    <li>Papillary carcinoma &ndash; ampullectomy</li>
+                    <li>Pancreatic Pseudocyst &ndash; Cystogastrostomy, Cystoduodenostomy</li>
+                    <li>Rendezvous biliary stenting</li>
+                    <li>Liver tumours &ndash; Percutaneous Ethanol injection (PEI)</li>
+                    <li>Variceal bleeding &ndash; Sclerotherapy, variceal banding, hemoclips</li>
+                    <li>Gastric varices &ndash; Cyanoacrylate glue injection</li>
+                    <li>Ulcer bleed &ndash; Injection Haemostasis, Gold probe, Haemoclips</li>
+                    <li>Mallory Weiss Tears &ndash; Injection haemostasis</li>
+                    <li>Foreign body &ndash; extraction</li>
+                </ul>
+                </div>
+                 <div class="col-lg-6">
+                     <ul>
+                        <li>Corrosive/Peptic stricture &ndash; Savary Gilliard Dilatation, TTS Balloon dilatation</li>
+                        <li>Achalasia Cardia &ndash; Rigiflex Balloon dilatation</li>
+                        <li>Carcinoma Esophagus/ GE junction &ndash; Ethanol tumour necrolysis, self-expandable metal stent placement</li>
+                        <li>Tracheo-esophageal fistulas &ndash; Covered SEMS placement</li>
+                        <li>Pyloric stenosis &ndash; TTS balloon dilatation, SEMS placement</li>
+                        <li>Gastric Polyps &ndash; Endoscopic polypectomy</li>
+                        <li>Early-stage gastric/esophageal cancer &ndash; Endoscopic Mucosal Resection (EMR)</li>
+                        <li>Feeding technique &ndash; PEG, PEGJ, Nasojejunal feeding tube placement</li>
+                        <li>Therapeutic lower GI endoscopic procedures</li>
+                        <li>Colonic polyps &ndash; Polypectomy + tattooing</li>
+                        <li>Diverticular Bleed &ndash; Injection haemostasis</li>
+                        <li>Carcinoma colon &ndash; Metallic stent placement</li>
+                        <li>Therapeutic ERCP procedures</li>
+                        <li>Bile duct stones &ndash; Basket/balloon extraction; lithotripsy</li>
+                    </ul>
+                 </div>
+            </div>
+
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+             <div class="row  " >
+                            <h5 class="mainheading">Gastroenterology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Gastroenterology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+   
+        
+         <!-- Surgical Gastroenterology -->
+        <div class="row">
+                <h5 class="mainheading">Surgical Gastroenterology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Surgical Gastroenterology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                               
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+                
+           
+        
+    </div>
+</section>
+
+
+
+<section id="deptsections">
+    <span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+            
+
+            {% if posts_exist %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+            <p class="mb-4 text-center">Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+                {% for post in posts %}
+                    {% if post.department.name == "Gastro Sciences" %}
+                        <div class="col-lg-12">
+                            <div class="post">
+                                <div class="row align-items-center mx-4">
+                                    <div class="col-lg-11">
+                                        <h6>{{ post.title }}</h6>
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <a href="{% url 'detail' post.slug %}">
+                                            <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr style="width: 95%; margin: 30px auto;">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <p><a class="mx-4 mt-5" href="#" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+            {% else %}
+                <p></p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

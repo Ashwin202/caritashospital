@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Articles To Read</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Your Guide to Better Well-Being: Caritas Articles to Read</h2>
+            </div> 
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+                {% if post.category.title == "Articles" %}  <!-- Filter posts by category title -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="post">
+                            
+                               
+                                    <a href="{% url 'detail' post.slug %}" style="color:#000;">
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-2">
+                                    </a>
+                                    <p style="color:#0072BC !important;">{{post.department.name}}</p>
+                                    
+                                    <h6><a href="{% url 'detail' post.slug %}" style="color:#000;">{{ post.title }}</a></h6>
+                                    
+                                   
+                                    <p style="color:rgba(0, 0, 0, 0.5);">{{ post.created|date:"F Y" }}</p> 
+                                
+                            
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

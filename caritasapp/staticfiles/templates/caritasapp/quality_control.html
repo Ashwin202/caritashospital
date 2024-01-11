@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Quality Control</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Precision and Quality in Practice at Caritas Hospital</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/quality1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        
+            <div class="row mt-4" >
+                <div class="col-lg-12" >
+                        <h3>Setting the Standard for Healthcare Excellence at Caritas Hospital</h3>    
+                        <p>Quality Control Department of Caritas Hospital implements and timely updates the quality improvement programmes in the hospital. The department consists of four personnel and a team approach is followed by them with all department heads, both clinical and non-clinical, to guide the hospital in complying with standards of NABH Accreditation, NABH Nursing Excellence Certification, NABH Ethics Committee Accreditation and ISO 9001-2015 Certification. The department prepares, amends and revises manuals and SOPs of all departments and services as and when necessary. </p>
+                        <p>The department reviews the performance of the hospital through different quality indicators captured on a monthly basis, analyze the trend and suggest necessary improvements to the Core Team as when required. The department conducts periodic internal audits, facility rounds etc. to ensure that the hospital is in compliance with recommended standards. </p>
+                        <p>The department acts as a facilitator to ensure quality and safety in the services provided by the hospital.</p>
+                </div>
+               
+            </div>
+              
+        </div>
+</section>
+
+<section>
+    <div class="container">
+    <h3>Transparency in Quality</h3>
+    <p>At Caritas Hospital, we believe in complete transparency when it comes to our commitment to quality healthcare. To uphold this commitment, we provide realtime access to our Quality Indicators.</p>
+    <div class="row">
+   
+        
+      <form method="GET" action="{% url 'quality_control' %}" class="filter-form" style="display: flex;
+    justify-content: space-between;">
+    <div class="col-lg-12 form-group" style=" display: flex;
+    align-items: justify;">
+        <label for="year" style="width: 130px; margin-right: 10px;">Filter Data by:</label>
+        <select name="year" id="year" >
+                <option value="">Select one...</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+
+        </select>
+
+        <select name="month" id="month" >
+            <option value="0">January
+                  <option value="1">February
+              	  <option value="2">March
+              	  <option value="3">April
+              	  <option value="4">May
+              	  <option value="5">June
+              	  <option value="6">July
+              	  <option value="7">August
+              	  <option value="8">September
+              	  <option value="9">October
+              	  <option value="10">November
+              	  <option value="11">December
+        </select>
+    </div>
+    
+</form>
+
+
+
+    </div>
+    
+    <div class="row mt-5">
+        {% for item in quality %}
+        <div class="col-lg-3 mb-4 " >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Average Length of Stay of Patients (In Days)</p>
+                    <h3>{{ item.average_length }}</h3>
+                
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Patient Satisfaction <br/> Index</p>
+                    <h3>{{ item.patient_satisfaction }}</h3>
+                    
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Catheter Associated Urinary <br/> Tract Infection (CAUTI) Rate</p>
+                    <h3>{{ item.cauti }}</h3>
+                
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Ventilator Associated <br/> Pneumonia (VAP) Rate</p>
+                    <h3>{{ item.vap }}</h3>
+                   
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Central Line Associated Blood Stream Infection (CLABSI) Rate</p>
+                    <h3>{{ item.clabsi }}</h3>
+                   
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Surgical Site <br/>Infection (SSI) rate</p>
+                    <h3>{{ item.ssi}}</h3>
+                    
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Incidence of Hospital Associated Pressure Ulcers After Admission</p>
+                    <h3>{{ item.pressure_ulcers_afteradmission }}</h3>
+                   
+            </div>
+     
+         
+        </div>
+        <div class="col-lg-3 mb-4" >
+            <div class="p-4" style="background:#FAF9F9;">
+                    <p>Compliance to Hand Hygiene Practice by Hospital Personnel</p>
+                    <h3>{{ item.compliance_hand_hygiene}}</h3>
+                    
+            </div>
+     
+         
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#year, #month').on('change', function () {
+        $('#filterForm').submit();
+    });
+});
+</script>
+
+
+
+ 
+
+{% endblock%}

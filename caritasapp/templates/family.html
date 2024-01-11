@@ -1,0 +1,865 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Caritas Family Hospital  </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Care at the Core of Everything</h2>
+                
+        </div>
+        <div class="row px-3 mt-4">
+            <div class="col-lg-12 col-md-112 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/family1.png' %}" class="img-fluid" alt="Cancer family hospital" />
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#speciality">Specialities</a><li>
+                <li><a href="#facilities">Facilities</a><li>   
+                <li><a href="#doctors">Doctors</a><li>
+                <!--<li><a href="#FAQ">FAQ</a><li> -->
+                <li><a href="#contactlocation">Contact & Location</a><li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Your Health, Our Legacy: Caritas Family Hospital, <br/>Where Care Comes First.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/family2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1 mb-2">
+                 <p> Care is the bedrock of our institution, Caritas Hospital & Institute of Health Sciences, which was founded in 1962. The lack of accessibility to affordable healthcare led Mar Thomas Tharayil, the erstwhile Bishop of Kottayam, Kerala, to establish the Caritas Hospital & Institute of Health Sciences. This legacy is now further extended through at the Caritas Family Hospital in Kottayam.</p>
+                 <p>We promise to provide next-gen medical care under a single roof. We continue to keep our promise by equipping ourselves with advanced medical technologies and a multitude of care facilities. A 24/7 emergency care unit with highly trained care experts backed by superior ambulance services is just a click away at Caritas Family Hospital. A fully integrated EMR expedites the diagnosis and prescription of medicines. Patient experience is as important to us as the clinical diagnosis. Keeping that in mind, the Caritas multispecialty family hospital features self-service kiosks for quick patient registration, convenient and contactless payments, home care services, video consultation, and online appointments. All these facilities heighten the overall patient experience.</p>
+                
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5" style="width:70%;margin:0 auto;">
+            
+            <h4 class="text-center mb-4" style="font-weight:600 ;">Why Choose Caritas Family Hospital</h4>
+            <p style="font-size:14px !important;" class="text-center">Caritas Family Hospital in Kottayam promises to deliver the best healthcare services to all its patients in distress. Our 24/7 healthcare services are aimed to provide you with a holistic care experience that not only focuses on fixing your medical condition but also promises a faster recovery to help return to a healthy life. Here are a few reasons why you should choose Caritas Family Hospital, Kottayam.</p>
+        </div>
+        <div class="row justify-content-center mt-5" style="margin :0 auto;width:98%;">
+            <div class="col-lg-2">
+                <div class="row ">
+                    <div class="col-lg-3" style="margin : auto 0;"><img src="{% static 'img/hospital 2.png' %}" class="img-fluid" alt="hospital_icon" style="width:35px;" /></div>
+                    <div class="col-lg-9 textxolor_aqua">All Major <br/>Specialties</div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <div class="col-lg-3" style="margin : auto 0;"><img src="{% static 'img/stethoscope 1.png' %}" class="img-fluid" alt="hospital_icon" style="width:35px;" /></div>
+                    <div class="col-lg-9 textxolor_aqua">Expert<br/> Doctors</div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-2" style="margin : auto 0;"><img src="{% static 'img/ambulance 1.png' %}" class="img-fluid" alt="hospital_icon" style="width:35px;" /></div>
+                    <div class="col-lg-9 textxolor_aqua">24x7 Emergency Care<br/> & Ambulance Service </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-3" style="margin : auto 0;"><img src="{% static 'img/handshake 1.png' %}" class="img-fluid" alt="hospital_icon" style="width:35px;" /></div>
+                    <div class="col-lg-9 textxolor_aqua">Patient Friendly<br/> Services</div>
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;background-image: url({% static 'img/family3.png' %}); background-size: contain ; padding: 150px 0;background-position:right;background-repeat: no-repeat;" ><span id="speciality"></span>
+    <div class="container">
+            
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <h3>Discover Our <br/>Multispecialty Departments</h3>
+                       <p>At Caritas Family Hospital, Kottayam, our team harnesses the wonders of modern medical science and technologies to provide highly accessible and affordable healthcare to our patients. In our endeavor to provide total patient satisfaction, we have pledged to offer specialized care for all our services from initial consultation to post-treatment follow-up rounds.</p>
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_paediatrics' %}">Paediatrics </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_generalmedicine' %}">General Medicine</a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'pulmonology' %}">Pulmonology </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_ENT' %}">ENT </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_orthopaedics' %}">Orthopaedics </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'emergency_medicine' %}">Emergency Care</a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_heart_institute' %}">Cardiology</a></p>
+                           </div>
+                            <div class="col-lg-6">
+                               <p><a class="textxolor_aqua" href="{% url 'gynaecology' %}">Gynaecology</a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_neuro' %}">Neurology </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_rheumatology' %}">Rheumatology </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'endocrinology' %}">Endocrinology </a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_gastro' %}">Gastroenterology</a></p>
+                               <p><a class="textxolor_aqua" href="{% url 'caritas_urology' %}">Urology</a></p>
+                            </div>
+                       </div>
+                       </div>
+                       <div class="col-lg-5">
+                           
+                       </div>
+                 
+             </div>   
+       
+    </div>
+</section>
+<section id="deptsections"><span id="facilities"></span>
+    <div class="container mt-5">
+    <h3 class="text-center mb-4">Cutting-Edge Facilities<br/> for Your Health</h3>
+    <div class="row">
+        <div class="col-lg-4">
+             <img src="{% static 'img/family4.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">Service Highlights</h5>
+             <ul style="width:75%;">
+                 <li>Focused geriatric care </li>
+                 <li>Diagnostics services available</li>
+                 <li>Extended clinical hours</li>
+                 <li>Caritas Family Care Van</li>
+                 <li>Health check-up packages </li>
+                 <li>WhatsApp booking </li>
+                 <li>24/7 backup care from the main Caritas Hospital</li>
+             </ul>
+        </div>
+        <div class="col-lg-4">
+             <img src="{% static 'img/family5.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">Holistic Homecare Services</h5>
+             <ul style="width:75%;">
+                 <li>Holistic Homecare Services</li>
+                 <li>Post-treatment doctor visit</li>
+                 <li>Physiotherapy</li>
+                 <li>Nursing care </li>
+                 <li>Ambulance services </li>
+                 
+             </ul>
+        </div>
+        <div class="col-lg-4">
+             <img src="{% static 'img/family6.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">Paperless Operations</h5>
+             <ul style="width:75%;">
+                 <li>Holistic Homecare Services</li>
+                 <li>Post-treatment doctor visit</li>
+                 <li>Physiotherapy</li>
+                 <li>Nursing care </li>
+                 <li>Ambulance services </li>
+             </ul>
+        </div>
+        
+    </div>
+       <div class="row mt-4">
+        <div class="col-lg-4">
+             <img src="{% static 'img/family7.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">24/7 Emergency Services</h5>
+             <ul style="width:75%;">
+                 <li>Highly proficient emergency management physicians</li>
+                 <li>24/7 emergency care unit</li>
+                 <li>24/7 ambulance service </li>
+                 
+             </ul>
+        </div>
+        <div class="col-lg-4">
+             <img src="{% static 'img/family8.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">Convenient Payment Services</h5>
+             <ul style="width:75%;">
+                 <li>Self-service kiosk  </li>
+                 <li>C pay service</li>
+                 
+             </ul>
+        </div>
+        <div class="col-lg-4">
+             <img src="{% static 'img/family9.png' %}" class="img-fluid" alt="Service Highlights" />
+             <h5 class="mt-3 mb-4">Video Consultation</h5>
+             <ul style="width:75%;">
+                 <li>Video consultation facility  </li>
+                 <li>Easily schedule appointments</li>
+                 <li>Executive Assistance for Video Consultation </li>
+                 
+              
+             </ul>
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section  style="background-color:#F4F6F6;max-width:100%;background-image: url({% static 'img/doctor-with-stethoscope-hand-hospital-background 1.png' %}); background-size: cover ; background-position:center;background-repeat: no-repeat;" >
+     <div class="container mt-5">
+         <div class="row">
+             <div class="col-lg-8">
+             </div>
+             <div class="col-lg-4 p-5" style="background-color:#C71782;opacity:80%;">
+                 <h2 style="color:#fff;">A Promise of Specialised Care at Caritas Family Hospital</h2>
+             </div>
+         </div>
+     </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Our Panel of <br/>Doctors</h3>
+            <p class="text-center">We are committed to providing the best care for all your clinical needs. That is why we get your health concerns handled by a competent, professional team of medical experts. At the Caritas Multispecialty Family Hospital, our healthcare professionals have the highest skills and qualifications in family medicine. They are here to assist you with various procedures, injuries, diseases, and wellness treatments that make up for the best healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+                       <div class="row  " >
+                           <!--
+                   {% for doctor in doctors_in_hospital %}
+                  <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                      
+                    <div class="d-flex align-items-center">
+                        <div class=" col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                            <img src="{{ doctor.image.url }}" alt="Doctor 1" class="img-fluid" />
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                            <h4>{{ doctor.name }}</h4>
+                            <h6>{{ doctor.designation }}</h6>
+                            <p class="hide_mobile">&nbsp;</p>
+                            <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2" ></i></a></p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl" ><a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                            <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i></a>
+                        </div>
+                    </div>
+                    <br/>
+                    
+                   
+                </div>
+                {% empty %}
+            <li>No doctors available</li>
+        {% endfor %}
+-->
+<h5 class="mainheading" >General Medicine</h5>
+             {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "General Medicine" %}
+             
+             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                 {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+    <!--Paediatrics -->
+        <h5 class="mainheading" >Paediatrics</h5>          
+             {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Paediatrics" %}
+             
+             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+        <!--ENT & Audiology -->
+        <h5 class="mainheading" >ENT</h5>          
+             {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "ENT & Audiology" %}
+             
+             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+           
+        <!--Orthopaedics -->   
+         <h5 class="mainheading" >Orthopaedics</h5>
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Orthopaedics" %}
+            
+             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+            <!--Rheumatology -->  
+        <h5 class="mainheading" >Rheumatology</h5>
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Rheumatology" %}
+             
+             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+        <!--Endocrinology -->  
+         <h5 class="mainheading" >Endocrinology</h5>
+        
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Endocrinology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+        
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+           <!--Oncology -->  
+        <h5 class="mainheading" >Oncology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Medical Oncology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+        <!--Dermatology -->  
+        <h5 class="mainheading" >Dermatology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Dermatology & Cosmetology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+            <!--Behavioral Science -->  
+        <h5 class="mainheading" >Behavioural Science</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Psychiatry & Psychology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+        <!--Gynaecology -->  
+        <h5 class="mainheading" >Gynaecology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Obstetrics & Gynaecology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+             <!--Gynaecology -->  
+        <h5 class="mainheading" >Neuro Medicine</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Neuro Medicine" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+        <!--General Surgery -->  
+        <h5 class="mainheading" >General Surgery</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "General Surgery" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+            
+        <!--Gastroenterology -->  
+        <h5 class="mainheading" >Gastroenterology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Gastroenterology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+    <!--Gastroenterology -->  
+        <h5 class="mainheading" >Urology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Urology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        <!--Cardiology -->  
+        <h5 class="mainheading" >Cardiology</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Cardiology & Interventional Cardiology" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+            
+         <!-- Geriatric Medicine -->
+            <h5 class="mainheading" >Geriatric Medicine</h5>
+         
+       
+           {% for doctor in doctors_in_hospital %}
+             {% if doctor.specialization == "Geriatric Medicine" %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">  
+             
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                {% if doctor.appointment_enabled %}
+                                    <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                {% else %}
+                                    <p></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+        
+    </div>
+</section>
+
+ <!-- ======= Frequently Asked Questions Section ======= -->
+  <!--
+    <section id="deptsections" style="background-color:#FAF9F9;"><span id="FAQ"></span>
+    <div class="container mt-5">
+        <h3 class="text-center">Frequently Asked Questions</h3>
+        <p class="text-center mb-5 mt-3">Answer to Conmmon Questions: Your Queries <br/>About Caritas Hospital Addressed</p>
+        <div class="accordion-wrapper" >
+           <button class="accordion" >What is a family hospital?</button>
+            <div class="panel">
+               <p>A multispeciality family hospital provides comprehensive and highly-targeted primary-care treatment to demographics ranging from infants to geriatrics.
+</p>
+                        
+            </div>
+            <hr style="width: 100%;margin:0;">
+                    
+            <button class="accordion" >What is the mission and vision of Caritas Family Hospital?</button>
+             <div class="panel">
+               <p>The mission and vision of Caritas Family Hospital are to make affordable and highly-specialized treatment accessible to people. Our mission includes providing an all-around satisfactory patient experience, from booking an appointment to the post-recovery follow-up.</p>
+                       
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion" >Who is the owner of Caritas Family Hospital?
+ </button>
+            <div class="panel">
+                <p>The Caritas Family Hospital is the outreach facility of Caritas Hospital that is owned and run by the Syro-Malabar Knanaya Catholic Archeparchy of Kottayam.
+</p>
+            </div>
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion" >How many beds does Caritas Family Hospital have?
+ </button>
+            <div class="panel">
+                <p>Currently, Caritas Family Hospital has 40 IP beds, including ICU beds fitted with advanced life-support equipment.
+</p>
+            </div>
+            
+             <hr style="width: 100%;margin:0;">
+            <button class="accordion" >How to book an appointment at Caritas Family Hospital?
+
+ </button>
+            <div class="panel">
+                <p>You can book an appointment via WhatsApp at 0481-2570100
+</p>
+            </div>
+             
+        </div>
+         <div class="text-center">
+        <a style="color: #c71782 !important;font-weight: 700;" href="#">View All <i class="bi bi-chevron-right "></i></a>
+        </div>
+    </div>
+</section>
+ <!-- End Frequently Asked Questions Section -->
+-->
+<section id="deptsections" ><span id="contactlocation"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-5" style="margin:auto 0;">
+                <h3 class="mb-4">Contact & Location</h3>
+                <p><b>Caritas Family Hospital</b></p>
+                <p>Caritas Hospital, Karipal Building, Vadavathoor P.O,<br/> Kalathipady,Kottayam - 686018</p>
+                <p>&nbsp;</p>
+                <p>Appointments/Enquiries : <a style="color:#0072BC;" href="tel:04812570100">0481 2570100</a></p>
+            </div>
+            <div class="col-lg-7">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109481.95213072303!2d76.5059094207597!3d9.641594684816656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062dac0baa1075%3A0x8371d3d5f44d580c!2sCaritas%20Family%20Hospital!5e0!3m2!1sen!2sin!4v1676394394541!5m2!1sen!2sin" width="595" height="370" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+         </div>
+    </div>
+</section>
+
+{% endblock%}

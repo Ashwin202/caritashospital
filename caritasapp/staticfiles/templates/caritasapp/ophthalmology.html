@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Ophthalmology</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Eye Hospital in Kerala</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/optamology1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+
+                      {% include 'caritasapp/enquiry_form_template.html' %}
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Facilities Offered</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+               
+            </ul>
+
+        </div>
+       </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Dedicated to the Tiniest Warriors: Where Hope Meets Healing.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/optamology2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;"> The department of Ophthalmology provides both basic and specialized eye care services for patients. We have a team of trained and experienced consultants, capable of offering specialized treatment for a range of eye problems. The department also has state-of-the-art equipment and technical facilities to provide quality treatment. These include argon laser for treatment of diabetic eye diseases and computerized visual field analyzers for assessment of glaucoma. The consultants are also trained in optometry and they help in the prescription of glasses for both adults and children. </p>
+                   <p style="font-weight:500;">The department is equipped with a world class theatre facility and is specialized in painless, no-injection cataract surgery (phacoemulsification). The Department also specializes in adult and pediatric squint evaluation and surgery.The other specialized services provided by the Department include pediatric ophthalmology, glaucoma diseases and treatment and diabetic retinopathy treatment.</p>
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container my-5">
+            
+       <h3 class="text-center pb-4">Facilities Offered</h3>
+       <div class="row justify-content-center" style="margin:0 auto;width:80%;">
+            <div class="col-lg-6" >
+             <strong>Cataract & IOL Implantation Services</strong>
+               <ul>
+               <li> Operating Microscope Carl Zeiss (Germany)</li>
+               <li> Sovereign phacoemulsification system with White Star (USA)</li>
+               <li> Biometry-Sonomed (USA) F</li>
+               <li> Fully automated surgical chair</li>
+               <li> Keratometer</li>
+               </ul>
+               
+              <strong>General Ophthalmology</strong>
+              <ul>
+                  
+                <li>Goldman Applanation Tonometer</li>
+                <li>Ophthalmic examination units</li>
+                <li>Slit Lamp Biomicroscope</li>
+                <li>Autorefractometer (Canon)</li>
+                <li>Indirect Ophthalmoscopes (Heine)</li>
+              </ul>
+
+            </div>
+            
+            <div class="col-lg-6" >
+
+                
+                <strong>Cataract surgery</strong>
+
+                  <ul>
+                      <li> Topical phacoemulsification (Painless cataract surgery without injection)</li>
+                      <li> Toric intraocular lenses (Correcting astigmatism)</li>
+                      <li>  Multifocal intraocular lens (for distance or near vision)</li>
+                      <li> Pediatric cataract surgery</li>
+                   </ul>
+                <strong>Squint correction surgeries</strong>
+                    <ul>
+                    <li>Horizontal squint surgery</li>
+                    <li>Vertical squint surgery</li>
+                    <li>Pediatric squint surgery</li>
+                    <li>Adult squint surgery</li>
+                    <li>Complicated squint surgery</li>
+                    </ul>
+                       
+                  
+            </div>
+          </div>
+                 
+        </div>
+      
+
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        <div class="row  " >
+                     <h5 style="color:#c71782;">Ophthalmology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Ophthalmology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+             {% if posts %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            {% if post.department.name == "Ophthalmology" %}
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+         {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock%}

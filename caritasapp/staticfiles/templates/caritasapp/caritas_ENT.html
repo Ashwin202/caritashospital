@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Department of ENT & Audiology </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Best ENT Hospital in Kerala</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/ENT 1.png' %}" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a></li>
+                <li><a href="#doctors">Doctors</a><li>
+                
+            </ul>
+
+        </div></div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Harmonizing Sound, Enhancing Lives:<br/> Your Ear and Throat Health, Our Priority</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/ENT 2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 ">
+                   <p> The Department of Otorhinolaryngology (ENT) at the Caritas Hospital offers comprehensive care for all disorders related to the ear, nose, and throat. The Department is one of the best centers in Central Travancore providing: </p>
+                   <ul>
+                    <li>General ENT surgeries including septoplasty, SMR, tonsillectomy, adenoidectomy, pre-auricular cyst excision, Caldwell-luc, dental cyst enucleation and cosmetic septorhinoplasty </li>
+                    <li>Micro ear surgeries including tympanoplasty, mastoidectomy, modified radical mastoidectomy</li>
+                    <li>Endoscopic nasal surgery (FESS) for chronic sinusitis, nasal polyp, DCR, benign tumors of nerve & nasopharynx </li>
+                    <li>Micro-laryngeal surgeries for vocal cord polyp and vocal cord nodules, both benign and malignant </li>
+                    <li>Management of all head & neck pathologies including benign and malignant tumors and abscess drainage </li>
+                    <li>Therapeutic & diagnostic procedures for larynx & esophagus including foreign body removal</li>
+                    <li>OPD consultation (available on all working days including Saturdays)</li>
+                    <li> Nasal endoscopy & video-laryngoscopy done as outpatient procedures </li>
+                    <li>Tests for hearing loss & giddiness( available on all working days)</li>
+                    <li>Assessment, diagnosis and management of speech & language delay, done in Speech Therapy Department</li>
+                   </ul>
+            </div>
+        </div>
+        <h6>Audiology</h6>
+        <p> Audiology and speech –language pathology is designed to provide for the development of advanced knowledge and skills related to the professions that specialize in communication disorders, speech language pathology, hearing and speech and language science.</p>
+        <p>Audiologists treat those with hearing loss and proactively prevent damage. Employing various testing strategies, audiologists aim to determine whether someone has normal sensitivity to sounds. If hearing loss is identified, audiologists determine which portions of hearing are affected, to what degree and where the lesion causing the hearing loss is found. In addition to diagnostic audiologic and vestibular pathologies , audiologists can also specialize in rehabilitation of tinnitus, hyperacusis, auditory processing disordes, cochlear implant use and hearing aid use. </p>
+        <p>The scope of practice as determined by the American speech-language-hearing association for these professions; multicultural service delivery for individuals with communication disorders; practice settings; employment opportunities; and the use of technology in management and treatment of communication disorders.</p>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container my-5">
+        <h3 class="text-center">Treatment and Procedures</h3>
+        <p class="text-center mb-5 mt-3">The services offered by audiologist and speech-language pathologist are </p>
+        <div class="row justify-content-center" style="width:80%;margin:0 auto;" >
+           <div class="col-lg-6">
+            <ol>
+                <li>Audiometry</li>
+                <li>Impedence audiometry</li>
+                <li>OAE</li>
+                <li>BERA</li>
+                <li>VEMP</li>
+                <li>Speech consultation</li>
+                <li>Speech therapy for
+                    <ul>
+                        <li>Delayed speech and language development</li>
+                        <li>DSL with hearing loss</li>
+                        <li>DSL with intellectual disability</li>
+                        <li>DSL with Autism</li>
+                        <li>DSL with cerebral palsy</li>
+                        <li>Misarticulation</li>
+                        <li>Cleft lip and palate</li>
+                        <li>Stuttering</li>
+                        <li>Aphasia</li>
+                        <li>Dysarthria|</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-6">
+            <ol start="8">
+                <li>Dysphagia (Swallowing) Assessment and Management</li>
+                <li>Voice therapy</li>
+                <li>Hearing aid trail and fitting</li>
+                <li>TRT ; Tinnitus re-training Therapy</li>
+                <li>Ear molds</li>
+                <li>Ear plugs</li>
+             </ol>
+        </div>     
+    </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row  " >
+                    <h5 class="mainheading">ENT & Audiology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "ENT & Audiology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+                
+           
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+             {% if posts %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            {% if post.department.name == "ENT & Audiology" %}
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+         {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock%}

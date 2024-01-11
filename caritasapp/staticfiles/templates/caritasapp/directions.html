@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Directions to Reach </h1>
+            <h2 style="color: #c71782; font-weight: 300;"> Navigating to Caritas Hospital Kottayam</h2>
+        </div>
+        <div class="row justify-content-center pt-5" >
+            <div class="col-lg-1" style="margin: auto 0;">
+                <img src="{% static 'img/plane.png' %}" class="img-fluid" alt="plane" >
+            </div>
+            <div class="col-lg-11 px-4">
+                <p><b>Cochin International Airport (COK): </b></p>
+                <p>Located approximately 80 kilometers (about 50 miles) from Caritas Hospital, Cochin International Airport is one of the nearest major airports. It offers both domestic and international flights.</p>
+                <p class="mt-4"><b>Trivandrum International Airport (TRV): </b></p>
+                <p>Trivandrum International Airport is approximately 160 kilometers (about 99 miles) away from Caritas Hospital. It is another major airport in the region, providing domestic and international air travel options.</p>
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;" >
+        <div class="row justify-content-center py-5" >
+            <div class="col-lg-1" style="margin: auto 0;">
+                <img src="{% static 'img/train.png' %}" class="img-fluid" alt="plane" >
+            </div>
+            <div class="col-lg-11 px-3 ">
+                <p><b>Kottayam Railway Station:  </b></p>
+                <p>Kottayam Railway Station is the primary railway station in Kottayam, located in the heart of the city. It offers rail connectivity to various parts of India and is the closest railway station to Caritas Hospital. </p>
+                <p class="mt-4"><b>Ettumanoor Railway Station: </b></p>
+                <p>Ettumanoor Railway Station is another nearby railway station, located approximately 4.8 kilometers (about 3 miles) away from Caritas Hospital. It serves as a convenient option for travelers. </p>
+            </div>
+        </div>
+        <hr style="border:1px solid #C71782;opacity:100%;" >
+        <div class="row justify-content-center py-5" >
+            <div class="col-lg-1" style="margin: auto 0;">
+                <img src="{% static 'img/bus.png' %}" class="img-fluid" alt="plane" >
+            </div>
+            <div class="col-lg-11 px-3">
+                <p><b>Kottayam Bus Stand:  </b></p>
+                <p>The Kottayam Bus Stand is the main bus station in Kottayam and is located in the city center, making it convenient for travelers. Caritas Hospital is accessible via local transportation options from this bus stand.  </p>
+                <p class="mt-4"><b> KSRTC Bus Stand: </b></p>
+                <p>The Kerala State Road Transport Corporation (KSRTC) Bus Stand in Kottayam serves as a hub for various state and inter-state buses. It's located in close proximity to Caritas Hospital. </p>
+            </div>
+        </div>
+        
+       
+    </div>
+</section>
+
+<section>
+    
+    <div class="container">
+        <h4 class="mb-5"><b>Google Map Location</b></h4>
+        <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.4144083857113!2d76.54630901083584!3d9.645586678992442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07d357e35d61ad%3A0x27680d9b2d78f03!2sCaritas%20Hospital%20-%20Multispeciality%20Hospital%2C%20Kottayam!5e0!3m2!1sen!2sin!4v1698934618083!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock%}

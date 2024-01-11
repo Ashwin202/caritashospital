@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Second Opinion</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Timely Insights, Informed Decision</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/second.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Caritas Second Opinion: Your Path to Informed Choices, Delivered in 24 Hours.</h3>
+            <p>&nbsp;</p>
+            <p>This is a special paid service provided by Caritas Hospital. Information regarding the second opinion will be delivered within 24 hours after consulting with the respective department/consultant. 
+            </div>
+    
+    <div class="row">
+                <div class="col-lg-8" >
+                     
+             <form action="your_action_url_here" method="POST"  class="custom-form">
+    <div class="secondopinion row mb-2">
+        
+        <div class="col-sm-6 my-2">
+            <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="First name">
+        </div>
+
+        
+        <div class="col-sm-6 my-2">
+            <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Last name">
+        </div>
+    </div>
+
+    <div class="secondopinion row mb-2">
+        
+        <div class="col-sm-6 my-2">
+            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+        </div>
+
+        
+        <div class="col-sm-6 my-2">
+            <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
+        </div>
+    </div>
+    <div class="secondopinion row mb-2">
+       
+        <div class="col-sm-12 my-2">
+            <input type="email" id="email" name="email" class="form-control" required placeholder="Select Department">
+        </div>
+
+        
+        <div class="col-sm-12 my-2">
+            <input type="text" id="address" name="address" class="form-control" required placeholder="Address">
+        </div>
+    </div>
+    <div class="col-sm-12 my-2">
+            <textarea id="query" name="query" class="form-control" required placeholder="Please Mention Your Query" rows="6" cols="40" style="border-bottom:1px solid #000;"></textarea>
+
+       
+    </div>
+    <div class="col-sm-12 my-2">
+    <label>Enter The Details of Payment Made Via Our Online Portal</label>
+    </div>
+
+
+    <div class="secondopinion row mt-4">
+        <div class="col-sm-12">
+            <button type="submit" class="" style
+            ="border:none; background:none;">Submit Now ></button>
+        </div>
+    </div>
+</form>
+                                  
+                </div>
+                <div class="col-lg-4 p-5" style="background:#FAF9F9;" >
+                  <h6>Availability of Service</h6>
+                  <p>This service is available only from  Monday to Friday 10.00 AM to 4.00 PM. </p>
+                  <h6>How it Works?</h6>
+                  <p>To access our Second Opinion service at Caritas Hospital, follow these simple steps to make your payment:</p>
+                  <ol>
+                      <li class="mb-4"><b>Visit Our Online Payment Portal:</b> Start by visiting our secure online payment portal. </li>
+                      <li class="mb-4"><b>Select "Second Opinion":</b> In the portal, choose the designated "Second Opinion" section for payment processing.</li>
+                      <li class="mb-4"><b>Payment Amount:</b>Make a payment of Rs. 500 for the Second Opinion service.</li>
+                      <li class="mb-4"><b>Furnish Your Details:</b> After completing the payment, please provide the necessary details in the form alongside. </li>
+                  </ol>
+
+
+ 
+
+
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+
+<section >
+    <div class="container ">
+          
+            <div class="row justify-content-center " style="width:90%;margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a></p>
+                        </div>
+                        <div class="ml-4" style="margin-left: 20%;">
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a style="color:#C71782;" href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'blood' %}">Blood Bank</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a href="{% url 'blood' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#C71782 !important;" href="{% url 'secondopinion' %}">Second Opinion</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a style="color:#C71782;" href="{% url 'secondopinion' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'support' %}">Caritas Support Team</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                               <a  href="{% url 'support' %}">     <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'physiotherapy' %}">Physiotherapy</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                   <a href="{% url 'physiotherapy' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'homecare' %}">Caritas Home Care</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                               <a  href="{% url 'homecare' %}">     <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+ 
+
+{% endblock%}

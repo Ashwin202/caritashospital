@@ -1,0 +1,843 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<style>
+#header {
+  
+  border-bottom:none !important; 
+ 
+
+}
+</style>
+
+ <!-- ======= Hero Section ======= -->
+  <!-- Slider as Background -->
+ <section class="hide_mobile">
+    <!-- Slider as Background with Images and Content -->
+        <div class="slider-container">
+      <div class="slides" style=" display: flex;
+      transition: transform 0.5s ease-in-out;">
+       
+        {% for image in desktop_images %}
+         
+          <div class="slide" style="background-image: url('{{ image.image.url }}'); ">
+            <div class="slide-content" >
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <h1 style="color:#fff;">{{image.title| safe }}</h1>
+                         <!-- 
+                          
+                        <h1><span style="background: #C61681; background: linear-gradient(to right, #C61681 66%, #106EEA 97%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size:50px;">Transforming </span><span style="color:#106eea;font-size:50px;">Lives</span><br/><span style="background: #C61681; background: linear-gradient(to right, #C61681 66%, #106EEA 97%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size:50px">Enriching</span> <span style="background: #C61681; background: linear-gradient(to right, #C61681 0%, #106EEA 7%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size:50px;">Health.</span></h1>
+                        -->
+                        <br/><br/>
+                        
+                        
+                        <div class="d-flex ">
+                           <a style="color:#fff !important;margin-top:10px;" href="/doctors/" >Find a Doctor <i class="bi bi-chevron-right"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank" > <button type="button" id="bannerbtn" style="background-color:#fff;color:#0072bc;">Book An Appointment</button></a>
+                        </div>
+                        <br/>
+                        <br/>
+                        <h6 style="color:#fff;">{{image.description| safe }}</h6>
+                      </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        
+        
+      </div>
+       <!-- Previous and Next arrows -->
+      <i class="arrow prev fas fa-chevron-left" onclick="prevSlide()"></i>
+      <i class="arrow next fas fa-chevron-right" onclick="nextSlide()"></i>
+    </div>
+    
+</section>
+
+<section class="hide_desktop">
+   <div class="slider-container ">
+        <div class="slides" style="display: flex; transition: transform 0.5s ease-in-out;">
+            
+                {% for img in mobile_images %}
+               
+                    <div class="slide" style="background-image: url('{{ img.image.url }}');">
+                        <!-- Slide content -->
+                      <div class="slide-content d-flex flex-column justify-content-end align-items-center h-100">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3 style="color:#fff;">{{ img.title|safe }}</h3>
+                                        <br/><br/>
+                                        <div class="d-md-flex flex-md-column">
+                                            <a style="color:#fff !important;margin-top:10px;" href="/doctors/">Find a Doctor <i class="bi bi-chevron-right"></i></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank"><button type="button" id="bannerbtn">Book An Appointment</button></a>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                {% endfor %}
+           
+        </div>
+      
+        <i class="arrow prev fas fa-chevron-left" onclick="prevSlidemobile()"></i>
+        <i class="arrow next fas fa-chevron-right" onclick="nextSlidemobile()"></i>
+    </div> 
+    
+</section>
+
+ <!--
+ <section id="banner-section" class="banner-section homebanner" >
+  <div class="container" >
+    <h1><span style="background: #C61681;
+    background: linear-gradient(to right, #C61681 66%, #106EEA 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">Transforming </span><span style="color:#106eea;">Lives</span><br/><span style="background: #C61681;
+    background: linear-gradient(to right, #C61681 66%, #106EEA 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">Enriching</span> <span style="background: #C61681;
+background: linear-gradient(to right, #C61681 0%, #106EEA 7%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;">Health.</span></h1>
+    <br/>
+    
+    <div class="d-flex">
+      <a style="color:#C71782 !important;margin-top:10px;" href="/doctors/" >Find a Doctor <i class="bi bi-chevron-right"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank" > <button type="button" id="bannerbtn">Book An Appointment</button></a>
+    </div>
+    <br/>
+    <br/>
+    <p style="font-weight:600;">Caritas Hospital embarks on a profound journey to redefine healthcare.<br/>With unwavering dedication, we seamlessly blend compassionate care and <br/>innovative practices, becoming architects of lasting transformations in every life we touch.</p>
+  </div>
+</section>
+-->
+
+<!-- End Hero -->
+
+  <main id="main">
+    <!-- Services-->
+    <section class="services align-items-center">
+      <div class="container mt-5 ">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <div class="icon mx-3">
+                <i class="bi bi-camera-video"></i>
+              </div>
+              <div>
+                <h6><a href="{% url 'video_consultation' %}">Video Consultation</a></h6>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-4">
+            <div class="d-flex align-items-center">
+              <div class="icon mx-3">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <div>
+                <h6><a href="{% url 'health_package' %}">Health Checkup Packages</a></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <div class="icon mx-3">
+                <i class="bi bi-people"></i>
+              </div>
+              <div>
+                <h6><a href="{% url 'visitors_guide' %}">Visitor Guides</a></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="d-flex align-items-center">
+              <div class="icon mx-3">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <div>
+                <h6><a href="{% url 'career' %}">Careers</a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--End of Services-->
+
+    <hr style="width:85%;margin:0 auto;">
+    <section>
+    <!--Search box-->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <h5 style="font-weight:600;">Find a Doctor/<br/>Search Specialties</h5>
+        </div>
+        <div class="col-md-8">
+           
+               <form id="search-form" class="form-inline" role="form" method="POST" action="{% url 'search_results' %}">
+                    {% csrf_token %}
+                    <div class="input-group rounded-search" style=" border-radius: 25px;box-shadow:0px 0px 4px 0px rgba(0,0,0,0.25); overflow: hidden;">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn search-btn" data-target="#search-form" name="q" style="border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        <input type="text" name="search" class="form-control search-form" placeholder="Search..." style="border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;">
+                    </div>
+                </form>
+
+        </div>
+    </div>
+
+<!--
+ <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search_results' %}">
+        {% csrf_token %}
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+</div>
+<!-- Search results container 
+    <div class="container mt-5">
+        <div id="search-results" class="row "></div>
+    </div>
+    -->
+  </section>  
+<!--    End of search box-->
+
+ <!-- ======= About Section ======= -->
+ <section id="about" class="about ">
+  <div class="container1" style="margin:0 !impotant;">
+
+    <div class="section-title">
+      <h3 class="mb-3">Centres of Excellenceee</h3>
+      <h6>Discovering exceptional care through our specialized<br/> centres of excellence.</h6>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-4" >
+          <img src="{% static 'img/Centre of Excellence (1).png' %}" class="img-fluid" alt="doctor" style="width:600;height:auto;">
+      </div>
+      <div class="col-lg-8 pt-4 pt-lg-0 content d-flex flex-column justify-content-center hide_mobile" >
+          <div class="row coelist">
+              <div class="col-lg-5 px-4" >
+                  <a href="{% url 'caritas_cancer_institute' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Caritas Cancer Institute<i class="bi bi-chevron-right"></i></a>
+                <a href="{% url 'caritas_heart_institute' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Caritas Heart Institute <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'caritas_neuro' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Caritas Neuro Sciences <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'criticalcare' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Critical Care Medicine <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'dermatology' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon" >Dermatology & Cosmetology <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'emergency_medicine' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Emergency Medicine & Trauma Care<i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'caritas_gastro' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Gastro Sciences <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'caritas_generalmedicine' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon" >General Medicine <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'generalsurgery' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">General, Minimal Access and Bariatric Surgery (General Surgery) <i class="bi bi-chevron-right ms-2"></i></a>
+               
+            
+              </div>
+              <div class="col-lg-1"></div>
+              <div class="col-lg-5 px-4 ">
+                 <a href="{% url 'caritas_nephrology' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Nephrology & Renal Transplant <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'gynaecology' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Obstetrics, Gynaecology and Fetal Medicine<i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'caritas_orthopaedics' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Orthopaedics, Joint Replacement <br/>and Arthroscopy<i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'caritas_paediatrics' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Paediatrics & Paediatrics Surgery <i class="bi bi-chevron-right ms-2"></i></a>
+                <a href="{% url 'physicalmedicine' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Physical Medicine and Rehabilitation<i class="bi bi-chevron-right ms-2"></i></a>
+                
+                <a href="{% url 'caritas_rheumatology' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Rheumatology<i class="bi bi-chevron-right ms-2"></i></a>
+                
+                <a href="{% url 'caritas_urology' %}" class="d-flex justify-content-between align-items-center mb-4 link-with-icon">Urology<i class="bi bi-chevron-right ms-2"></i></a>
+               
+                
+              </div>
+              <br/>
+              <br/>
+              
+             <!-- <p class="hide_desktop mt-5 text-center"><a style="color:#C71782 !important;" href="#">View All Specialities <i class="bi bi-chevron-right ms-2"></i></a></p>
+              <p class="hide_mobile mt-5"><a style="color:#C71782 !important;" href="#">View All Specialities <i class="bi bi-chevron-right ms-2"></i></a></p>
+              <p>&nbsp;</p>-->
+          </div>
+              <div class="row coelistmob pt-4">
+              <div class="col-lg-5 px-5" >
+                <p><a href="{% url 'caritas_cancer_institute' %}" >Caritas Cancer Institute<i class="bi bi-chevron-right mx-3"></i></a></p>
+               <p><a href="{% url 'caritas_heart_institute' %}" >Caritas Heart Institute <i class="bi bi-chevron-right  mx-3"></i></a></p>
+                <p><a href="{% url 'caritas_neuro' %}" >Caritas Neuro Sciences <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'criticalcare' %}" >Critical Care Medicine <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'dermatology' %}" >Dermatology & Cosmetology <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'emergency_medicine' %}" >Emergency Medicine & Trauma Care<i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'caritas_gastro' %}" >Gastro Sciences <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'caritas_generalmedicine' %}"  >General Medicine <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'generalsurgery' %}" >General, Minimal Access and Bariatric Surgery (General Surgery) <i class="bi bi-chevron-right mx-4"></i></a></p>
+               
+            
+              </div>
+              <div class="col-lg-1"></div>
+              <div class="col-lg-5 px-5 mt-3 ">
+                 <p><a href="{% url 'caritas_nephrology' %}" >Nephrology & Renal Transplant <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'gynaecology' %}" >Obstetrics, Gynaecology and Fetal Medicine<i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'caritas_orthopaedics' %}" >Orthopaedics, Joint Replacement <br/>and Arthroscopy<i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'caritas_paediatrics' %}" >Paediatrics & Paediatrics Surgery <i class="bi bi-chevron-right mx-3"></i></a></p>
+                <p><a href="{% url 'physicalmedicine' %}">Physical Medicine and Rehabilitation<i class="bi bi-chevron-right mx-3"></i></a></p>
+                
+                <p><a href="{% url 'caritas_rheumatology' %}" >Rheumatology<i class="bi bi-chevron-right mx-3"></i></a></p>
+                
+                <p><a href="{% url 'caritas_urology' %}" >Urology<i class="bi bi-chevron-right mx-3"></i></a></p>
+               
+                
+              </div>
+              <br/>
+              <br/>
+              
+             <!-- <p class="hide_desktop mt-5 text-center"><a style="color:#C71782 !important;" href="#">View All Specialities <i class="bi bi-chevron-right ms-2"></i></a></p>
+              <p class="hide_mobile mt-5"><a style="color:#C71782 !important;" href="#">View All Specialities <i class="bi bi-chevron-right ms-2"></i></a></p>
+              <p>&nbsp;</p>-->
+          </div>
+         
+      </div>
+      
+      
+      
+  </div>
+  
+
+  </div>
+</section>
+<!-- End About Section -->
+
+
+<section id="future" style="background-color:#F4F6F6;padding-bottom:0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row mt-5">
+                    <h3 class="my-3">Future Starts with the FIRST</h3>
+                    <span style="font-size:14px;">Being FIRST is an honour. We have made our ‘First’ impressions in care that took us <br/> further in promoting good health and happiness for all.</span>
+                    <div class="col-lg-5 mt-5">
+                        <ul class="custom-list">
+                            <li class="mx-2 my-3">Kerala’s First Laser Angioplasty System </li>
+                            <li class="mx-2 my-3">India's First Telemedic AI ED on Wheels </li>
+                            <li class="mx-2 my-3">Kerala's First Hospital to Implement Bharat Bill Payment System</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5 mt-5">
+                        <ul class="custom-list">
+                            <li class="mx-2 my-3">Kerala’s First Great Place To Work-Certified Hospital</li>
+                            <li class="mx-2 my-3">Kerala’s First TrueBeam with HyperArc Technology</li>
+                            <li class="mx-2 my-3">Kerala’s First 384-Slice Diagnostic Cardiology Dual Energy RT-CT Scan Machine</li>
+                            
+                        </ul>
+                    </div>
+                    <a style="color:#C71782 !important;" href="{% url 'achievements' %}">View All<i class="bi bi-chevron-right ms-2"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <img src="{% static 'img/DIARY-INNER-PAGES_PRINTFILE 1.png' %}" alt="future start with first" style="height:500px;" />
+            </div>
+            
+
+        </div>
+    
+ </div>
+</section>
+
+<!--bannersection-->
+<section class="full-width-bg hide_mobile " style="background-image: url({% static 'img/Homecare-01.jpg' %}); background-size: cover; color: white; background-position: center;background-repeat:no-repeat;padding-bottom: 100px;"
+ >
+  <div class="container mb-5" >
+   
+      <div class="row justify-content-center">
+        <div class="col" style=" padding-left: 100px;padding-top:200px;margin-bottom:30px; ">
+        
+          <h2>
+            Caritas Home Care:<br/>
+            Rest Easy, We've Got Your<br/> Health Covered.
+          </h2>
+          <br/>
+          <a style="color:#fff !important;margin-top: 10px;" href="{% url 'homecare' %}">Read More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!--End of banner -->
+
+<!--mobile bannersection-->
+<section class="full-width-bg hide_desktop" style="background-image: url({% static 'img/Homecaremobile-01.jpg' %}); background-size: cover; color: white; background-position: center;background-repeat:no-repeat;padding-bottom: 50px;"
+ >
+  <div class="container mb-5" >
+   
+      <div class="row justify-content-center">
+        <div class="col" style=" padding-left: 8%;padding-top:50px;margin-bottom:30px; padding-bottom:80px;">
+        
+          <span style="font-size:20px;font-weight:600;line-height:1.2;">
+            Caritas Home Care:<br/>
+            Rest Easy, We've Got Your<br/> Health Covered.
+          </span>
+          <br/><br/>
+          <a style="color:#fff !important;margin-top: 10px;" href="{% url 'homecare' %}">Read More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a>
+          <br/><br/>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!--End of banner -->
+
+<!--Tab-->
+<section id="insight_tab" style="background-color:#F4F6F6;" class="pt-5">
+<div class="container" >
+  <div class="row justify-content-center my-5">
+    <div class="col-lg-8 ">
+      <h3>Caritas Insights</h3>
+      <div class="row">
+        <div class="col-lg-4">
+          <p>Discover What's happening at Caritas</p>
+        </div>
+        <div class="col-lg-8 px-0">
+          <hr style="width:100%;">
+        </div>
+
+      </div>
+    </div>
+ 
+    <div class="col-lg-4 px-0">
+      <ul class="nav nav-tabs pt-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">News & Events</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Articles to Read</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">Videos</button>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+
+
+
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+          <div class="row justify-content-center">
+              
+    {% for post in posts %}
+    {% if post.category.title == "News & Events" %}  <!-- Filter posts by category title -->
+    <div class="col-lg-12">
+        <div class="post">
+            <div class="row align-items-center mx-4">
+                <div class="col-lg-11">
+                    <h6> <a href="{% url 'detail' post.slug %}">{{ post.title }}</a></h6>
+                </div>
+                <div class="col-lg-1">
+                    <a href="{% url 'detail' post.slug %}">
+                        <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                    </a>
+                </div>
+            </div>
+            <hr style="width: 95%; margin: 30px auto;">
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+              <br/>
+              <br/>
+              <p ><a class="mx-4 mt-5" href="{% url 'news_events' %}" style="color:#C71782 !important;">Read All News & Events <i class="bi bi-chevron-right ms-2"></i></a></p>
+
+          </div>
+          
+      </div>
+      
+      
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+         
+    {% for post in posts %}
+    {% if post.category.title == "Articles" %}  <!-- Filter posts by category title -->
+    <div class="col-lg-12">
+        <div class="post">
+            <div class="row align-items-center mx-4">
+                <div class="col-lg-11">
+                  <a href="{% url 'detail' post.slug %}">  <h6>  {{ post.title }} </h6></a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="{% url 'detail' post.slug %}">
+                        <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                    </a>
+                </div>
+            </div>
+            <hr style="width: 95%; margin: 30px auto;">
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <br/>
+              <br/>
+              <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#C71782 !important;">Read Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+          <div class="video-list">
+                    <div class="row justify-content-center">
+            {% for testimonial in testimonials|slice:":3" %}
+                <div class="col-lg-4  my-3">
+                    <h5>{{ testimonial.title }}</h5>
+                    <!-- Video iframe directly embedded -->
+                 
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="380" height="250" class="videobox embed-responsive-item" src="https://www.youtube.com/embed/{{testimonial.youtube_id }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <p>&nbsp;</p>
+            <p style="text-align:center;"><a style="color:#C71782 !important;"  href="{% url 'testimonials' %}" >View All &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+</section>
+<!--end tab-->
+
+
+<!--Card-->
+<section id="card">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4 py-5 px-4">
+         <h3 class="card-title">Health Checkup <br/>Packages</h3>
+        <p class="card-text">Our health checkup packages are thoughtfully crafted to provide you with a holistic assessment of your health, enabling early detection of potential concerns and proactive management.</p>
+        <p><a style="color:#C71782 !important;" href="{% url 'health_package' %}">View All Packages &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+      </div>
+        
+      <div class="col-md-4" style="background-image: url({% static 'img/organ_transplant.jpg' %}); background-size: cover; ">
+        
+      </div>
+      <div class="col-md-4 py-5 px-4">
+        <h3 class="card-title">Caritas <br/>Pastoral Care</h3>
+       <p class="card-text">Provides spiritual, psychological assistance and emotional support to the patients and to their dear ones if needed, by which it contributes to the holistic health program of the hospital, irrespective of their caste, creed and religion.</p>
+       <p><a style="color:#C71782 !important;" href="{% url 'pastoralcare' %}">Know More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 " style="background-image: url({% static 'img/caritas_support_team.png' %}); background-size: cover; ">
+        
+      </div>
+      <div class="col-md-4 py-5 px-4">
+        <h3 class="card-title">Caritas <br/>Organ Transplant</h3>
+       <p class="card-text">Caritas Hospital & Institute of Health Sciences stands as a licensed multi-organ transplantation center, boasting both deceased and live donor programs, led by an exceptional team of doctors at the forefront of the Caritas Transplant Programme.</p>
+       <p><a style="color:#C71782 !important;" href="{% url 'organ' %}">Know More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+     </div>
+     <div class="col-md-4" style="background-image: url({% static 'img/Pastoral Care.png' %}); background-size: cover; ">
+      
+    </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!--End of Card-->
+
+    
+
+    <!--Our Hospitals-->
+    <section class="pb-0">
+      <div class="container px-5 py-5"  style="background-color:#F4F6F6;border-radius:25px;">
+        <div class="row justify-content-center ">
+          <h3 class="mt-5 mb-3">Our Hospitals</h3>
+          <p>Discover our network of exceptional hospitals, <br/>each committed to providing comprehensive healthcare with expertise and compassion.</p>
+        </div>
+        <div class="box-row mt-4">
+          <div class="box-container ">
+            <img src="{% static 'img/family hospital.jpg' %}" alt="family hospital" class="box-image">
+            <div class="box-content">
+              <h5>Caritas Family Hospital</h5>
+              <span style="font-size:14px;">Karipal Building, Vadavathoor P.O<br/>Kalathipady, Kottayam, Kerala - 686018</span>
+              <h6 class="mt-3">0481 2570100</h6>
+              <br/>
+              <p><a style="color:#C71782 !important;" href="{% url 'family' %}">Know More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+            </div>
+          </div>
+      
+          <div class="box-container">
+            <img src="{% static 'img/kmm hospital.jpg' %}" alt="kmm hospital" class="box-image">
+            <div class="box-content">
+              <h5>Caritas KMM Hospital</h5>
+              <span style="font-size:14px;">Thiruvathukkal Rd, Puthenangady<br/> Kottayam, Kerala - 686001</span>
+              <h6 class="mt-3">0481 2580047</h6>
+              <br/>
+              <p><a style="color:#C71782 !important;" href="{% url 'caritaskkm' %}">Know More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+            </div>
+          </div>
+      
+          <div class="box-container">
+            <img src="{% static 'img/hdp hospital.jpg' %}" alt="hdp hospital" class="box-image">
+            <div class="box-content">
+              <h5>Caritas HDP Hospital</h5>
+              <span style="font-size:14px;">Kaipuzha, Kottayam,<br/> Kerala - 686602</span>
+              <h6 class="mt-3">0481 2711418</h6>
+              <br/>
+              <p><a style="color:#C71782 !important;" href="{% url 'caritashdp' %}">Know More &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--End of Our Hospitals-->
+    
+<!-- ======= Counts Section ======= -->
+<section id="counts" class="counts">
+  <div class="container" >
+    <div class="row justify-content-center">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="count-box">
+          <p>
+            <span data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+            <span class="plus">+</span>
+          </p>
+          <p>Departments</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="count-box">
+          <p>
+            <span data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+            <span class="plus">+</span>
+          </p>
+          <p>Expert Doctors</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="count-box">
+          <p>
+            <span data-purecounter-end="3000" data-purecounter-duration="1" class="purecounter"></span>
+            <span class="plus">+</span>
+          </p>
+          <p>Dedicated Professionals</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="count-box">
+          <p>
+            <span data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+            <span class="plus">+</span>
+          </p>
+          <p>Medical Services</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- End Counts Section -->
+
+<!--Voice of Our Patients-->
+
+<section style="background-color:#F4F6F6;">
+    <div class="container mt-5">
+        <div class="row justify-content-center text-center">
+              <h3>Voices of Our Patients</h3>
+              <p>Discover the heartfelt stories and experiences shared by our valued patients</p>
+              <p>&nbsp;</p>
+        </div>
+        <div class="row justify-content-center">
+            {% for testimonial in testimonials|slice:":3" %}
+                <div class="col-lg-4 my-3">
+                    
+                    <!-- Video iframe directly embedded -->
+                  
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="380" height="250" class="videobox embed-responsive-item" src="https://www.youtube.com/embed/{{testimonial.youtube_id }}" allowfullscreen></iframe>
+                    </div>
+                    <h5 class="mb-3">{{ testimonial.title }}</h5>
+                    
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <p>&nbsp;</p>
+            <p style="text-align:center;"><a style="color:#C71782 !important;"  href="{% url 'testimonials' %}" >View All &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+    </div>
+</section>
+
+<!--
+
+<section style="background-color:#F4F6F6;">
+  <div class="container mt-5">
+    <div class="row justify-content-center text-center">
+      <h3>Voices of Our Patients</h3>
+      <p>Discover the heartfelt stories and experiences shared by our valued patients</p>
+      <p>&nbsp;</p>
+      <div class="video-list">
+        <div class="row justify-content-center text-center">
+          {% for video in videos %}
+          <div class="col-md-4 "> 
+          <div class="video-box" style="width:auto;">
+              <div class="video-thumbnail">
+                  <a href="#" class="video-link" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ video.file.url }}">
+                    {% if video.thumbnail %}
+                    <img src="{{ video.thumbnail.url }}" alt="{{ video.title }} Thumbnail">
+                    {% else %}
+                    <img src="{% static 'path/to/placeholder_image.jpg' %}" alt="Placeholder Thumbnail">
+                    {% endif %}
+                  </a>
+                </div>
+              <div class="video-details">
+                <h5>{{ video.title }}</h5><br>
+                <!--<strong>Video:</strong> <a href="{{ video.file.url }}" target="_blank">{{ video.file.name }}</a> -->
+       <!--      </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div>
+            <p style="text-align:center;"><a style="color:#C71782 !important;"  href="{% url 'testimonials' %}" >View All &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+-->
+
+
+
+<!--End of Voice of Our Patients-->  
+    
+    <!-- Accred & Certification -->
+<section>
+    <div class="container mt-5">
+      <div class="row text-center">
+        <h3 class="my-3" >Accreditations & Certifications</h3>
+        <span style="font-size:14px;">Elevating Standards, Ensuring Excellence: Explore Our <br/> Accreditations and Certifications</span>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-lg-3 border-end">
+                <img src="{% static 'img/nabh 1.png' %}" alt="nabh" >
+                <p>NABH <br/> Accreditation</p>
+            </div>
+            <div class="col-lg-3 border-end">
+                <img src="{% static 'img/nabh ne 1.png' %}" alt="nabh ne" >
+                <p>NABH Nursing Excellence <br/> Certification</p>
+            </div>
+            <div class="col-lg-3 border-end">
+                <img src="{% static 'img/NABL_Official_LOGO_Registered 3.png' %}" alt="NABL_Official_LOGO_Registered" >
+                <p>NABL <br/>Accreditation</p>
+            </div>
+            <div class="col-lg-3 ">
+                <img src="{% static 'img/download (10) 3.png' %}" alt="nabh" >
+                <p>Great Place to<br/> Work Certification</p>
+            </div>
+            <p>&nbsp;</p>
+            <p style="text-align:center;"><a style="color:#C71782 !important;"  href="/achievements/#accreditations" >View All &nbsp;<i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+    </div>
+</section>
+
+  
+
+   
+
+  </main><!-- End #main -->
+
+
+<!--Video popup -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-content-override">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <video id="videoPlayer" class="w-100" controls>
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <script>
+   let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+      if(!(isMobile))
+      {
+     
+    const slides = document.querySelectorAll('.hide_mobile .slide');
+   
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    function changeSlide(index) {
+      slides[currentIndex].style.display = 'none';
+      currentIndex = (index + totalSlides) % totalSlides;
+      slides[currentIndex].style.display = 'block';
+    }
+
+    function nextSlide() {
+      changeSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      changeSlide(currentIndex - 1);
+    }
+
+    setInterval(nextSlide, 8000); // Change slide automatically every 5 seconds (adjust as needed)
+    }
+    else if(isMobile)
+    {
+       
+     const slidesmobile = document.querySelectorAll('.hide_desktop .slide');
+   
+    
+       
+    const totalSlides = slidesmobile.length;
+    let currentIndex = 0;
+
+    function changeSlidemobile(index) {
+      slidesmobile[currentIndex].style.display = 'none';
+      currentIndex = (index + totalSlides) % totalSlides;
+      slidesmobile[currentIndex].style.display = 'block';
+    }
+
+    function nextSlidemobile() {
+      changeSlidemobile(currentIndex + 1);
+    }
+
+    function prevSlidemobile() {
+      changeSlidemobile(currentIndex - 1);
+    }
+
+    setInterval(nextSlidemobile, 8000); // Change slide automatically every 5 seconds (adjust as needed)
+    
+    }
+  </script>
+  
+ 
+  
+{% endblock%}

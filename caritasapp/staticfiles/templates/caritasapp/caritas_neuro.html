@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Caritas Neuro Sciences </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Best Neurology Hospital in Kerala </h2>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/Neuro Sciences.png' %}" class="img-fluid"/>
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#facilities">Facilities</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>At Caritas Neuro Sciences, we're passionate about guiding you toward <br/>a lifetime of neuro health through expert care and innovation.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/Neuro Sciences 505_357.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1 mb-2">
+                 <p style="font-weight:500;margin-bottom:30px;"> Epilepsy, strokes and other muscle-related ailments are some of the most significant contributors to India's cumulative neurological disability-adjusted life years (DALYs)—such a high metric warrants immediate and accurate treatment at par with international standards. A few decades back, even basic neurological examinations were hard to find in Kerala. This prompted the philanthropists in Kerala to initiate the neurology department at Caritas hospital.</p>
+                <p style="font-weight:500;margin-bottom:30px;"> Within a very short period, the quality of treatment provided by the team of neuro physicians, neurosurgeons, nurses and support staff supported by the best-in-class medical equipment earned Caritas the fame of the best neurological hospital in Kerala.</p>
+                <p style="font-weight:500;margin-bottom:30px;"> Caritas Hospital's Department of Neuro Sciences offers advanced neurology, neurosurgery, spine surgery, neuro-oncology and neuro-rehabilitation services.
+                </p>
+            </div>
+        <p>This neurology hospital is a one-stop center for all neurological issues. It has inpatient and outpatient wings, a daycare unit, dedicated neuro ICUs, neurosurgery suites, interventional neuroradiology and the most advanced imaging facilities, including nuclear medicine.</p>
+
+        <p>The 24-hour emergency division caters to all types of neurological and neurosurgery emergencies, including complex neurotrauma and hyperacute management of stroke. It is another factor why this department makes Caritas the best neurology hospital in Kerala.</p>
+                   
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container">
+            <div class="row mt-5">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Treatment and Procedures</h3>
+                    <p class="text-center mb-5 mt-3">Caritas hospital provides a broad range of neurology treatments and procedures under the supervision of experienced neuro physicians. We use various diagnostic tests to help pinpoint the cause of symptoms and guide the selection of an appropriate treatment plan.</p>
+                </div>
+                <div class="row justify-content-center" style="width:60%;margin:0 auto;">  
+                    <button class="accordion">NeuroSurgery</button>
+                    <div class="panel">
+                       <p> The Department of Neurosurgery in Caritas Hospital offers a wide range of surgical procedures to treat various neurological disorders and accidents, including congenital disorders of the brain and spine, traumatic brain injury, spinal cord injuries and degenerative disc disorders.</p>
+                       <p>This department has highly experienced neurosurgical experts and spine surgeons to perform a range of simple to complex procedures, which are:</p>
+                       <ul> 
+                       <li>Micro-neuro surgery for tumours & vascular disorders</li>
+                       <li>Awake craniotomy</li>
+                       <li>Minimal invasive surgery for spinal disorders – IVDP, microdiscectomy</li>
+                       <li>Emergency decompressive craniectomy and other emergency brain surgeries</li>
+                       <li>VP shunt procedures for hydrocephalus </li>
+                       </ul>
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    
+                    <button class="accordion">Neurology</button>
+                    <div class="panel">
+                      <p>The neurology department comprises a team of highly skilled physicians who have successfully diagnosed and treated neurological diseases, neuro infection and immunology, neuromuscular disorders and dementia.</p><p>
+                          
+                      </p><p>Our team is always up on their heels to provide immediate care for neurological incidents like acute ischemic stroke. We have the necessary facilities and experts to conduct mechanical thrombectomy therapy for acute strokes. The department uses a thrombolytic agent known as clot-busting drug to treat appropriate stroke patients.</p>
+                      <p>Regarded as one of the best neurology hospitals in Kerala, the neurology department is equipped with the following facilities:</p>
+                       <ul>
+                        <li>Electroencephalogram (EEG)</li>
+                        <li>Nerve Conduction Studies (NCS)</li>
+                        <li>Electromyography (EMG)</li>
+                        <li>Evoked Potential (VEP, SSEP, BERA)</li>
+                        <li>Video EEG Monitoring</li>
+                        <li>Cerebral Angiogram</li>
+                        <li>Carotid Doppler</li>
+                        <li>Plasmapheresis</li>
+                        </ul>
+                       
+                    </div>
+                    <hr style="width: 100%;margin:0;">
+                    <button class="accordion">Stroke Helpline</button>
+                    <div class="panel">
+                      <p>The 24*7 active stroke helpline is arguably the only facility in Kerala that provides in-hospital brain imaging (CT/MRI) services, diagnoses and treats stroke patients within 30 minutes of their arrival in the hospital.</p>
+                        <p>The stroke helpline is equipped with the following facilities:</p>
+                       <ul> 
+                            <li>CT Scanner</li>
+                            <li>1.5 Tesla MRI</li>
+                            <li>Hybrid Cath Lab</li>
+                            <li>Dedicated Neuro ICUs</li>
+                            <li>Integrated Neurosurgery Units</li>
+                       </ul>
+                    </div>
+                   
+                </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+             <div class="row  " >
+                          <!-- Neuro Medicine -->
+                <h5 class="mainheading">Neuro Medicine</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Neuro Medicine" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                               
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+      
+        
+         <div class="row">
+           
+         <!-- Neuro Surgery -->
+                <h5 class="mainheading">Neuro Surgery</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Neuro Surgery" %} 
+                 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+        </div>
+            
+    </div>
+</section>
+
+
+
+<section id="deptsections" style="background-color:#F4F6F6;max-width:100%;">
+    <span id="facilities"></span>
+    <div class="container mt-5 ">
+        <div class="row justify-content-center" style="margin:0 auto;width:90%;" >
+            <h3 class="text-center pb-4">Facilities</h3>
+            <p>Facilities The neurology department facilitates a range of diagnostics and therapeutic services such as neuropathies, neuropsychology services and others.</p>
+           <div class="col-lg-6">
+               <ul>
+                   <li>Outpatient Neurology Clinic (6 days a week)</li>
+                   <li>Stroke Unit with Facility for Thrombolysis</li>
+                   <li>24 hr Emergency Services </li>
+                   <li>Intra-arterial & Endovascular Intervention for Stroke</li>
+               </ul>
+           </div>
+           <div class="col-lg-6">
+               <ul>
+                   <li>EEG Monitoring for Epilepsy   </li>
+                   <li>Comprehensive Neuro Rehabilitation</li>
+                   <li>Speech and Language Therapy</li>
+                   <li>Comprehensive Care for Parkinson’s and Movement Disorders</li>
+               </ul>
+           </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+             {% if posts %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            {% if post.department.name == "Caritas Neuro Sciences" %}
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+         {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock%}

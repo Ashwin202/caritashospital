@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center" id="album_images">
+               <h2>{{ album.title }}</h2>
+               <p>&nbsp;</p>
+                <div class="images-container">
+                    {% for i in album.images.all %}
+                        <a href="{{ i.image.url }}" data-lightbox="{{ album.title }}" data-title="{{ i.description }}">
+                            <img src="{{ i.image.url }}" alt="{{ i.description }}" style="width:380px;margin:15px;">
+                        </a>
+                    {% endfor %}
+                </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+{% endblock%}

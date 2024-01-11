@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Neonatology </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Neonatology Hospital in Kerala </h2>
+            </div>
+            <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/neonatology1.png' %}" class="img-fluid" />
+            </div>
+             <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    <form action="your_action_url_here" method="POST" class="custom-form">
+                        <div class="form-group row mb-2">
+                            <label for="first_name" class="col-sm-4 col-form-label text-light">First Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="first_name" name="first_name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="last_name" class="col-sm-4 col-form-label text-light">Last Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="last_name" name="last_name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="email" class="col-sm-4 col-form-label text-light">Email:</label>
+                            <div class="col-sm-8">
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="phone_number" class="col-sm-4 col-form-label text-light">Phone Number:</label>
+                            <div class="col-sm-8">
+                                <input type="tel" id="phone_number" name="phone_number" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-4">
+                            <div class="col-sm-12">
+                                <button type="submit" class="enqrbtn">Enquire Now ></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Balancing Hormones, Transforming Lives: Your Health, Our Expertise</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/neonatology2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p>One of the most advanced facilities of its kind in the region, Caritas Diabetes Care provides a comprehensive and customized treatment plan for patients suffering from endocrine and metabolic disorders, especially diabetes.</p> 
+                   <p>Our endocrinologists and registered dietitians provide expert care to prevent, manage and treat diabetes through a comprehensive and personalized treatment plan.</p>
+                   <p>The Endocrinology department has expertise in treating people with all types of diabetes including advanced and complex diabetes. Referral and prompt access to ophthalmologists, nephrologists, neurologists and surgeons is also readily available here. </p>
+                   <p>Diabetic patients receive nutritional counseling and planning. Besides, obese diabetes patients are offered psychological counseling.</p>
+        </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Treatment and Procedures</h3>
+                    </div>
+                <div class="row mt-3">
+                   Specialized diabetes treatment services:
+                   <br/><br/>
+                    <ul >
+                        <li>Comprehensive diabetes management for adults (Type 1 and 2 diabetes care)</li>
+                        <li>Antenatal diabetes (diabetes in pregnancy) care</li>
+                        <li>Assessment and treatment of associated complications of diabetes such as neuropathy, nephropathy and retinopathy</li>
+                        <li>Specialized lab tests (C-peptide, anti-GAD, TSH receptor antibodies, Chromogranin, IGF 1, IGFBP3)</li>
+                        <li>Dynamic endocrine tests, ACTH stimulation tests, glucose tolerance test, dexamethasone suppression test and water deprivation test</li>
+                        <li>Continuous Glucose Monitoring (CGM) using Ipro 2 CGM device</li>
+                        <li>Insulin pump therapy</li>
+                        <li>Assessment of diabetic retinopathy</li>
+                        <li>Treatment for associated diseases such as hypercholesterolaemia &nbsp;and hypertension</li>
+                    </ul>
+                  
+                    The Endocrinology Department of Caritas Hospital also provides treatment for:
+                    <br/><br/>
+                        <ul >
+                            <li>Thyroid disorders</li>
+                            <li>Metabolic bone disease</li>
+                            <li>Obesity / overweight(including bariatric management and surgery)</li>
+                            <li>Sexual disorders</li>
+                            <li>Obstetrics and gynecology-related endocrine issues</li>
+                        </ul>
+                        </p>
+                </div>
+                
+             
+
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row justify-content-center " >
+            
+                <!-- Doctor 1 -->
+                
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4  ">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-5">
+                            <img src="{% static 'img/Dr. Jayakumar.png' %}" alt="Doctor 1" class="img-fluid" />
+                        </div>
+                        <div class="mx-4 mt-2">
+                            <h4>Dr. Jayakumar R. V.</h4>
+                            <h6>Senior Consultant Endocrinologist</h6>
+                            <p>&nbsp;</p>
+                            <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                        </div>
+                        <div class="ml-auto align-self-start mt-4" style="margin-left: 0%;">
+                            <i class='bi bi-arrow-right-circle'></i>
+                        </div>
+                    </div>
+                    <br/>
+                    
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+            
+        
+                <!-- Doctor 2 -->
+                
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-5">
+                            <img src="{% static 'img/Dr. Sreenath.png' %}" alt="Doctor 2" class="img-fluid" />
+                        </div>
+                        <div class="mx-4 mt-2">
+                            <h4>Dr. Sreenath R.</h4>
+                            <h6>Consultant Endocrinologist</h6>
+                            <p>&nbsp;</p>
+                            <p><a style="color:#c71782;" href="#">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                        </div>
+                        <div class="ml-auto align-self-start mt-4" style="margin-left: 10%;">
+                            <i class='bi bi-arrow-right-circle'></i>
+                        </div>
+                    </div>
+                    <br/>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+           </div>
+    
+</section>
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container">
+        <div class="row">
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in cancer_posts %}  <!-- Updated variable name -->
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="#" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            
+                <h1 style="font-weight: 600;">Caritas Family Hospital  </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Care at the Core of Everything</h2>
+                
+        </div>
+        <div class="row px-3 ">
+            <div class="col-lg-12 col-md-112 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/family1.png' %}" class="img-fluid" alt="Cancer family hospital" />
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4"></h3>
+           
+            <p>Your generous contribution to Caritas Hospital is more than a gift; it's a catalyst for transforming healthcare for both our patients and society. As a charitable healthcare institution, we deeply appreciate your support, enabling us to deliver top-quality, compassionate care to underserved communities that often lack access to modern healthcare. </p>
+            
+            <h5 class="mt-4">Our Dedication to Safe Care </h5>
+            <p>We stand ready to provide unwavering support. Whether it's everyday healthcare or life-changing medical interventions, you can rely on us to safeguard your well-being and that of your loved ones.</p>
+            <p>Your donation to Caritas Hospital creates a profound impact, fostering a healthier and more equitable future for all.</p>
+            </div>
+            <p>&nbsp;</p>
+           <button type="button" class="enqrybtn">Donate Now</button>
+              
+        </div>
+</section>
+
+
+ 
+
+{% endblock%}

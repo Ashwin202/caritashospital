@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Research & Development Cell </h1>
+            <h2 style="color: #c71782; font-weight: 300;">From Ideas to Impact</h2>
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/research1.png' %}" class="img-fluid"/>
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;height:493px !important;vertical-align:middle;">
+                <div class="col-content text-justify pt-5 px-3 mt-4"  >
+                    <h6 class="text-light py-2">- Clinical Research </h6>
+                    <h6 class="text-light py-2">- Statistical Consultation </h6>
+                    <h6 class="text-light py-2">- Public Health Research</h6>
+                    <h6 class="text-light py-2">- Healthcare Analytics</h6>
+                    <h6 class="text-light py-2">- Research Trainings & Internships</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#ongoing-studies">Ongoing Studies</a><li>
+                <li><a href="#completed-studies">Completed Studies</a><li>
+                <li><a href="#top-collaborators">Top Collaborators</a><li>
+                <li><a href="#contact">Contact</a><li>
+            </ul>
+
+        </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        
+    
+    <div class="row">
+     <div class="col-lg-7" >
+                     
+       <h3>Catalyzing Ideas, Igniting Progress: Caritas R & D at the Forefront.</h3>
+       <p>The Research in Caritas Hospital was started in 2001. The department has successfully completed around 50 research studies. The department provides research support for all the doctors, faculties and students in our institutes. The centre provides statistical consultation and Research Methodology supports for researchers within and outside the institution. Various students from institutions across India join us for their research internship programs.</p>
+       <p>We work along with brightest minds in the world through sponsored studies. We contribute to the growth of science using in house research projects by our faculties. Our institute promotes research by providing intra-mural grants for brightest ideas in the institute.</p>
+                                  
+     </div>
+     <div class="col-lg-1"></div>
+                <div class="col-lg-4 p-5 " style="background:#FAF9F9;" >
+                  <h6>Scope of Services</h6>
+                  <ul class="pt-4">
+                    	<li>Clinical Research &amp; Registries</li>
+                    	<li>Epidemiological Studies</li>
+                    	<li>Systematic Reviews</li>
+                    	<li>Statistical Analysis</li>
+                    	<li>Healthcare Analytics</li>
+                    	<li>Data Science</li>
+                    	<li>Research Methodology</li>
+                    	<li>Research Training</li>
+                    </ul>
+
+
+ 
+
+
+                </div>
+            </div>
+              
+        </div>
+</section>
+<section  id="deptsections"><span id="ongoing-studies"></span>
+    <div class="container">
+        <div class="row mt-5">
+                <h3>Ongoing Studies</h3>
+                <p>&nbsp;</p>
+        </div>
+        <div class="row"  style="width:90%;">  
+            <div class="col-lg-8 ">
+                <h6>Study Name</h6>
+            </div>
+            <div class="col-lg-4">
+                <h6>Investigators</h6>
+            </div>
+                <hr class="pinkhr my-3"> 
+        </div>
+        
+    {% for study in ongoing_page_obj %}
+        {% if study.category == "Ongoing" %} 
+        <div class="row my-4" style="width:90%;">
+            <div class="col-lg-8 ">
+                <p>{{study.study_name}}</p>
+            </div>
+            <div class="col-lg-4 ">
+                <p>{{study.investigators}}</p>
+            </div>
+            <hr/>
+        </div>
+        {% endif %}
+    {% endfor%}
+<!-- Display pagination links -->
+ <div class="pagination">
+        <!-- Pagination links for ongoing studies -->
+        {% for num in ongoing_page_obj.paginator.page_range %}
+            {% if ongoing_page_obj.number == num %}
+                <span class="current_page">{{ num }}</span>
+            {% else %}
+                <a href="?ongoing_page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+        
+    </div>
+</section>
+
+<section id="deptsections"><span id="completed-studies"></span>
+    <div class="container mt-5">
+         <h3 class="mb-4">Completed Studies</h3>
+            
+            <p>&nbsp;</p>
+          <div class="row"  style="width:90%;">  
+            <div class="col-lg-8 ">
+                <h6>Study Name</h6>
+            </div>
+            <div class="col-lg-4">
+                <h6>Investigators</h6>
+            </div>
+                <hr class="pinkhr my-3"> 
+        </div>
+        
+     {% for study in completed_page_obj %}
+        {% if study.category == "Completed" %} 
+        <div class="row my-4" style="width:90%;">
+            <div class="col-lg-8 ">
+                <p>{{study.study_name}}</p>
+            </div>
+            <div class="col-lg-4 ">
+                <p>{{study.investigators}}</p>
+            </div>
+            <hr/>
+        </div>
+        {% endif %}
+    {% endfor%}
+<!-- Display pagination links -->
+<div class="pagination">
+        <!-- Pagination links for completed studies -->
+        {% for num in completed_page_obj.paginator.page_range %}
+            {% if completed_page_obj.number == num %}
+                <span class="current_page">{{ num }}</span>
+            {% else %}
+                <a href="?completed_page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+            
+    </div>
+</section>
+
+<section>
+    <div class="container">
+    <div class="row">
+        <h3 class="my-5">Top Collaborators</h3>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/St.John.png' %}" class="img-fluid" alt="St.John's" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Novartis-Logo 1.png' %}" class="img-fluid" alt="Novartis-Logo 1" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Meril.png' %}" class="img-fluid" alt="Meril" />
+        </div><div class="col-lg-2 my-4">
+            <img src="{% static 'img/MG Unibersity.png' %}" class="img-fluid" alt="MG Unibersity" />
+        </div><div class="col-lg-2 my-4">
+            <img src="{% static 'img/Hamilton Health Science.png' %}" class="img-fluid" alt="Hamilton Health Science" />
+        </div><div class="col-lg-2 my-4">
+            <img src="{% static 'img/Medical Science.png' %}" class="img-fluid" alt="Medical Science" />
+        </div><div class="col-lg-2 my-4">
+            <img src="{% static 'img/Abbott.png' %}" class="img-fluid" alt="Abbott" />
+        </div><div class="col-lg-2 my-4">
+            <img src="{% static 'img/Eversana.png' %}" class="img-fluid" alt="Eversana" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Batra-Hospital-300x214 1.png' %}" class="img-fluid" alt="Batra-Hospital" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/cucebo.png' %}" class="img-fluid" alt="cucebo" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Amarin.png' %}" class="img-fluid" alt="Amarin.png" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Biotronik.png' %}" class="img-fluid" alt="Biotronik.png" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Bristol.png' %}" class="img-fluid" alt="Bristol.png" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Boehringer.png' %}" class="img-fluid" alt="Boehringer" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Cadila.png' %}" class="img-fluid" alt="Cadila" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Cardiological Society.png' %}" class="img-fluid" alt="Cardiological Society" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Lilly.png' %}" class="img-fluid" alt="Lilly.png" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Glenmark.png' %}" class="img-fluid" alt="Glenmark.png" />
+        </div>
+        <div class="col-lg-2 mb-4">
+            <img src="{% static 'img/GSK.png' %}" class="img-fluid" alt="GSK" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Reliance.png' %}" class="img-fluid" alt="Reliance.png" />
+        </div>
+        <div class="col-lg-2 my-4">
+            <img src="{% static 'img/Wyeth.png' %}" class="img-fluid" alt="Wyeth.png" />
+        </div>
+        
+    </div>
+        
+        
+    </div>
+    
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <h3>Connect with Caritas Research & Development Cell</h3>
+            <div class="col-lg-6 mt-4">
+            
+            <p>For enquiries, collaborations, and research support, reach out to our dedicated team at <a style="color:#0072BC;" href="mailto:research@caritashospital.org">research@caritashospital.org</a> or call us at <a style="color:#0072BC;" href="tel:0481-2790025">0481-2790025(Extn- 6041)</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock%}

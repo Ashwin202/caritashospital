@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Gallery</h1>
+                <h2 style="color: #c71782; font-weight: 300;"></h2>
+                <p>&nbsp;</p>
+                
+        </div>
+           
+  <div class="row">
+          {% for album in albums %}
+        <div class="col-md-4" style="display: inline-block;">
+            <a href="{% url 'album_detail' album.id %}">
+                {% if album.images.all %}
+                    <img src="{{ album.images.first.image.url }}" alt="{{ album.images.first.description }}" style="width:100%;">
+                {% endif %}
+                <h5 class="mt-3">{{ album.title }}</h5>
+                <p>&nbsp;</p>
+            </a>
+        </div>
+        {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div><div class="row">
+        {% endif %}
+    {% endfor %}
+
+  </div>
+
+        
+    </div>
+</section>
+
+{% endblock%}

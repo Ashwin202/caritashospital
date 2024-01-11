@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Radiology & Interventional Radiology</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Radiology Hospital in Kerala</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/intervention1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container "  id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+ </div>
+        </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Unveiling the Epitome of Precision in Healthcare with the Best Radiology Hospital in Kerala</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/intervention2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 ">
+                   <p>Caritas Hospital has charted its growth from providing medical care for maternity needs and snakebite management to complex treatment procedures, high-precision surgeries and providing evidence-based treatments. Interventional radiology has played a critical role in this journey. The well-equipped radiology department generates highly-precise and accurate diagnosis that facilitate evidence-based therapy for patients. It earned us the name of the best radiology hospital in Kerala. </p>
+                   <p> Our radiology department has a wide range of state-of-the-art imaging equipment, including digital X-ray, fluoroscopy, CT scan and ultrasound. The department also provides 3D/4D/contrast ultrasound and Doppler/colour doppler imaging. The Radiology Department also houses mammography units for highly-precise breast imaging, multi-slice CT and MRI. </p>
+                   <p> All procedures are performed by highly trained medical professionals dedicated to providing quality care. Our radiology department offers same-day service for all your radiological needs. You can get treated at our hospital without waiting for days or weeks for your appointment. If needed, our radiologists use local anaesthesia during diagnosis & interventional procedures so that you do not feel any pain during the test itself. It means that you will be able to undergo almost any type of test without feeling any discomfort or pain whatsoever.</p>
+
+            </div>
+          
+        </div>
+  </div>
+</section>
+
+                 
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Treatment and Procedures</h3></div>
+                <div class="row justify-content-center" style="width:90%;margin:0 auto;"> 
+                <p class="mt-5 text-center">Caritas hospital is the only advanced Interventional Radiology Unit in the Central Travancore region. It has state-of-the-art equipment that allows doctors to perform minimally invasive procedures. We offer a wide range of highly specialized, image-guided, minimally invasive neuroradiology, vascular, oncology, hepato-biliary, urology and transplant interventional procedures for therapeutic purposes. We hold the record of being the first radiology hospital in Kerala to conduct Trans-jugular Intra-hepatic Porto-systemic Shunt (TIPS) procedures in patients with liver cirrhosis.</p>
+                <p>&nbsp;</p>
+                <div class="col-lg-6">
+              <ul>
+                	<li>FNAC/biopsy</li>
+                	<li>Aspiration/Percutaneous Catheter Drainage (PCD)</li>
+                	<li>Percutaneous Trans-hepatic Biliary Drainage (PTBD)</li>
+                	<li>Trans Arterial Chemoembolization (TACE)</li>
+                	<li>Embolisation and coiling (bronchial, GI bleed, uterine, traumatic, intracranial)</li>
+                	<li>Angioplasty/Thrombolysis (GI, peripheral)</li>
+                	<li>Stenting (biliary, ureteric and vascular interventions)</li>
+                </ul>
+
+                </div>
+                 <div class="col-lg-6">
+                     <ul>
+                    	<li>Radio Frequency Ablation (RFA) in HCC, RCC, lung and bone tumours</li>
+                    	<li>Varicose vein ablation and Injection Sclerotherapy</li>
+                    	<li>Hepatic Venous Pressure Gradient Estimation (HVPG)</li>
+                    	<li>Trans-jugular Liver Biopsy (TJLB)</li>
+                    	<li>Trans-jugular Intrahepatic Porto-systemic Shunt (TIPS)</li>
+                    	<li>Balloon-Occluded Retrograde Trans-venous Obliteration (BRTO) of Gastric Varices</li>
+                    </ul>
+
+                 </div>
+            </div>      
+    </div>
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            
+              <div class="row  " >
+                <h5 class="mainheading">Radiology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Radiology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                               
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+   
+        </div>
+            <div class="row  " >
+                <h5 class="mainheading">Interventional Radiology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Interventional Radiology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                               
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+   
+        </div>
+                </div>
+                </section>
+
+<section id="deptsections"><span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+             {% if posts %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+
+            <p class="mb-4 text-center"> Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+            {% for post in posts %}  <!-- Updated variable name -->
+            {% if post.department.name == "Interventional Radiology, Radio Diagnosis and Imaging" %}
+            <div class="col-lg-12">
+                <div class="post">
+                    <div class="row align-items-center mx-4">
+                        <div class="col-lg-11">
+                            <h6>{{ post.title }}</h6>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="{% url 'detail' post.slug %}">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                            </a>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 30px auto;">
+                </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+            <p ><a class="mx-4 mt-5" href="{% url 'articles' %}" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+         {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock%}

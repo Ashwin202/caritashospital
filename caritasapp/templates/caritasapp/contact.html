@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<!--
+<div class="breadcrumbs">
+  <a href="/">Home</a> ›
+  <?php
+  $url = $_SERVER['REQUEST_URI'];
+  $urlParts = explode('/', rtrim($url, '/'));
+  $breadcrumbs = array_filter($urlParts);
+
+  $path = '';
+  foreach ($breadcrumbs as $crumb) {
+      $path .= "/$crumb";
+      echo "<a href=\"$path\">Specialities</a> › ";
+  }
+  ?>
+  <span class="current-page">Contact Us</span>
+</div>
+-->
+ 
+ <!-- ======= Contact Section ======= -->
+ <section id="contact" class="contact">
+    <div class="container" >
+
+      <div style="background-color: #F7F7F8 !important;padding:30px 0px !important;">
+        <h2 class="text-center" >Contact Us</h2>
+        
+      
+      <p class="text-center">If you have any questions, concerns, or would like to schedule an appointment, please don't hesitate to contact us using the information provided above. Our friendly and knowledgeable staff is here to assist you.</p>
+      </div>
+      <div>
+        <iframe style="border:0; width: 100%; height: 476px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="row mt-5 justify-content-center">
+
+        <div class="col-lg-6 mb-3">
+          <h4 class="mb-3">Contact Form</h4>
+          <p>You can also reach out to us by filling out the contact form below. Please provide us with your contact details and a brief message, and we will get back to you as soon as possible.</p>
+         <form method="post" action="{% url 'contact' %}" id="contactus">
+            {% csrf_token %}
+            <div class="radio-group" style="background-color: #F7F7F8;padding:10px 20px;border-radius:10px;">
+                Type of query:
+                <label class="mx-2">
+                    Enquiry <input type="radio" name="query_type" value="Enquiry">
+                </label>
+                <label class="mx-2">
+                    Complaint <input type="radio" name="query_type" value="Complaint"> 
+                </label>
+                <label class="mx-2">
+                    Feedback <input type="radio" name="query_type" value="Feedback"> 
+                </label>
+            </div>
+            <br/>
+            
+              <div class="contactform-group ">
+                <label class="mb-2">Name </label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+               
+              </div>
+              <div class=" contactform-group mt-3">
+                <label class="mb-2">Email </label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+             <div class="contactform-group mt-3">
+                <label for="department" class="mb-2">Select Department</label>
+                <select name="department" id="department" required>
+                    {% for department in departments %}
+                        <option value="{{ department.Department_id }}">{{ department.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="contactform-group mt-3">
+                <label for="doctor" class="mb-2">Select Doctor</label>
+                <select name="doctor" id="doctor" required>
+                    {% for doctor in doctors %}
+                        <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="contactform-group mt-3">
+                <label class="mb-2">Message </label>
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+           
+            <div class="my-5" >
+           
+            <button style="color:#fff;background-color:#229AD5;width:100%;padding:2% 0px;border: 1px solid #CDCACA;border-radius:10px" type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+            <img src="{%static 'img/hospital.png' %}" style="width:100%;height:auto;padding:0 35px;margin:0 auto;" />
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 justify-content-center my-3" >
+                        <div class="icon-box mx-2 py-3" style="background-color: #F7F7F8;" >
+                            <img src="{% static 'img/call.png' %}" class="img-fluid d-block mx-auto" alt="Call Icon">
+                            <p style="color:#229AD5;text-align:center;">Talk to us <br/>
+                            0481-2790025 to 29</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6 justify-content-center my-3" >
+                        <div class="icon-box mx-2 py-3" style="background-color: #F7F7F8;" >
+                            <img src="{% static 'img/mail.png' %}" class="img-fluid d-block mx-auto" alt="Call Icon">
+                            <p style="color:#229AD5;text-align:center;">Email <br/>mail@caritashospital.org</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6 justify-content-center my-3" >
+                        <div class="icon-box mx-2 py-3" style="background-color: #F7F7F8;vertical-align:middle;" >
+                            <img src="{% static 'img/location.png' %}" class="img-fluid d-block mx-auto" alt="Call Icon">
+                            <p style="color:#229AD5;text-align:center;">Caritas<br/> HospitalThellakom (po),<br/>Kottayam-686630</p>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-6 justify-content-center my-3" >
+                        <div class="icon-box mx-2 py-3" style="background-color: #F7F7F8;" >
+                            <img src="{% static 'img/feedback.png' %}" class="img-fluid d-block mx-auto" alt="Call Icon">
+                            <p style="color:#229AD5;text-align:center;">Feedback <br/>patientfeedback@caritashospital.org</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-4 px-5">
+                <h4>Contact Number</h4>
+                Ambulance+91 (0) 9496555200
+Information 24/7+91 (0) 481-2790025 to 29
+Appointment+91 (0) 9496555300,+91 (0) 9496555400
+Cardiology Information+91 (0) 9496555600
+ECHS Helpline+91 (0) 8547090029
+Health Check-up plans+91 (0) 9496555900
+Insurance Cell+91 (0) 9446021300
+Stroke Helpline Number+91 (0) 9496555800
+                
+            </div>
+        </div>
+
+    </div>
+
+  </section>
+  <!-- End Contact Section -->
+  {% endblock%}

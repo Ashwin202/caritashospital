@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Patients Testimonials </h1>
+                
+             <p>&nbsp;</p>   
+        </div>
+             <div class="row justify-content-center text-center">
+              {% for video in videos %}
+              <div class="col-md-4 "> <!-- Adjust the column width as needed -->
+                <div class="video-box" style="width:auto;">
+                  <div class="video-thumbnail">
+                  <a href="#" class="video-link" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ video.file.url }}">
+                    {% if video.thumbnail %}
+                    <img src="{{ video.thumbnail.url }}" alt="{{ video.title }} Thumbnail">
+                    {% else %}
+                    <img src="{% static 'path/to/placeholder_image.jpg' %}" alt="Placeholder Thumbnail">
+                    {% endif %}
+                  </a>
+                </div>
+                  <div class="video-details">
+                    <h5>{{ video.title }}</h5><br>
+                    <!--<strong>Video:</strong> <a href="{{ video.file.url }}" target="_blank">{{ video.file.name }}</a> -->
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              <div>
+                
+            </div>
+          </div>
+     </div>   
+</section>
+
+
+
+{% endblock%}

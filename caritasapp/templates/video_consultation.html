@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">          
+                <h1 style="font-weight: 600;"> Video Consultation </h1>
+                <h2 style="color: #c71782; font-weight: 300;"> Expert Care, Just a Click Away </h2>    
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/video1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#How it Works">How it Works</a><li>
+                <li><a href="#Book Your Consultation">Book Your Consultation</a><li>
+                
+            </ul>
+
+          </div>
+    </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Empowering Your Health Journey<br/> Through Caritas Video Consultation</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-12">
+            
+                   <p> Discover a new era of healthcare with Caritas Telemedicine, where we bring quality medical care right to your doorstep. Our interactive video consulting service ensures you have access to medical expertise at your convenience,</p>
+                   <p>With a commitment to excellence, we guarantee the availability of doctors in all departments, providing you with the assurance of timely and comprehensive consultations. Our telemedicine service extends its reach even to remote areas, bridging the gap in healthcare accessibility.</p>
+                   
+                   
+        </div>
+      <p>&nbsp;</p>
+      </div>
+      <div class="row">
+          <div class="col-lg-6">
+              <ul>
+                  <li>Quality health care at home.</li>
+                  <li>Interactive video consulting.</li>
+                  <li>Assured doctor availability in all departments.</li> 
+                  <li>Assured doctor patient interactions.</li> 
+                  <li>Consultations available at remote areas.</li>
+              </ul>
+          </div>
+          <div class="col-lg-6">
+              <ul>
+                  <li>Facilitate health checkups & report submissions.</li> 
+                  <li>Time allocated consultation assures no waiting in Queue.</li> 
+                  <li>Reminders & updates of appointments through E mail & SMS.</li> 
+                  <li>Equivalent quality assured service at reasonable & affordable price-at home.</li> 
+                  <li>Fee remittance through multiple payment gateways.</li>
+                  </ul>
+              
+          </div>
+      </div>
+      
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="How it Works"></span>
+    <div class="container mt-5">
+                
+                <div class="row justify-content-center" style="margin:0 auto;"> 
+                <div class="col-lg-5">
+                     <img src="{% static 'img/video2.png' %}" class="img-fluid" alt="How it work" />
+             
+                </div>
+                 <div class="col-lg-7">
+                     <h3 class="mb-4">How it Works</h3>
+                     <p><b>Fill up the online form or call us to book your appointment.</b></p>
+                     <ul>
+                        <li> Begin the process by filling out the online form with your details or reach us at <a style="color:#0072BC;" href="tel:+919946856789">+91 99468 56789</a></li>
+                        <li>This step is your initial point of contact to schedule a video consultation.</li>
+                        </ul>
+                        <p><b>Choose a convenient schedule for appointments.</b></p> 
+                        <ul>
+                            <li>After you submit the form, our team will promptly contact you to provide available time slots and options.</li>
+                            <li>Select a date and time that suits your availability from the available options</li>
+                        </ul>
+                        <p><b> Make payment online, using the link shared through Email/SMS.</b></p>
+                        <ul>
+                            <li>After selecting your appointment, you will receive a secure payment link through Email and SMS.</li>
+                            <li>Click on the link to proceed with the online payment process.</li>
+                        </ul>
+                          <p><b>After successful payment, appointments will be confirmed.</b></p> 
+                          <ul>
+                              <li>Once your payment is successfully processed, your appointment will be confirmed.</li>
+                              <li>You will receive a confirmation notification through Email and SMS.</li>
+                          </ul>
+                            <p><b>Make video consultation using the link shared, on a given time schedule.</b></p> 
+                            <ul>
+                                <li>On the scheduled date and time, click the link provided for your video consultation.</li>
+                                <li>Ensure you have a stable internet connection and a compatible device for the video call.</li>
+                            
+                    </ul>
+                 </div>
+            </div>
+
+        
+    </div>
+</section>
+
+<section id="deptsections" ><span id="Book Your Consultation"></span>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-7">
+                <h3>Book Your Consultation</h3>
+                
+                 <form action=" " method="post" class="custom-form">
+                    {% csrf_token %}
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="text" id="first_name" placeholder="First Name" name="first_name" class="form-control" required>
+                            <span class="required-symbol">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="text" id="last_name" placeholder="Last Name" name="last_name" class="form-control" required>
+                            <span class="required-symbol">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                            <span class="required-symbol">*</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="secondopinion row mb-2">
+        
+                        <div class="col-sm-6 my-2">
+                            <div class="input-with-symbol">
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="" disabled selected>Select Country</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.alpha_2 }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <span style="    position: absolute;right: 50%;top: 15%; transform: translateY(-50%);color: red; font-size: 25px;" >*</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 my-2">
+                            <div class="input-with-symbol">
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+                            <span style="    position: absolute;right: 50%;top: 15%; transform: translateY(-50%);color: red; font-size: 25px;" >*</span>
+                        </div>
+                        </div>
+                
+                    </div>
+                     <div class="row mb-2">
+                        <div class="col-sm-12 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tickbox" name="agree_terms" required>
+                                <label class="form-check-label" for="tickbox">
+                                    By ticking, I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and SMS.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-grp row mt-4">
+                        <div class="col-sm-12">
+                            <button type="submit" class="enqrybtn">Submit Now </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-5" style="background-color:#FAF9F9;">
+                <h5>Other ways to Book</h5>
+                <p>In addition to our online form, Caritas Hospital offers you multiple convenient methods to book your video consultation. We understand the importance of flexibility when it comes to healthcare access, so you can also schedule your virtual appointment through the following options:</p>
+               <p><b> Phone Booking:</b> </p>
+               <h5><a href="tel:+919946856789">+91 99468 56789</a></h5>
+               <p>Simply give us a call, and our dedicated team will assist you in reserving a video consultation at a time that suits your schedule.</p> 
+               <p><b>WhatsApp Booking:</b></p>
+               <p>Click Here</p> 
+               <p>Use the popular messaging app WhatsApp to initiate your video consultation booking. Our team will guide you through the process and confirm your appointment.</p>
+            </div>
+        </div>
+     </div>      
+</section>
+
+{% endblock%}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="">
+          {% if doctor.image %}
+              <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" class="img-fluid mb-3">
+            {% else %}
+              <!-- Handle the case where there is no image associated with the doctor -->
+              <p>No image available</p>
+            {% endif %}
+          <h1>{{ doctor.name }}</h1>
+          <h2>{{ doctor.designation }}</h2>
+          <h3>Department: {{ doctor.department.name }}</h3>
+          <p>{{ doctor.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

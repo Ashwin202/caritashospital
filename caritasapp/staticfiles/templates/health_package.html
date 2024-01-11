@@ -1,0 +1,436 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center" id="enquiry">
+            
+                <h1 style="font-weight: 600;">Caritas Hospital Health Checkup Packages </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Your Path to Better Health</h2>
+                
+        </div>
+        <div class="row px-3" >
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/young-male-psysician-with-patient-measuring-blood-pressure 1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;" >
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="health" >
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-3">
+            <h3>Your Wellness,<br/> Our Expertise</h3>
+            </div>
+            <div class="col-lg-9">
+            <p>Welcome to Caritas Hospital, your trusted partner in health and wellness. Our health checkup packages are meticulously designed to provide you with the insights and tools you need to live a healthier, happier life. Discover our comprehensive range of health assessments, each tailored to meet your unique needs.</p>
+            </div>
+            </div>
+            <div class="row mt-4">
+               
+            <div class="col-lg-12" >
+                  <div class="accordion-wrapper">
+           <button class="accordion">Executive Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 4,250</span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 3,000</span></button>
+                    <div class="panel">
+                        <div class="row ">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:400px;">
+                                <p>Combining advanced medical assessments with convenience, this checkup empowers individuals to proactively manage their health, ensuring peak performance and well-being. Elevate your health, elevate your success."</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-5">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   <li>Fasting Blood Sugar (FBS) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                   <li>Serum Sodium</li>
+                                   <li>HbsAg</li>
+                                   <li>Serum Uric Acid</li>
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               <h5>Radiological Investigation</h5>
+                               <ul>
+                                   <li>Chest X-Ray</li>
+                                   <li>Ultrasound Scan - Abdomen</li>
+                               </ul>
+                            </div>
+                            <div class="col-lg-4 px-4">
+                                <h5>Pulmonogical Investigation</h5>
+                                <ul>
+                                    <li>Pulmonary Function Test</li>
+                                </ul>
+                                
+                                
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram</li>
+                                    <li>ECHO</li>
+                                    <li>Tread Mill Test (TMT)</li>
+                                </ul>
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Cardiologist</li>
+                                    <li>Pulmonologist</li>
+                                    <li>Gynaecologist (Only for females)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
+                    </div>
+           
+           
+            <hr style="width: 100%;margin:0;">
+                    
+            <button class="accordion">Diabetic Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 4,250</span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 3,000</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:450px;">
+                                <p>Living with diabetes requires careful monitoring and proactive healthcare. At Caratas Hospital, we understand the unique challenges that come with diabetes and are here to support you on your journey to better health. Our Diabetic Health Check-Up package is designed to help you manage diabetes with confidence and optimize your well-being.</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-5">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   <li>Fasting Blood Sugar (FBS) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>T4 <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>ECR</li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Serum Sodium</li>
+                                   <li>Serum Calcium</li>
+                                   <li>Serum Uric Acid</li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                    <li>Urine for Microalbunuria</li>
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               
+                            </div>
+                            <div class="col-lg-4 px-4">
+                 
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram(ECG)</li>
+                                    
+                                </ul>
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Endocrinology</li>
+                                    <li>Opthalmology Consultation</li>
+                                    <li>Peripheral Nurmpathy Filamant Test</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
+                    </div>
+                
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">Well Women Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 4,250</span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 3,000</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:500px;">
+                                <p>At Caratas Hospital, we believe that women's health deserves specialized care and attention. Our Well Women Health Check-Up package is meticulously designed to cater to the unique health needs of women. We understand that women's well-being is diverse and ever-evolving, and we're here to support you on your journey to optimal health.</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-4">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   <li>Fasting Blood Sugar (FBS) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                   <li>Serum Calcium</li>
+                                   <li>Pap Smear/PSA</li>
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               <h5>Radiological Investigation</h5>
+                               <ul>
+                                   
+                                   <li>Ultrasound Scan - Abdomen</li>
+                                   <li>Ultrasound Scan - Female Pelvic (TVS)</li>
+                               </ul>
+                            </div>
+                            <div class="col-lg-4 px-4">
+                  
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram(ECG)</li>
+                                    
+                                </ul>
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Gynaecologist (Only for females)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
+                    </div>
+                    
+            <hr style="width: 100%;margin:0;">
+            <button class="accordion">Paediatric Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 2,500</span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 1,650</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:400px;">
+                                <p>Combining advanced medical assessments with convenience, this checkup empowers individuals to proactively manage their health, ensuring peak performance and well-being. Elevate your health, elevate your success."</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-4">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>T4 <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>ESR</li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Serum Sodium</li>
+                                   <li>Serum Potassium</li>
+                                   <li>Serum Calcium</li>
+                                   
+                                   <li>Serum Photosphorus</li>
+                                   <li>SGOT</li>
+                                   <li>SGPT</li>
+                                   <li>Platelet Count</li>
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               
+                            </div>
+                            <div class="col-lg-4 px-4">
+                         
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Paediatric Consultation</li>
+                            
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
+                    </div>
+                    
+            <hr style="width: 100%;margin:0;">   
+            <button class="accordion">Whole Body Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 8,000</span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 5,500</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:500px;">
+                                <p>At Caratas Hospital, we understand that your health is your most valuable asset. Our Whole Body Health Check-Up package is designed to provide you with a comprehensive overview of your well-being. We believe in the importance of preventive care, and this package is your key to early detection, prevention, and a healthier, happier life.</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-4">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   <li>Fasting Blood Sugar (FBS)<span style="color:#C71782;"> (Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>T3 <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>T4 <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>ESR</li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Serum Sodium</li>
+                                   <li>Serum Potassium</li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                   <li>Anti HCV Test</li>
+                                   <li>HbsAg</li>
+                                   <li>Serum Calcium</li>
+                                   
+                                   <li>Serum Uric Acid</li>
+                                   <li>Pap Smear/PSA</li>
+                                   
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               <h5>Radiological Investigation</h5>
+                               <ul>
+                                   <li>Chest X-Ray</li>
+                                   <li>Ultrasound Scan - Abdomen</li>
+                               </ul>
+                               
+                            </div>
+                            <div class="col-lg-4 px-4">
+                                <h5>Ultrasound Scan - Abdomen</h5>
+                                <ul>
+                                    <li>Pulmonary Function Test</li>
+                                </ul>
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram (ECG)</li>
+                                    <li>ECHO</li>
+                                    <li>Tread Mill Test (TMT)</li>
+                                </ul>
+                         
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Cardiologist</li>
+                                    <li>Pulmonologist</li>
+                                    <li>Gynaecologist (Only for females)</li>
+                            
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
+                    </div>
+
+                    <hr style="width: 100%;margin:0;"> 
+                    <button class="accordion">Senior Citizen Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 5,750 </span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 3,750</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:500px;">
+                                <p>At Caratas Hospital, we hold a deep respect for our senior citizens and understand the unique healthcare needs that come with age. Our Senior Citizen Health Check-Up package is designed to provide comprehensive care, tailored specifically to the health and wellness of our beloved seniors. We're here to ensure that your golden years are filled with good health and well-being.</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-4">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   <li>Fasting Blood Sugar (FBS)<span style="color:#C71782;"> (Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>ESR</li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                   <li>Urine for Microalbunuria</li>
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               <h5>Radiological Investigation</h5>
+                               <ul>
+                                   <li>Ultrasound Scan - Abdomen</li>
+                               </ul>
+                            </div>
+                            <div class="col-lg-4 px-4">
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram (ECG)</li>
+                                    <li>ECHO</li>
+                                    <li>Tread Mill Test (TMT)</li>
+                                </ul>
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Paediatric Consultation</li>
+                            
+                                </ul>
+                            </div>
+                        </div>
+                         <br/><br/>
+                    </div>
+                   
+                    <hr style="width: 100%;margin:0;"> 
+                    
+                    <button class="accordion">Cardiac Health Check-Up<br><strike style="color:rgba(199, 23, 130, 1);"><span style="color:#CCCCCC;">₹ 6,250 </span></strike> <span style="color:rgba(199, 23, 130, 1);">₹ 4,000</span></button>
+                    <div class="panel">
+                        <div class="row">
+                            <div class="col-lg-3 pt-5 px-4" style="background-color:#FAF9F9;height:500px;">
+                                <p>At Caratas Hospital, we understand that a healthy heart is the foundation of a vibrant life. Our Cardiac Health Check-Up package is dedicated to assessing and safeguarding the well-being of your heart. We believe in the importance of proactive cardiac care, and this package is your gateway to a heart-healthy future.</p>
+                                 <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                                <p><a style="color:#c71782;" href="#enquiry" target="">Make An Enquiry<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-5 px-4">
+                               <h5> Blood Investigation</h5>
+                               <ul>
+                                   
+                                   <li>Fasting Blood Sugar (FBS)<span style="color:#C71782;"> (Fasting Required)</span></li>
+                                   <li>Lipid Profile <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Thyroid Stimulating Hormone (TSH) <span style="color:#C71782;">(Fasting Required)</span></li>
+                                   <li>Complete Blood Count </li>
+                                   <li>ESR</li>
+                                   <li>Blood Grouping & RH Typing (TSH) </li>
+                                   <li>Liver Function Test<span style="color:#C71782;">*</span></li>
+                                   <li>Renal Panel (Kidney Profile)<span style="color:#C71782;">*</span></li>
+                                   <li>Serum Sodium</li>
+                                   <li>Serum Calcium</li>
+                                   <li>Serum Uric Acid</li>
+                                   <li>Post Prandial Blood Sugar (PPBS)</li>
+                                   <li>HbA1c</li>
+                                   <li>Pap Smear/PSA</li>
+                                   
+                                   <li>Urine Analysis<span style="color:#C71782;">*</span></li>
+                               </ul>
+                               <h5>Radiological Investigation</h5>
+                               <ul>
+                                   <li>Chest X-Ray</li>
+                                   <li>Ultrasound Scan - Abdomen</li>
+                               </ul>
+                               
+                               
+                            </div>
+                            <div class="col-lg-4 px-4">
+                                <h5>Cardiac Investigation</h5>
+                                <ul>
+                                    <li>Electrocardiogram (ECG)</li>
+                                    <li>ECHO</li>
+                                </ul>
+                                <h5>Consultation</h5>
+                                <ul>
+                                    <li>Physician/Endocrinology/Geriatric</li>
+                                    <li>Cardiologist</li>
+                                    <li>Gynaecologist (Only for females)</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <br/><br/>
+                    </div>
+                    
+                    <hr style="width: 100%;margin:0;"> 
+                   
+        </div>
+        
+                </div>
+            </div>
+              
+        </div>
+</section>
+
+
+
+
+
+
+
+ 
+
+{% endblock%}

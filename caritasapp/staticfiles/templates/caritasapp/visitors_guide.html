@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 style="font-weight: 600;">Visitor Guides </h1>
+            <h2 style="color: #c71782; font-weight: 300;">Navigate with Ease   </h2>
+        </div>
+        <p>&nbsp;</p>
+        <div class="row">
+    
+        <div class="col-lg-2 border-end visitors" style="position: sticky; top: 0;">
+            <p class="mb-4"><a href="#booking">Book an Appointment</a></p>
+            <p class="mb-4"><a href="#outpatient">Outpatient Visits </a></p>
+            <p class="mb-4"><a href="#pharmacy">Pharmacy</a></p>
+            <p class="mb-4"><a href="#laboratory">Laboratory Services</a></p>
+            <p class="mb-4"><a href="#imaging">Imaging Services</a></p>
+            <p class="mb-4"><a href="#emergency">Emergency</a></p>
+            <p class="mb-4"><a href="#ambulance">Ambulance</a></p>
+            <p class="mb-4"><a href="#critical">Critical Care Units</a></p>
+            <p class="mb-4"><a href="#admission">Admissions</a></p>
+            <p class="mb-4"><a href="#billing">Billing</a></p>
+            <p class="mb-4"><a href="#insurances">Insurance</a></p>
+            <p class="mb-4"><a href="#discharge">Discharge</a></p>
+            <p class="mb-4"><a href="#parking">Parking</a></p>
+            <p class="mb-4"><a href="#vaccination">Vaccination Rooms</a></p>
+            <p class="mb-4"><a href="#blood">Blood Bank</a></p>
+            <p class="mb-4"><a href="#attendant">Attendant Bystanders and Visitors</a></p>
+            
+
+        </div>
+        <div class="col-lg-8 visitorguide" id="visitorsguide">
+           <div id="deptsections" ><span id="booking" ></span>
+                       
+            <p >Booking an Appointment</p>
+            <ul>
+                <li> We offer 24x7 Remote booking facility through our website(www.caritashospital.org), WhatsApp (+91 481 279 0025) and call centre (9496555300)</li>
+                <li> For walk-in patients, the tokens shall be obtained from Self Service Kiosk and Registration desks </li>
+                <li>Registration counters are located at the Main OP Block, Caritas Cancer Institute, Caritas Heart Institute, Caritas Neurosciences and Gynecology Department </li>
+                <li>For every new patient registration of patient details would be required.</li>
+                <li> If you have been registered previously, kindly quote your Registration Number, while taking an appointment.</li>
+            </ul>
+            </div>
+            <div id="deptsections"><span id="outpatient"></span>
+            <p > Outpatient Visits </p>
+            <ul>
+                <li>Selected departments offer both morning and evening outpatient services</li>
+                <li> Every outpatient seeking treatment at the hospital is registered prior to the consultation </li>
+                <li>Please ensure you reach at least 15 minutes before your scheduled appointment </li>
+                <li>Check in at the initial assessment desk/ nursing station at least 15 minutes before your scheduled time </li>
+            </ul>
+            </div>
+           
+                 <div id="deptsections" >
+            <span id="pharmacy"></span>
+            <p >Pharmacy </p>
+            <ul>
+                <li>Doctors will advice your medications in the electronic records and you can collect them from the pharmacies</li>
+                <li> Four Out Patient pharmacies are located within the hospital premises: Main Pharmacy, SP pharmacy, CHI Pharmacy, and CCI pharmacy</li>
+                <li> Main Pharmacy dispenses medicine for all hospital departments. </li>
+                <li>SP Pharmacy has medicines of gastroenterology, gynecology, nephrology and pulmonology departments.</li>
+                <li>Cardiology Pharmacy has medicines of medication to cardiology and dental patients.</li>
+                <li> CCI Pharmacy gives medicines of Oncology patients.</li>
+                <li> Patients who are admitted in the hospital will receive their medicines directly in their rooms.</li>
+            </ul>
+            </div>
+            <div id="deptsections"><span id="laboratory"></span>
+            <p> Laboratory Services</p>
+            <ul>
+                <li> Caritas Lab is situated opposite administration block </li>
+                <li>Soft copy of your reports can be downloaded via WhatsApp (+91 481 279 0025), Text the number a greeting saying "Hello" for the lab results. </li>
+                <li>Print out can also be collected from the Result Counter near the lab</li>
+                <li> Doctors can see results in their systems</li>
+                <li> The result time varies depending on the test. Contact the lab staff to know about the waiting duration for results.</li>
+            </ul>
+            </div>
+            <div id="deptsections"><span id="imaging"></span>
+            <p>Imaging Services</p>
+            <ul>
+                <li> Caritas CT scan and X-Ray are located near front desk </li>
+                <li>Additional X-Ray facility for Oncology patients are available at ground floor- Caritas Cancer Institute</li>
+                <li> The MRI scan is offered by the external service provider and is located near Caritas Cancer Institute</li>
+                <li> Caritas Pet scan is located at BC block (Booking at 9846211555)</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="emergency"></span>
+            <p> Emergency </p>
+            <ul>
+                <li>We provide 24×7 emergency </li>
+                <li> Once the patient is received in the Emergency department, register the patient at the registration desk </li>
+                <li>You can connect with the Public Relations Officer (8281599842) for information regarding your dear ones</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="ambulance"></span>
+            <p> Ambulance</p>
+            <ul>
+                <li>We provide 24×7 ambulance care</li>
+                <li>Connect to our ambulance service at +91-9496555200</li>
+                <li>Air Ambulance service could be arranged upon request</li>
+                <li>Bike ambulance service also available</li>
+            </ul>  
+            </div>
+            <div id="deptsections">
+                <span id="critical"></span>
+            <p>Critical Care Units</p> 
+            <ul>
+                <li>Immediate family may wait outside the CCI or ICU in the waiting area</li>
+                <li>The doctors will brief the relatives about the patient’s condition daily</li>
+            </ul> 
+            </div>
+            <div id="deptsections">
+                <span  id="admission"></span>
+            <p>Admissions</p> 
+            <ul>
+                <li>Once the doctor intimates the admission, go directly to the inpatient admissions counter in the front office for proceedings</li>
+                <li>If you have insurance, inform to the insurance department</li>
+            </ul>  
+            </div>
+            <div id="deptsections">
+                <span id="billing"></span>
+            <p >Billing</p> 
+            <ul>
+                <li>Utilize your UPI apps like Gpay/PhonePe for your bill payment.</li>
+                <li>Search for biller- Caritas Hospital in your app </li>
+                <li>Settle the bill using your IP number and the bill number</li>
+                <li> Payment can be made at the reception counters</li>
+            </ul>  
+            </div>
+            <div id="deptsections">
+                <span id="insurances"></span>
+            <p>Insurance</p>
+            <ul>
+            	<li>The insurance department is located near the Caritas Chapel (administration)</li>
+            	<li>The waiting period for insurance approval depends on your insurance company</li>
+            	<li>Submit your insurance-related documents to the insurance department</li>
+            	<li>Contact our Insurance office for further information (9446021300)</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="discharge"></span>
+            <p>Discharge </p>
+            <ul>
+            	<li>The process of discharge starts once the patient is advised discharge by the doctor</li>
+            	<li>It takes about three hours for cash paying patients</li>
+            	<li>In case of Insurance covered patients the timing may be more depending on the approval received from the Insurance/TPA.</li>
+            	<li>Once the medicines are ready it will be delivered to your room</li>
+            	<li>Once the final bill is ready, a message giving e-payment option will be received in the registered phone number. You may use this option</li>
+            	<li>Those of all who doesn&rsquo;t have any e-payment facility could approach the front desk for the payment</li>
+            	<li>The Nurse will hand over the discharge docket consisting of discharge summary and reports of all investigations carried out during the current admission.</li>
+            	<li>Follow-up information will be provided by the nurse in-charge</li>
+            	<li>In case of insurance patients, please note the original reports/discharge summary is submitted to your TPA, hence the hospital will hand over a photocopy of the same to the patient.</li>
+            	<li>Patients/relatives are requested to vacate the room/bed immediately once the discharge formalities are completed.</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="parking"></span>
+            <p >Parking</p> 
+            <ul>
+            	<li>Parking facilities are available for the patients and immediate family</li>
+            	<li>Free Buggy car facility would be available for your transportation to the respective departments/blocks</li>
+            	<li>Five Parking Zones are located across the campus</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="vaccination"></span>
+            <p >Vaccination Rooms</p> 
+            <ul>
+            	<li>The vaccination room is located near the pediatric department</li>
+            	<li>Settle the service bill at the designated bill counter</li>
+            	<li>Vaccine will be given only according to doctor&rsquo;s prescription</li>
+            	<li>Buy the prescribed vaccine from the main pharmacy and submit to the vaccination room without delay</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="blood"></span>
+            <p>Blood Bank</p>
+            <ul>
+            	<li>Blood bank is near the laboratory at the ground floor near administration</li>
+            	<li>Donors may fill the form while waiting</li>
+            	<li>Mild refreshments are provided after donation</li>
+            	<li>Use Blood App for more services</li>
+            </ul>
+            </div>
+            <div id="deptsections">
+                <span id="attendant"></span>
+            <p>Attendant Bystanders and Visitors</p>
+            <ul>
+            	<li>Only one bystander is allowed in the room along with the patient</li>
+            	<li>Show your Stay Pass to the security while entering the ward</li>
+            	<li>Immediate family members can visit the patient during 2 pm &ndash; 4 pm</li>
+            	<li>Please make sure visitors and bystanders follow hospital rules and regulations.</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+<script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.visitors a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId + 'p'); // Adjust to target the <h3> tag
+
+                if (targetElement) {
+                    const yOffset = -20; // Adjust this value to suit your layout
+                    const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+{% endblock%}      

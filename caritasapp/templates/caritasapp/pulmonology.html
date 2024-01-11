@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Pulmonology & Interventional Pulmonology</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Best Pulmonology Hospital in Kerala</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/pulmonology.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+ 
+                     {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container " id="deptmenu">
+        <div class="navbar" id="navbr"> 
+            <ul >
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#treatments-procedures">Treatments and Procedures</a><li>
+                <li><a href="#doctors">Doctors</a><li>
+                
+                <li><a href="#articles">Articles</a><li>
+            </ul>
+
+        </div>
+       </div>
+</section>
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3>Breathing Life into Health: Your Lungs, Our Expertise.</h3>
+            <p>&nbsp;</p>
+            <div class="col-lg-5">
+                    <img src="{% static 'img/Pulminology2.png' %}" style="width:96%;" />
+             </div>
+            <div class="col-lg-7 pt-4 mt-1">
+                   <p style="font-weight:500;margin-bottom:30px;">Findings of the Seasonal Waves Of Respiratory Disorders (SWORD) study stated that chronic and acute respiratory problems are the most significant contributors to India’s growing mortality rate after heart diseases.  </p>
+                   <p style="font-weight:500;">The lack of awareness about such morbid conditions has resulted in demography leading to reckless lifestyles and food habits. Such a lifestyle eventually leads to symptoms like chest tightness, sleep apnea, and wheezing that ultimately manifests into severe ailments like lung cancer. </p>
+                   <p style="font-weight:500;">At Caritas, our motto is to relieve a patient from their respiratory problems and educate the masses about the gravity of COPD illnesses and the necessity to lead a healthy lifestyle to remove this disease from its roots.</p>
+                   <p style="font-weight:500;">Over the years, we have successfully achieved the objective that helped us to be identified as the best pulmonology hospital in Kerala.</p>
+                  <p> Comprehensive Respiratory Care for All Ages </p>
+                  <p> The pulmonology department in Caritas Hospital is a specialized unit that completely treats respiratory diseases. The experienced doctors and nurses provide all diagnostic, therapeutic and rehabilitation services. We provide specialized care for children with respiratory conditions, adults with chronic obstructive pulmonary disease (COPD), asthma and other respiratory diseases. </p>
+                  <p> The primary purpose of the pulmonology department is to diagnose the patients and provide appropriate treatment to improve their quality of life. The aim is to prevent further complications, reduce hospitalization, improve physical activity and provide long-term control of symptoms.</p>
+
+            </div>
+        </div>
+  </div>
+</section>
+<section  id="deptsections" style="background-color:#F4F6F6;max-width:100%;"><span id="treatments-procedures"></span>
+    <div class="container my-5">
+            
+       <h3 class="text-center">Treatment and Procedures</h3>
+        <p class="text-center mb-5 mt-3">Caritas Hospital provides highly effective treatment for recurring allergies, asthma, COPD, lung cancer, obstructive sleep apnoea and chronic ventilatory failure - especially those secondary to neuromuscular disorders. Our team of pulmonologists also provide specialized critical care for patients with acute respiratory conditions and respiratory failure:</p>
+        <div class="row justify-content-center" style="margin:0 auto;width:80%;">
+            <div class="col-lg-6" >
+              <ul><li>Cryobiopsy for DPLDs</li>
+                <li>Foreign Body Removal</li>
+                
+              <li>  Pleural Biopsy</li>
+              <li>  Forceps/Cryo Biopsy</li>
+               <li> Adhesiolysis</li>
+             <li>   Mechanical/Chemical</li>
+               <li> Pleurodesis</li>
+              <li>  Indwelling tunneled Pleural Catheter (IPC)</li>
+             <li>   Pigtail Catheter</li>
+             <li>   Conventional ICD</li>
+             </ul>
+            </div>
+            <div class="col-lg-6" >
+                <ul>
+               <li> Haemoptysis management</li>
+                <li>BPF Management</li>
+               <li> Brachytherapy</li>
+                <li>EndoBrochial UltraSound (EBUS)</li>
+               <li> Mediastinal Node FNAC/FNAB</li>
+                <li>Staging EBUS for Lung Cancer</li>
+               <li> Peripheral Pulmonary Nodule (PPN) Evaluation</li>
+               <li> Thin Scope + Radial EBUS + Fluoroscopy</li>
+              <li>  EUS-B-FNA</li>
+              <li>  Pleural Biopsy</li>
+              </ul>
+            </div>
+          </div>
+      
+    </div>
+  
+</section>
+
+<section id="deptsections"><span id="doctors"></span>
+    <div class="container mt-5">
+         <h3 class="text-center mb-4">Dedicated Team of Doctors</h3>
+            <p class="text-center">At Caritas, our dedicated team of experienced doctors is committed to your well-being. With a wealth of medical expertise and a passion for compassionate care, our physicians are here to provide you with top-notch healthcare services.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <div class="row  " >
+                      <h5 class="mainheading">Pulmonology & Interventional Pulmonology</h5>
+                {% for doctor in doctors%}
+                 {% if doctor.specialization == "Pulmonology & Interventional Pulmonology" %} 
+                 
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 pt-4 doctorbox ">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 mr-5 dr_img">
+                                <img src="{{ doctor.image.url }}" alt="Doctor img" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mx-2 mt-2">
+                                <h4>{{ doctor.name }}</h4>
+                                <h6>{{ doctor.designation }}</h6>
+                                <h6><a style="color:#c71782;" href="#">{{ doctor.department }}</a></h6>
+                                <p class="hide_mobile">&nbsp;</p>
+                                <p><a style="color:#c71782;" href="https://booking.caritashospital.org/schedule/OnlineAppointmentBooking/OnlineAppointmentBooking.aspx" target="_blank">Book An Appointment<i class="bi bi-chevron-right ms-2"></i></a></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 ml-auto align-self-start drurl">
+                                <a href="{% url 'doctor_detail' doctor_id=doctor.id %}">
+                                    <i class='bi bi-arrow-right-circle' style="font-size:40px;color:#C71782;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
+            {% endif %}
+            {% endfor %}
+           
+                
+           
+        </div>
+    </div>
+</section>
+
+<section id="deptsections">
+    <span id="articles"></span>
+    <div class="container mt-5">
+        <div class="row">
+            
+
+            {% if posts_exist %}
+            <h3 class="mb-4 text-center">Articles to Read</h3>
+            <p class="mb-4 text-center">Whether you're seeking knowledge, inspiration, or valuable insights, our articles offer a wealth of information to inform and empower you on your journey towards better health and well-being.</p>
+            <p>&nbsp;</p>
+                {% for post in posts %}
+                    {% if post.department.name == "Pulmonology & Interventional Pulmonology" %}
+                        <div class="col-lg-12">
+                            <div class="post">
+                                <div class="row align-items-center mx-4">
+                                    <div class="col-lg-11">
+                                        <h6>{{ post.title }}</h6>
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <a href="{% url 'detail' post.slug %}">
+                                            <img src="{% static 'img/right-arrow.png' %}" alt="right-arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr style="width: 95%; margin: 30px auto;">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <p><a class="mx-4 mt-5" href="#" style="color:#c61682;">View All Articles <i class="bi bi-chevron-right ms-2"></i></a></p>
+            {% else %}
+                <p></p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Ethics Committee   </h1>
+                <h2 style="color: #c71782; font-weight: 300;">Upholding Integrity in Medical Advancements</h2>    
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/ethics.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4">Establishment and Significance of the <br/> Caritas Hospital Ethics Committee</h3>           
+          <p> In 2001, Caritas Hospital established its Ethics Committee, pioneering the concept under the visionary guidance of Dr. Johny Joseph, Head of Caritas Heart Institute.
+            The esteemed Professor Dr. Madhavankutty, former Principal of MCH, Kottayam, and former Director of Medical Education, Kerala, was appointed as the Founding Chairman of the Ethics Committee. In addition, Professor Dr. George Jacob, retired Professor of Cardiology at MCH, Kottayam, served as the Founding Member Secretary.</p>
+            
+           <p> The primary role of the Ethics Committee is to meticulously review and approve proposals for clinical trials and research studies conducted within Caritas Hospital. The committee's paramount focus is to ensure that these endeavors prioritize patient safety and uphold the institutional standards.</p>
+            
+         <p>   Notably, the prestigious NABH Accreditation serves as a testament to the committee's dedication to enhancing both the quality and capacity of ethical research involving new drugs. Caritas Hospital proudly stands as the second institution in the state and the first in Central Kerala to achieve this esteemed recognition.</p>
+            
+           <p> This accomplishment reflects the concerted efforts of the hospital's management, past and present ethics committee members, clinical trial physicians, research department, and quality department. Caritas Hospital remains committed to maintaining the highest ethical standards in healthcare and research, driving innovation and patient well-being</p>
+           <p>&nbsp;</p>
+           
+       </div>
+       <div class="row " >
+            <h3 class="mb-5">The members of Ethics Committee - Caritas Hospital</h3>
+            <div class="col-lg-5" >
+                  <p> Dr.N Sudhayakumar<br><font color="#333333">  Chairman</font> </p>
+                  <p> Dr. Manu John<br><font color="#333333">  Member Secretary</font> </p>                
+                  <p> Dr.Deepthi Madhu<br><font color="#333333"> Basic Medical Scientist & Alternate Member Secertary</font> </p>        
+                  <p> Adv. Chacko Simon<br><font color="#333333"> Legal Expert</font></p>
+                  <p>Adv.Jessymol Joseph<br><font color="#333333"> Legal Expert</font></p>
+                  <p>Prof.Dr.Johnson Neelanirappel<br><font color="#333333"> Theologian</font></p>
+                </div>  
+            
+           <div class="col-lg-5" >
+                  
+                    <p>Rev. Fr. Jinu Kavil<br> <font color="#333333">Theologian</font></p>                   
+                    <p> Dr.Sajan thomas<br><font color="#333333">Clinician</font> </p>
+                    <p>Mr. A.J Chacko<br><font color="#333333">Lay Person</font></p>
+                   <p>Dr.Jacob Jesurun<br><font color="#333333">Basic Medical Scientist </font> </p>
+                    <p>Prof. Dr.Cinu Thomas<br><font color="#333333">Basic Medical Scientist </font> </p>   
+                     <p>Prof.Twinkle Mathew<br><font color="#333333">Basic Medical Scientist </font> </p>     
+                 
+                </div>  
+             
+              </div>
+            
+            <p>&nbsp;</p>
+           
+              
+        </div>
+</section>
+
+<section >
+    <div class="container ">
+          
+            <div class="row bottomlinks " style="width:90%;margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000;" href="{% url 'director_message' %}">Director's Message</a></p>
+                        </div>
+                        <div class="ml-4" style="margin-left: 20%;">
+                           <a href="{% url 'director_message' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#C71782;" href="{% url 'ethics' %}">Ethics Committee</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a style="color:#C71782;" href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="{% url 'governing_body' %}">Governing Body</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <a href="{% url 'blood' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="{% url 'quality_control' %}">Quality Indicators </a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000;" href="{% url 'milestones' %}">Milestones</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="{% url 'biomedical'%}">Biomedical Waste Management (BMW)</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="{% url 'achievements' %}">Awards & Achievements</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                <!--
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a href="#">FAQ</a></p>
+                                </div>
+                                <div class="ml-4" style="margin-left: 20%;">
+                                    <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+            -->
+           </div>
+        
+        
+    </div>
+</section>
+
+
+ 
+
+{% endblock%}

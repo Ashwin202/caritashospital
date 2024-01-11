@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load video_tags %} -
+
+{% block content%}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+                <h1 style="font-weight: 600;">Clinical Nutrition</h1>
+                <h2 style="color: #c71782; font-weight: 300;">Kottayam's Nutrition-Centric Hospital</h2>
+                
+        </div>
+        <div class="row px-3">
+            <div class="col-lg-8 col-md-10 col-sm-12 text-center px-0 " style="margin:auto 0;">
+                <img src="{% static 'img/clinical1.png' %}" class="img-fluid" alt="Cancer Institute Image" />
+            </div>
+            <div class="col-lg-4 col-md-10 col-sm-12 px-5 py-5" style="background-color: #c71782;">
+                <div class="col-content text-justify">
+                    <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
+                    <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
+
+                    {% include 'caritasapp/enquiry_form_template.html' %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deptsections"><span id="overview"></span>
+    <div class="container">
+        <div class="row" >
+            <h3 class="mb-4">Expert-Led Clinical Nutrition for <br>Customized Dietary Solutions at Caritas Hospital</h3>
+            <p>Led by a team of expert dieticians, the department of Clinical Nutrition at Caritas Hospital offers customized, guideline-based dietary plans for patients. These dietary plans are devised for each patient based on their health problems and nutritional requirements. The department provides crucial support to all specialties by assessing, monitoring and optimizing the nutritional status of patients, including those who require intravenous feeding.</p>
+            
+            <p>Trained extensively in all aspects of diet and nutrition, the dieticians of the Department also provide expert advice to patients on how to eat healthy, maintain optimal body weight and prevent/ manage lifestyle disorders including diabetes, obesity and hypertension. Our dieticians are extensively trained in all the aspects of diet and nutrition, and they also provide expert advice to patients on how to eat healthy, maintain optimal body weight and prevent/manage lifestyle disorders including diabetes, obesity and hypertension</p>
+            </div>
+            </div>
+            
+</section>
+<section style="background-color:#FAF9F9;">
+            <div class="container mt-5" >
+            <div class="row">
+            <h4 class="mb-3"><strong>Nutrition Clinics</strong></h4>
+            <p> The Nutrition Clinics under clinical nutrition offer customized, guideline-based diet advice for patients. A holistic approach is followed by these clinics and each patient is assessed in details on the basis of their current physical/ medical condition, nutritional requirements and expected recovery time before deciding the special diet patterns that need to be followed.</p>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-5" >
+                  <h5 class="mb-4">Diabetes Clinic</h5> 
+                  <img src="{% static 'img/clinical2.png' %}" class="img-fluid mb-4" alt="diabetes-clinic" />
+                 <p> Our dieticians create personalized diet plans for diabetic patients that help to control/maintain blood sugar levels and manage diabetes effectively. These diet plans include 'what to eat and what not to eat,' which are created on the basis of the medical inputs provided by Diabetologist and Endocrinologist.</p>
+                  <p> With a focus on empowering patients, we ensure that these dietary solutions are not only effective but also easy to follow, promoting long-term health and well-being.     </p>      
+                  <p><a href="#" style="color: #c71782;">Enquire Now<i class="bi bi-chevron-right ms-2"></i></a></p>
+
+                </div>
+                <div class="col-lg-1">
+                    
+                </div>
+                <div class="col-lg-5" >
+                    <h5 class="mb-4">Wellness Nutrition Clinic</h5> 
+                  <img src="{% static 'img/clinical3.png' %}" class="img-fluid mb-4" alt="wellness-nutrition" />
+                 <p> The Wellness Nutrition Clinic helps our dieticians assess the health status and lifestyle of patients in detail. Based on the valuable inputs provided by the Wellness team, the dieticians can create customized diet plans for patients. </p>
+                  <p> These plans help patients meet their daily nutritional requirements and maintain optimal body weight and good health. The diet plan also include recommendations to improve physical activity, ensure optimal calorie expenditure, prevent accumulation of fat and ensure overall wellness.    </p>   
+                  <p><a href="#" style="color: #c71782;">Enquire Now<i class="bi bi-chevron-right ms-2"></i></a></p>
+
+                  
+                </div>
+            </div>
+           </div>
+              
+        
+</section>
+
+<section >
+    <div class="container ">
+          
+            <div class="row bottomlinks" style="margin:0 auto;">
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                  <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p><a style="color:#000 !important;" href="{% url 'radiology' %}">Radiology & Laboratory</a></p>
+                        </div>
+                        <div>
+                           <a href="{% url 'radiology' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                        </div>
+                    </div>
+                    <hr style="width: 98%;margin:0 ;">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                     <p><a style="color:#000 !important;" href="{% url 'insurance' %}">Insurance Partners</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'insurance' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                          <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'blood' %}">Blood Bank</a></p>
+                                </div>
+                                <div>
+                                   <a style="color:#C71782;" href="{% url 'blood' %}"> <i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#C71782 !important;" href="{% url 'clinical' %}">Clinical Nutrition</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'clinical' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+              
+                  <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p><a style="color:#000 !important;" href="{% url 'pastoralcare' %}">Pastoral Care</a></p>
+                                </div>
+                                <div>
+                                    <a style="color:#C71782;" href="{% url 'pastoralcare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p> <a style="color:#000 !important;" href="{% url 'organ' %}">Organ Transplant Program</a></p>
+                                </div>
+                                <div>
+                                     <a href="{% url 'organ' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 px-3 pt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                 <div>
+                                    <p><a  href="{% url 'homecare' %}">Caritas Home Care</a></p>
+                                </div>
+                                <div>
+                                    <a  href="{% url 'homecare' %}"><i class='bi bi-arrow-right' style="color:#C71782;font-size:35px"></i></a>
+                                </div>
+                            </div>
+                            <hr style="width: 98%;margin:0 ;">
+                </div>
+                
+       
+                
+           </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+ 
+
+{% endblock%}
