@@ -42,46 +42,60 @@
                     <p>&nbsp;</p>
                     <h5>General Enquiry</h5>
                     <p>&nbsp;</p>
-                    <form action=" " method="post" class="custom-form">
+                    <form action="/contact-us/" method="post" class="custom-form">
                     {% csrf_token %}
                     <div class="secondopinion row mb-2">
        
                          <div class="col-sm-12 my-2">
+                              <div class="input-with-symbol">
                        
                             <input type="text" id="first_name" placeholder="First Name" name="first_name" class="form-control" required>
+                            <span class="required-symbol">*</span>
                         </div>
+                    </div>
                     </div>
                     <div class="secondopinion row mb-2">
        
                         <div class="col-sm-12 my-2">
+                             <div class="input-with-symbol">
                             <input type="text" id="last_name" placeholder="Last Name" name="last_name" class="form-control" required>
+                            <span class="required-symbol">*</span>
+                        </div>
                         </div>
                     </div>
                     <div class="secondopinion row mb-2">
                         <div class="col-sm-6 my-2">
+                             <div class="input-with-symbol">
                             <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
+                            <span class="required-symbol">*</span>
+                            </div>
                         </div>
         
                         <div class="col-sm-6 my-2">
-                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+                             <div class="input-with-symbol">
+                             <input type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" class="form-control required-field" required pattern="[0-9]{10,14}" title="Please enter a valid phone number">
+                            <small class="error-msg" style="display: none; color: red;">Please enter a valid phone number (10-14 digits).</small>
+                            <span class="required-symbol">*</span>
+                            </div>
                         </div>
                 
                     </div>
                     <div class="form-grp row mb-2">
                          <div class="col-sm-12 my-2">
-                            <textarea id="query" name="query" class="form-control" required placeholder="Message Query" rows="6" cols="40" style="border-bottom:1px solid #000;"></textarea>
+                             
+                            <textarea id="query" name="query" class="form-control"  placeholder="Message Query" rows="6" cols="40" style="border-bottom:1px solid #000;"></textarea>
 
                         </div>
                     </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" id="tickbox" name="tickbox">
-                        <label class="form-check-label" for="categorySales">
-                            By Ticking,I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and sms.
-                        </label>
-                    </div>
+                     <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tickbox" name="agree_terms" required>
+                                <label class="form-check-label" for="tickbox">
+                                    By ticking, I agree to the Terms and Conditions, and I am giving my consent to receive updates through email and SMS.
+                                </label>
+                            </div>
                     <div class="form-grp row mt-4">
                         <div class="col-sm-12">
-                            <button type="submit" class="enqrybtn">Submit Now </button>
+                            <button type="submit" class="enqrybtn">Submit Nows </button>
                         </div>
                     </div>
                 </form>

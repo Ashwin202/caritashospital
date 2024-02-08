@@ -1,6 +1,6 @@
 from django import forms
 from .models import Enquire
-from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm
+from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm,BookConsultation
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -61,3 +61,15 @@ class InternationalForm(forms.ModelForm):
         if not last_name or not last_name.strip().isalpha():
             raise forms.ValidationError("Please enter a valid last name.")
         return last_name
+        
+class BookConsultationForm(forms.ModelForm):
+    class Meta:
+        model = BookConsultation
+        fields = ['first_name', 'last_name', 'gender', 'email', 'country', 'phone_number', 'dob', 'op_number', 'department', 'doctor', 'message', 'agree_terms']
+        widgets = {
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(BookConsultationForm, self).__init__(*args, **kwargs)
+        # Add any customizations or additional validation here if needed

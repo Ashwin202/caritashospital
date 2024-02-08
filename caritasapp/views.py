@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post,Category,Doctor,Department,Contact,ContactUs, Career,JobType,Application,SliderImage,Videos,Album,MobileSliderImage,BioMedical, QualityControl, Studies,HomeCare,Hospital,InternationalForm
+from .models import Post,Category,Doctor,Department,Contact,ContactUs, Career,JobType,Application,SliderImage,Videos,Album,MobileSliderImage,BioMedical, QualityControl, Studies,HomeCare,Hospital,InternationalForm,BookConsultation, CaritasHospitalDoctor,DoctorSlider
 from .models import Card
 from .models import Video
 from django.dispatch import receiver
@@ -7,7 +7,7 @@ from django.db.models.signals import post_save  # Import the post_save signal
 import os
 from moviepy.editor import VideoFileClip 
 from .models import Enquire
-from .forms import EnquireForm, ContactUsForm,ApplicationForm,InternationalForm
+from .forms import EnquireForm, ContactUsForm,ApplicationForm,InternationalForm,BookConsultationForm
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from .forms import ContactForm,HomeCareForm
@@ -17,7 +17,11 @@ import pycountry
 from itertools import groupby 
 from django.db.models import Count 
 from django.core.paginator import Paginator
-
+from datetime import datetime
+from django.db.models import Max
+import datetime
+from django.core.mail import send_mail
+from .lib.sendMail import sendEmail
 
 # Create your views here.
 def index(request):
@@ -26,12 +30,14 @@ def index(request):
     testimonials = Videos.objects.all()
     desktop_images = SliderImage.objects.all()
     mobile_images = MobileSliderImage.objects.all()
+    doctors_images = DoctorSlider.objects.all()
     context = {
      'posts': posts,
      'videos': videos,
      'desktop_images':desktop_images ,
      'mobile_images': mobile_images,
      'testimonials':testimonials,
+     'doctors_images': doctors_images,
     }
     return render(request, 'caritasapp/index.html', context)
 
@@ -106,7 +112,20 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
-            form.save()  # This will save the form data to the ContactUs model
+            entry = form.save()  # This will save the form data to the ContactUs model
+
+            # Send email to admin
+            subject = 'New Contact Us Submission'
+            message = f'Name: {entry.first_name} {entry.last_name}\nEmail: {entry.email}\nPhone Number: {entry.phone_number}\nPage URL: {entry.page_url}'
+            # from_email = 'neeraja@onbyz.com'  # Replace with your email
+            from_email = 'ashes192000@gmail.com'  # Replace with your email
+            # to_email = 'neerajakmadhavi@gmail.com'  # Replace with admin's email
+            to_email = 'ashwinm.045@gmail.com'  # Replace with admin's email
+            try:
+                sendEmail(subject, message, from_email, to_email)
+            except Exception as e:
+                print(f"Error sending email: {e}")
+
             return render(request, 'caritasapp/success.html')  # Redirect to a success page
     else:
         form = ContactUsForm()
@@ -662,18 +681,25 @@ def director_message(request):
     return render(request, 'caritasapp/director-message.html') 
 def governing_body(request):
      return render(request, 'caritasapp/governing_body.html')
+     
 def quality_control(request):
-    
     year = request.GET.get('year')
     month = request.GET.get('month')
 
     if year and month:
-        quality = QualityControl.objects.filter(year=year, month=month)
+        # Assuming month_year is a DateField or DateTimeField
+        quality = QualityControl.objects.filter(month_year__year=year, month_year__month=month)
     else:
+        x = datetime.datetime.now()
+        
+
         quality = QualityControl.objects.all()
+   
+
+
 
     return render(request, 'caritasapp/quality_control.html', {'quality': quality})
-
+    
 def articles(request):
    
     posts = Post.objects.order_by('-created')
@@ -785,7 +811,7 @@ def family(request):
 
     hospital = get_object_or_404(Hospital, name=hospital_name)
     
-    doctors_in_hospital = Doctor.objects.filter(hospitals=hospital).order_by('order')
+    doctors_in_hospital = CaritasHospitalDoctor.objects.filter(hospitals=hospital).order_by('order')
 
     context = {
         'doctors_in_hospital': doctors_in_hospital,
@@ -796,23 +822,22 @@ def family(request):
     
 def caritashdp(request):
     hospital_name = 'Caritas HDP Hospital'
-
     hospital = get_object_or_404(Hospital, name=hospital_name)
-    
-    doctors_in_hospital = Doctor.objects.filter(hospitals=hospital).order_by('order')
+    doctors_in_hospital = CaritasHospitalDoctor.objects.filter(hospitals=hospital).order_by('order')
 
     context = {
         'doctors_in_hospital': doctors_in_hospital,
         'hospital': hospital,
     }
-    return render(request,'caritasapp/caritashdp.html', context)
+
+    return render(request, 'caritasapp/caritashdp.html', context)
 
 def caritaskkm(request):
     hospital_name = 'Caritas KMM Hospital'
 
     hospital = get_object_or_404(Hospital, name=hospital_name)
     
-    doctors_in_hospital = Doctor.objects.filter(hospitals=hospital).order_by('order')
+    doctors_in_hospital = CaritasHospitalDoctor.objects.filter(hospitals=hospital).order_by('order')
 
     context = {
         'doctors_in_hospital': doctors_in_hospital,
@@ -844,13 +869,26 @@ def job_detail(request, career_id):
     
 def senior_executive(request):
     return render(request,'caritasapp/senior_executive.html')
+    
 
 def video_consultation(request):
     doctors = Doctor.objects.all()
     departments = Department.objects.all()
     countries = list(pycountry.countries)
 
-    return render(request, 'caritasapp/video_consultation.html', {'doctors': doctors, 'departments': departments,'countries':countries})
+    if request.method == 'POST':
+        form = BookConsultationForm(request.POST)
+        if form.is_valid():
+            entry = form.save(commit=False)
+            entry.save()
+            return render(request, 'caritasapp/success.html')
+        else:
+            print(form.errors)
+    else:
+        form = BookConsultationForm()
+
+    return render(request, 'caritasapp/video_consultation.html', {'form': form, 'doctors': doctors, 'departments': departments, 'countries': countries})
+
     
 def homecare(request):
     countries = list(pycountry.countries)
@@ -1036,12 +1074,28 @@ def interventional(request):
     }
     return render(request, 'caritasapp/interventional.html', context)
     
-    
-def departments_page(request):
+def geriatric_medicine(request):
+    department_name = 'Geriatric Medicine'
+    department = Department.objects.get(name=department_name)
+    doctors = Doctor.objects.order_by('order')
     departments = Department.objects.all()
-    return render(request, 'caritasapp/departments.html', {'departments': departments})
+    posts = Post.objects.filter(department__name="Geriatric Medicine")[:5]
+    doctors_in_department = Doctor.objects.filter(department=department)
+    context = {
+        
+        'posts': posts,
+        'doctors_in_department': doctors_in_department,
+        'doctors': doctors,
+        'departments': departments,
+    }
+    return render(request, 'caritasapp/geriatric_medicine.html', context)
 
-def department_detail(request, department_slug):
-    department = get_object_or_404(Department, slug=department_slug)
-    template_name = f"caritasapp/{department_slug}.html"
-    return render(request, template_name, {'department': department})
+def caritashospitaldoctor_detail(request, doctor_id):
+    print("View called with doctor_id:", doctor_id)
+    doctor = get_object_or_404(CaritasHospitalDoctor, id=doctor_id)
+    department = Department.objects.all()
+    return render(request, 'caritasapp/caritashospitaldoctor_detail.html', {'doctor': doctor, 'department': department})
+    
+#def google046804b37e953e57(request):
+ #   return render(request, 'google046804b37e953e57.html')
+    

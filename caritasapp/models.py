@@ -9,13 +9,15 @@ from django.db.models.signals import post_save
 import tempfile
 from django.utils.text import Truncator
 from django.db.models.signals import pre_save
-
+from django.urls import reverse
 import uuid
 
 class Department(models.Model):
     name = models.CharField(max_length=100)
     Department_id =  models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     slug = models.SlugField()
+    Department_url = models.TextField(null=True, blank=True)
+    #Department_url = models.URLField(null=True, blank=True)
     def __str__(self):
         return self.name
         
@@ -62,6 +64,9 @@ class Post(models.Model):
         if not self.excerpt:
             self.excerpt = Truncator(self.body).chars(200)  # Truncate to 200 characters
         super(Post, self).save(*args, **kwargs)
+        
+    def get_absolute_url(self):
+        return reverse('detail', args=[str(self.slug)])
 
     def __str__(self):
         return self.title
@@ -165,13 +170,14 @@ class Doctor(models.Model):
     bio = models.TextField(blank=True)
     image = models.ImageField(upload_to='doctors/', null=True, blank=True)
     professional_qualifications = models.CharField(max_length=1000, blank=True)
-    achievements_and_expertise = models.CharField(max_length=1000, blank=True)
-    awards_and_recognitions = models.CharField(max_length=1000, blank=True)
+    achievements_and_expertise = models.TextField(blank=True)
+    awards_and_recognitions = models.TextField(blank=True)
     language = models.CharField(max_length=255, blank=True)
     hospitals = models.ManyToManyField(Hospital, blank=True)
     order=  models.CharField(max_length=255, blank=True)
     is_visible = models.BooleanField(default=True)
     appointment_enabled = models.BooleanField(default=True)
+    active = models.BooleanField(default=False)
     
     def __str__(self):
         return self.name
@@ -287,8 +293,11 @@ class QualityControl(models.Model):
     compliance_hand_hygiene=models.CharField(max_length=100)
     month_year = models.DateField(verbose_name="Month and Year", null=True, blank=True)
 
+    def formatted_date(self):
+        return self.month_year.strftime("%d-%b-%y") if self.month_year else ''
+
     def __str__(self):
-        return f"QualityControl for {self.month_year}"
+        return f"QualityControl for {self.formatted_date()}"
         
 class BioMedical(models.Model):
     total_bags=models.CharField(max_length=100)
@@ -320,6 +329,29 @@ class HomeCare(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name} - {self.email}'
         
+class BookConsultation(models.Model):
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    ]
+
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
+    email = models.EmailField()
+    country = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=30)
+    dob = models.DateField(blank=True, null=True)
+    op_number = models.CharField(max_length=255, blank=True, null=True)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE,blank=True, null=True)
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE,blank=True, null=True)
+    message = models.TextField(blank=True)
+    agree_terms = models.BooleanField()
+    created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
         
 class InternationalForm(models.Model):
     first_name = models.CharField(max_length=100)
@@ -327,6 +359,33 @@ class InternationalForm(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=15)
     country = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+        
+class CaritasHospitalDoctor(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
+    name = models.CharField(max_length=255)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, default=None) 
+    designation = models.CharField(max_length=255)
+    specialization = models.CharField(max_length=255,blank=True)
+    bio = models.TextField(blank=True)
+    image = models.ImageField(upload_to='doctors/', null=True, blank=True)
+    professional_qualifications = models.CharField(max_length=1000, blank=True)
+    achievements_and_expertise = models.CharField(max_length=1000, blank=True)
+    awards_and_recognitions = models.CharField(max_length=1000, blank=True)
+    language = models.CharField(max_length=255, blank=True)
+    hospitals = models.ManyToManyField(Hospital, blank=True)
+    order=  models.CharField(max_length=255, blank=True)
+    is_visible = models.BooleanField(default=True)
+   
+    available_timings = models.TextField(blank=True)
+    
+    def __str__(self):
+        return self.name
+        
+class DoctorSlider(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='doctors_images/')
+    

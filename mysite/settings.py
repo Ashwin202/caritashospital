@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-sr==h6f=xce6-4os1o@-62e&*lw0j&s5&djqsb37h)$+rb463k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['162.240.158.131','caritashospital.in','*']
+ALLOWED_HOSTS = ['162.240.158.131','caritashospital.org','*']
 
 
 # Application definition
@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "caritasapp.apps.CaritasappConfig",
+    'django.contrib.sitemaps'
+     
 ]
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,4 +135,10 @@ MEDIA_ROOT = BASE_DIR/'caritasapp/static/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # or the port your SMTP server uses
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'ashwinm.045@gmail.com'  # your email
+EMAIL_HOST_PASSWORD = 'wyln hmwr yncn vece'  # your email password

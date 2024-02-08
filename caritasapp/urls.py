@@ -3,6 +3,10 @@ from . import views
 from .views import autocomplete
 from django.conf.urls.static import static
 from django.conf import settings
+#from django.contrib.sitemaps.views import sitemap
+#from .sitemaps import PostSitemap
+
+
 
 urlpatterns = [
     path('', views.index, name = 'index'),
@@ -26,7 +30,7 @@ urlpatterns = [
     path('neonatology',views.neonatology, name='neonatology'),
     path('ophthalmology',views.ophthalmology, name='ophthalmology'),
     
-      path('emergency-medicine',views.emergency_medicine, name='emergency_medicine'),
+    path('emergency-medicine',views.emergency_medicine, name='emergency_medicine'),
     path('dental',views.dental, name='dental'),
     path('pathology',views.pathology, name='pathology'),
     path('psychiatry', views.psychiatry, name='psychiatry'),
@@ -99,8 +103,10 @@ urlpatterns = [
     path('filter-doctors/', views.filter_doctors, name='filter_doctors'),
     path('research-development/', views.research_development, name='research_development'),
     path('interventional-radiology/', views.interventional, name='interventional'),
-    path('departments/', views.departments_page, name='departments_page'),
-    path('department/<slug:department_slug>/', views.department_detail, name='department_detail'),
+   
+    path('geriatric-medicine/', views.geriatric_medicine, name='geriatric_medicine'),
+    path('caritashospitaldoctors/<uuid:doctor_id>/', views.caritashospitaldoctor_detail, name='caritashospitaldoctor_detail')
+   # path('sitemap.xml', sitemap, {'sitemaps': {'post': PostSitemap}}, name='django.contrib.sitemaps.views.sitemap'),
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
