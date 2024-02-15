@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Post, Category,Subcategory, Video, Department,Speciality, Doctor, Contact, ContactUs, Career, JobType,Application,SliderImage,Videos,Album, Image, MobileSliderImage, QualityControl, Studies,BioMedical,HomeCare, Hospital,InternationalForm
+from .models import Post, Category,Subcategory, Video, Department,Speciality, Doctor, Contact, ContactUs, Career, JobType,Application,SliderImage,Videos,Album, Image, MobileSliderImage, QualityControl, Studies,BioMedical,HomeCare, Hospital,InternationalForm,BookConsultation,DoctorSlider, CaritasHospitalDoctor
 from .models import Enquire
+import csv
+from django.http import HttpResponse
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
@@ -47,9 +49,22 @@ class EnquireAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
     
 class ContactUsAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number',  'created_at')
+    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone_number')
     readonly_fields = ('created_at',)
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="contact_us.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Page URL', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.phone_number, obj.page_url, obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected Contacts"
+
+    actions = ['export_as_csv']  # Add the export action to the admin interface
     
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('query_type', 'name', 'email', 'department', 'doctor', 'created_at')
@@ -75,7 +90,7 @@ class MobileSliderImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'caption', 'image')
 
 class VideosAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+    list_display = ('title','created_at')
     
 
 class ImageInline(admin.TabularInline):
@@ -90,7 +105,7 @@ class QualityControlAdmin(admin.ModelAdmin):
     list_filter = ('month_year',) 
     
 class BioMedicalAdmin(admin.ModelAdmin):
-    list_display = ('total_bags','yellow_bags','red_bags','white_bags','brownish_yellow_bags','blue_bags')
+    list_display = ('total_bags','yellow_bags','red_bags','white_bags','brownish_yellow_bags','blue_bags','month_year')
     list_filter = ('month_year',) 
 
 class StudiesAdmin(admin.ModelAdmin):
@@ -105,6 +120,31 @@ class HomeCareAdmin(admin.ModelAdmin):
 class InternationalFormAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'email', 'phone_number', 'country']
     search_fields = ['first_name', 'last_name', 'email', 'phone_number', 'country']
+
+class InternationalAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'phone_number','country',  'created_at')
+    search_fields = ('first_name', 'last_name', 'email','country',)
+    list_filter =('first_name', 'last_name', 'email','country',)
+    readonly_fields = ('created_at',)
+    
+class BookConsultationAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'last_name', 'email', 'country', 'phone_number', 'gender','created_at']
+    search_fields = ['first_name', 'last_name', 'email','gender']
+    list_filter = ['country', 'gender', 'agree_terms','created_at']
+    
+    
+class CaritasHospitalDoctorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'specialization', 'image', 'display_hospitals')
+    list_filter = ['name', 'specialization', 'hospitals']
+    search_fields = ('name', 'specialization',)
+
+    def display_hospitals(self, obj):
+        return ", ".join([hospital.name for hospital in obj.hospitals.all()])
+
+    display_hospitals.short_description = 'Hospitals'
+
+class DoctorSliderAdmin(admin.ModelAdmin):
+    list_display = ('title','image',)
     
 admin.site.register(Album, AlbumAdmin)
 
@@ -132,4 +172,8 @@ admin.site.register(BioMedical,BioMedicalAdmin)
 admin.site.register(Studies,StudiesAdmin)
 admin.site.register(HomeCare, HomeCareAdmin)
 admin.site.register(Hospital,HospitalAdmin)
-admin.register(InternationalForm,InternationalFormAdmin)
+#admin.register(InternationalForm,InternationalFormAdmin)
+admin.site.register(InternationalForm, InternationalAdmin)
+admin.site.register(BookConsultation, BookConsultationAdmin)
+admin.site.register(CaritasHospitalDoctor, CaritasHospitalDoctorAdmin)
+admin.site.register(DoctorSlider,DoctorSliderAdmin)
