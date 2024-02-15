@@ -23,11 +23,12 @@ import datetime
 from django.core.mail import send_mail
 from .lib.sendMail import sendEmail
 
+
 # Create your views here.
 def index(request):
     posts = Post.objects.all()[:11]
     videos = Video.objects.all()
-    testimonials = Videos.objects.all()
+    testimonials = Videos.objects.all().order_by('-created_at')
     desktop_images = SliderImage.objects.all()
     mobile_images = MobileSliderImage.objects.all()
     doctors_images = DoctorSlider.objects.all()
@@ -117,14 +118,15 @@ def contact_us(request):
             # Send email to admin
             subject = 'New Contact Us Submission'
             message = f'Name: {entry.first_name} {entry.last_name}\nEmail: {entry.email}\nPhone Number: {entry.phone_number}\nPage URL: {entry.page_url}'
-            # from_email = 'neeraja@onbyz.com'  # Replace with your email
-            from_email = 'ashes192000@gmail.com'  # Replace with your email
-            # to_email = 'neerajakmadhavi@gmail.com'  # Replace with admin's email
-            to_email = 'ashwinm.045@gmail.com'  # Replace with admin's email
-            try:
-                sendEmail(subject, message, from_email, to_email)
-            except Exception as e:
-                print(f"Error sending email: {e}")
+            from_email = 'ashwinm.045@gmail.com'
+            to_email = 'ashes192000@gmail.com'
+            # send_mail(subject, message, from_email, [to_email],fail_silently=False, auth_user='ashwinm.045@gmail.com', auth_password='wyln hmwr yncn vece')
+            # send_mail(subject, message, from_email, [to_email])
+            sendEmail(subject, message, from_email, to_email)
+            # try:
+            #     send_mail(subject, message, from_email, [to_email])
+            # except Exception as e:
+            #     print(f"Error sending email: {e}")
 
             return render(request, 'caritasapp/success.html')  # Redirect to a success page
     else:
@@ -182,10 +184,19 @@ def enquire_form(request):
     
 def doctors(request):
     doctors = Doctor.objects.filter(is_visible=True).order_by('order')
-    departments = Department.objects.all()
-
-    return render(request, 'doctors.html', {'doctors': doctors, 'departments': departments})
-
+    departments = Department.objects.filter(doctor__isnull=False).distinct().order_by('name')
+    search_query = request.GET.get('search')
+    search_results = None
+    
+    if search_query:
+        # Perform search query based on the search query entered by the user
+        search_results = Doctor.objects.filter(
+            Q(name__icontains=search_query) |  # Search by doctor name
+            Q(department__name__icontains=search_query) |  # Search by department name
+            Q(specialization__icontains=search_query)  # Search by specialization
+        )
+    
+    return render(request, 'doctors.html', {'doctors': doctors, 'departments': departments, 'search_query': search_query, 'search_results': search_results})
 
 def doctor_detail(request, doctor_id):
     doctor = get_object_or_404(Doctor, id=doctor_id)
@@ -683,31 +694,39 @@ def governing_body(request):
      return render(request, 'caritasapp/governing_body.html')
      
 def quality_control(request):
-    year = request.GET.get('year')
-    month = request.GET.get('month')
+    year = request.POST.get('year')
+    month = request.POST.get('month')
+
 
     if year and month:
         # Assuming month_year is a DateField or DateTimeField
         quality = QualityControl.objects.filter(month_year__year=year, month_year__month=month)
+           
+
+       
     else:
         x = datetime.datetime.now()
         
+        quality = QualityControl.objects.all().order_by('-month_year')[:1].values()
 
-        quality = QualityControl.objects.all()
-   
+
 
 
 
     return render(request, 'caritasapp/quality_control.html', {'quality': quality})
     
+    
+
+    
 def articles(request):
    
     posts = Post.objects.order_by('-created')
-
+    departments = Department.objects.filter(post__isnull=False).distinct().order_by('name')
     videos = Video.objects.all()
     context = {
      'posts': posts,
      'videos': videos,
+     'departments': departments,
     }
     return render(request, 'articles.html', context)
     
@@ -734,7 +753,7 @@ def pharmacy(request):
 def international_patients(request):
     countries = list(pycountry.countries)
     videos = Video.objects.all()
-    testimonials = Videos.objects.all()
+    testimonials = Videos.objects.all().order_by('-created_at')
     
     if request.method == 'POST':
         form = InternationalForm(request.POST)
@@ -758,7 +777,7 @@ def international_patients(request):
 def international_patients_arabic(request):
     countries = list(pycountry.countries)
     videos = Video.objects.all()
-    testimonials = Videos.objects.all()
+    testimonials = Videos.objects.all().order_by('-created_at')
     
     if request.method == 'POST':
         form = InternationalForm(request.POST)
@@ -792,8 +811,24 @@ def career(request):
     return render(request, 'caritasapp/career.html', {'careers': careers})
     
 def biomedical(request):
-    data =BioMedical.objects.all()
-    return render(request,'caritasapp/biomedical.html',{'data':data})
+    year = request.GET.get('year')
+    month = request.GET.get('month')
+
+    data = BioMedical.objects.all().order_by('-month_year')[:1].values()  # Retrieve all BioMedical objects by default
+           
+
+    if year and month:
+        try:
+            # Attempt to convert year and month to integers
+            year = int(year)
+            month = int(month)
+            # Filter BioMedical objects based on the provided year and month
+            data = BioMedical.objects.filter(month_year__year=year, month_year__month=month)
+        except ValueError:
+            # Handle the case where year or month is not an integer
+            pass
+    
+    return render(request, 'caritasapp/biomedical.html', {'data': data})
  
 def support(request):
     return render(request,'caritasapp/support.html')
@@ -956,13 +991,14 @@ def search_results(request):
     if request.method == 'POST':
         search = request.POST['search']
         #departments = Department.objects.filter(name__contains=search)
+        departments = Department.objects.all()
         doctors = Doctor.objects.filter(
                 Q(name__icontains=search) |
                 Q(department__name__icontains=search)
             )
 
 
-        return render(request, 'caritasapp/search_results.html', {'search': search, 'doctors':doctors,})
+        return render(request, 'caritasapp/search_results.html', {'search': search, 'doctors':doctors,'departments':departments})
     else:
         return render(request, 'caritasapp/search_results.html', {})
 
@@ -972,7 +1008,7 @@ def autocomplete(request):
     return JsonResponse(list(suggestions), safe=False)
     
 def patients_testimonials(request):
-    videos = Video.objects.all()
+    videos = Videos.objects.all().order_by('-created_at')
     context = {
      'videos': videos,
     }
@@ -1002,7 +1038,7 @@ def faq(request):
     return render(request, 'caritasapp/faq.html') 
     
 def testimonials(request):
-    testimonials = Videos.objects.all()
+    testimonials = Videos.objects.all().order_by('-created_at')
     return render(request, 'caritasapp/testimonials.html', {'testimonials': testimonials})
 
 def community_medicine(request):

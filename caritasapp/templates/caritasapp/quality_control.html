@@ -52,68 +52,47 @@
     <div class="row">
    
         
-      <form method="GET" action="{% url 'quality_control' %}" class="filter-form" style="display: flex;
-    justify-content: space-between;">
-    <div class="col-lg-12 form-group" style=" display: flex;
-    align-items: justify;">
-        <label for="year" style="width: 130px; margin-right: 10px;">Filter Data by:</label>
-        <select name="year" id="year" >
-                <option value="">Select one...</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-                <option value="2016">2016</option>
-                <option value="2015">2015</option>
-                <option value="2014">2014</option>
-                <option value="2013">2013</option>
-                <option value="2012">2012</option>
-                <option value="2011">2011</option>
-                <option value="2010">2010</option>
-                <option value="2009">2009</option>
-                <option value="2008">2008</option>
-                <option value="2007">2007</option>
-                <option value="2006">2006</option>
-                <option value="2005">2005</option>
-                <option value="2004">2004</option>
-                <option value="2003">2003</option>
-                <option value="2002">2002</option>
-                <option value="2001">2001</option>
-                <option value="2000">2000</option>
+    <form method="POST" action="" class="filter-form" id="filterForm">
+          {% csrf_token %}
 
-        </select>
-
-        <select name="month" id="month" >
-            <option value="0">January
-                  <option value="1">February
-              	  <option value="2">March
-              	  <option value="3">April
-              	  <option value="4">May
-              	  <option value="5">June
-              	  <option value="6">July
-              	  <option value="7">August
-              	  <option value="8">September
-              	  <option value="9">October
-              	  <option value="10">November
-              	  <option value="11">December
-        </select>
-    </div>
-    
-</form>
-
+                    <div class="col-lg-5 form-group" style=" display: flex; align-items: justify;" id="biofilter">
+                        <label for="year" style="width: 150px; margin-right: 10px;padding-top:6px;">Filter Data by:</label>
+                        <select name="year" id="year">
+                            <option value="">Select Year</option>
+                            <option value="2023">2023</option>
+                            
+                        </select>
+                        <select name="month" id="month">
+                            <option value="">Select Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <button type="button" id="filterButton" class="btn enqrybtn px-4">Filter</button>
+            
+                    </div>
+                </form>
 
 
     </div>
     
-    <div class="row mt-5">
+    <div class="row mt-5" id="resultsContainer">
+        {% if quality %}
         {% for item in quality %}
         <div class="col-lg-3 mb-4 " >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Average Length of Stay of Patients (In Days)</p>
                     <h3>{{ item.average_length }}</h3>
+                    <h3>{{ item.month_year }}</h3>
                 
             </div>
      
@@ -183,23 +162,60 @@
          
         </div>
         {% endfor %}
+        
+         {% else %}
+                <!-- Display message if no data found -->
+                <div class="col">
+                    <h6>No data found.</h6>
+                </div>
+            {% endif %}
     </div>
     </div>
 </section>
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Add Bootstrap JS  -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+     
+     
 <script>
-$(document).ready(function () {
-    $('#year, #month').on('change', function () {
-        $('#filterForm').submit();
+     $(document).ready(function() {
+        $('#filterButton').click(function() {
+            filterResults();
+        });
     });
-});
+
+    function filterResults() {
+        var year = $('#year').val();
+        var month = $('#month').val();
+
+        if (year && month) {
+         
+            $.ajax({
+                type: 'POST',
+                url: '/quality-control#filterform', 
+                data: {
+                    'year': year,
+                    'month': month,
+                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+                },
+                success: function(response) {
+                              
+
+                    $('#resultsContainer').html(response);
+                },
+                error: function(xhr, errmsg, err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        } else {
+            alert('Please select both year and month.');
+        }
+    }
 </script>
-
-
-
  
 
 {% endblock%}
