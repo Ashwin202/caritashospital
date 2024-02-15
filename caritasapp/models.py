@@ -17,6 +17,7 @@ class Department(models.Model):
     Department_id =  models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     slug = models.SlugField()
     Department_url = models.TextField(null=True, blank=True)
+    order=  models.CharField(max_length=255, blank=True)
     #Department_url = models.URLField(null=True, blank=True)
     def __str__(self):
         return self.name
@@ -87,7 +88,7 @@ class Card(models.Model):
 
 
 class Video(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=1000)
     file = models.FileField(upload_to='videos/', default='default_video.mp4')
     thumbnail = models.ImageField(upload_to='video_thumbnails/', blank=True, null=True)
 
@@ -267,9 +268,9 @@ class MobileSliderImage(models.Model):
         return self.caption  # Or any other field you want to represent in admin
         
 class Videos(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=1000)
     youtube_id = models.CharField(max_length=20)  # Store YouTube video IDs
-
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     def __str__(self):
         return self.title
 
@@ -314,7 +315,7 @@ class BioMedical(models.Model):
         
 class Studies(models.Model):
     study_name=models.TextField(blank=True)
-    investigators=models.CharField(max_length=100)
+    investigators=models.TextField(blank=True)
     category=models.CharField(max_length=100,null=True, blank=True)
     
     
@@ -389,3 +390,5 @@ class DoctorSlider(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='doctors_images/')
     
+
+   
