@@ -144,20 +144,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gender-selection my-4" >
-                    <label>Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <label>
-                        <input type="radio" name="gender" value="male" required> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="female" required> Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="other" required> I don’t want to specify
-                        
-                    </label>
-                    
-                </div>
+                    <div class="gender-selection my-4">
+                        <label for="male">
+                            <input type="radio" id="male" name="gender" value="male" required> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <label for="female">
+                            <input type="radio" id="female" name="gender" value="female" required> Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <label for="other">
+                            <input type="radio" id="other" name="gender" value="other" required> I don’t want to specify
+                        </label>
+                    </div>
+
                     <div class="secondopinion row mb-2">
                         <div class="col-sm-12">
                             <div class="input-with-symbol">
@@ -206,32 +204,37 @@
                         </div>
                 
                     </div>
-                     <div class="secondopinion row mb-2">
-        
-                        <div class="col-sm-6 my-2">
-                            <div class="input-with-symbol">
-                               <select name="department" id="department" class="form-control" required>
-                                   <option value="" disabled selected>Select Department</option>
-                                    {% for department in departments %}
-                                        <option value="{{ department.Department_id }}">{{ department.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            <span style="    position: absolute;left:0;top: 45%; transform: translateY(-50%);color: red; font-size: 15px;" >*</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 my-2">
-                            <div class="input-with-symbol">
-                             <select name="doctor" id="doctor" class="form-control" required>
-                                 <option value="" disabled selected>Select Doctor</option>
-                                {% for doctor in doctors %}
-                                    <option value="{{ doctor.id }}">{{ doctor.name }}</option>
-                                {% endfor %}
-                            </select>
-                             <span class="required-symbol">*</span>
-                        </div>
-                        </div>
-                
+          <div class="secondopinion row mb-2">
+                <div class="col-sm-6 my-2">
+                    <div class="input-with-symbol">
+                        <select name="department" id="department" class="form-control" required>
+                            <option value="" disabled selected>Select Department</option>
+                            {% for department in departments %}
+                                <option value="{{ department.Department_id }}">{{ department.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <span style="position: absolute;left:0;top: 45%; transform: translateY(-50%);color: red; font-size: 15px;">*</span>
                     </div>
+                </div>
+                <div class="col-sm-6 my-2">
+                    <div class="input-with-symbol">
+                        <select name="doctor" id="doctor" class="form-control" required>
+                            <option value="" disabled selected>Select Doctor</option>
+                            {% for doctor in doctors %}
+                             {% if doctor.active %}
+                                <option value="{{ doctor.name }}" data-department="{{ doctor.department.Department_id }}">{{ doctor.name }}</option>
+                                {% else %}
+                                    no active doctors
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <span class="required-symbol">*</span>
+                    </div>
+                </div>
+            </div>
+               
+
+
                     <div class="my-3">
                         
                         <textarea id="message" name="message" class="form-control" placeholder="If you have any additional details or specific requirements you'd like to share, please utilize this space." rows="4" ></textarea>
@@ -260,7 +263,7 @@
                <h6><a style="color:#0072BC;" href="tel:+919946856789">+91 99468 56789</a></h6>
                <p>Simply give us a call, and our dedicated team will assist you in reserving a video consultation at a time that suits your schedule.</p> 
                <p><b>WhatsApp Booking:</b></p>
-               <h6><a href="https://wa.me/+914812790025?text=Hello%20there!" target="_blank">
+               <h6><a href="https://wa.me/+919946856789?text=Hello%20there!" target="_blank">
         <img src="{% static 'img/whatsapp-icon.png' %}" style="width:35px;height:35px;"/> &nbsp;<span style="color:#0072BC;font-weight:600;">Click Here</span></a></h6> 
                <p>Use the popular messaging app WhatsApp to initiate your video consultation booking. Our team will guide you through the process and confirm your appointment.</p>
             </div>
@@ -290,4 +293,28 @@
             }
         }
     </script>
+    
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+ <script>
+    // JavaScript to dynamically populate doctors based on the selected department
+    $('#department').on('change', function() {
+        var selectedDepartment = $(this).val();
+        
+        // Hide all doctors initially
+        $('#doctor option').hide();
+
+        // Show doctors with the selected department
+        $('#doctor option[data-department="' + selectedDepartment + '"]').show();
+
+        // Set the first visible doctor as selected
+        $('#doctor option[data-department="' + selectedDepartment + '"]:first').prop('selected', true);
+    });
+</script>
+
+
+
 {% endblock%}

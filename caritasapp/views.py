@@ -118,8 +118,8 @@ def contact_us(request):
             # Send email to admin
             subject = 'New Contact Us Submission'
             message = f'Name: {entry.first_name} {entry.last_name}\nEmail: {entry.email}\nPhone Number: {entry.phone_number}\nPage URL: {entry.page_url}'
-            from_email = 'ashwinm.045@gmail.com'
-            to_email = 'ashes192000@gmail.com'
+            from_email = 'neeraja@onbyz.com'
+            to_email = 'simy@onbyz.com'
             # send_mail(subject, message, from_email, [to_email],fail_silently=False, auth_user='ashwinm.045@gmail.com', auth_password='wyln hmwr yncn vece')
             # send_mail(subject, message, from_email, [to_email])
             sendEmail(subject, message, from_email, to_email)
@@ -808,21 +808,22 @@ def biomedical(request):
     year = request.GET.get('year')
     month = request.GET.get('month')
 
-    data = BioMedical.objects.all().order_by('-month_year')[:1].values()  # Retrieve all BioMedical objects by default
+     # Retrieve all BioMedical objects by default
            
 
     if year and month:
-        try:
-            # Attempt to convert year and month to integers
-            year = int(year)
-            month = int(month)
             # Filter BioMedical objects based on the provided year and month
-            data = BioMedical.objects.filter(month_year__year=year, month_year__month=month)
-        except ValueError:
-            # Handle the case where year or month is not an integer
-            pass
+            data = list(BioMedical.objects.filter(month_year__year=year, month_year__month=month).values())
+            return JsonResponse({'data': data})
+    else:
+        data = BioMedical.objects.all().order_by('-month_year')[:1].values() 
+     
     
     return render(request, 'caritasapp/biomedical.html', {'data': data})
+ 
+
+  
+    
  
 def support(request):
     return render(request,'caritasapp/support.html')

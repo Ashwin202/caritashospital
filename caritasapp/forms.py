@@ -38,7 +38,7 @@ class ApplicationForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'email', 'phone_number', 'resume', 'agree_terms']
         widgets = {
             'agree_terms': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            # Add any custom widgets or field-specific attributes here
+   
         }
 
 
@@ -72,4 +72,4 @@ class BookConsultationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BookConsultationForm, self).__init__(*args, **kwargs)
-        # Add any customizations or additional validation here if needed
+        

@@ -40,3 +40,5 @@ Pipfile.lock
 # Ignore temporary files
 *.swp
 *~
+test.py
+DEV
