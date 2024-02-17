@@ -91,8 +91,8 @@
         <div class="col-lg-3 mb-4 " >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Average Length of Stay of Patients (In Days)</p>
-                    <h3>{{ item.average_length }}</h3>
-                    <h3>{{ item.month_year }}</h3>
+                    <h3 id="average_length">{{ item.average_length }}</h3>
+                    <h3 id="month_year">{{ item.month_year }}</h3>
                 
             </div>
      
@@ -100,8 +100,8 @@
         </div>
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
-                    <p>Patient Satisfaction <br/> Index</p>
-                    <h3>{{ item.patient_satisfaction }}</h3>
+                    <p>Patient Satisfaction <br /> Index</p>
+                    <h3 id="patient_satisfaction">{{ item.patient_satisfaction }}</h3>
                     
             </div>
      
@@ -109,17 +109,17 @@
         </div>
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
-                    <p>Catheter Associated Urinary <br/> Tract Infection (CAUTI) Rate</p>
-                    <h3>{{ item.cauti }}</h3>
+                    <p>Catheter Associated Urinary <br /> Tract Infection (CAUTI) Rate</p>
+                    <h3 id="cauti">{{ item.cauti }}</h3>
                 
             </div>
      
          
         </div>
-        <div class="col-lg-3 mb-4" >
+            <div class="col-lg-3 mb-4">
             <div class="p-4" style="background:#FAF9F9;">
-                    <p>Ventilator Associated <br/> Pneumonia (VAP) Rate</p>
-                    <h3>{{ item.vap }}</h3>
+                    <p>Ventilator Associated <br /> Pneumonia (VAP) Rate</p>
+                    <h3 id="vap">{{ item.vap }}</h3>
                    
             </div>
      
@@ -128,7 +128,7 @@
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Central Line Associated Blood Stream Infection (CLABSI) Rate</p>
-                    <h3>{{ item.clabsi }}</h3>
+                    <h3 id="clabsi">{{ item.clabsi }}</h3>
                    
             </div>
      
@@ -137,7 +137,7 @@
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Surgical Site <br/>Infection (SSI) rate</p>
-                    <h3>{{ item.ssi}}</h3>
+                    <h3 id="ssi">{{ item.ssi}}</h3>
                     
             </div>
      
@@ -146,7 +146,7 @@
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Incidence of Hospital Associated Pressure Ulcers After Admission</p>
-                    <h3>{{ item.pressure_ulcers_afteradmission }}</h3>
+                    <h3 id="pressure_ulcers_afteradmission">{{ item.pressure_ulcers_afteradmission }}</h3>
                    
             </div>
      
@@ -155,7 +155,7 @@
         <div class="col-lg-3 mb-4" >
             <div class="p-4" style="background:#FAF9F9;">
                     <p>Compliance to Hand Hygiene Practice by Hospital Personnel</p>
-                    <h3>{{ item.compliance_hand_hygiene}}</h3>
+                    <h3 id="compliance_hand_hygiene">{{ item.compliance_hand_hygiene}}</h3>
                     
             </div>
      
@@ -176,13 +176,21 @@
 
 
 <!-- Add Bootstrap JS  -->
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+<!-- moment js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
      
      
 <script>
-     $(document).ready(function() {
-        $('#filterButton').click(function() {
+    $(document).ready(function () {
+        $('#filterButton').click(function () {
             filterResults();
         });
     });
@@ -199,13 +207,40 @@
                 data: {
                     'year': year,
                     'month': month,
-                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
             action: 'post'
                 },
-                success: function(response) {
+                dataType: 'json',
+                success: function (response) {
                               
 
-                    $('#resultsContainer').html(response);
+                    if(response?.quality?.length == 0)
+                        return
+                        
+                    
+                    const average_length = response.quality[0].average_length
+                    const month_year = response.quality[0].month_year
+                    const formattedDate = moment(month_year).format('MMM. D, YYYY');
+                    const patient_satisfaction = response.quality[0].patient_satisfaction
+                    const cauti = response.quality[0].cauti
+                    const vap = response.quality[0].vap
+                    const clabsi = response.quality[0].clabsi
+                    const ssi = response.quality[0].ssi
+                    const pressure_ulcers_afteradmission = response.quality[0].pressure_ulcers_afteradmission
+                    const compliance_hand_hygiene = response.quality[0].compliance_hand_hygiene
+
+                    document.getElementById('average_length').innerText = average_length
+                    document.getElementById('month_year').innerText = formattedDate
+                    document.getElementById('patient_satisfaction').innerText = patient_satisfaction
+                    document.getElementById('cauti').innerText = cauti
+                    document.getElementById('vap').innerText = vap
+                    document.getElementById('clabsi').innerText = clabsi
+                    document.getElementById('ssi').innerText = ssi
+                    document.getElementById('pressure_ulcers_afteradmission').innerText = pressure_ulcers_afteradmission
+                    document.getElementById('compliance_hand_hygiene').innerText = compliance_hand_hygiene
+
+
+                    // $('#resultsContainer').html(response);
                 },
                 error: function(xhr, errmsg, err) {
                     console.log(xhr.status + ": " + xhr.responseText);

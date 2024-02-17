@@ -700,18 +700,12 @@ def quality_control(request):
 
     if year and month:
         # Assuming month_year is a DateField or DateTimeField
-        quality = QualityControl.objects.filter(month_year__year=year, month_year__month=month)
-           
-
-       
+        # quality = QualityControl.objects.filter(month_year__year=year, month_year__month=month)
+        quality = list(QualityControl.objects.filter(month_year__year=year, month_year__month=month).values())            
+        return JsonResponse({'quality': quality})       
     else:
-        x = datetime.datetime.now()
-        
+        x = datetime.datetime.now()        
         quality = QualityControl.objects.all().order_by('-month_year')[:1].values()
-
-
-
-
 
     return render(request, 'caritasapp/quality_control.html', {'quality': quality})
     
