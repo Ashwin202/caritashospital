@@ -146,13 +146,13 @@
                     </div>
                     <div class="gender-selection my-4">
                         <label for="male">
-                            <input type="radio" id="male" name="gender" value="male" required> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="male" name="gender" value="M" required> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </label>
                         <label for="female">
-                            <input type="radio" id="female" name="gender" value="female" required> Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="female" name="gender" value="F" required> Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </label>
                         <label for="other">
-                            <input type="radio" id="other" name="gender" value="other" required> I don’t want to specify
+                            <input type="radio" id="other" name="gender" value="O" required> I don’t want to specify
                         </label>
                     </div>
 
@@ -222,7 +222,7 @@
                             <option value="" disabled selected>Select Doctor</option>
                             {% for doctor in doctors %}
                              {% if doctor.active %}
-                                <option value="{{ doctor.name }}" data-department="{{ doctor.department.Department_id }}">{{ doctor.name }}</option>
+                                <option value="{{ doctor.id }}" data-department="{{ doctor.department.Department_id }}">{{ doctor.name }}</option>
                                 {% else %}
                                     no active doctors
                                 {% endif %}
