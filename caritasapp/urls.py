@@ -105,8 +105,10 @@ urlpatterns = [
     path('interventional-radiology/', views.interventional, name='interventional'),
    
     path('geriatric-medicine/', views.geriatric_medicine, name='geriatric_medicine'),
-    path('caritashospitaldoctors/<uuid:doctor_id>/', views.caritashospitaldoctor_detail, name='caritashospitaldoctor_detail')
+    path('caritashospitaldoctors/<uuid:doctor_id>/', views.caritashospitaldoctor_detail, name='caritashospitaldoctor_detail'),
+    path('success/', views.success, name='success'),
    # path('sitemap.xml', sitemap, {'sitemaps': {'post': PostSitemap}}, name='django.contrib.sitemaps.views.sitemap'),
+   
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
