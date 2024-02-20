@@ -22,7 +22,7 @@ from django.db.models import Max
 import datetime
 from django.core.mail import send_mail
 from .lib.sendMail import sendEmail
-
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -921,31 +921,24 @@ def video_consultation(request):
 
     
 def homecare(request):
-    countries = list(pycountry.countries)
-    
     if request.method == 'POST':
         form = HomeCareForm(request.POST)
         if form.is_valid():
-            # Get form data
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-
             # Save the form data to the database
-            entry = HomeCare.objects.create(
-                first_name=first_name,
-                last_name=last_name,
-                email=email,
-                message=message,  # Fixed the typo here
-            )
+            form.save()
 
-            # Redirect to a success page
-            return render(request, 'caritasapp/success.html')
+            # Send email notification
+           # subject = 'New Home Care Inquiry'
+            #message = 'A new home care inquiry has been submitted.'
+            #from_email = 'your@example.com'  # Replace with your email
+            #to_email = 'admin@example.com'  # Replace with admin's email
+            #send_mail(subject, message, from_email, [to_email])
 
+            # Redirect to a success page or render a success message
+            return HttpResponseRedirect('/success/')  # Redirect to a success page
     else:
         form = HomeCareForm()
-    return render(request, 'caritasapp/homecare.html', {'form': form,'countries': countries})
+    return render(request, 'caritasapp/homecare.html', {'form': form})
     
 def visitors_guide(request):
     return render(request, 'caritasapp/visitors_guide.html')
@@ -1126,6 +1119,9 @@ def caritashospitaldoctor_detail(request, doctor_id):
     doctor = get_object_or_404(CaritasHospitalDoctor, id=doctor_id)
     department = Department.objects.all()
     return render(request, 'caritasapp/caritashospitaldoctor_detail.html', {'doctor': doctor, 'department': department})
+    
+def success(request):
+    return render(request, 'caritasapp/success.html')
     
 #def google046804b37e953e57(request):
  #   return render(request, 'google046804b37e953e57.html')
