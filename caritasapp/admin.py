@@ -47,6 +47,29 @@ class EnquireAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'phone_number', 'page_url', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone_number', 'page_url')
     readonly_fields = ('created_at',)
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="enquiries.csv"'
+
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Page URL', 'Created At'])
+
+        for enquiry in queryset:
+            writer.writerow([
+                enquiry.first_name,
+                enquiry.last_name,
+                enquiry.email,
+                enquiry.phone_number,
+                enquiry.page_url,
+                enquiry.created_at,
+            ])
+
+        return response
+
+    export_as_csv.short_description = "Export selected enquiries as CSV"
+    actions = ['export_as_csv']
+    
     
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'phone_number', 'created_at')
@@ -111,11 +134,37 @@ class BioMedicalAdmin(admin.ModelAdmin):
 class StudiesAdmin(admin.ModelAdmin):
     list_display = ('study_name','investigators')
     list_filter =('study_name','investigators')
+
 class HomeCareAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'message',  'created_at')
-    search_fields = ('first_name', 'last_name', 'email',)
-    list_filter =('first_name', 'last_name', 'email',)
+    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'created_at')
+    search_fields = ('first_name', 'last_name', 'email', 'phone_number')
     readonly_fields = ('created_at',)
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="homecare_data.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.phone_number, obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected HomeCare Data"
+
+    actions = [export_as_csv]
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="homecare_data.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Message', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.message, obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected HomeCare Data"
+
+    actions = [export_as_csv]
     
 class InternationalFormAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'email', 'phone_number', 'country']
@@ -127,10 +176,33 @@ class InternationalAdmin(admin.ModelAdmin):
     list_filter =('first_name', 'last_name', 'email','country',)
     readonly_fields = ('created_at',)
     
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="international_data.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Country', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.phone_number, obj.country, obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected International Data"
+    actions = [export_as_csv]
+    
 class BookConsultationAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'country', 'phone_number', 'gender','created_at']
+    list_display = ['first_name', 'last_name', 'email', 'country', 'phone_number','op_number', 'gender','department','doctor','created_at']
     search_fields = ['first_name', 'last_name', 'email','gender']
-    list_filter = ['country', 'gender', 'agree_terms','created_at']
+    
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="book_consultation_data.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Gender', 'Email', 'Country', 'Phone Number', 'Date of Birth', 'Operation Number', 'Department', 'Doctor', 'Message', 'Agree to Terms', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.gender, obj.email, obj.country, obj.phone_number, obj.dob, obj.op_number, obj.department, obj.doctor, obj.message, obj.agree_terms, obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected Consultations"
+    actions = [export_as_csv]
     
     
 class CaritasHospitalDoctorAdmin(admin.ModelAdmin):

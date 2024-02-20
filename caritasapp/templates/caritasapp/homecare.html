@@ -236,20 +236,11 @@
                     </div>
                     <div class="secondopinion row my-3">
         
-                        <div class="col-sm-6 my-2">
+                       
+                        <div class="col-sm-12 my-2">
                             <div class="input-with-symbol">
-                            <select id="country" name="country" class="form-control" required>
-                                <option value="" disabled selected>Select Country</option>
-                                {% for country in countries %}
-                                    <option value="{{ country.alpha_2 }}">{{ country.name }}</option>
-                                {% endfor %}
-                            </select>
-                            <span class="required-symbol">*</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 my-2">
-                            <div class="input-with-symbol">
-                            <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="Phone_number">
+                            <input type="tel" id="phone_number" name="phone_number"  class="form-control required-field" placeholder=" Phone Number" required pattern="[0-9]{10,14}" title="Please enter a valid phone number">
+                            <small class="error-msg" style="display: none; color: red;">Please enter a valid phone number (10-14 digits).</small>
                            <span class="required-symbol">*</span>
                         </div>
                         </div>
@@ -260,13 +251,11 @@
                             <div class="input-with-symbol">
                            <select id="package" name="package" class="form-control" required>
                                 <option value="" disabled selected>Select Home Care Packages</option>
-                                 <option value="EHC">Executive Health Check-Up</option>
-                                 <option value="DHC">Diabetic Health Check-Up</option>
-                                 <option value="WWHC">Well Women Health Check-Up</option>
-                                 <option value="PHC">Paediatric Health Check-Up</option>
-                                 <option value="WBHC">Whole Body Health Check-Up</option>
-                                 <option value="SCHC">Senior Citizen Health Check-Up</option>
-                                 <option value="CHC">Cardiac Health Check-Up</option>
+                                 <option value="Basic">Basic Package</option>
+                                 <option value="BIP">Basic Investigation Package</option>
+                                 <option value="EP">Executive Package</option>
+                                 <option value="EIP">Executive Investigation Package</option>
+                                 
                             </select>
                             <span class="required-symbol">*</span>
                         </div>

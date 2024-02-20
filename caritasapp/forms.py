@@ -29,7 +29,7 @@ class ContactUsForm(forms.ModelForm):
 class HomeCareForm(forms.ModelForm):
     class Meta:
         model = HomeCare
-        fields = ['first_name', 'last_name', 'email', 'message'] 
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'package'] 
 
 
 class ApplicationForm(forms.ModelForm):
