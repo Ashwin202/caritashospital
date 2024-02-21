@@ -34,7 +34,7 @@ local_settings.py
 # Ignore pipenv virtual environment
 Pipfile.lock
 
-# Ignore macOS system files
+# Ignore macOS system file
 .DS_Store
 
 # Ignore temporary files
