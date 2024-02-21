@@ -44,8 +44,8 @@ class SpecialityAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name','department')}    
     
 class EnquireAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'page_url', 'created_at')
-    search_fields = ('first_name', 'last_name', 'email', 'phone_number', 'page_url')
+    list_display = ('name', 'email', 'phone_number', 'message', 'page_url', 'created_at')
+    search_fields = ('name', 'email', 'phone_number', 'page_url')
     readonly_fields = ('created_at',)
 
     def export_as_csv(self, request, queryset):
@@ -53,14 +53,14 @@ class EnquireAdmin(admin.ModelAdmin):
         response['Content-Disposition'] = 'attachment; filename="enquiries.csv"'
 
         writer = csv.writer(response)
-        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Page URL', 'Created At'])
+        writer.writerow(['Name', 'Email', 'Phone Number', 'Message','Page URL', 'Created At'])
 
         for enquiry in queryset:
             writer.writerow([
-                enquiry.first_name,
-                enquiry.last_name,
+                enquiry.name,
                 enquiry.email,
                 enquiry.phone_number,
+                enquiry.message,
                 enquiry.page_url,
                 enquiry.created_at,
             ])
@@ -72,7 +72,7 @@ class EnquireAdmin(admin.ModelAdmin):
     
     
 class ContactUsAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'created_at')
+    list_display = ('first_name', 'last_name', 'email', 'phone_number','message', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone_number')
     readonly_fields = ('created_at',)
 

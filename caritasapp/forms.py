@@ -9,7 +9,7 @@ import os
 class EnquireForm(forms.ModelForm):
     class Meta:
         model = Enquire
-        fields = ['first_name', 'last_name', 'email', 'phone_number'] 
+        fields = ['name', 'email', 'phone_number', 'message'] 
         
     
 

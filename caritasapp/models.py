@@ -114,15 +114,16 @@ class Video(models.Model):
                 pass
 
 class Enquire(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
+    message = models.TextField(default = '')
     page_url = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    send_status = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} - {self.email}'
+        return f'{self.name} - {self.email}'
         
         
 class ContactUs(models.Model):
@@ -130,9 +131,11 @@ class ContactUs(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
+    message = models.TextField(default = '')
     page_url = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-
+    send_status = models.BooleanField(default=False)
+    
     def __str__(self):
         return f'{self.first_name} {self.last_name} - {self.email}'
 
@@ -239,7 +242,7 @@ class Application(models.Model):
     agree_terms = models.BooleanField()
     page_url = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    send_status = models.BooleanField(default=False)
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.job_title}"
         
@@ -326,6 +329,7 @@ class HomeCare(models.Model):
     phone_number = models.CharField(max_length=20,null=True)
     package = models.CharField(max_length=100,null=True)  # Assuming package is a string field
     agree_terms = models.BooleanField(default=False)
+    send_status = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
 
     def __str__(self):
@@ -351,7 +355,8 @@ class BookConsultation(models.Model):
     message = models.TextField(blank=True)
     agree_terms = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
-
+    send_status = models.BooleanField(default=False)
+    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
         
@@ -362,7 +367,8 @@ class InternationalForm(models.Model):
     phone_number = models.CharField(max_length=15)
     country = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-
+    send_status = models.BooleanField(default=False)
+    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
         
@@ -390,6 +396,3 @@ class CaritasHospitalDoctor(models.Model):
 class DoctorSlider(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='doctors_images/')
-    
-
-   

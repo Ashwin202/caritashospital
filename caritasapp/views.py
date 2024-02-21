@@ -21,7 +21,7 @@ from datetime import datetime
 from django.db.models import Max
 import datetime
 from django.core.mail import send_mail
-from .lib.sendMail import sendEmail
+# from .lib.sendMail import sendEmail
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -122,7 +122,7 @@ def contact_us(request):
             to_email = 'simy@onbyz.com'
             # send_mail(subject, message, from_email, [to_email],fail_silently=False, auth_user='ashwinm.045@gmail.com', auth_password='wyln hmwr yncn vece')
             # send_mail(subject, message, from_email, [to_email])
-            sendEmail(subject, message, from_email, to_email)
+            # sendEmail(subject, message, from_email, to_email)
             # try:
             #     send_mail(subject, message, from_email, [to_email])
             # except Exception as e:
@@ -159,18 +159,18 @@ def enquire_form(request):
         form = EnquireForm(request.POST)
         if form.is_valid():
             # Get form data
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
+            name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             phone_number = form.cleaned_data['phone_number']
+            message = form.cleaned_data['message']
             page_url = request.META.get('HTTP_REFERER')  # Get the page URL
 
             # Save the form data to the database
             entry = Enquire.objects.create(
-                first_name=first_name,
-                last_name=last_name,
+                name=name,
                 email=email,
                 phone_number=phone_number,
+                message=message,
                 page_url=page_url,
             )
 
