@@ -42,3 +42,4 @@ Pipfile.lock
 *~
 test.py
 DEV
+caritasapp/migrations
