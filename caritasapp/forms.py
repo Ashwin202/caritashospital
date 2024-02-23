@@ -1,6 +1,6 @@
 from django import forms
 from .models import Enquire
-from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm,BookConsultation
+from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm,BookConsultation,JobApply
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -73,3 +73,11 @@ class BookConsultationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(BookConsultationForm, self).__init__(*args, **kwargs)
         
+class JobApplyForm(forms.ModelForm):
+    class Meta:
+        model = JobApply
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'resume', 'agree_terms']
+        widgets = {
+            'agree_terms': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+   
+        }

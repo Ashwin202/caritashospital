@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Post, Category,Subcategory, Video, Department,Speciality, Doctor, Contact, ContactUs, Career, JobType,Application,SliderImage,Videos,Album, Image, MobileSliderImage, QualityControl, Studies,BioMedical,HomeCare, Hospital,InternationalForm,BookConsultation,DoctorSlider, CaritasHospitalDoctor
-from .models import Enquire
+from .models import Enquire,JobApply
 import csv
 from django.http import HttpResponse
 
@@ -157,9 +157,9 @@ class HomeCareAdmin(admin.ModelAdmin):
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="homecare_data.csv"'
         writer = csv.writer(response)
-        writer.writerow(['First Name', 'Last Name', 'Email', 'Message', 'Created At'])
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Created At'])
         for obj in queryset:
-            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.message, obj.created_at])
+            writer.writerow([obj.first_name, obj.last_name, obj.email,  obj.created_at])
         return response
 
     export_as_csv.short_description = "Export Selected HomeCare Data"
@@ -218,6 +218,11 @@ class CaritasHospitalDoctorAdmin(admin.ModelAdmin):
 class DoctorSliderAdmin(admin.ModelAdmin):
     list_display = ('title','image',)
     
+class JobApplyAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'phone_number',  'resume','created_at')
+    search_fields = ('first_name', 'last_name', 'email', 'phone_number')
+    list_filter = ('created_at',)
+    
 admin.site.register(Album, AlbumAdmin)
 
     
@@ -249,3 +254,4 @@ admin.site.register(InternationalForm, InternationalAdmin)
 admin.site.register(BookConsultation, BookConsultationAdmin)
 admin.site.register(CaritasHospitalDoctor, CaritasHospitalDoctorAdmin)
 admin.site.register(DoctorSlider,DoctorSliderAdmin)
+admin.site.register(JobApply,JobApplyAdmin)

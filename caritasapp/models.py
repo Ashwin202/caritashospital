@@ -396,3 +396,15 @@ class CaritasHospitalDoctor(models.Model):
 class DoctorSlider(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='doctors_images/')
+    
+class JobApply(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=20)
+    resume = models.FileField(upload_to='resumes/')
+    agree_terms = models.BooleanField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    send_status = models.BooleanField(default=False)
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

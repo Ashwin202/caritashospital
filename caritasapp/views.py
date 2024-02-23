@@ -23,6 +23,8 @@ import datetime
 from django.core.mail import send_mail
 # from .lib.sendMail import sendEmail
 from django.http import HttpResponseRedirect
+from .models import JobApply
+from .forms import JobApplyForm
 
 # Create your views here.
 def index(request):
@@ -140,13 +142,13 @@ def caritas_cancer_institute(request):
     doctors = Doctor.objects.order_by('order')
     departments = Department.objects.all()
     
-    upcoming_projects = Category.objects.get(title='Upcoming Projects')
+    #upcoming_projects = Category.objects.get(title='Upcoming Projects')
     cancer = Category.objects.get(title='cancer')
-    upcoming_projects_posts = Post.objects.filter(category=upcoming_projects)[:5] 
+  #  upcoming_projects_posts = Post.objects.filter(category=upcoming_projects)[:5] 
     cancer_posts = Post.objects.filter(category=cancer)[:5]
     
     context = {
-        'upcoming_projects_posts': upcoming_projects_posts,
+       # 'upcoming_projects_posts': upcoming_projects_posts,
         'cancer_posts': cancer_posts,
         'doctors': doctors,
         'departments': departments
@@ -879,8 +881,19 @@ def caritaskkm(request):
 def open_positions(request):
     careers = Career.objects.all()
     job_types = JobType.objects.values_list('job_type', flat=True).distinct()
-    return render(request,'caritasapp/open_positions.html',{'careers': careers, 'job_types': job_types})
-
+    
+    if request.method == 'POST':
+        form = JobApplyForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Create an application object but don't save it yet
+            application = form.save(commit=False)
+            application.save()
+            return render(request, 'caritasapp/success.html')  # Redirect to a success page
+    else:
+        form = JobApplyForm()
+    context = {'careers': careers, 'form': form, 'job_types': job_types}
+    return render(request,'caritasapp/open_positions.html', context)
+    
 def job_detail(request, career_id):
     career = get_object_or_404(Career, id=career_id)
 
