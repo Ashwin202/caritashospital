@@ -398,8 +398,8 @@ class DoctorSlider(models.Model):
     image = models.ImageField(upload_to='doctors_images/')
     
 class JobApply(models.Model):
-    first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
     resume = models.FileField(upload_to='resumes/')

@@ -116,20 +116,6 @@ def contact_us(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             entry = form.save()  # This will save the form data to the ContactUs model
-
-            # Send email to admin
-            subject = 'New Contact Us Submission'
-            message = f'Name: {entry.first_name} {entry.last_name}\nEmail: {entry.email}\nPhone Number: {entry.phone_number}\nPage URL: {entry.page_url}'
-            from_email = 'neeraja@onbyz.com'
-            to_email = 'simy@onbyz.com'
-            # send_mail(subject, message, from_email, [to_email],fail_silently=False, auth_user='ashwinm.045@gmail.com', auth_password='wyln hmwr yncn vece')
-            # send_mail(subject, message, from_email, [to_email])
-            # sendEmail(subject, message, from_email, to_email)
-            # try:
-            #     send_mail(subject, message, from_email, [to_email])
-            # except Exception as e:
-            #     print(f"Error sending email: {e}")
-
             return render(request, 'caritasapp/success.html')  # Redirect to a success page
     else:
         form = ContactUsForm()

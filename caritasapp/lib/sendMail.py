@@ -1,46 +1,29 @@
-
+import os
 from django.core.mail import send_mail
+from django.conf import settings
+from datetime import datetime
 
 
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
-def sendEmail(subject, body, from_email, to_email):
-    sender_email = "ashwinm.045@gmail.com"
-    sender_password = "wyln hmwr yncn vece"
-
-    message = MIMEMultipart()
-    message['From'] = from_email
-    message['To'] = to_email
-    message['Subject'] = subject
-    
-    # Attach the body of the email
-    message.attach(MIMEText(body, 'plain'))
-    
+def sendMail(from_email, to_email, message, subject):
+    to_email = "ericjohn26296@gmail.com"
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
-        # Connect to the SMTP server (in this case, Gmail's SMTP server)
-        with smtplib.SMTP('smtp.gmail.com', 587) as server:
-            # Start TLS for security
-            server.starttls()
-        
-            # Login to your Gmail account
-            server.login(sender_email, sender_password)
-        
-            # Send the email
-            server.sendmail(sender_email, to_email, message.as_string())
-        
-        print("Email sent successfully!")
+        # Manually configure Django settings
+        if not settings.configured:
+            settings.configure(
+                EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend",
+                EMAIL_HOST="smtp.gmail.com",
+                EMAIL_PORT=587,
+                EMAIL_USE_TLS=True,
+                EMAIL_HOST_USER="ericjohn26296@gmail.com",
+                EMAIL_HOST_PASSWORD="teyi ntre ujro rdch",
+                DEFAULT_FROM_EMAIL="ashes192000@gmail.com",
+            )
+        send_mail(subject, message, from_email, [to_email])
+
+        print(
+            f"[{timestamp} | sendMail] | From: {from_email} | Email sent successfully!"
+        )
 
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
-    
-# def sendEmail(subject,message,from_email,to_email):
-#     try:
-#         send_mail(subject, message, from_email, [to_email])
-#         print("Email sent successfully!")
-
-#     except Exception as e:
-#         print(f"Error sending email: {e}")
-
-sendEmail("Test subject", "Test body", "ashes192000@gmail.com", "ashwinm.045@gmail.com")
+        print(f"[{timestamp} | sendMail] | Error sending email: {e}")

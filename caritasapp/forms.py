@@ -24,7 +24,7 @@ class DoctorSearchForm(forms.Form):
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
-        fields = ['first_name', 'last_name', 'email', 'phone_number'] 
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'message' ] 
         
 class HomeCareForm(forms.ModelForm):
     class Meta:
