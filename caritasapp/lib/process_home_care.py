@@ -4,7 +4,8 @@ from datetime import datetime
 
 
 def process_home_care_form():
-    to_email = "ericjohn26296@gmail.com"
+    to_email = "marketing@caritashospital.org"
+    # to_email = 'ericjohn26296@gmail.com'
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         homecare_to_process = HomeCare.objects.filter(send_status=False)
@@ -17,7 +18,7 @@ def process_home_care_form():
 
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nHealth Care Package: {package}"
 
-            print(f"[{timestamp} | process_home_care_form] | Email body: {body}")
+            print(f"[{timestamp} | process_home_care_form] | Sending Email from {email}")
             sendMail(
                 email,
                 to_email,
@@ -28,9 +29,7 @@ def process_home_care_form():
             homecare.save()
 
     except Exception as e:
-        print(
-            f"[{timestamp} | process_home_care_form] | Error processing homecare packages: {e}"
-        )
+        print(f"[{timestamp} | process_home_care_form] | Error processing homecare packages: {e}")
 
 
 if __name__ == "__main__":

@@ -4,7 +4,8 @@ from datetime import datetime
 
 
 def process_video_consultation():
-    to_email = "ericjohn26296@gmail.com"
+    to_email = "marketing@caritashospital.org"
+    # to_email = 'ericjohn26296@gmail.com'
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         contacts_to_process = BookConsultation.objects.filter(send_status=False)
@@ -22,7 +23,9 @@ def process_video_consultation():
 
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nDate of Birth: {dob}\nCountry: {country}\nOP Number: {op_number}\nDepartment: {department}\nDoctor: {doctor}\nMessage: {message}"
 
-            print(f"[{timestamp} | process_video_consultation] | Email body: {body}")
+            print(
+                f"[{timestamp} | process_video_consultation] | Sending Email from {email}"
+            )
             sendMail(
                 email, to_email, body, "Caritas - Response from Video Consultation Form"
             )

@@ -4,8 +4,8 @@ from datetime import datetime
 
 
 def process_job_application():
-    # to_email = "ericjohn26296@gmail.com"
-    to_email = "ashwinm.045@gmail.com"
+    to_email = "career@caritashospital.org"
+    # to_email = 'ericjohn26296@gmail.com'
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         job_application_to_process = JobApply.objects.filter(send_status=False)
@@ -18,7 +18,7 @@ def process_job_application():
 
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}"
 
-            print(f"[{timestamp} | process_job_application] | Email body: {body}")
+            print(f"[{timestamp} | process_job_application] | Sending Email from {email}")
 
             sendMail(
                 email,

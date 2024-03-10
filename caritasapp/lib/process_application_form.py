@@ -3,7 +3,8 @@ from caritasapp.lib.send_doc_email import sendMail
 from datetime import datetime
 
 def process_application():
-    to_email = 'ericjohn26296@gmail.com'
+    to_email = 'career@caritashospital.org'
+    # to_email = 'ericjohn26296@gmail.com'
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         application_to_process = Application.objects.filter(send_status=False)
@@ -23,7 +24,7 @@ def process_application():
             
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nJob Title: {job_title}"
             
-            print(f"[{timestamp} | process_application] | Email body: {body}")
+            print(f"[{timestamp} | process_application] | Sending Email from {email}")
             
             sendMail(email, to_email, body, f"Caritas - Response from Application Form for {job_title}", resume)            
             application.send_status = True # Update status to 1

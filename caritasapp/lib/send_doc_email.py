@@ -27,8 +27,8 @@ def sendMail(from_email, to_email, message, subject, resume_path):
 
         # Send email
         try:
-            email = EmailMessage(subject, message, from_email, [to_email], cc=['ashes192000@gmail.com'])
-            # email = EmailMessage(subject, message, from_email, [to_email], cc=['akshaya.unnikrishnan@caritashospital.org'])
+            # email = EmailMessage(subject, message, from_email, [to_email])
+            email = EmailMessage(subject, message, from_email, [to_email], cc=['akshaya.unnikrishnan@caritashospital.org'])
             email.attach(filename='attachment.pdf', content=pdf_data, mimetype='application/pdf')
             email.send()
             print(f"[{timestamp} | sendMail] | Email sent successfully!")

@@ -4,7 +4,8 @@ from datetime import datetime
 
 
 def process_enquire_form():
-    to_email = "ericjohn26296@gmail.com"
+    to_email = "marketing@caritashospital.org"
+    # to_email = 'ericjohn26296@gmail.com'
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         enquiries_to_process = Enquire.objects.filter(send_status=False)
@@ -17,8 +18,11 @@ def process_enquire_form():
 
             body = f"First Name: {name}\nEmail: {email}\nPhone Number: {phone_number}\nMessage: {message}\nPage URL: {page_url}"
 
-            print(f"[{timestamp} | process_enquire_form] | Email body: {body}")
-            sendMail(email, to_email, body, "Caritas - Response from Enquire Form", True)
+            print(f"[{timestamp} | process_enquire_form] | Sending Email from {email}")
+            # sendMail(email, to_email, body, "Caritas - Response from Enquire Form")
+            sendMail(
+                email, to_email, body, "Caritas - Response from Enquire Form", True
+            )
             enquiry.send_status = True  # Update status to 1
             enquiry.save()
 
