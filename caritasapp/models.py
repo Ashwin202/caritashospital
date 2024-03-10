@@ -125,6 +125,18 @@ class Enquire(models.Model):
     def __str__(self):
         return f'{self.name} - {self.email}'
         
+class CareerEnquire(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=20)
+    message = models.TextField(default = '')
+    page_url = models.URLField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    send_status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.name} - {self.email}'      
+        
         
 class ContactUs(models.Model):
     first_name = models.CharField(max_length=100)
@@ -366,6 +378,7 @@ class InternationalForm(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=15)
     country = models.CharField(max_length=100)
+    message = models.TextField(default = '')
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     send_status = models.BooleanField(default=False)
     
@@ -398,8 +411,8 @@ class DoctorSlider(models.Model):
     image = models.ImageField(upload_to='doctors_images/')
     
 class JobApply(models.Model):
-    last_name = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
     resume = models.FileField(upload_to='resumes/')
@@ -408,3 +421,10 @@ class JobApply(models.Model):
     send_status = models.BooleanField(default=False)
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+        
+class VideoGallery(models.Model):
+    title = models.CharField(max_length=1000)
+    youtube_id = models.CharField(max_length=20)  # Store YouTube video IDs
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    def __str__(self):
+        return self.title

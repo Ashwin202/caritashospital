@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post,Category,Doctor,Department,Contact,ContactUs, Career,JobType,Application,SliderImage,Videos,Album,MobileSliderImage,BioMedical, QualityControl, Studies,HomeCare,Hospital,InternationalForm,BookConsultation, CaritasHospitalDoctor,DoctorSlider
+from .models import Post,Category,Doctor,CareerEnquire,Department,Contact,ContactUs, Career,JobType,Application,SliderImage,Videos,Album,MobileSliderImage,BioMedical, QualityControl, Studies,HomeCare,Hospital,InternationalForm,BookConsultation, CaritasHospitalDoctor,DoctorSlider
 from .models import Card
 from .models import Video
 from django.dispatch import receiver
@@ -7,7 +7,7 @@ from django.db.models.signals import post_save  # Import the post_save signal
 import os
 from moviepy.editor import VideoFileClip 
 from .models import Enquire
-from .forms import EnquireForm, ContactUsForm,ApplicationForm,InternationalForm,BookConsultationForm
+from .forms import EnquireForm, ContactUsForm,ApplicationForm,InternationalForm,BookConsultationForm, CareerEnquireForm
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from .forms import ContactForm,HomeCareForm
@@ -25,6 +25,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from .models import JobApply
 from .forms import JobApplyForm
+from .models import VideoGallery
 
 # Create your views here.
 def index(request):
@@ -116,6 +117,20 @@ def contact_us(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             entry = form.save()  # This will save the form data to the ContactUs model
+
+            # Send email to admin
+            subject = 'New Contact Us Submission'
+            message = f'Name: {entry.first_name} {entry.last_name}\nEmail: {entry.email}\nPhone Number: {entry.phone_number}\nMessage: {entry.message}\nPage URL: {entry.page_url}'
+            from_email = 'neeraja@onbyz.com'
+            to_email = 'simy@onbyz.com'
+            # send_mail(subject, message, from_email, [to_email],fail_silently=False, auth_user='ashwinm.045@gmail.com', auth_password='wyln hmwr yncn vece')
+            # send_mail(subject, message, from_email, [to_email])
+            # sendEmail(subject, message, from_email, to_email)
+            # try:
+            #     send_mail(subject, message, from_email, [to_email])
+            # except Exception as e:
+            #     print(f"Error sending email: {e}")
+
             return render(request, 'caritasapp/success.html')  # Redirect to a success page
     else:
         form = ContactUsForm()
@@ -790,6 +805,30 @@ def charity(request):
     
 def career(request):
     careers = Career.objects.all()
+    if request.method == 'POST':
+        form = CareerEnquireForm(request.POST)
+        if form.is_valid():
+            # Get form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            phone_number = form.cleaned_data['phone_number']
+            message = form.cleaned_data['message']
+            page_url = request.META.get('HTTP_REFERER')  # Get the page URL
+
+            # Save the form data to the database
+            entry = CareerEnquire.objects.create(
+                name=name,
+                email=email,
+                phone_number=phone_number,
+                message=message,
+                page_url=page_url,
+            )
+
+            # Redirect to a success page
+            return render(request, 'caritasapp/success.html')
+
+    else:
+        form = CareerEnquireForm()
     return render(request, 'caritasapp/career.html', {'careers': careers})
     
 def biomedical(request):
@@ -1125,3 +1164,6 @@ def success(request):
 #def google046804b37e953e57(request):
  #   return render(request, 'google046804b37e953e57.html')
     
+def video_gallery(request):
+    video_gallery = VideoGallery.objects.all().order_by('-created_at')
+    return render(request, 'caritasapp/video_gallery.html', {'video_gallery' : video_gallery})

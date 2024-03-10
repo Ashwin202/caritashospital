@@ -1,6 +1,6 @@
 from django import forms
 from .models import Enquire
-from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm,BookConsultation,JobApply
+from .models import Department , Doctor, Contact,ContactUs,Application, HomeCare,InternationalForm,BookConsultation,JobApply,CareerEnquire
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -11,7 +11,11 @@ class EnquireForm(forms.ModelForm):
         model = Enquire
         fields = ['name', 'email', 'phone_number', 'message'] 
         
-    
+
+class CareerEnquireForm(forms.ModelForm):
+    class Meta:
+        model = CareerEnquire
+        fields = ['name', 'email', 'phone_number', 'message']    
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -24,7 +28,7 @@ class DoctorSearchForm(forms.Form):
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
-        fields = ['first_name', 'last_name', 'email', 'phone_number', 'message' ] 
+        fields = ['first_name', 'last_name', 'email', 'phone_number','message'] 
         
 class HomeCareForm(forms.ModelForm):
     class Meta:
@@ -48,7 +52,7 @@ class DepartmentFilterForm(forms.Form):
 class InternationalForm(forms.ModelForm):
     class Meta:
         model = InternationalForm
-        fields = ['first_name', 'last_name', 'email', 'phone_number', 'country']
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'country', 'message']
 
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
@@ -81,3 +85,4 @@ class JobApplyForm(forms.ModelForm):
             'agree_terms': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
    
         }
+        

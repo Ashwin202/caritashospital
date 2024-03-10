@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import Post, Category,Subcategory, Video, Department,Speciality, Doctor, Contact, ContactUs, Career, JobType,Application,SliderImage,Videos,Album, Image, MobileSliderImage, QualityControl, Studies,BioMedical,HomeCare, Hospital,InternationalForm,BookConsultation,DoctorSlider, CaritasHospitalDoctor
-from .models import Enquire,JobApply
+from .models import Enquire,JobApply,CareerEnquire
+from .models import VideoGallery
 import csv
 from django.http import HttpResponse
+from django.utils.html import format_html
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
@@ -70,6 +72,33 @@ class EnquireAdmin(admin.ModelAdmin):
     export_as_csv.short_description = "Export selected enquiries as CSV"
     actions = ['export_as_csv']
     
+class CareerEnquireAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone_number', 'message', 'page_url', 'created_at')
+    search_fields = ('name', 'email', 'phone_number', 'page_url')
+    readonly_fields = ('created_at',)
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="enquiries.csv"'
+
+        writer = csv.writer(response)
+        writer.writerow(['Name', 'Email', 'Phone Number', 'Message','Page URL', 'Created At'])
+
+        for enquiry in queryset:
+            writer.writerow([
+                enquiry.name,
+                enquiry.email,
+                enquiry.phone_number,
+                enquiry.message,
+                enquiry.page_url,
+                enquiry.created_at,
+            ])
+
+        return response
+
+    export_as_csv.short_description = "Export selected enquiries as CSV"
+    actions = ['export_as_csv']
+    
     
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'phone_number','message', 'created_at')
@@ -102,9 +131,29 @@ class CareerAdmin(admin.ModelAdmin):
     search_fields = ('job_title', 'department','job_type')
     
 class ApplicationAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'job_title', 'resume','created_at')
+    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'job_title', 'resume', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone_number', 'job_title')
     list_filter = ('created_at',)
+    actions = ['export_as_csv']
+
+    def resume_link(self, obj):
+        if obj.resume:
+            return format_html('<a href="{}">Download Resume</a>', obj.resume.url)
+        return '-'
+
+    resume_link.short_description = 'Resume'
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="applications.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Job Title', 'Resume', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.phone_number, obj.job_title, obj.resume.url if obj.resume else '', obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected Applications"
+
     
 class SliderImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'caption', 'image')
@@ -167,7 +216,7 @@ class HomeCareAdmin(admin.ModelAdmin):
     actions = [export_as_csv]
     
 class InternationalFormAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'phone_number', 'country']
+    list_display = ['first_name', 'last_name', 'email', 'phone_number', 'country', 'message']
     search_fields = ['first_name', 'last_name', 'email', 'phone_number', 'country']
 
 class InternationalAdmin(admin.ModelAdmin):
@@ -219,9 +268,31 @@ class DoctorSliderAdmin(admin.ModelAdmin):
     list_display = ('title','image',)
     
 class JobApplyAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number',  'resume','created_at')
+    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'resume', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone_number')
     list_filter = ('created_at',)
+    actions = ['export_as_csv']
+
+    def resume_link(self, obj):
+        if obj.resume:
+            return format_html('<a href="{}">Download Resume</a>', obj.resume.url)
+        return '-'
+
+    resume_link.short_description = 'Resume'
+
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="applications.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['First Name', 'Last Name', 'Email', 'Phone Number', 'Resume', 'Created At'])
+        for obj in queryset:
+            writer.writerow([obj.first_name, obj.last_name, obj.email, obj.phone_number, obj.resume.url if obj.resume else '', obj.created_at])
+        return response
+
+    export_as_csv.short_description = "Export Selected Applications"
+    
+class VideoGalleryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at')    
     
 admin.site.register(Album, AlbumAdmin)
 
@@ -240,6 +311,7 @@ admin.site.register(Doctor, DoctorAdmin)
 admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Speciality, SpecialityAdmin)
 admin.site.register(Enquire, EnquireAdmin)
+admin.site.register(CareerEnquire, CareerEnquireAdmin)
 admin.site.register(Application, ApplicationAdmin) 
 admin.site.register(SliderImage,SliderImageAdmin)
 admin.site.register(MobileSliderImage,MobileSliderImageAdmin)
@@ -252,6 +324,7 @@ admin.site.register(Hospital,HospitalAdmin)
 #admin.register(InternationalForm,InternationalFormAdmin)
 admin.site.register(InternationalForm, InternationalAdmin)
 admin.site.register(BookConsultation, BookConsultationAdmin)
+admin.site.register(VideoGallery, VideoGalleryAdmin)
 admin.site.register(CaritasHospitalDoctor, CaritasHospitalDoctorAdmin)
 admin.site.register(DoctorSlider,DoctorSliderAdmin)
 admin.site.register(JobApply,JobApplyAdmin)
