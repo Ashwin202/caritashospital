@@ -21,7 +21,47 @@
                     <h4 class="text-light">Have Questions?<br/>We're Here to Help</h4>
                     <p class="text-light">Feel free to reach out, and let's embark on a journey to better health together.</p>
 
-                    {% include 'caritasapp/enquiry_form_template.html' %}
+                    <form action=" " method="post" class="custom-form">
+                    {% csrf_token %}
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="text" id="name" placeholder="Name" name="name" class="form-control" maxlength="30" pattern="^[A-Za-z]{1,}[\.]{0,1}[A-Za-z]{0,}$" required>
+                            <span class="required-symbol-wt" style="left:0;">*</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+                            <span class="required-symbol-wt" style="left:0;">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-sm-12">
+                            <div class="input-with-symbol">
+                                <span class="required-symbol-wt" style="left: 0;">*</span>
+                            <input type="tel" id="phone_number" name="phone_number" placeholder="Phone Number"  maxlength="30" class="form-control" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                         <div class="col-sm-12">
+                             <div class="input-with-symbol">
+                                <span class="required-symbol-wt" style="left: 0;top: 14px;">*</span>
+                                 <textarea id="message" class="form-control" name="message" placeholder="Messages..." cols="34" required></textarea>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <div class="col-sm-12">
+                            <button type="submit" class="enqrbtn">Enquire Now ></button>
+                        </div>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -32,43 +72,39 @@
     <div class="container">
         <div class="row" >
             <div class="col-lg-5">
-            <h3 class="mb-4">Where Quality Healthcare Meets Professional Excellence</h3>
-            <p>&nbsp;</p>
-           <a href="{% url 'open_positions' %}"><button type="button" class="enqrybtn">View Open Positions</button></a>
-           </div>
-           <div class="col-lg-7 px-3">
-            <p>At Caritas Hospital, we believe in the power of people to make a positive impact on healthcare. We invite you to embark on a journey of professional growth, personal fulfillment, and compassionate care.</p>
-            <p>Join our dynamic team and be a part of an organization dedicated to delivering high-quality healthcare services while upholding the values of empathy, excellence, and innovation. Whether you are an experienced healthcare professional or a fresh graduate looking to make a difference, Caritas offers a range of career opportunities in various departments.</p>
-            <p>Discover a supportive and inclusive work environment where you can learn, grow, and contribute to the well-being of our community. Your journey to a rewarding and meaningful career starts here at Caritas Hospital. Explore our current job openings, and together, let's create a healthier and happier tomorrow.</p>
-            
-            
+                <h3 class="mb-4">Where Quality Healthcare Meets Professional Excellence</h3>
+                <a href="{% url 'open_positions' %}"><button type="button" class="enqrybtn openbtn">View Open Positions</button></a>
+            </div>
+            <div class="col-lg-7 px-3">
+                <p>At Caritas Hospital, we believe in the power of people to make a positive impact on healthcare. We invite you to embark on a journey of professional growth, personal fulfillment, and compassionate care.</p>
+                <p>Join our dynamic team and be a part of an organization dedicated to delivering high-quality healthcare services while upholding the values of empathy, excellence, and innovation. Whether you are an experienced healthcare professional or a fresh graduate looking to make a difference, Caritas offers a range of career opportunities in various departments.</p>
+                <p>Discover a supportive and inclusive work environment where you can learn, grow, and contribute to the well-being of our community. Your journey to a rewarding and meaningful career starts here at Caritas Hospital. Explore our current job openings, and together, let's create a healthier and happier tomorrow.</p>
             </div>
         </div>
             
-              
+
         </div>
 </section>
 <section>
-    <div class="row">
-        <div class="col-lg-2">
-            <img src="{% static 'img/career1.png' %}" class="img-fluid" alt="Career1" />
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career1.png' %}" class="img-fluid full-screen-image" alt="Career1" />
         </div>
-        <div class="col-lg-2">
-            <img src="{% static 'img/career2.png' %}" class="img-fluid" alt="Career2" />
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career2.png' %}" class="img-fluid full-screen-image" alt="Career2" />
         </div>
-        <div class="col-lg-2">
-            <img src="{% static 'img/career3.png' %}" class="img-fluid" alt="Career3" />
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career3.png' %}" class="img-fluid full-screen-image" alt="Career3" />
         </div>
-        <div class="col-lg-2">
-            <img src="{% static 'img/career4.png' %}" class="img-fluid" alt="Career4" />
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career4.png' %}" class="img-fluid full-screen-image" alt="Career4" />
         </div>
-        <div class="col-lg-2">
-            <img src="{% static 'img/career5.png' %}" class="img-fluid" alt="Career5" />
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career5.png' %}" class="img-fluid full-screen-image" alt="Career5" />
         </div>
-        <div class="col-lg-2">
-            <img src="{% static 'img/career6.png' %}" class="img-fluid" alt="Career6" />
+        <div class="col-lg-2 col-12 mb-3 text-center">
+            <img src="{% static 'img/career6 (1).png' %}" class="img-fluid full-screen-image" alt="Career6" />
         </div>
-        
     </div>
 </section>
 

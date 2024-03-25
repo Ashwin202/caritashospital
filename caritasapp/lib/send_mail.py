@@ -3,7 +3,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from datetime import datetime
 
-def sendMail(from_email, to_email, message, subject, resume_path):
+def sendMail(from_email, to_email, message, subject, resume_path=None, cc_email=None):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         if resume_path:  # Check if resume is not None
@@ -18,8 +18,7 @@ def sendMail(from_email, to_email, message, subject, resume_path):
                 print(f"[{timestamp} | sendMail] | Error reading PDF file: {e}")
                 return
         else:
-            print(f"[{timestamp} | sendMail] | No resume path provided.")
-            return
+            pdf_data = None
 
         # Safety check
         if not settings.configured:
@@ -27,9 +26,9 @@ def sendMail(from_email, to_email, message, subject, resume_path):
 
         # Send email
         try:
-            # email = EmailMessage(subject, message, from_email, [to_email])
-            email = EmailMessage(subject, message, from_email, [to_email], cc=['akshaya.unnikrishnan@caritashospital.org'])
-            email.attach(filename='attachment.pdf', content=pdf_data, mimetype='application/pdf')
+            email = EmailMessage(subject, message, from_email, to_email, cc=cc_email)
+            if pdf_data:
+                email.attach(filename='attachment.pdf', content=pdf_data, mimetype='application/pdf')
             email.send()
             print(f"[{timestamp} | sendMail] | Email sent successfully!")
         except Exception as e:
@@ -46,5 +45,5 @@ def configure_email_settings():
         EMAIL_USE_TLS=True,
         EMAIL_HOST_USER='ericjohn26296@gmail.com',
         EMAIL_HOST_PASSWORD='teyi ntre ujro rdch',
-        DEFAULT_FROM_EMAIL='ashes192000@gmail.com'
+        DEFAULT_FROM_EMAIL='ericjohn26296@gmail.com'
     )

@@ -1,5 +1,5 @@
 from caritasapp.models import ContactUs
-from caritasapp.lib.sendMail import sendMail
+from caritasapp.lib.send_mail import sendMail
 from datetime import datetime
 
 def process_contact_us():
@@ -18,7 +18,7 @@ def process_contact_us():
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nMessage: {message}"
             
             print(f"[{timestamp} | process_contact_us] | Sending Email from {email}")            
-            sendMail(email, to_email, body, "Caritas - Response from Contact Us Form")            
+            sendMail(from_email='ericjohn26296@gmail.com', to_email=[to_email],cc_email=['akshaya.unnikrishnan@caritashospital.org', 'managerbandc@caritashospital.org'], message=body, subject='Caritas - Response from Contact Us Form')
             contact.send_status = True # Update status to 1
             contact.save()
 
