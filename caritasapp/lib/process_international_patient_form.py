@@ -19,7 +19,7 @@ def process_international_patient():
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nCountry: {country}"
             
             print(f"[{timestamp} | process_international_patient] | Sending Email from {email}")  
-            sendMail(from_email='ericjohn26296@gmail.com', to_email=[to_email], message=body, subject='Caritas - Response from International Patient Form', cc_email=['akshaya.unnikrishnan@caritashospital.org', 'managerbandc@caritashospital.org'])        
+            sendMail(from_email='caritasenquiry@gmail.com', to_email=[to_email], message=body, subject='Caritas - Response from International Patient Form', cc_email=['akshaya.unnikrishnan@caritashospital.org', 'managerbandc@caritashospital.org'])        
             contact.send_status = True # Update status to 1
             contact.save()
 

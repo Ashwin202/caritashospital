@@ -43,7 +43,7 @@ def configure_email_settings():
         EMAIL_HOST='smtp.gmail.com',
         EMAIL_PORT=587,
         EMAIL_USE_TLS=True,
-        EMAIL_HOST_USER='ericjohn26296@gmail.com',
-        EMAIL_HOST_PASSWORD='teyi ntre ujro rdch',
-        DEFAULT_FROM_EMAIL='ericjohn26296@gmail.com'
+        EMAIL_HOST_USER='caritasenquiry@gmail.com',
+        EMAIL_HOST_PASSWORD='brvn olyy wejg scae',
+        DEFAULT_FROM_EMAIL='caritasenquiry@gmail.com'
     )

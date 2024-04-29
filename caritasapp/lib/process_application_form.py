@@ -25,7 +25,7 @@ def process_application():
             body = f"First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nJob Title: {job_title}"
             
             print(f"[{timestamp} | process_application] | Sending Email from {email}")
-            sendMail(from_email='ericjohn26296@gmail.com', to_email=[to_email], message=body, subject=f"Caritas - Response from Application Form for {job_title}", resume_path=resume)
+            sendMail(from_email='caritasenquiry@gmail.com', to_email=[to_email], message=body, subject=f"Caritas - Response from Application Form for {job_title}", resume_path=resume)
             
             application.send_status = True # Update status to 1
             application.save()
